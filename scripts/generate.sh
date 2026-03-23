@@ -105,7 +105,7 @@ for service in "${services[@]}"; do
 		-i "${service_spec}" \
 		-o "${service_tmp}" \
 		--global-property apiDocs=false,modelDocs=false,apiTests=false,modelTests=false \
-		--additional-properties "artifactId=rixl-api-${service},groupId=io.rixl.sdk,artifactVersion=2.0.0,invokerPackage=io.rixl.sdk.${service}.client,apiPackage=io.rixl.sdk.${service}.api,modelPackage=io.rixl.sdk.${service}.model,library=resttemplate"
+		--additional-properties "artifactId=rixl-api-${service},groupId=io.rixl.sdk,artifactVersion=2.0.0,invokerPackage=io.rixl.sdk.${service}.client,apiPackage=io.rixl.sdk.${service}.api,modelPackage=io.rixl.sdk.${service}.model,library=resttemplate,hideGenerationTimestamp=true"
 
 	perl -0pi -e 's{http://localhost}{https://api.rixl.com}g; s{https://github.com/openapitools/openapi-generator}{https://github.com/qeeqez/rixl-sdk-java}g; s{git@github.com:openapitools/openapi-generator\.git}{git@github.com:qeeqez/rixl-sdk-java.git}g' "${service_tmp}/README.md" "${service_tmp}/pom.xml"
 
