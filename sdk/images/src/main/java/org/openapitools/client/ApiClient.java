@@ -61,10 +61,10 @@ import org.openapitools.client.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    protected String basePath = "https://api.rixl.com";
+    protected String basePath = "http://localhost";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
-      "https://api.rixl.com",
+      "",
       "No description provided",
       new HashMap<String, ServerVariable>()
     )
@@ -102,6 +102,7 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("ApiKeyAuth", new ApiKeyAuth("header", "X-API-Key"));
+        authentications.put("Bearer", new ApiKeyAuth("header", "Authorization"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -118,6 +119,7 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("ApiKeyAuth", new ApiKeyAuth("header", "X-API-Key"));
+        authentications.put("Bearer", new ApiKeyAuth("header", "Authorization"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -159,7 +161,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.rixl.com)
+     * @param basePath Base path of the URL (e.g http://localhost)
      * @return An instance of ApiClient
      */
     public ApiClient setBasePath(String basePath) {

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * GithubComQeeqezApiInternalVideosTypesChapterInput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:20:00.639892+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:28:35.758920+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class GithubComQeeqezApiInternalVideosTypesChapterInput {
   public static final String SERIALIZED_NAME_START_TIME_SEC = "start_time_sec";
   @SerializedName(SERIALIZED_NAME_START_TIME_SEC)

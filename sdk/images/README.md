@@ -2,7 +2,7 @@
 
 RIXL API
 - API version: 2.0
-  - Build date: 2026-03-23T17:20:02.990110+01:00[Africa/Lagos]
+  - Build date: 2026-03-23T17:28:37.966244+01:00[Africa/Lagos]
   - Generator version: 7.20.0
 
 **Build a powerful video experience from on-demand streaming to dynamic social feeds with a single API.**
@@ -95,7 +95,7 @@ import org.openapitools.client.api.ImagesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.rixl.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure API key authorization: ApiKeyAuth
     ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -104,11 +104,15 @@ public class Example {
     //ApiKeyAuth.setApiKeyPrefix("Token");
 
     ImagesApi apiInstance = new ImagesApi(defaultClient);
-    String imageId = "imageId_example"; // String | Image ID
+    Integer limit = 25; // Integer | Maximum number of items to return in a single request. <br> **Default:** `25`
+    Integer offset = 0; // Integer | Starting point of the result set. <br>To get page 2 with a limit of 25, set `offset` to `25`. <br> **Default:** `0`
+    String sort = "created_at"; // String | Field to sort by (created_at, name, size, updated_at)
+    String order = "desc"; // String | Sort order (asc, desc)
     try {
-      apiInstance.deleteImagesImageId(imageId);
+      PaginationPaginatedResponseImage result = apiInstance.imagesGet(limit, offset, sort, order);
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling ImagesApi#deleteImagesImageId");
+      System.err.println("Exception when calling ImagesApi#imagesGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -121,15 +125,15 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.rixl.com*
+All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ImagesApi* | [**deleteImagesImageId**](docs/ImagesApi.md#deleteImagesImageId) | **DELETE** /images/{imageId} | Delete image
-*ImagesApi* | [**getImages**](docs/ImagesApi.md#getImages) | **GET** /images | List images for a project
-*ImagesApi* | [**getImagesImageId**](docs/ImagesApi.md#getImagesImageId) | **GET** /images/{imageId} | Get image
-*ImagesApi* | [**postImagesUploadComplete**](docs/ImagesApi.md#postImagesUploadComplete) | **POST** /images/upload/complete | Upload: Mark as complete
-*ImagesApi* | [**postImagesUploadInit**](docs/ImagesApi.md#postImagesUploadInit) | **POST** /images/upload/init | Upload: Init
+*ImagesApi* | [**imagesGet**](docs/ImagesApi.md#imagesGet) | **GET** /images | List images for a project
+*ImagesApi* | [**imagesImageIdDelete**](docs/ImagesApi.md#imagesImageIdDelete) | **DELETE** /images/{imageId} | Delete image
+*ImagesApi* | [**imagesImageIdGet**](docs/ImagesApi.md#imagesImageIdGet) | **GET** /images/{imageId} | Get image
+*ImagesApi* | [**imagesUploadCompletePost**](docs/ImagesApi.md#imagesUploadCompletePost) | **POST** /images/upload/complete | Upload: Mark as complete
+*ImagesApi* | [**imagesUploadInitPost**](docs/ImagesApi.md#imagesUploadInitPost) | **POST** /images/upload/init | Upload: Init
 
 
 ## Documentation for Models
@@ -137,14 +141,14 @@ Class | Method | HTTP request | Description
  - [FileStatus](docs/FileStatus.md)
  - [GithubComQeeqezApiInternalErrorsErrorResponse](docs/GithubComQeeqezApiInternalErrorsErrorResponse.md)
  - [Image](docs/Image.md)
+ - [ImagesUploadCompletePostRequest](docs/ImagesUploadCompletePostRequest.md)
+ - [ImagesUploadInitPostRequest](docs/ImagesUploadInitPostRequest.md)
  - [InternalImagesHandlerCompleteRequest](docs/InternalImagesHandlerCompleteRequest.md)
  - [InternalImagesHandlerInitResponse](docs/InternalImagesHandlerInitResponse.md)
  - [InternalImagesHandlerUploadInitRequest](docs/InternalImagesHandlerUploadInitRequest.md)
  - [ModelFile](docs/ModelFile.md)
  - [PaginationPaginatedResponseImage](docs/PaginationPaginatedResponseImage.md)
  - [PaginationPagination](docs/PaginationPagination.md)
- - [PostImagesUploadCompleteRequest](docs/PostImagesUploadCompleteRequest.md)
- - [PostImagesUploadInitRequest](docs/PostImagesUploadInitRequest.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -157,6 +161,13 @@ Authentication schemes defined for the API:
 
 - **Type**: API key
 - **API key parameter name**: X-API-Key
+- **Location**: HTTP header
+
+<a id="Bearer"></a>
+### Bearer
+
+- **Type**: API key
+- **API key parameter name**: Authorization
 - **Location**: HTTP header
 
 

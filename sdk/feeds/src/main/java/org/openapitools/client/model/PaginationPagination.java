@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Pagination data for the request.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:19:58.230469+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:28:33.726119+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class PaginationPagination {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)

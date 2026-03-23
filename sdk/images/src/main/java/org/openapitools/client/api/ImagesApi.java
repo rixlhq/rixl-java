@@ -29,10 +29,10 @@ import java.io.IOException;
 
 import org.openapitools.client.model.GithubComQeeqezApiInternalErrorsErrorResponse;
 import org.openapitools.client.model.Image;
+import org.openapitools.client.model.ImagesUploadCompletePostRequest;
+import org.openapitools.client.model.ImagesUploadInitPostRequest;
 import org.openapitools.client.model.InternalImagesHandlerInitResponse;
 import org.openapitools.client.model.PaginationPaginatedResponseImage;
-import org.openapitools.client.model.PostImagesUploadCompleteRequest;
-import org.openapitools.client.model.PostImagesUploadInitRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -78,150 +78,7 @@ public class ImagesApi {
     }
 
     /**
-     * Build call for deleteImagesImageId
-     * @param imageId Image ID (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteImagesImageIdCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/images/{imageId}"
-            .replace("{" + "imageId" + "}", localVarApiClient.escapeString(imageId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteImagesImageIdValidateBeforeCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'imageId' is set
-        if (imageId == null) {
-            throw new ApiException("Missing the required parameter 'imageId' when calling deleteImagesImageId(Async)");
-        }
-
-        return deleteImagesImageIdCall(imageId, _callback);
-
-    }
-
-    /**
-     * Delete image
-     * delete an image by marking it as deleted
-     * @param imageId Image ID (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
-     </table>
-     */
-    public void deleteImagesImageId(@javax.annotation.Nonnull String imageId) throws ApiException {
-        deleteImagesImageIdWithHttpInfo(imageId);
-    }
-
-    /**
-     * Delete image
-     * delete an image by marking it as deleted
-     * @param imageId Image ID (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> deleteImagesImageIdWithHttpInfo(@javax.annotation.Nonnull String imageId) throws ApiException {
-        okhttp3.Call localVarCall = deleteImagesImageIdValidateBeforeCall(imageId, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Delete image (asynchronously)
-     * delete an image by marking it as deleted
-     * @param imageId Image ID (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call deleteImagesImageIdAsync(@javax.annotation.Nonnull String imageId, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = deleteImagesImageIdValidateBeforeCall(imageId, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for getImages
+     * Build call for imagesGet
      * @param limit Maximum number of items to return in a single request. &lt;br&gt; **Default:** &#x60;25&#x60; (optional, default to 25)
      * @param offset Starting point of the result set. &lt;br&gt;To get page 2 with a limit of 25, set &#x60;offset&#x60; to &#x60;25&#x60;. &lt;br&gt; **Default:** &#x60;0&#x60; (optional, default to 0)
      * @param sort Field to sort by (created_at, name, size, updated_at) (optional)
@@ -240,7 +97,7 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call imagesGetCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -301,8 +158,8 @@ public class ImagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getImagesValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order, final ApiCallback _callback) throws ApiException {
-        return getImagesCall(limit, offset, sort, order, _callback);
+    private okhttp3.Call imagesGetValidateBeforeCall(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order, final ApiCallback _callback) throws ApiException {
+        return imagesGetCall(limit, offset, sort, order, _callback);
 
     }
 
@@ -326,8 +183,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public PaginationPaginatedResponseImage getImages(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order) throws ApiException {
-        ApiResponse<PaginationPaginatedResponseImage> localVarResp = getImagesWithHttpInfo(limit, offset, sort, order);
+    public PaginationPaginatedResponseImage imagesGet(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order) throws ApiException {
+        ApiResponse<PaginationPaginatedResponseImage> localVarResp = imagesGetWithHttpInfo(limit, offset, sort, order);
         return localVarResp.getData();
     }
 
@@ -351,8 +208,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PaginationPaginatedResponseImage> getImagesWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order) throws ApiException {
-        okhttp3.Call localVarCall = getImagesValidateBeforeCall(limit, offset, sort, order, null);
+    public ApiResponse<PaginationPaginatedResponseImage> imagesGetWithHttpInfo(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order) throws ApiException {
+        okhttp3.Call localVarCall = imagesGetValidateBeforeCall(limit, offset, sort, order, null);
         Type localVarReturnType = new TypeToken<PaginationPaginatedResponseImage>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -378,15 +235,158 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order, final ApiCallback<PaginationPaginatedResponseImage> _callback) throws ApiException {
+    public okhttp3.Call imagesGetAsync(@javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String order, final ApiCallback<PaginationPaginatedResponseImage> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getImagesValidateBeforeCall(limit, offset, sort, order, _callback);
+        okhttp3.Call localVarCall = imagesGetValidateBeforeCall(limit, offset, sort, order, _callback);
         Type localVarReturnType = new TypeToken<PaginationPaginatedResponseImage>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getImagesImageId
+     * Build call for imagesImageIdDelete
+     * @param imageId Image ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imagesImageIdDeleteCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/images/{imageId}"
+            .replace("{" + "imageId" + "}", localVarApiClient.escapeString(imageId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call imagesImageIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'imageId' is set
+        if (imageId == null) {
+            throw new ApiException("Missing the required parameter 'imageId' when calling imagesImageIdDelete(Async)");
+        }
+
+        return imagesImageIdDeleteCall(imageId, _callback);
+
+    }
+
+    /**
+     * Delete image
+     * delete an image by marking it as deleted
+     * @param imageId Image ID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
+     </table>
+     */
+    public void imagesImageIdDelete(@javax.annotation.Nonnull String imageId) throws ApiException {
+        imagesImageIdDeleteWithHttpInfo(imageId);
+    }
+
+    /**
+     * Delete image
+     * delete an image by marking it as deleted
+     * @param imageId Image ID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> imagesImageIdDeleteWithHttpInfo(@javax.annotation.Nonnull String imageId) throws ApiException {
+        okhttp3.Call localVarCall = imagesImageIdDeleteValidateBeforeCall(imageId, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete image (asynchronously)
+     * delete an image by marking it as deleted
+     * @param imageId Image ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> Image deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid project ID or image ID </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Access denied </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Image not found </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> Failed to delete image </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call imagesImageIdDeleteAsync(@javax.annotation.Nonnull String imageId, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = imagesImageIdDeleteValidateBeforeCall(imageId, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for imagesImageIdGet
      * @param imageId Image ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -403,7 +403,7 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesImageIdCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call imagesImageIdGetCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -449,13 +449,13 @@ public class ImagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getImagesImageIdValidateBeforeCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call imagesImageIdGetValidateBeforeCall(@javax.annotation.Nonnull String imageId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'imageId' is set
         if (imageId == null) {
-            throw new ApiException("Missing the required parameter 'imageId' when calling getImagesImageId(Async)");
+            throw new ApiException("Missing the required parameter 'imageId' when calling imagesImageIdGet(Async)");
         }
 
-        return getImagesImageIdCall(imageId, _callback);
+        return imagesImageIdGetCall(imageId, _callback);
 
     }
 
@@ -477,8 +477,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public Image getImagesImageId(@javax.annotation.Nonnull String imageId) throws ApiException {
-        ApiResponse<Image> localVarResp = getImagesImageIdWithHttpInfo(imageId);
+    public Image imagesImageIdGet(@javax.annotation.Nonnull String imageId) throws ApiException {
+        ApiResponse<Image> localVarResp = imagesImageIdGetWithHttpInfo(imageId);
         return localVarResp.getData();
     }
 
@@ -500,8 +500,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Image> getImagesImageIdWithHttpInfo(@javax.annotation.Nonnull String imageId) throws ApiException {
-        okhttp3.Call localVarCall = getImagesImageIdValidateBeforeCall(imageId, null);
+    public ApiResponse<Image> imagesImageIdGetWithHttpInfo(@javax.annotation.Nonnull String imageId) throws ApiException {
+        okhttp3.Call localVarCall = imagesImageIdGetValidateBeforeCall(imageId, null);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -525,16 +525,16 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Internal server error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getImagesImageIdAsync(@javax.annotation.Nonnull String imageId, final ApiCallback<Image> _callback) throws ApiException {
+    public okhttp3.Call imagesImageIdGetAsync(@javax.annotation.Nonnull String imageId, final ApiCallback<Image> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getImagesImageIdValidateBeforeCall(imageId, _callback);
+        okhttp3.Call localVarCall = imagesImageIdGetValidateBeforeCall(imageId, _callback);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for postImagesUploadComplete
-     * @param postImagesUploadCompleteRequest Upload completion request (required)
+     * Build call for imagesUploadCompletePost
+     * @param imagesUploadCompletePostRequest Upload completion request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -550,7 +550,7 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadCompleteCall(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call imagesUploadCompletePostCall(@javax.annotation.Nonnull ImagesUploadCompletePostRequest imagesUploadCompletePostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -564,7 +564,7 @@ public class ImagesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = postImagesUploadCompleteRequest;
+        Object localVarPostBody = imagesUploadCompletePostRequest;
 
         // create path and map variables
         String localVarPath = "/images/upload/complete";
@@ -596,20 +596,20 @@ public class ImagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postImagesUploadCompleteValidateBeforeCall(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'postImagesUploadCompleteRequest' is set
-        if (postImagesUploadCompleteRequest == null) {
-            throw new ApiException("Missing the required parameter 'postImagesUploadCompleteRequest' when calling postImagesUploadComplete(Async)");
+    private okhttp3.Call imagesUploadCompletePostValidateBeforeCall(@javax.annotation.Nonnull ImagesUploadCompletePostRequest imagesUploadCompletePostRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'imagesUploadCompletePostRequest' is set
+        if (imagesUploadCompletePostRequest == null) {
+            throw new ApiException("Missing the required parameter 'imagesUploadCompletePostRequest' when calling imagesUploadCompletePost(Async)");
         }
 
-        return postImagesUploadCompleteCall(postImagesUploadCompleteRequest, _callback);
+        return imagesUploadCompletePostCall(imagesUploadCompletePostRequest, _callback);
 
     }
 
     /**
      * Upload: Mark as complete
      * Complete the upload process and create the image record using API key authentication
-     * @param postImagesUploadCompleteRequest Upload completion request (required)
+     * @param imagesUploadCompletePostRequest Upload completion request (required)
      * @return Image
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -624,15 +624,15 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public Image postImagesUploadComplete(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest) throws ApiException {
-        ApiResponse<Image> localVarResp = postImagesUploadCompleteWithHttpInfo(postImagesUploadCompleteRequest);
+    public Image imagesUploadCompletePost(@javax.annotation.Nonnull ImagesUploadCompletePostRequest imagesUploadCompletePostRequest) throws ApiException {
+        ApiResponse<Image> localVarResp = imagesUploadCompletePostWithHttpInfo(imagesUploadCompletePostRequest);
         return localVarResp.getData();
     }
 
     /**
      * Upload: Mark as complete
      * Complete the upload process and create the image record using API key authentication
-     * @param postImagesUploadCompleteRequest Upload completion request (required)
+     * @param imagesUploadCompletePostRequest Upload completion request (required)
      * @return ApiResponse&lt;Image&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -647,8 +647,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Image> postImagesUploadCompleteWithHttpInfo(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest) throws ApiException {
-        okhttp3.Call localVarCall = postImagesUploadCompleteValidateBeforeCall(postImagesUploadCompleteRequest, null);
+    public ApiResponse<Image> imagesUploadCompletePostWithHttpInfo(@javax.annotation.Nonnull ImagesUploadCompletePostRequest imagesUploadCompletePostRequest) throws ApiException {
+        okhttp3.Call localVarCall = imagesUploadCompletePostValidateBeforeCall(imagesUploadCompletePostRequest, null);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -656,7 +656,7 @@ public class ImagesApi {
     /**
      * Upload: Mark as complete (asynchronously)
      * Complete the upload process and create the image record using API key authentication
-     * @param postImagesUploadCompleteRequest Upload completion request (required)
+     * @param imagesUploadCompletePostRequest Upload completion request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -672,16 +672,16 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadCompleteAsync(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest, final ApiCallback<Image> _callback) throws ApiException {
+    public okhttp3.Call imagesUploadCompletePostAsync(@javax.annotation.Nonnull ImagesUploadCompletePostRequest imagesUploadCompletePostRequest, final ApiCallback<Image> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postImagesUploadCompleteValidateBeforeCall(postImagesUploadCompleteRequest, _callback);
+        okhttp3.Call localVarCall = imagesUploadCompletePostValidateBeforeCall(imagesUploadCompletePostRequest, _callback);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for postImagesUploadInit
-     * @param postImagesUploadInitRequest Upload initialization request (required)
+     * Build call for imagesUploadInitPost
+     * @param imagesUploadInitPostRequest Upload initialization request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -696,7 +696,7 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadInitCall(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call imagesUploadInitPostCall(@javax.annotation.Nonnull ImagesUploadInitPostRequest imagesUploadInitPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -710,7 +710,7 @@ public class ImagesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = postImagesUploadInitRequest;
+        Object localVarPostBody = imagesUploadInitPostRequest;
 
         // create path and map variables
         String localVarPath = "/images/upload/init";
@@ -742,20 +742,20 @@ public class ImagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postImagesUploadInitValidateBeforeCall(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'postImagesUploadInitRequest' is set
-        if (postImagesUploadInitRequest == null) {
-            throw new ApiException("Missing the required parameter 'postImagesUploadInitRequest' when calling postImagesUploadInit(Async)");
+    private okhttp3.Call imagesUploadInitPostValidateBeforeCall(@javax.annotation.Nonnull ImagesUploadInitPostRequest imagesUploadInitPostRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'imagesUploadInitPostRequest' is set
+        if (imagesUploadInitPostRequest == null) {
+            throw new ApiException("Missing the required parameter 'imagesUploadInitPostRequest' when calling imagesUploadInitPost(Async)");
         }
 
-        return postImagesUploadInitCall(postImagesUploadInitRequest, _callback);
+        return imagesUploadInitPostCall(imagesUploadInitPostRequest, _callback);
 
     }
 
     /**
      * Upload: Init
      * Initialize a presigned URL upload for an image file using API key authentication
-     * @param postImagesUploadInitRequest Upload initialization request (required)
+     * @param imagesUploadInitPostRequest Upload initialization request (required)
      * @return InternalImagesHandlerInitResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -769,15 +769,15 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public InternalImagesHandlerInitResponse postImagesUploadInit(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest) throws ApiException {
-        ApiResponse<InternalImagesHandlerInitResponse> localVarResp = postImagesUploadInitWithHttpInfo(postImagesUploadInitRequest);
+    public InternalImagesHandlerInitResponse imagesUploadInitPost(@javax.annotation.Nonnull ImagesUploadInitPostRequest imagesUploadInitPostRequest) throws ApiException {
+        ApiResponse<InternalImagesHandlerInitResponse> localVarResp = imagesUploadInitPostWithHttpInfo(imagesUploadInitPostRequest);
         return localVarResp.getData();
     }
 
     /**
      * Upload: Init
      * Initialize a presigned URL upload for an image file using API key authentication
-     * @param postImagesUploadInitRequest Upload initialization request (required)
+     * @param imagesUploadInitPostRequest Upload initialization request (required)
      * @return ApiResponse&lt;InternalImagesHandlerInitResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -791,8 +791,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InternalImagesHandlerInitResponse> postImagesUploadInitWithHttpInfo(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest) throws ApiException {
-        okhttp3.Call localVarCall = postImagesUploadInitValidateBeforeCall(postImagesUploadInitRequest, null);
+    public ApiResponse<InternalImagesHandlerInitResponse> imagesUploadInitPostWithHttpInfo(@javax.annotation.Nonnull ImagesUploadInitPostRequest imagesUploadInitPostRequest) throws ApiException {
+        okhttp3.Call localVarCall = imagesUploadInitPostValidateBeforeCall(imagesUploadInitPostRequest, null);
         Type localVarReturnType = new TypeToken<InternalImagesHandlerInitResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -800,7 +800,7 @@ public class ImagesApi {
     /**
      * Upload: Init (asynchronously)
      * Initialize a presigned URL upload for an image file using API key authentication
-     * @param postImagesUploadInitRequest Upload initialization request (required)
+     * @param imagesUploadInitPostRequest Upload initialization request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -815,9 +815,9 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadInitAsync(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest, final ApiCallback<InternalImagesHandlerInitResponse> _callback) throws ApiException {
+    public okhttp3.Call imagesUploadInitPostAsync(@javax.annotation.Nonnull ImagesUploadInitPostRequest imagesUploadInitPostRequest, final ApiCallback<InternalImagesHandlerInitResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postImagesUploadInitValidateBeforeCall(postImagesUploadInitRequest, _callback);
+        okhttp3.Call localVarCall = imagesUploadInitPostValidateBeforeCall(imagesUploadInitPostRequest, _callback);
         Type localVarReturnType = new TypeToken<InternalImagesHandlerInitResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -2,7 +2,7 @@
 
 RIXL API
 - API version: 2.0
-  - Build date: 2026-03-23T17:20:00.639892+01:00[Africa/Lagos]
+  - Build date: 2026-03-23T17:28:35.758920+01:00[Africa/Lagos]
   - Generator version: 7.20.0
 
 **Build a powerful video experience from on-demand streaming to dynamic social feeds with a single API.**
@@ -95,7 +95,7 @@ import org.openapitools.client.api.VideosApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.rixl.com");
+    defaultClient.setBasePath("http://localhost");
     
     // Configure API key authorization: ApiKeyAuth
     ApiKeyAuth ApiKeyAuth = (ApiKeyAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -104,12 +104,15 @@ public class Example {
     //ApiKeyAuth.setApiKeyPrefix("Token");
 
     VideosApi apiInstance = new VideosApi(defaultClient);
-    String videoId = "videoId_example"; // String | Video ID
+    Integer limit = 25; // Integer | Maximum number of items to return in a single request. <br> **Default:** `25`
+    Integer offset = 0; // Integer | Starting point of the result set. <br>To get page 2 with a limit of 25, set `offset` to `25`. <br> **Default:** `0`
+    String sort = "created_at"; // String | Field to sort by (created_at, name, size, updated_at, duration)
+    String order = "desc"; // String | Sort order (asc, desc)
     try {
-      AudioTrackDelete result = apiInstance.deleteVideosVideoIdAudioTracks(videoId);
+      PaginationPaginatedResponseVideo result = apiInstance.videosGet(limit, offset, sort, order);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling VideosApi#deleteVideosVideoIdAudioTracks");
+      System.err.println("Exception when calling VideosApi#videosGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -122,29 +125,29 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.rixl.com*
+All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*VideosApi* | [**deleteVideosVideoIdAudioTracks**](docs/VideosApi.md#deleteVideosVideoIdAudioTracks) | **DELETE** /videos/{videoId}/audio-tracks | Delete all audio tracks
-*VideosApi* | [**deleteVideosVideoIdAudioTracksLangCode**](docs/VideosApi.md#deleteVideosVideoIdAudioTracksLangCode) | **DELETE** /videos/{videoId}/audio-tracks/{lang_code} | Delete audio track by language
-*VideosApi* | [**deleteVideosVideoIdAudioTracksTrackId**](docs/VideosApi.md#deleteVideosVideoIdAudioTracksTrackId) | **DELETE** /videos/{videoId}/audio-tracks/{trackId} | Delete audio track
-*VideosApi* | [**deleteVideosVideoIdChapters**](docs/VideosApi.md#deleteVideosVideoIdChapters) | **DELETE** /videos/{videoId}/chapters | Delete video chapters
-*VideosApi* | [**deleteVideosVideoIdDelete**](docs/VideosApi.md#deleteVideosVideoIdDelete) | **DELETE** /videos/{videoId}/delete | Delete video
-*VideosApi* | [**deleteVideosVideoIdSubtitles**](docs/VideosApi.md#deleteVideosVideoIdSubtitles) | **DELETE** /videos/{videoId}/subtitles | Delete all subtitles
-*VideosApi* | [**deleteVideosVideoIdSubtitlesLangCode**](docs/VideosApi.md#deleteVideosVideoIdSubtitlesLangCode) | **DELETE** /videos/{videoId}/subtitles/{lang_code} | Delete subtitle by language
-*VideosApi* | [**deleteVideosVideoIdSubtitlesSubtitleId**](docs/VideosApi.md#deleteVideosVideoIdSubtitlesSubtitleId) | **DELETE** /videos/{videoId}/subtitles/{subtitleId} | Delete subtitle
-*VideosApi* | [**getVideos**](docs/VideosApi.md#getVideos) | **GET** /videos | List videos for a project
-*VideosApi* | [**getVideosLanguages**](docs/VideosApi.md#getVideosLanguages) | **GET** /videos/languages | List available subtitle languages
-*VideosApi* | [**getVideosVideoId**](docs/VideosApi.md#getVideosVideoId) | **GET** /videos/{videoId} | Get a video
-*VideosApi* | [**postVideosUploadComplete**](docs/VideosApi.md#postVideosUploadComplete) | **POST** /videos/upload/complete | Upload: Mark as complete
-*VideosApi* | [**postVideosUploadInit**](docs/VideosApi.md#postVideosUploadInit) | **POST** /videos/upload/init | Upload: Init
-*VideosApi* | [**postVideosVideoIdAudioTracks**](docs/VideosApi.md#postVideosVideoIdAudioTracks) | **POST** /videos/{videoId}/audio-tracks | Bulk upsert video audio tracks
-*VideosApi* | [**postVideosVideoIdSubtitles**](docs/VideosApi.md#postVideosVideoIdSubtitles) | **POST** /videos/{videoId}/subtitles | Bulk upsert video subtitles
-*VideosApi* | [**putVideosVideoIdAudioTracksLangCode**](docs/VideosApi.md#putVideosVideoIdAudioTracksLangCode) | **PUT** /videos/{videoId}/audio-tracks/{lang_code} | Upsert video audio track
-*VideosApi* | [**putVideosVideoIdChapters**](docs/VideosApi.md#putVideosVideoIdChapters) | **PUT** /videos/{videoId}/chapters | Update video chapters
-*VideosApi* | [**putVideosVideoIdSubtitlesLangCode**](docs/VideosApi.md#putVideosVideoIdSubtitlesLangCode) | **PUT** /videos/{videoId}/subtitles/{lang_code} | Upsert video subtitle
-*VideosApi* | [**putVideosVideoIdThumbnail**](docs/VideosApi.md#putVideosVideoIdThumbnail) | **PUT** /videos/{videoId}/thumbnail | Update video thumbnail
+*VideosApi* | [**videosGet**](docs/VideosApi.md#videosGet) | **GET** /videos | List videos for a project
+*VideosApi* | [**videosLanguagesGet**](docs/VideosApi.md#videosLanguagesGet) | **GET** /videos/languages | List available subtitle languages
+*VideosApi* | [**videosUploadCompletePost**](docs/VideosApi.md#videosUploadCompletePost) | **POST** /videos/upload/complete | Upload: Mark as complete
+*VideosApi* | [**videosUploadInitPost**](docs/VideosApi.md#videosUploadInitPost) | **POST** /videos/upload/init | Upload: Init
+*VideosApi* | [**videosVideoIdAudioTracksDelete**](docs/VideosApi.md#videosVideoIdAudioTracksDelete) | **DELETE** /videos/{videoId}/audio-tracks | Delete all audio tracks
+*VideosApi* | [**videosVideoIdAudioTracksLangCodeDelete**](docs/VideosApi.md#videosVideoIdAudioTracksLangCodeDelete) | **DELETE** /videos/{videoId}/audio-tracks/{lang_code} | Delete audio track by language
+*VideosApi* | [**videosVideoIdAudioTracksLangCodePut**](docs/VideosApi.md#videosVideoIdAudioTracksLangCodePut) | **PUT** /videos/{videoId}/audio-tracks/{lang_code} | Upsert video audio track
+*VideosApi* | [**videosVideoIdAudioTracksPost**](docs/VideosApi.md#videosVideoIdAudioTracksPost) | **POST** /videos/{videoId}/audio-tracks | Bulk upsert video audio tracks
+*VideosApi* | [**videosVideoIdAudioTracksTrackIdDelete**](docs/VideosApi.md#videosVideoIdAudioTracksTrackIdDelete) | **DELETE** /videos/{videoId}/audio-tracks/{trackId} | Delete audio track
+*VideosApi* | [**videosVideoIdChaptersDelete**](docs/VideosApi.md#videosVideoIdChaptersDelete) | **DELETE** /videos/{videoId}/chapters | Delete video chapters
+*VideosApi* | [**videosVideoIdChaptersPut**](docs/VideosApi.md#videosVideoIdChaptersPut) | **PUT** /videos/{videoId}/chapters | Update video chapters
+*VideosApi* | [**videosVideoIdDeleteDelete**](docs/VideosApi.md#videosVideoIdDeleteDelete) | **DELETE** /videos/{videoId}/delete | Delete video
+*VideosApi* | [**videosVideoIdGet**](docs/VideosApi.md#videosVideoIdGet) | **GET** /videos/{videoId} | Get a video
+*VideosApi* | [**videosVideoIdSubtitlesDelete**](docs/VideosApi.md#videosVideoIdSubtitlesDelete) | **DELETE** /videos/{videoId}/subtitles | Delete all subtitles
+*VideosApi* | [**videosVideoIdSubtitlesLangCodeDelete**](docs/VideosApi.md#videosVideoIdSubtitlesLangCodeDelete) | **DELETE** /videos/{videoId}/subtitles/{lang_code} | Delete subtitle by language
+*VideosApi* | [**videosVideoIdSubtitlesLangCodePut**](docs/VideosApi.md#videosVideoIdSubtitlesLangCodePut) | **PUT** /videos/{videoId}/subtitles/{lang_code} | Upsert video subtitle
+*VideosApi* | [**videosVideoIdSubtitlesPost**](docs/VideosApi.md#videosVideoIdSubtitlesPost) | **POST** /videos/{videoId}/subtitles | Bulk upsert video subtitles
+*VideosApi* | [**videosVideoIdSubtitlesSubtitleIdDelete**](docs/VideosApi.md#videosVideoIdSubtitlesSubtitleIdDelete) | **DELETE** /videos/{videoId}/subtitles/{subtitleId} | Delete subtitle
+*VideosApi* | [**videosVideoIdThumbnailPut**](docs/VideosApi.md#videosVideoIdThumbnailPut) | **PUT** /videos/{videoId}/thumbnail | Update video thumbnail
 
 
 ## Documentation for Models
@@ -164,15 +167,15 @@ Class | Method | HTTP request | Description
  - [ModelFile](docs/ModelFile.md)
  - [PaginationPaginatedResponseVideo](docs/PaginationPaginatedResponseVideo.md)
  - [PaginationPagination](docs/PaginationPagination.md)
- - [PostVideosUploadCompleteRequest](docs/PostVideosUploadCompleteRequest.md)
- - [PostVideosUploadInitRequest](docs/PostVideosUploadInitRequest.md)
- - [PutVideosVideoIdChaptersRequest](docs/PutVideosVideoIdChaptersRequest.md)
  - [Subtitle](docs/Subtitle.md)
  - [SubtitleDelete](docs/SubtitleDelete.md)
  - [UpdateChaptersRequest](docs/UpdateChaptersRequest.md)
  - [UpdateChaptersResponse](docs/UpdateChaptersResponse.md)
  - [Video](docs/Video.md)
  - [VideoUploadInitRequest](docs/VideoUploadInitRequest.md)
+ - [VideosUploadCompletePostRequest](docs/VideosUploadCompletePostRequest.md)
+ - [VideosUploadInitPostRequest](docs/VideosUploadInitPostRequest.md)
+ - [VideosVideoIdChaptersPutRequest](docs/VideosVideoIdChaptersPutRequest.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -185,6 +188,13 @@ Authentication schemes defined for the API:
 
 - **Type**: API key
 - **API key parameter name**: X-API-Key
+- **Location**: HTTP header
+
+<a id="Bearer"></a>
+### Bearer
+
+- **Type**: API key
+- **API key parameter name**: Authorization
 - **Location**: HTTP header
 
 
