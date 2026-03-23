@@ -1,46 +1,44 @@
-# RIXL Java SDKs
+# RIXL Java SDK
 
-This repository contains the Java SDK split by service instead of one flat generated client.
+The RIXL Java SDK provides a strongly-typed, object-oriented interface for the RIXL API, making it easy to build high-performance applications on the JVM.
 
-## Layout
+## Modules
 
-- `sdk/feeds`
-- `sdk/videos`
-- `sdk/images`
+The SDK is organized into service-specific modules:
 
-Each service folder is a standalone generated Java package with its own `pom.xml`, Gradle files, and source tree.
+- **feeds**: `io.rixl.sdk.feeds` — Manage community and user feeds.
+- **videos**: `io.rixl.sdk.videos` — Handle video uploads and processing.
+- **images**: `io.rixl.sdk.images` — Image processing and asset management.
 
-## Build Example
+## Installation
 
-Build the videos SDK:
+### Maven
 
-```sh
-cd sdk/videos
-mvn clean install
+Add the following coordinates to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>io.rixl.sdk</groupId>
+    <artifactId>rixl-sdk-java-videos</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
-The generated packages follow the service namespace:
+### Gradle
 
-- `io.rixl.sdk.feeds.*`
-- `io.rixl.sdk.videos.*`
-- `io.rixl.sdk.images.*`
-
-## Regenerate
-
-Generate all services:
-
-```sh
-./scripts/generate.sh
+```gradle
+implementation 'io.rixl.sdk:rixl-sdk-java-videos:1.0.0'
 ```
 
-Generate one service:
+## Quick Start
 
-```sh
-./scripts/generate.sh --service videos
+```java
+import io.rixl.sdk.feeds.api.FeedsApi;
+
+FeedsApi api = new FeedsApi();
+// api.getFeed();
 ```
 
-Regenerate from a fresh OpenAPI file:
+## Support
 
-```sh
-./scripts/generate.sh --spec /path/to/public.swagger.json --service images
-```
+For issues or feature requests, please open an issue in the GitHub repository.
