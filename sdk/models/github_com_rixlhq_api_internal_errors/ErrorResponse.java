@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.models.github_com_qeeqez_api_internal_errors;
+package com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors;
 
 import com.microsoft.kiota.ApiException;
 import com.microsoft.kiota.serialization.AdditionalDataHolder;

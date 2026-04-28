@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.videos;
+package com.rixlhq.rixl.sdk.videos;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -9,11 +9,11 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.qeeqez.rixl.sdk.models.github_com_qeeqez_api_internal_errors.ErrorResponse;
-import com.qeeqez.rixl.sdk.models.pagination.PaginatedResponseVideo;
-import com.qeeqez.rixl.sdk.videos.item.WithVideoItemRequestBuilder;
-import com.qeeqez.rixl.sdk.videos.languages.LanguagesRequestBuilder;
-import com.qeeqez.rixl.sdk.videos.upload.UploadRequestBuilder;
+import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixlhq.rixl.sdk.models.pagination.PaginatedResponseVideo;
+import com.rixlhq.rixl.sdk.videos.item.WithVideoItemRequestBuilder;
+import com.rixlhq.rixl.sdk.videos.languages.LanguagesRequestBuilder;
+import com.rixlhq.rixl.sdk.videos.upload.UploadRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
         return new UploadRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * Gets an item from the com.qeeqez.rixl.sdk.videos.item collection
+     * Gets an item from the com.rixlhq.rixl.sdk.videos.item collection
      * @param videoId Video ID
      * @return a {@link WithVideoItemRequestBuilder}
      */

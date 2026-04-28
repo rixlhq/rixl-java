@@ -1,9 +1,9 @@
-package com.qeeqez.rixl.sdk.videos.upload;
+package com.rixlhq.rixl.sdk.videos.upload;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.qeeqez.rixl.sdk.videos.upload.complete.CompleteRequestBuilder;
-import com.qeeqez.rixl.sdk.videos.upload.init.InitRequestBuilder;
+import com.rixlhq.rixl.sdk.videos.upload.complete.CompleteRequestBuilder;
+import com.rixlhq.rixl.sdk.videos.upload.init.InitRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**

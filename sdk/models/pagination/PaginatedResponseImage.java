@@ -1,10 +1,10 @@
-package com.qeeqez.rixl.sdk.models.pagination;
+package com.rixlhq.rixl.sdk.models.pagination;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.qeeqez.rixl.sdk.models.Image;
+import com.rixlhq.rixl.sdk.models.Image;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;

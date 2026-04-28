@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.images;
+package com.rixlhq.rixl.sdk.images;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -9,10 +9,10 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.qeeqez.rixl.sdk.images.item.WithImageItemRequestBuilder;
-import com.qeeqez.rixl.sdk.images.upload.UploadRequestBuilder;
-import com.qeeqez.rixl.sdk.models.github_com_qeeqez_api_internal_errors.ErrorResponse;
-import com.qeeqez.rixl.sdk.models.pagination.PaginatedResponseImage;
+import com.rixlhq.rixl.sdk.images.item.WithImageItemRequestBuilder;
+import com.rixlhq.rixl.sdk.images.upload.UploadRequestBuilder;
+import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixlhq.rixl.sdk.models.pagination.PaginatedResponseImage;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
         return new UploadRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * Gets an item from the com.qeeqez.rixl.sdk.images.item collection
+     * Gets an item from the com.rixlhq.rixl.sdk.images.item collection
      * @param imageId Image ID
      * @return a {@link WithImageItemRequestBuilder}
      */

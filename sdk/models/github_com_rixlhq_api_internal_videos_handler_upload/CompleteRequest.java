@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.models.github_com_qeeqez_api_internal_videos_types;
+package com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_videos_handler_upload;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
@@ -7,35 +7,34 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * Video upload completion request
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class ChapterInput implements AdditionalDataHolder, Parsable {
+public class CompleteRequest implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
     private Map<String, Object> additionalData;
     /**
-     * The start_time_sec property
+     * The video_id property
      */
-    private Double startTimeSec;
+    private String videoId;
     /**
-     * The title property
+     * Instantiates a new {@link CompleteRequest} and sets the default values.
      */
-    private String title;
-    /**
-     * Instantiates a new {@link ChapterInput} and sets the default values.
-     */
-    public ChapterInput() {
+    public CompleteRequest() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link ChapterInput}
+     * @return a {@link CompleteRequest}
      */
     @jakarta.annotation.Nonnull
-    public static ChapterInput createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static CompleteRequest createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new ChapterInput();
+        return new CompleteRequest();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -51,26 +50,17 @@ public class ChapterInput implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("start_time_sec", (n) -> { this.setStartTimeSec(n.getDoubleValue()); });
-        deserializerMap.put("title", (n) -> { this.setTitle(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the start_time_sec property value. The start_time_sec property
-     * @return a {@link Double}
-     */
-    @jakarta.annotation.Nullable
-    public Double getStartTimeSec() {
-        return this.startTimeSec;
-    }
-    /**
-     * Gets the title property value. The title property
+     * Gets the video_id property value. The video_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public String getTitle() {
-        return this.title;
+    public String getVideoId() {
+        return this.videoId;
     }
     /**
      * Serializes information the current object
@@ -78,8 +68,7 @@ public class ChapterInput implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeDoubleValue("start_time_sec", this.getStartTimeSec());
-        writer.writeStringValue("title", this.getTitle());
+        writer.writeStringValue("video_id", this.getVideoId());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -90,17 +79,10 @@ public class ChapterInput implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the start_time_sec property value. The start_time_sec property
-     * @param value Value to set for the start_time_sec property.
+     * Sets the video_id property value. The video_id property
+     * @param value Value to set for the video_id property.
      */
-    public void setStartTimeSec(@jakarta.annotation.Nullable final Double value) {
-        this.startTimeSec = value;
-    }
-    /**
-     * Sets the title property value. The title property
-     * @param value Value to set for the title property.
-     */
-    public void setTitle(@jakarta.annotation.Nullable final String value) {
-        this.title = value;
+    public void setVideoId(@jakarta.annotation.Nullable final String value) {
+        this.videoId = value;
     }
 }

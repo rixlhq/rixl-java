@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.videos.item.thumbnail;
+package com.rixlhq.rixl.sdk.videos.item.thumbnail;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

@@ -1,8 +1,8 @@
-package com.qeeqez.rixl.sdk.feeds.item.creators;
+package com.rixlhq.rixl.sdk.feeds.item.creators;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.qeeqez.rixl.sdk.feeds.item.creators.item.WithCreatorItemRequestBuilder;
+import com.rixlhq.rixl.sdk.feeds.item.creators.item.WithCreatorItemRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -11,7 +11,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreatorsRequestBuilder extends BaseRequestBuilder {
     /**
-     * Gets an item from the com.qeeqez.rixl.sdk.feeds.item.creators.item collection
+     * Gets an item from the com.rixlhq.rixl.sdk.feeds.item.creators.item collection
      * @param creatorId Creator ID
      * @return a {@link WithCreatorItemRequestBuilder}
      */

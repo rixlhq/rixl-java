@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.videos.item.subtitles;
+package com.rixlhq.rixl.sdk.videos.item.subtitles;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.qeeqez.rixl.sdk.models.SubtitleDelete;
-import com.qeeqez.rixl.sdk.videos.item.subtitles.item.WithLangCodeItemRequestBuilder;
+import com.rixlhq.rixl.sdk.models.SubtitleDelete;
+import com.rixlhq.rixl.sdk.videos.item.subtitles.item.WithLangCodeItemRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SubtitlesRequestBuilder extends BaseRequestBuilder {
     /**
-     * Gets an item from the com.qeeqez.rixl.sdk.videos.item.subtitles.item collection
+     * Gets an item from the com.rixlhq.rixl.sdk.videos.item.subtitles.item collection
      * @param lang_code Language Code (BCP 47)
      * @return a {@link WithLangCodeItemRequestBuilder}
      */

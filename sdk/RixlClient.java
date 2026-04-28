@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk;
+package com.rixlhq.rixl.sdk;
 
 import com.microsoft.kiota.ApiClientBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -12,9 +12,9 @@ import com.microsoft.kiota.serialization.ParseNodeFactoryRegistry;
 import com.microsoft.kiota.serialization.SerializationWriterFactoryRegistry;
 import com.microsoft.kiota.serialization.TextParseNodeFactory;
 import com.microsoft.kiota.serialization.TextSerializationWriterFactory;
-import com.qeeqez.rixl.sdk.feeds.FeedsRequestBuilder;
-import com.qeeqez.rixl.sdk.images.ImagesRequestBuilder;
-import com.qeeqez.rixl.sdk.videos.VideosRequestBuilder;
+import com.rixlhq.rixl.sdk.feeds.FeedsRequestBuilder;
+import com.rixlhq.rixl.sdk.images.ImagesRequestBuilder;
+import com.rixlhq.rixl.sdk.videos.VideosRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -60,9 +60,5 @@ public class RixlClient extends BaseRequestBuilder {
         ApiClientBuilder.registerDefaultDeserializer(() -> new JsonParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new FormParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new TextParseNodeFactory());
-        if (requestAdapter.getBaseUrl() == null || requestAdapter.getBaseUrl().isEmpty()) {
-            requestAdapter.setBaseUrl("https://api.rixl.com");
-        }
-        pathParameters.put("baseurl", requestAdapter.getBaseUrl());
     }
 }

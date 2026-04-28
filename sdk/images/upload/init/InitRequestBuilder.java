@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.images.upload.init;
+package com.rixlhq.rixl.sdk.images.upload.init;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,9 +8,9 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.qeeqez.rixl.sdk.models.github_com_qeeqez_api_internal_errors.ErrorResponse;
-import com.qeeqez.rixl.sdk.models.internal_images_handler.InitResponse;
-import com.qeeqez.rixl.sdk.models.internal_images_handler.UploadInitRequest;
+import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixlhq.rixl.sdk.models.internal_images_handler.InitResponse;
+import com.rixlhq.rixl.sdk.models.internal_images_handler.UploadInitRequest;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

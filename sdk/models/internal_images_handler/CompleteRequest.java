@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.models.internal_images_handler;
+package com.rixlhq.rixl.sdk.models.internal_images_handler;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

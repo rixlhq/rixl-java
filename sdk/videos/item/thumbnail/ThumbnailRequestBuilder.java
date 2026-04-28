@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.videos.item.thumbnail;
+package com.rixlhq.rixl.sdk.videos.item.thumbnail;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.qeeqez.rixl.sdk.models.github_com_qeeqez_api_internal_errors.ErrorResponse;
-import com.qeeqez.rixl.sdk.models.Video;
+import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixlhq.rixl.sdk.models.Video;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/videos/{videoId}/thumbnail", rawUrl);
     }
     /**
-     * Update the thumbnail image for an existing video using API key authentication
+     * Update the thumbnail image for an existing video
      * @param body The request body
      * @return a {@link Video}
      * @throws ErrorResponse When receiving a 400 status code
@@ -50,7 +50,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
         return put(body, null);
     }
     /**
-     * Update the thumbnail image for an existing video using API key authentication
+     * Update the thumbnail image for an existing video
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Video}
@@ -73,7 +73,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, errorMapping, Video::createFromDiscriminatorValue);
     }
     /**
-     * Update the thumbnail image for an existing video using API key authentication
+     * Update the thumbnail image for an existing video
      * @param body The request body
      * @return a {@link RequestInformation}
      */
@@ -82,7 +82,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
         return toPutRequestInformation(body, null);
     }
     /**
-     * Update the thumbnail image for an existing video using API key authentication
+     * Update the thumbnail image for an existing video
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}

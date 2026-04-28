@@ -1,4 +1,4 @@
-package com.qeeqez.rixl.sdk.videos.languages;
+package com.rixlhq.rixl.sdk.videos.languages;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.qeeqez.rixl.sdk.models.internal_videos_handler_subtitles.LanguageResponse;
+import com.rixlhq.rixl.sdk.models.internal_videos_handler_subtitles.LanguageResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
