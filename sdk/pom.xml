@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.rixlhq</groupId>
-  <artifactId>rixl-sdk-java</artifactId>
+  <artifactId>rixl-java</artifactId>
   <version>0.0.0-kiota</version>
-  <name>rixl-sdk-java</name>
+  <name>rixl-java</name>
   <description>Kiota-generated Java SDK for RIXL.</description>
 
   <properties>

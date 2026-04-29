@@ -3,7 +3,7 @@
     "packages": {
         "sdk": {
             "release-type": "maven",
-            "package-name": "rixl-sdk-java"
+            "package-name": "rixl-java"
         }
     }
 }
