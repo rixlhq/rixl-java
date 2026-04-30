@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.rixl.sdk</groupId>
   <artifactId>rixl-java</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <name>RIXL Java SDK</name>
   <description>Java client for the RIXL API.</description>
   <url>https://github.com/rixlhq/rixl-java</url>
