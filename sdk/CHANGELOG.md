@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.3...rixl-java-v0.2.4) (2026-04-30)
+
+
+### Bug Fixes
+
+* **deps:** correct artifactId casing to microsoft-kiota-http-okHttp ([bd94198](https://github.com/rixlhq/rixl-java/commit/bd94198125d33743f75a9bb085b26f0131d37493))
+
 ## [0.2.3](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.2...rixl-java-v0.2.3) (2026-04-30)
 
 
