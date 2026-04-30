@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/rixlhq/rixl-java/compare/rixl-java-v1.0.0...rixl-java-v1.0.1) (2026-04-30)
+
+
+### Documentation
+
+* trim pom description ([c6b87b3](https://github.com/rixlhq/rixl-java/commit/c6b87b3b32a942b4d1df53dbade3683367419701))
+
 ## [1.0.0](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.4...rixl-java-v1.0.0) (2026-04-30)
 
 
