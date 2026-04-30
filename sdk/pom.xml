@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.rixl.sdk</groupId>
   <artifactId>rixl-java</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>RIXL Java SDK</name>
   <description>The official Java client for the RIXL API. Build a powerful video experience — on-demand streaming, dynamic social feeds, image and video uploads with global delivery — from a single API. Generated from the RIXL OpenAPI spec via Microsoft Kiota.</description>
   <url>https://github.com/rixlhq/rixl-java</url>
