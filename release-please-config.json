@@ -5,7 +5,8 @@
     "packages": {
         "sdk": {
             "release-type": "maven",
-            "package-name": "rixl-java"
+            "package-name": "rixl-java",
+            "skip-github-release": true
         }
     }
 }
