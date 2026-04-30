@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.2...rixl-java-v0.2.3) (2026-04-30)
+
+
+### Features
+
+* publish to GitHub Packages instead of Maven Central ([a81f105](https://github.com/rixlhq/rixl-java/commit/a81f105245ccf4644414050b5f32699b1c354d66))
+
 ## [0.2.2](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.1...rixl-java-v0.2.2) (2026-04-30)
 
 
