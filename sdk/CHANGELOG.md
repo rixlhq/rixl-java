@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/rixlhq/rixl-java/compare/rixl-java-v1.0.1...rixl-java-v1.0.2) (2026-04-30)
+
+
+### Documentation
+
+* sync sdk/README from root ([913a2f8](https://github.com/rixlhq/rixl-java/commit/913a2f8916471cf0f9310309bd4abe9ea0b93c7b))
+
 ## [1.0.1](https://github.com/rixlhq/rixl-java/compare/rixl-java-v1.0.0...rixl-java-v1.0.1) (2026-04-30)
 
 
