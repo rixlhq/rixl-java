@@ -58,7 +58,7 @@ https://github.com/settings/tokens.)
 
 <dependencies>
   <dependency>
-    <groupId>com.rixlhq</groupId>
+    <groupId>com.rixl.sdk</groupId>
     <artifactId>rixl-java</artifactId>
     <version>0.2.2</version>
   </dependency>
@@ -79,14 +79,14 @@ repositories {
 }
 
 dependencies {
-    implementation("com.rixlhq:rixl-java:0.2.2")
+    implementation("com.rixl.sdk:rixl-java:0.2.2")
 }
 ```
 
 ## Quick start
 
 ```java
-import com.rixlhq.rixl.sdk.RixlClient;
+import com.rixl.sdk.RixlClient;
 import com.microsoft.kiota.authentication.ApiKeyAuthenticationProvider;
 import com.microsoft.kiota.authentication.KeyLocation;
 import com.microsoft.kiota.http.OkHttpRequestAdapter;
@@ -139,8 +139,8 @@ var image = client.images().byImageId("PS5IMKoFLm").get();
 client.images().byImageId("PS5IMKoFLm").delete();
 
 // Upload (init → PUT bytes to presigned URL → complete)
-import com.rixlhq.rixl.sdk.models.internal_images_handler.UploadInitRequest;
-import com.rixlhq.rixl.sdk.models.internal_images_handler.CompleteRequest;
+import com.rixl.sdk.models.internal_images_handler.UploadInitRequest;
+import com.rixl.sdk.models.internal_images_handler.CompleteRequest;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -179,8 +179,8 @@ var video = client.videos().byVideoId("VI9VXQxWXQ").get();
 var tracks = client.videos().byVideoId("VI9VXQxWXQ").subtitles().get();
 
 // Upload (init returns presigned URLs for both the video and a poster image)
-import com.rixlhq.rixl.sdk.models.VideoUploadInitRequest;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_videos_handler_upload.CompleteRequest;
+import com.rixl.sdk.models.VideoUploadInitRequest;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_videos_handler_upload.CompleteRequest;
 
 var initReq = new VideoUploadInitRequest();
 initReq.setFileName("clip.mp4");
@@ -199,7 +199,7 @@ var done = client.videos().upload().complete().post(completeReq);
 List endpoints accept `limit`, `offset`, `sort`, and `order`:
 
 ```java
-import com.rixlhq.rixl.sdk.images.ImagesRequestBuilder;
+import com.rixl.sdk.images.ImagesRequestBuilder;
 
 int limit = 50, offset = 0;
 while (true) {
@@ -222,7 +222,7 @@ while (true) {
 API errors (400, 401, 403, 404, 500) are thrown as `ErrorResponse`:
 
 ```java
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
 
 try {
     var image = client.images().byImageId("PS5IMKoFLm").get();
@@ -234,7 +234,7 @@ try {
 
 ## Models
 
-Generated types live under `com.rixlhq.rixl.sdk.models.*`:
+Generated types live under `com.rixl.sdk.models.*`:
 
 | Package | Contents |
 |---------|----------|

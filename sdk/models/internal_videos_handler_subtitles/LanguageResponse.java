@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.models.internal_videos_handler_subtitles;
+package com.rixl.sdk.models.internal_videos_handler_subtitles;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

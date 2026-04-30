@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.videos.upload.complete;
+package com.rixl.sdk.videos.upload.complete;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,9 +8,9 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_videos_handler_upload.CompleteRequest;
-import com.rixlhq.rixl.sdk.models.Video;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_videos_handler_upload.CompleteRequest;
+import com.rixl.sdk.models.Video;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

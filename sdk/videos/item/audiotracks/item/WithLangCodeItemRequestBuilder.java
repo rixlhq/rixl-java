@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.videos.item.audiotracks.item;
+package com.rixl.sdk.videos.item.audiotracks.item;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixlhq.rixl.sdk.models.AudioTrack;
-import com.rixlhq.rixl.sdk.models.AudioTrackDelete;
+import com.rixl.sdk.models.AudioTrack;
+import com.rixl.sdk.models.AudioTrackDelete;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

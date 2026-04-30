@@ -1,8 +1,8 @@
-package com.rixlhq.rixl.sdk.feeds;
+package com.rixl.sdk.feeds;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixlhq.rixl.sdk.feeds.item.WithFeedItemRequestBuilder;
+import com.rixl.sdk.feeds.item.WithFeedItemRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -11,7 +11,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FeedsRequestBuilder extends BaseRequestBuilder {
     /**
-     * Gets an item from the com.rixlhq.rixl.sdk.feeds.item collection
+     * Gets an item from the com.rixl.sdk.feeds.item collection
      * @param feedId Feed ID
      * @return a {@link WithFeedItemRequestBuilder}
      */

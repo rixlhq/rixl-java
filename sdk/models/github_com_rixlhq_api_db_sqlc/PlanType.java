@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_db_sqlc;
+package com.rixl.sdk.models.github_com_rixlhq_api_db_sqlc;
 
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;

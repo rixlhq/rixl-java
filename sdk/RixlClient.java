@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk;
+package com.rixl.sdk;
 
 import com.microsoft.kiota.ApiClientBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -12,9 +12,9 @@ import com.microsoft.kiota.serialization.ParseNodeFactoryRegistry;
 import com.microsoft.kiota.serialization.SerializationWriterFactoryRegistry;
 import com.microsoft.kiota.serialization.TextParseNodeFactory;
 import com.microsoft.kiota.serialization.TextSerializationWriterFactory;
-import com.rixlhq.rixl.sdk.feeds.FeedsRequestBuilder;
-import com.rixlhq.rixl.sdk.images.ImagesRequestBuilder;
-import com.rixlhq.rixl.sdk.videos.VideosRequestBuilder;
+import com.rixl.sdk.feeds.FeedsRequestBuilder;
+import com.rixl.sdk.images.ImagesRequestBuilder;
+import com.rixl.sdk.videos.VideosRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**

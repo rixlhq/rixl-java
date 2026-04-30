@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.models.pagination;
+package com.rixl.sdk.models.pagination;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

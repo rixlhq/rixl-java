@@ -8,7 +8,7 @@ Add the following to your `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>com.rixlhq</groupId>
+    <groupId>com.rixl.sdk</groupId>
     <artifactId>rixl-java</artifactId>
     <version>0.1.0</version>
 </dependency>
@@ -17,7 +17,7 @@ Add the following to your `pom.xml`:
 ## Quick Start
 
 ```java
-import com.rixlhq.rixl.RixlClient;
+import com.rixl.sdk.RixlClient;
 import com.microsoft.kiota.authentication.ApiKeyAuthenticationProvider;
 import com.microsoft.kiota.http.OkHttpRequestAdapter;
 

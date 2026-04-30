@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_videos_types;
+package com.rixl.sdk.models.github_com_rixlhq_api_internal_videos_types;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

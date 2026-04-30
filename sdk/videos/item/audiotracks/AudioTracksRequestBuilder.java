@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.videos.item.audiotracks;
+package com.rixl.sdk.videos.item.audiotracks;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixlhq.rixl.sdk.models.AudioTrackDelete;
-import com.rixlhq.rixl.sdk.videos.item.audiotracks.item.WithLangCodeItemRequestBuilder;
+import com.rixl.sdk.models.AudioTrackDelete;
+import com.rixl.sdk.videos.item.audiotracks.item.WithLangCodeItemRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AudioTracksRequestBuilder extends BaseRequestBuilder {
     /**
-     * Gets an item from the com.rixlhq.rixl.sdk.videos.item.audioTracks.item collection
+     * Gets an item from the com.rixl.sdk.videos.item.audioTracks.item collection
      * @param lang_code Language Code (BCP 47)
      * @return a {@link WithLangCodeItemRequestBuilder}
      */

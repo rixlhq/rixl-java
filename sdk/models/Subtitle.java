@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.models;
+package com.rixl.sdk.models;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

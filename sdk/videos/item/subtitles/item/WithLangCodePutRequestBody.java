@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.videos.item.subtitles.item;
+package com.rixl.sdk.videos.item.subtitles.item;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;

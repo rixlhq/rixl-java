@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.videos.item;
+package com.rixl.sdk.videos.item;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
-import com.rixlhq.rixl.sdk.models.Video;
-import com.rixlhq.rixl.sdk.videos.item.audiotracks.AudioTracksRequestBuilder;
-import com.rixlhq.rixl.sdk.videos.item.chapters.ChaptersRequestBuilder;
-import com.rixlhq.rixl.sdk.videos.item.delete.DeleteRequestBuilder;
-import com.rixlhq.rixl.sdk.videos.item.subtitles.SubtitlesRequestBuilder;
-import com.rixlhq.rixl.sdk.videos.item.thumbnail.ThumbnailRequestBuilder;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixl.sdk.models.Video;
+import com.rixl.sdk.videos.item.audiotracks.AudioTracksRequestBuilder;
+import com.rixl.sdk.videos.item.chapters.ChaptersRequestBuilder;
+import com.rixl.sdk.videos.item.delete.DeleteRequestBuilder;
+import com.rixl.sdk.videos.item.subtitles.SubtitlesRequestBuilder;
+import com.rixl.sdk.videos.item.thumbnail.ThumbnailRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

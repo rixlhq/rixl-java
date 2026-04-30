@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.feeds.item;
+package com.rixl.sdk.feeds.item;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -9,10 +9,10 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixlhq.rixl.sdk.feeds.item.creators.CreatorsRequestBuilder;
-import com.rixlhq.rixl.sdk.feeds.item.item.WithPostItemRequestBuilder;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
-import com.rixlhq.rixl.sdk.models.pagination.PaginatedResponsePost;
+import com.rixl.sdk.feeds.item.creators.CreatorsRequestBuilder;
+import com.rixl.sdk.feeds.item.item.WithPostItemRequestBuilder;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_errors.ErrorResponse;
+import com.rixl.sdk.models.pagination.PaginatedResponsePost;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
         return new CreatorsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * Gets an item from the com.rixlhq.rixl.sdk.feeds.item.item collection
+     * Gets an item from the com.rixl.sdk.feeds.item.item collection
      * @param postId Post ID
      * @return a {@link WithPostItemRequestBuilder}
      */

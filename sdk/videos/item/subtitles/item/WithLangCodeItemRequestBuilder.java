@@ -1,4 +1,4 @@
-package com.rixlhq.rixl.sdk.videos.item.subtitles.item;
+package com.rixl.sdk.videos.item.subtitles.item;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixlhq.rixl.sdk.models.Subtitle;
-import com.rixlhq.rixl.sdk.models.SubtitleDelete;
+import com.rixl.sdk.models.Subtitle;
+import com.rixl.sdk.models.SubtitleDelete;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,11 +1,11 @@
-package com.rixlhq.rixl.sdk.models;
+package com.rixl.sdk.models;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_db_sqlc.PlanType;
-import com.rixlhq.rixl.sdk.models.github_com_rixlhq_api_internal_videos.VideoResponse;
+import com.rixl.sdk.models.github_com_rixlhq_api_db_sqlc.PlanType;
+import com.rixl.sdk.models.github_com_rixlhq_api_internal_videos.VideoResponse;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
