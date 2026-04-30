@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.rixlhq</groupId>
   <artifactId>rixl-java</artifactId>
-  <version>0.2.3</version>
+  <version>0.2.4-SNAPSHOT</version>
   <name>rixl-java</name>
   <description>Kiota-generated Java SDK for RIXL.</description>
 
