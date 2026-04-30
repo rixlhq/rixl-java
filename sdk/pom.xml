@@ -1,10 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.rixl.sdk</groupId>
   <artifactId>rixl-java</artifactId>
-  <version>0.2.5-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>RIXL Java SDK</name>
   <description>The official Java client for the RIXL API. Build a powerful video experience — on-demand streaming, dynamic social feeds, image and video uploads with global delivery — from a single API. Generated from the RIXL OpenAPI spec via Microsoft Kiota.</description>
   <url>https://github.com/rixlhq/rixl-java</url>
