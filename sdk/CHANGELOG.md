@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.4...rixl-java-v1.0.0) (2026-04-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename Maven groupId and Java package to com.rixl.sdk
+
+### Features
+
+* rename Maven groupId and Java package to com.rixl.sdk ([8da4c05](https://github.com/rixlhq/rixl-java/commit/8da4c0594a2d7234dcdd623b398eacfe29380412))
+
 ## [0.2.4](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.3...rixl-java-v0.2.4) (2026-04-30)
 
 
