@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.1...rixl-java-v0.2.2) (2026-04-30)
+
+
+### Bug Fixes
+
+* **deps:** replace kiota-bundle meta with explicit serialization deps. ([cc10389](https://github.com/rixlhq/rixl-java/commit/cc10389f04b62a12b515df53b9c0530648566ea5))
+
 ## [0.2.1](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.2.0...rixl-java-v0.2.1) (2026-04-30)
 
 
