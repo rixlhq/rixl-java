@@ -63,4 +63,12 @@
       </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages — rixlhq/rixl-java</name>
+      <url>https://maven.pkg.github.com/rixlhq/rixl-java</url>
+    </repository>
+  </distributionManagement>
 </project>

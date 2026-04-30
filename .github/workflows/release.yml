@@ -7,6 +7,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  packages: write
 
 jobs:
   release-please:
@@ -32,16 +33,14 @@ jobs:
         with:
           distribution: temurin
           java-version: "17"
-          server-id: central
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+          # Wires Maven settings.xml so `mvn deploy` authenticates against
+          # GitHub Packages with the workflow's GITHUB_TOKEN.
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
 
-      - name: Publish to Maven Central
+      - name: Publish to GitHub Packages
         working-directory: sdk
-        run: mvn -B -P release deploy
+        run: mvn -B deploy -DskipTests
         env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

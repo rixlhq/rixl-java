@@ -2,7 +2,7 @@
 
 The official Java client for the [RIXL](https://rixl.com) API.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.rixlhq/rixl-java.svg)](https://central.sonatype.com/artifact/com.rixlhq/rixl-java)
+[![GitHub release](https://img.shields.io/github/v/release/rixlhq/rixl-java.svg)](https://github.com/rixlhq/rixl-java/releases)
 
 [Installation](#installation) • [Quick start](#quick-start) • [Authentication](#authentication) • [Resources](#resources) • [Pagination](#pagination) • [Errors](#errors)
 
@@ -21,20 +21,66 @@ The official Java client for the [RIXL](https://rixl.com) API.
 
 ## Installation
 
-### Maven
+The SDK is published to **GitHub Packages**. GitHub requires authentication
+to download Maven artifacts even for public repositories — your build needs
+a token with `read:packages` scope.
+
+### 1. Authenticate Maven against GitHub Packages
+
+Add to your `~/.m2/settings.xml`:
 
 ```xml
-<dependency>
-  <groupId>com.rixlhq</groupId>
-  <artifactId>rixl-java</artifactId>
-  <version>0.2.2</version>
-</dependency>
+<settings>
+  <servers>
+    <server>
+      <id>github-rixlhq</id>
+      <username>YOUR_GITHUB_USERNAME</username>
+      <password>YOUR_GITHUB_TOKEN</password>
+    </server>
+  </servers>
+</settings>
 ```
 
-### Gradle
+(Generate a personal access token with `read:packages` at
+https://github.com/settings/tokens.)
+
+### 2. Add the repository and dependency
+
+#### Maven
+
+```xml
+<repositories>
+  <repository>
+    <id>github-rixlhq</id>
+    <url>https://maven.pkg.github.com/rixlhq/rixl-java</url>
+  </repository>
+</repositories>
+
+<dependencies>
+  <dependency>
+    <groupId>com.rixlhq</groupId>
+    <artifactId>rixl-java</artifactId>
+    <version>0.2.2</version>
+  </dependency>
+</dependencies>
+```
+
+#### Gradle
 
 ```gradle
-implementation 'com.rixlhq:rixl-java:0.2.2'
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/rixlhq/rixl-java")
+        credentials {
+            username = providers.gradleProperty("gpr.user").getOrElse(System.getenv("GITHUB_ACTOR"))
+            password = providers.gradleProperty("gpr.token").getOrElse(System.getenv("GITHUB_TOKEN"))
+        }
+    }
+}
+
+dependencies {
+    implementation("com.rixlhq:rixl-java:0.2.2")
+}
 ```
 
 ## Quick start
