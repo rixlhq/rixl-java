@@ -1,0 +1,13 @@
+# Changelog
+
+## [0.2.0](https://github.com/rixlhq/rixl-java/compare/rixl-java-v0.1.0...rixl-java-v0.2.0) (2026-04-30)
+
+
+### Features
+
+* add sdk [#86](https://github.com/rixlhq/rixl-java/issues/86)ewyy49g ([fc8148f](https://github.com/rixlhq/rixl-java/commit/fc8148fc805fa585bb7a203429e92c0c899d9323))
+
+
+### Documentation
+
+* add sdk readme for maven ([2a4aa9f](https://github.com/rixlhq/rixl-java/commit/2a4aa9f46e3901175309eb8385b2294698162571))
