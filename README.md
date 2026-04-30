@@ -19,7 +19,7 @@ Add the following coordinates to your `pom.xml`:
 ```xml
 <dependency>
     <groupId>io.rixl.sdk</groupId>
-    <artifactId>rixl-sdk-java-videos</artifactId>
+    <artifactId>rixl-java-videos</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -27,7 +27,7 @@ Add the following coordinates to your `pom.xml`:
 ### Gradle
 
 ```gradle
-implementation 'io.rixl.sdk:rixl-sdk-java-videos:1.0.0'
+implementation 'io.rixl.sdk:rixl-java-videos:1.0.0'
 ```
 
 ## Quick Start
