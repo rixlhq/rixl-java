@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/rixlhq/rixl-java/compare/rixl-java-v1.0.1...rixl-java-v2.0.0) (2026-05-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* publish to maven central; rename to com.rixl:sdk
+
+### Features
+
+* publish to maven central; rename to com.rixl:sdk ([145f3df](https://github.com/rixlhq/rixl-java/commit/145f3dfb803f8c77fb12a98cbb7ca9e19dbf09a5))
+
+
+### Documentation
+
+* sync sdk/README from root ([913a2f8](https://github.com/rixlhq/rixl-java/commit/913a2f8916471cf0f9310309bd4abe9ea0b93c7b))
+
 ## [1.0.1](https://github.com/rixlhq/rixl-java/compare/rixl-java-v1.0.0...rixl-java-v1.0.1) (2026-04-30)
 
 
