@@ -7,7 +7,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  packages: write
 
 jobs:
   release-please:
@@ -15,12 +14,27 @@ jobs:
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
+      version: ${{ steps.release.outputs.version }}
     steps:
       - uses: googleapis/release-please-action@v5
         id: release
         with:
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
+
+      - name: Prepend install snippet to release notes
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.release.outputs.tag_name }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          body=$(gh release view "$TAG" --repo ${{ github.repository }} --json body --jq .body)
+          {
+            printf '## Install\n\n```xml\n<dependency>\n  <groupId>com.rixl</groupId>\n  <artifactId>sdk</artifactId>\n  <version>%s</version>\n</dependency>\n```\n\n' "$VERSION"
+            printf '%s' "$body"
+          } > /tmp/notes.md
+          gh release edit "$TAG" --repo ${{ github.repository }} --notes-file /tmp/notes.md
 
   publish:
     needs: release-please
@@ -34,13 +48,17 @@ jobs:
           distribution: temurin
           java-version: "17"
           # Wires Maven settings.xml so `mvn deploy` authenticates against
-          # GitHub Packages with the workflow's GITHUB_TOKEN.
-          server-id: github
-          server-username: GITHUB_ACTOR
-          server-password: GITHUB_TOKEN
+          # the Sonatype Central Portal.
+          server-id: central
+          server-username: MAVEN_CENTRAL_USERNAME
+          server-password: MAVEN_CENTRAL_PASSWORD
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
-      - name: Publish to GitHub Packages
+      - name: Publish to Maven Central
         working-directory: sdk
         run: mvn -B deploy -DskipTests
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAVEN_CENTRAL_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}

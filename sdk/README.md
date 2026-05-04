@@ -2,61 +2,24 @@
 
 Java client for the [RIXL](https://rixl.com) API.
 
-Published to GitHub Packages. Requires Java 17+.
+Published to Maven Central. Requires Java 17+.
 
 ## Install
-
-GitHub Packages requires authentication for downloads even from public repos. You'll need a personal access token with `read:packages` scope (https://github.com/settings/tokens).
-
-Add the server entry to `~/.m2/settings.xml`:
-
-```xml
-<settings>
-  <servers>
-    <server>
-      <id>github-rixlhq</id>
-      <username>YOUR_GITHUB_USERNAME</username>
-      <password>YOUR_GITHUB_TOKEN</password>
-    </server>
-  </servers>
-</settings>
-```
 
 ### Maven
 
 ```xml
-<repositories>
-  <repository>
-    <id>github-rixlhq</id>
-    <url>https://maven.pkg.github.com/rixlhq/rixl-java</url>
-  </repository>
-</repositories>
-
-<dependencies>
-  <dependency>
-    <groupId>com.rixl.sdk</groupId>
-    <artifactId>rixl-java</artifactId>
-    <version>0.2.4</version>
-  </dependency>
-</dependencies>
+<dependency>
+  <groupId>com.rixl</groupId>
+  <artifactId>sdk</artifactId>
+  <version>1.0.0</version>
+</dependency>
 ```
 
 ### Gradle
 
 ```gradle
-repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/rixlhq/rixl-java")
-        credentials {
-            username = providers.gradleProperty("gpr.user").getOrElse(System.getenv("GITHUB_ACTOR"))
-            password = providers.gradleProperty("gpr.token").getOrElse(System.getenv("GITHUB_TOKEN"))
-        }
-    }
-}
-
-dependencies {
-    implementation("com.rixl.sdk:rixl-java:0.2.4")
-}
+implementation("com.rixl:sdk:1.0.0")
 ```
 
 ## Quick start
