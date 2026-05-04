@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/rixlhq/rixl-java/compare/rixl-java-v2.0.0...rixl-java-v2.0.1) (2026-05-04)
+
+
+### Bug Fixes
+
+* **deps:** bump microsoft-kiota-* from 1.8.5 to 1.9.2 ([25bf529](https://github.com/rixlhq/rixl-java/commit/25bf529cde1cf40945f1380920e69e16c5bf171c))
+
 ## [2.0.0](https://github.com/rixlhq/rixl-java/compare/rixl-java-v1.0.1...rixl-java-v2.0.0) (2026-05-04)
 
 
