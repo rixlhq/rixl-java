@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1](https://github.com/rixlhq/rixl-java/compare/v1.0.0...v1.0.1) (2026-05-06)
+
+
+### Bug Fixes
+
+* get back release please manifest file ([2cc9376](https://github.com/rixlhq/rixl-java/commit/2cc9376ce67a933d5d235791978b67804139265e))
+* restore release please config for java publishing ([9b88b35](https://github.com/rixlhq/rixl-java/commit/9b88b35e2dddcd67eaf00f17070dd4018bb8b99f))
+* setup gpg key for the build ([55808f4](https://github.com/rixlhq/rixl-java/commit/55808f4b3bf0caf14d78c61f112f37734c473370))
+* update secrets env vars ([15618a9](https://github.com/rixlhq/rixl-java/commit/15618a9307d28a8c793d6e870149c626d8eb824d))
+
 ## [1.0.0](https://github.com/rixlhq/rixl-java/compare/v0.0.1...v1.0.0) (2026-05-06)
 
 
