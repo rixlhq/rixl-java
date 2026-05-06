@@ -3,9 +3,10 @@
     "bump-minor-pre-major": false,
     "bump-patch-for-minor-pre-major": true,
     "packages": {
-        "sdk": {
+        ".": {
             "release-type": "maven",
-            "package-name": "rixl-java"
+            "package-name": "rixl-java",
+            "include-component-in-tag": false
         }
     }
 }

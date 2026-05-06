@@ -86,7 +86,7 @@
   </dependencies>
 
   <build>
-    <sourceDirectory>${project.basedir}</sourceDirectory>
+    <sourceDirectory>${project.basedir}/sdk</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
