@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/rixlhq/rixl-java/compare/v1.0.1...v1.0.2) (2026-05-06)
+
+
+### Bug Fixes
+
+* wait on publish only until validation and not full publish process ([7df02c2](https://github.com/rixlhq/rixl-java/commit/7df02c2171b110b99870ce56db09a09aac5a8662))
+
 ## [1.0.1](https://github.com/rixlhq/rixl-java/compare/v1.0.0...v1.0.1) (2026-05-06)
 
 
