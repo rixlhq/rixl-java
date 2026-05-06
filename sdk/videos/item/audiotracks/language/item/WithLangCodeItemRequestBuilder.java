@@ -1,21 +1,22 @@
-package com.rixl.sdk.videos.item.subtitles.item;
+package com.rixl.sdk.videos.item.audiotracks.language.item;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.MultipartBody;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.Subtitle;
-import com.rixl.sdk.models.SubtitleDelete;
+import com.rixl.sdk.models.AudioTrack;
+import com.rixl.sdk.models.AudioTrackDelete;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /videos/{videoId}/subtitles/{lang_code}
+ * Builds and executes requests for operations under /videos/{videoId}/audio-tracks/language/{lang_code}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithLangCodeItemRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +26,7 @@ public class WithLangCodeItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithLangCodeItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/videos/{videoId}/subtitles/{lang_code}", pathParameters);
+        super(requestAdapter, "{+baseurl}/videos/{videoId}/audio-tracks/language/{lang_code}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithLangCodeItemRequestBuilder} and sets the default values.
@@ -33,49 +34,49 @@ public class WithLangCodeItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithLangCodeItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/videos/{videoId}/subtitles/{lang_code}", rawUrl);
+        super(requestAdapter, "{+baseurl}/videos/{videoId}/audio-tracks/language/{lang_code}", rawUrl);
     }
     /**
-     * Remove a subtitle for a specific language using API key authentication
-     * @return a {@link SubtitleDelete}
+     * Remove an audio track for a specific language using API key authentication
+     * @return a {@link AudioTrackDelete}
      */
     @jakarta.annotation.Nullable
-    public SubtitleDelete delete() {
+    public AudioTrackDelete delete() {
         return delete(null);
     }
     /**
-     * Remove a subtitle for a specific language using API key authentication
+     * Remove an audio track for a specific language using API key authentication
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link SubtitleDelete}
+     * @return a {@link AudioTrackDelete}
      */
     @jakarta.annotation.Nullable
-    public SubtitleDelete delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    public AudioTrackDelete delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, SubtitleDelete::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, AudioTrackDelete::createFromDiscriminatorValue);
     }
     /**
-     * Add or replace a subtitle for a specific language using API key authentication
+     * Add or replace an audio track for a specific language using API key authentication
      * @param body The request body
-     * @return a {@link Subtitle}
+     * @return a {@link AudioTrack}
      */
     @jakarta.annotation.Nullable
-    public Subtitle put(@jakarta.annotation.Nonnull final WithLangCodePutRequestBody body) {
+    public AudioTrack put(@jakarta.annotation.Nonnull final MultipartBody body) {
         return put(body, null);
     }
     /**
-     * Add or replace a subtitle for a specific language using API key authentication
+     * Add or replace an audio track for a specific language using API key authentication
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link Subtitle}
+     * @return a {@link AudioTrack}
      */
     @jakarta.annotation.Nullable
-    public Subtitle put(@jakarta.annotation.Nonnull final WithLangCodePutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public AudioTrack put(@jakarta.annotation.Nonnull final MultipartBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Subtitle::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, AudioTrack::createFromDiscriminatorValue);
     }
     /**
-     * Remove a subtitle for a specific language using API key authentication
+     * Remove an audio track for a specific language using API key authentication
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -83,7 +84,7 @@ public class WithLangCodeItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Remove a subtitle for a specific language using API key authentication
+     * Remove an audio track for a specific language using API key authentication
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -95,27 +96,27 @@ public class WithLangCodeItemRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * Add or replace a subtitle for a specific language using API key authentication
+     * Add or replace an audio track for a specific language using API key authentication
      * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final WithLangCodePutRequestBody body) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final MultipartBody body) {
         return toPutRequestInformation(body, null);
     }
     /**
-     * Add or replace a subtitle for a specific language using API key authentication
+     * Add or replace an audio track for a specific language using API key authentication
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final WithLangCodePutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final MultipartBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/x-www-form-urlencoded", body);
+        requestInfo.setContentFromParsable(requestAdapter, "multipart/form-data", body);
         return requestInfo;
     }
     /**

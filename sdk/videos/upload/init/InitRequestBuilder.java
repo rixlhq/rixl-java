@@ -38,7 +38,7 @@ public class InitRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param body The request body
+     * @param body Video upload initialization request
      * @return a {@link InitResponse}
      * @throws ErrorResponse When receiving a 400 status code
      * @throws ErrorResponse When receiving a 401 status code
@@ -51,7 +51,7 @@ public class InitRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param body The request body
+     * @param body Video upload initialization request
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link InitResponse}
      * @throws ErrorResponse When receiving a 400 status code
@@ -72,7 +72,7 @@ public class InitRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param body The request body
+     * @param body Video upload initialization request
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -81,7 +81,7 @@ public class InitRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param body The request body
+     * @param body Video upload initialization request
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

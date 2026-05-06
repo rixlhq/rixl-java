@@ -38,7 +38,7 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Complete the upload process and create the image record using API key authentication
-     * @param body The request body
+     * @param body Upload completion request
      * @return a {@link Image}
      * @throws ErrorResponse When receiving a 400 status code
      * @throws ErrorResponse When receiving a 401 status code
@@ -52,7 +52,7 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Complete the upload process and create the image record using API key authentication
-     * @param body The request body
+     * @param body Upload completion request
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Image}
      * @throws ErrorResponse When receiving a 400 status code
@@ -75,7 +75,7 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Complete the upload process and create the image record using API key authentication
-     * @param body The request body
+     * @param body Upload completion request
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -84,7 +84,7 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Complete the upload process and create the image record using API key authentication
-     * @param body The request body
+     * @param body Upload completion request
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

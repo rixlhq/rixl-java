@@ -69,7 +69,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
-     * @param body The request body
+     * @param body Chapters array
      * @return a {@link UpdateChaptersResponse}
      * @throws ErrorResponse When receiving a 400 status code
      * @throws ErrorResponse When receiving a 401 status code
@@ -83,7 +83,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
-     * @param body The request body
+     * @param body Chapters array
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateChaptersResponse}
      * @throws ErrorResponse When receiving a 400 status code
@@ -126,7 +126,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
-     * @param body The request body
+     * @param body Chapters array
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -135,7 +135,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
-     * @param body The request body
+     * @param body Chapters array
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

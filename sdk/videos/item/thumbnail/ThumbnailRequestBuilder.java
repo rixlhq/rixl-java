@@ -3,6 +3,7 @@ package com.rixl.sdk.videos.item.thumbnail;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.MultipartBody;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
@@ -36,7 +37,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/videos/{videoId}/thumbnail", rawUrl);
     }
     /**
-     * Update the thumbnail image for an existing video
+     * Update the thumbnail image for an existing video using API key authentication
      * @param body The request body
      * @return a {@link Video}
      * @throws ErrorResponse When receiving a 400 status code
@@ -46,11 +47,11 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
      * @throws ErrorResponse When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
-    public Video put(@jakarta.annotation.Nonnull final ThumbnailPutRequestBody body) {
+    public Video put(@jakarta.annotation.Nonnull final MultipartBody body) {
         return put(body, null);
     }
     /**
-     * Update the thumbnail image for an existing video
+     * Update the thumbnail image for an existing video using API key authentication
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Video}
@@ -61,7 +62,7 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
      * @throws ErrorResponse When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
-    public Video put(@jakarta.annotation.Nonnull final ThumbnailPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public Video put(@jakarta.annotation.Nonnull final MultipartBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
@@ -73,27 +74,27 @@ public class ThumbnailRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, errorMapping, Video::createFromDiscriminatorValue);
     }
     /**
-     * Update the thumbnail image for an existing video
+     * Update the thumbnail image for an existing video using API key authentication
      * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ThumbnailPutRequestBody body) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final MultipartBody body) {
         return toPutRequestInformation(body, null);
     }
     /**
-     * Update the thumbnail image for an existing video
+     * Update the thumbnail image for an existing video using API key authentication
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ThumbnailPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final MultipartBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/x-www-form-urlencoded", body);
+        requestInfo.setContentFromParsable(requestAdapter, "multipart/form-data", body);
         return requestInfo;
     }
     /**
