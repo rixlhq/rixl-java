@@ -132,6 +132,7 @@
             <phase>verify</phase>
             <goals><goal>sign</goal></goals>
             <configuration>
+              <keyname>CA9F17951BB044E2</keyname>
               <gpgArguments>
                 <arg>--pinentry-mode</arg>
                 <arg>loopback</arg>
