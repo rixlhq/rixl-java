@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/rixlhq/rixl-java/compare/v1.0.2...v1.1.0) (2026-05-07)
+
+
+### Features
+
+* **sdk:** regenerate based on latest OpenAPI spec ([fe828c6](https://github.com/rixlhq/rixl-java/commit/fe828c6932b3cf901cf98ec962a2c0b7c28ddb11))
+
 ## [1.0.2](https://github.com/rixlhq/rixl-java/compare/v1.0.1...v1.0.2) (2026-05-06)
 
 
