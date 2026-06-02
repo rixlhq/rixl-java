@@ -12,9 +12,7 @@ import com.microsoft.kiota.serialization.ParseNodeFactoryRegistry;
 import com.microsoft.kiota.serialization.SerializationWriterFactoryRegistry;
 import com.microsoft.kiota.serialization.TextParseNodeFactory;
 import com.microsoft.kiota.serialization.TextSerializationWriterFactory;
-import com.rixl.sdk.feeds.FeedsRequestBuilder;
-import com.rixl.sdk.images.ImagesRequestBuilder;
-import com.rixl.sdk.videos.VideosRequestBuilder;
+import com.rixl.sdk.media.MediaRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -23,28 +21,12 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RixlClient extends BaseRequestBuilder {
     /**
-     * The feeds property
-     * @return a {@link FeedsRequestBuilder}
+     * The media property
+     * @return a {@link MediaRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public FeedsRequestBuilder feeds() {
-        return new FeedsRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The images property
-     * @return a {@link ImagesRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public ImagesRequestBuilder images() {
-        return new ImagesRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The videos property
-     * @return a {@link VideosRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public VideosRequestBuilder videos() {
-        return new VideosRequestBuilder(pathParameters, requestAdapter);
+    public MediaRequestBuilder media() {
+        return new MediaRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link RixlClient} and sets the default values.
