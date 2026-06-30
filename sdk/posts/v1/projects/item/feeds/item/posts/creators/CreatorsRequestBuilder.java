@@ -1,0 +1,41 @@
+package com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators;
+
+import com.microsoft.kiota.BaseRequestBuilder;
+import com.microsoft.kiota.RequestAdapter;
+import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.item.WithCreatorItemRequestBuilder;
+import java.util.HashMap;
+import java.util.Objects;
+/**
+ * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class CreatorsRequestBuilder extends BaseRequestBuilder {
+    /**
+     * Gets an item from the com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.item collection
+     * @param creatorId Creator ID
+     * @return a {@link WithCreatorItemRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WithCreatorItemRequestBuilder byCreatorId(@jakarta.annotation.Nonnull final String creatorId) {
+        Objects.requireNonNull(creatorId);
+        final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
+        urlTplParams.put("creatorId", creatorId);
+        return new WithCreatorItemRequestBuilder(urlTplParams, requestAdapter);
+    }
+    /**
+     * Instantiates a new {@link CreatorsRequestBuilder} and sets the default values.
+     * @param pathParameters Path parameters for the request
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public CreatorsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators", pathParameters);
+    }
+    /**
+     * Instantiates a new {@link CreatorsRequestBuilder} and sets the default values.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public CreatorsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators", rawUrl);
+    }
+}

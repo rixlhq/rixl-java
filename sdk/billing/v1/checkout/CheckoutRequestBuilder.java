@@ -1,0 +1,99 @@
+package com.rixl.sdk.billing.v1.checkout;
+
+import com.microsoft.kiota.BaseRequestBuilder;
+import com.microsoft.kiota.BaseRequestConfiguration;
+import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.RequestAdapter;
+import com.microsoft.kiota.RequestInformation;
+import com.microsoft.kiota.RequestOption;
+import com.microsoft.kiota.serialization.Parsable;
+import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.billingv1.HostedCheckoutSessionResponse;
+import com.rixl.sdk.models.gateway.CheckoutBody;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+/**
+ * Builds and executes requests for operations under /billing/v1/checkout
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class CheckoutRequestBuilder extends BaseRequestBuilder {
+    /**
+     * Instantiates a new {@link CheckoutRequestBuilder} and sets the default values.
+     * @param pathParameters Path parameters for the request
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public CheckoutRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/billing/v1/checkout", pathParameters);
+    }
+    /**
+     * Instantiates a new {@link CheckoutRequestBuilder} and sets the default values.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public CheckoutRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/billing/v1/checkout", rawUrl);
+    }
+    /**
+     * Create a Stripe hosted checkout session
+     * @param body Checkout request
+     * @return a {@link HostedCheckoutSessionResponse}
+     */
+    @jakarta.annotation.Nullable
+    public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CheckoutBody body) {
+        return post(body, null);
+    }
+    /**
+     * Create a Stripe hosted checkout session
+     * @param body Checkout request
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link HostedCheckoutSessionResponse}
+     */
+    @jakarta.annotation.Nullable
+    public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CheckoutBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.send(requestInfo, null, HostedCheckoutSessionResponse::createFromDiscriminatorValue);
+    }
+    /**
+     * Create a Stripe hosted checkout session
+     * @param body Checkout request
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CheckoutBody body) {
+        return toPostRequestInformation(body, null);
+    }
+    /**
+     * Create a Stripe hosted checkout session
+     * @param body Checkout request
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CheckoutBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
+        return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a {@link CheckoutRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public CheckoutRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new CheckoutRequestBuilder(rawUrl, requestAdapter);
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class PostRequestConfiguration extends BaseRequestConfiguration {
+    }
+}

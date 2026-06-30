@@ -2,9 +2,7 @@ package com.rixl.sdk.media;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixl.sdk.media.feeds.FeedsRequestBuilder;
-import com.rixl.sdk.media.images.ImagesRequestBuilder;
-import com.rixl.sdk.media.videos.VideosRequestBuilder;
+import com.rixl.sdk.media.v1.V1RequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -13,28 +11,12 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MediaRequestBuilder extends BaseRequestBuilder {
     /**
-     * The feeds property
-     * @return a {@link FeedsRequestBuilder}
+     * The v1 property
+     * @return a {@link V1RequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public FeedsRequestBuilder feeds() {
-        return new FeedsRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The images property
-     * @return a {@link ImagesRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public ImagesRequestBuilder images() {
-        return new ImagesRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The videos property
-     * @return a {@link VideosRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public VideosRequestBuilder videos() {
-        return new VideosRequestBuilder(pathParameters, requestAdapter);
+    public V1RequestBuilder v1() {
+        return new V1RequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link MediaRequestBuilder} and sets the default values.
