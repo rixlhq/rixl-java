@@ -16,6 +16,7 @@ import com.rixl.sdk.auth.v1.register.RegisterRequestBuilder;
 import com.rixl.sdk.auth.v1.token.TokenRequestBuilder;
 import com.rixl.sdk.auth.v1.userinfo.UserinfoRequestBuilder;
 import com.rixl.sdk.auth.v1.users.UsersRequestBuilder;
+import com.rixl.sdk.auth.v1.verifypasskey.VerifyPasskeyRequestBuilder;
 import com.rixl.sdk.auth.v1.verifytotp.VerifyTotpRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
@@ -135,6 +136,14 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public UsersRequestBuilder users() {
         return new UsersRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The verifyPasskey property
+     * @return a {@link VerifyPasskeyRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public VerifyPasskeyRequestBuilder verifyPasskey() {
+        return new VerifyPasskeyRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The verifyTotp property

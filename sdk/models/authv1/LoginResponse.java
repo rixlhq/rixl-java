@@ -18,6 +18,10 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
+     * authentication lists the 2FA methods the user has configured whenstatus is &quot;2fa_required&quot;. The public API renders these as lowercasestrings: &quot;passkey&quot;, &quot;totp&quot;.
+     */
+    private java.util.List<Integer> authentication;
+    /**
      * The email property
      */
     private String email;
@@ -25,6 +29,10 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
      * The expires_in property
      */
     private Integer expiresIn;
+    /**
+     * passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON,present only when &quot;passkey&quot; is one of the authentication methods.
+     */
+    private java.util.List<Integer> passkeyOptions;
     /**
      * The refresh_token property
      */
@@ -38,7 +46,7 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
      */
     private String sessionId;
     /**
-     * &quot;ok&quot; | &quot;otp_required&quot; | &quot;email_not_verified&quot;
+     * &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
      */
     private String status;
     /**
@@ -78,6 +86,14 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
+     * Gets the authentication property value. authentication lists the 2FA methods the user has configured whenstatus is &quot;2fa_required&quot;. The public API renders these as lowercasestrings: &quot;passkey&quot;, &quot;totp&quot;.
+     * @return a {@link java.util.List<Integer>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<Integer> getAuthentication() {
+        return this.authentication;
+    }
+    /**
      * Gets the email property value. The email property
      * @return a {@link String}
      */
@@ -99,16 +115,26 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
+        deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getCollectionOfPrimitiveValues(Integer.class)); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getIntegerValue()); });
+        deserializerMap.put("passkey_options", (n) -> { this.setPasskeyOptions(n.getCollectionOfPrimitiveValues(Integer.class)); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
         deserializerMap.put("session_id", (n) -> { this.setSessionId(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the passkey_options property value. passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON,present only when &quot;passkey&quot; is one of the authentication methods.
+     * @return a {@link java.util.List<Integer>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<Integer> getPasskeyOptions() {
+        return this.passkeyOptions;
     }
     /**
      * Gets the refresh_token property value. The refresh_token property
@@ -135,7 +161,7 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
         return this.sessionId;
     }
     /**
-     * Gets the status property value. &quot;ok&quot; | &quot;otp_required&quot; | &quot;email_not_verified&quot;
+     * Gets the status property value. &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -157,8 +183,10 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_token", this.getAccessToken());
+        writer.writeCollectionOfPrimitiveValues("authentication", this.getAuthentication());
         writer.writeStringValue("email", this.getEmail());
         writer.writeIntegerValue("expires_in", this.getExpiresIn());
+        writer.writeCollectionOfPrimitiveValues("passkey_options", this.getPasskeyOptions());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
         writer.writeStringValue("session_id", this.getSessionId());
@@ -181,6 +209,13 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
+     * Sets the authentication property value. authentication lists the 2FA methods the user has configured whenstatus is &quot;2fa_required&quot;. The public API renders these as lowercasestrings: &quot;passkey&quot;, &quot;totp&quot;.
+     * @param value Value to set for the authentication property.
+     */
+    public void setAuthentication(@jakarta.annotation.Nullable final java.util.List<Integer> value) {
+        this.authentication = value;
+    }
+    /**
      * Sets the email property value. The email property
      * @param value Value to set for the email property.
      */
@@ -193,6 +228,13 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
      */
     public void setExpiresIn(@jakarta.annotation.Nullable final Integer value) {
         this.expiresIn = value;
+    }
+    /**
+     * Sets the passkey_options property value. passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON,present only when &quot;passkey&quot; is one of the authentication methods.
+     * @param value Value to set for the passkey_options property.
+     */
+    public void setPasskeyOptions(@jakarta.annotation.Nullable final java.util.List<Integer> value) {
+        this.passkeyOptions = value;
     }
     /**
      * Sets the refresh_token property value. The refresh_token property
@@ -216,7 +258,7 @@ public class LoginResponse implements AdditionalDataHolder, Parsable {
         this.sessionId = value;
     }
     /**
-     * Sets the status property value. &quot;ok&quot; | &quot;otp_required&quot; | &quot;email_not_verified&quot;
+     * Sets the status property value. &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
      * @param value Value to set for the status property.
      */
     public void setStatus(@jakarta.annotation.Nullable final String value) {
