@@ -2,7 +2,6 @@ package com.rixl.sdk.auth.v1.blog;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixl.sdk.auth.v1.blog.broadcast.BroadcastRequestBuilder;
 import com.rixl.sdk.auth.v1.blog.subscribe.SubscribeRequestBuilder;
 import com.rixl.sdk.auth.v1.blog.subscription.SubscriptionRequestBuilder;
 import com.rixl.sdk.auth.v1.blog.unsubscribe.UnsubscribeRequestBuilder;
@@ -13,14 +12,6 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class BlogRequestBuilder extends BaseRequestBuilder {
-    /**
-     * The broadcast property
-     * @return a {@link BroadcastRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public BroadcastRequestBuilder broadcast() {
-        return new BroadcastRequestBuilder(pathParameters, requestAdapter);
-    }
     /**
      * The subscribe property
      * @return a {@link SubscribeRequestBuilder}
