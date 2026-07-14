@@ -12,14 +12,14 @@ import java.util.Objects;
 public class ImagesRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.images.item collection
-     * @param imageId Image ID
+     * @param image_id Unique identifier of the item
      * @return a {@link WithImageItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithImageItemRequestBuilder byImageId(@jakarta.annotation.Nonnull final String imageId) {
-        Objects.requireNonNull(imageId);
+    public WithImageItemRequestBuilder byImage_id(@jakarta.annotation.Nonnull final String image_id) {
+        Objects.requireNonNull(image_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("imageId", imageId);
+        urlTplParams.put("image_id", image_id);
         return new WithImageItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**

@@ -12,7 +12,7 @@ import java.util.Objects;
 public class InvitationsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.invitations.item collection
-     * @param token Invitation token
+     * @param token Unique identifier of the item
      * @return a {@link WithTokenItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

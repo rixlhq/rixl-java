@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.SalesLead;
-import com.rixl.sdk.models.gateway.ContactSalesBody;
+import com.rixl.sdk.models.billing.v1.ContactSalesRequest;
+import com.rixl.sdk.models.billing.v1.SalesLead;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class ContactSalesRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/billing/v1/contact-sales", rawUrl);
     }
     /**
-     * Submits a sales contact request for the organization.
-     * @param body Contact sales request
+     * ContactSales
+     * @param body The request body
      * @return a {@link SalesLead}
      */
     @jakarta.annotation.Nullable
-    public SalesLead post(@jakarta.annotation.Nonnull final ContactSalesBody body) {
+    public SalesLead post(@jakarta.annotation.Nonnull final ContactSalesRequest body) {
         return post(body, null);
     }
     /**
-     * Submits a sales contact request for the organization.
-     * @param body Contact sales request
+     * ContactSales
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SalesLead}
      */
     @jakarta.annotation.Nullable
-    public SalesLead post(@jakarta.annotation.Nonnull final ContactSalesBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public SalesLead post(@jakarta.annotation.Nonnull final ContactSalesRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, SalesLead::createFromDiscriminatorValue);
     }
     /**
-     * Submits a sales contact request for the organization.
-     * @param body Contact sales request
+     * ContactSales
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ContactSalesBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ContactSalesRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Submits a sales contact request for the organization.
-     * @param body Contact sales request
+     * ContactSales
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ContactSalesBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ContactSalesRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

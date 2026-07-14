@@ -6,7 +6,7 @@ import com.rixl.sdk.billing.v1.invoices.item.status.StatusRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /billing/v1/invoices/{invoiceId}
+ * Builds and executes requests for operations under /billing/v1/invoices/{invoice_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithInvoiceItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithInvoiceItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithInvoiceItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/invoices/{invoiceId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/invoices/{invoice_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithInvoiceItemRequestBuilder} and sets the default values.
@@ -32,6 +32,6 @@ public class WithInvoiceItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithInvoiceItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/invoices/{invoiceId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/invoices/{invoice_id}", rawUrl);
     }
 }

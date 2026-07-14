@@ -7,7 +7,6 @@ import com.rixl.sdk.billing.v1.bandwidthusage.BandwidthUsageRequestBuilder;
 import com.rixl.sdk.billing.v1.checkout.CheckoutRequestBuilder;
 import com.rixl.sdk.billing.v1.contactsales.ContactSalesRequestBuilder;
 import com.rixl.sdk.billing.v1.invoices.InvoicesRequestBuilder;
-import com.rixl.sdk.billing.v1.jobs.JobsRequestBuilder;
 import com.rixl.sdk.billing.v1.paymentmethods.PaymentMethodsRequestBuilder;
 import com.rixl.sdk.billing.v1.plans.PlansRequestBuilder;
 import com.rixl.sdk.billing.v1.setupintent.SetupIntentRequestBuilder;
@@ -60,14 +59,6 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public InvoicesRequestBuilder invoices() {
         return new InvoicesRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The jobs property
-     * @return a {@link JobsRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public JobsRequestBuilder jobs() {
-        return new JobsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The paymentMethods property

@@ -9,8 +9,8 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.email.verify.resend.ResendRequestBuilder;
-import com.rixl.sdk.models.authv1.VerifyEmailResponse;
-import com.rixl.sdk.models.gateway.VerifyEmailBody;
+import com.rixl.sdk.models.auth.v1.VerifyEmailRequest;
+import com.rixl.sdk.models.auth.v1.VerifyEmailResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,43 +45,43 @@ public class VerifyRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/email/verify", rawUrl);
     }
     /**
-     * Verifies a user&apos;s email address using a verification id and the code sent to them.
-     * @param body Verification id and code
+     * VerifyEmail
+     * @param body The request body
      * @return a {@link VerifyEmailResponse}
      */
     @jakarta.annotation.Nullable
-    public VerifyEmailResponse post(@jakarta.annotation.Nonnull final VerifyEmailBody body) {
+    public VerifyEmailResponse post(@jakarta.annotation.Nonnull final VerifyEmailRequest body) {
         return post(body, null);
     }
     /**
-     * Verifies a user&apos;s email address using a verification id and the code sent to them.
-     * @param body Verification id and code
+     * VerifyEmail
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VerifyEmailResponse}
      */
     @jakarta.annotation.Nullable
-    public VerifyEmailResponse post(@jakarta.annotation.Nonnull final VerifyEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public VerifyEmailResponse post(@jakarta.annotation.Nonnull final VerifyEmailRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, VerifyEmailResponse::createFromDiscriminatorValue);
     }
     /**
-     * Verifies a user&apos;s email address using a verification id and the code sent to them.
-     * @param body Verification id and code
+     * VerifyEmail
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyEmailBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyEmailRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Verifies a user&apos;s email address using a verification id and the code sent to them.
-     * @param body Verification id and code
+     * VerifyEmail
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyEmailRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

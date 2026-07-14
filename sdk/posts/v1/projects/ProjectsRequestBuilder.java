@@ -12,14 +12,14 @@ import java.util.Objects;
 public class ProjectsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.projects.item collection
-     * @param projectId Project ID
+     * @param project_id Unique identifier of the item
      * @return a {@link WithProjectItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithProjectItemRequestBuilder byProjectId(@jakarta.annotation.Nonnull final String projectId) {
-        Objects.requireNonNull(projectId);
+    public WithProjectItemRequestBuilder byProject_id(@jakarta.annotation.Nonnull final String project_id) {
+        Objects.requireNonNull(project_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("projectId", projectId);
+        urlTplParams.put("project_id", project_id);
         return new WithProjectItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**

@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.VerificationSentResponse;
-import com.rixl.sdk.models.gateway.ChangeEmailBody;
+import com.rixl.sdk.models.auth.v1.InitiateEmailChangeRequest;
+import com.rixl.sdk.models.auth.v1.VerificationSentResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class ChangeRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails/change", rawUrl);
     }
     /**
-     * Starts changing the authenticated account&apos;s email address. A verificationcode is sent to the new address; the change is applied only after the codeis confirmed via `POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body New email address
+     * InitiateEmailChange
+     * @param body The request body
      * @return a {@link VerificationSentResponse}
      */
     @jakarta.annotation.Nullable
-    public VerificationSentResponse put(@jakarta.annotation.Nonnull final ChangeEmailBody body) {
+    public VerificationSentResponse put(@jakarta.annotation.Nonnull final InitiateEmailChangeRequest body) {
         return put(body, null);
     }
     /**
-     * Starts changing the authenticated account&apos;s email address. A verificationcode is sent to the new address; the change is applied only after the codeis confirmed via `POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body New email address
+     * InitiateEmailChange
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VerificationSentResponse}
      */
     @jakarta.annotation.Nullable
-    public VerificationSentResponse put(@jakarta.annotation.Nonnull final ChangeEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public VerificationSentResponse put(@jakarta.annotation.Nonnull final InitiateEmailChangeRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, VerificationSentResponse::createFromDiscriminatorValue);
     }
     /**
-     * Starts changing the authenticated account&apos;s email address. A verificationcode is sent to the new address; the change is applied only after the codeis confirmed via `POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body New email address
+     * InitiateEmailChange
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ChangeEmailBody body) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final InitiateEmailChangeRequest body) {
         return toPutRequestInformation(body, null);
     }
     /**
-     * Starts changing the authenticated account&apos;s email address. A verificationcode is sent to the new address; the change is applied only after the codeis confirmed via `POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body New email address
+     * InitiateEmailChange
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ChangeEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final InitiateEmailChangeRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);

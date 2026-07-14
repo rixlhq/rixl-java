@@ -3,6 +3,7 @@ package com.rixl.sdk.billing.v1.tax;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
 import com.rixl.sdk.billing.v1.tax.calculate.CalculateRequestBuilder;
+import com.rixl.sdk.billing.v1.tax.calculategeneric.CalculateGenericRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -17,6 +18,14 @@ public class TaxRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public CalculateRequestBuilder calculate() {
         return new CalculateRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The calculateGeneric property
+     * @return a {@link CalculateGenericRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public CalculateGenericRequestBuilder calculateGeneric() {
+        return new CalculateGenericRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link TaxRequestBuilder} and sets the default values.

@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.videosv1.ListLanguagesResponse;
+import com.rixl.sdk.models.videos.v1.ListLanguagesResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class LanguagesRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/media/v1/languages", rawUrl);
     }
     /**
-     * Returns the language codes supported for audio tracks and subtitles.
+     * ListLanguages
      * @return a {@link ListLanguagesResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class LanguagesRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the language codes supported for audio tracks and subtitles.
+     * ListLanguages
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListLanguagesResponse}
      */
@@ -53,7 +53,7 @@ public class LanguagesRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListLanguagesResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the language codes supported for audio tracks and subtitles.
+     * ListLanguages
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class LanguagesRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the language codes supported for audio tracks and subtitles.
+     * ListLanguages
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

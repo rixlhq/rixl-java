@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.PermissionRegistryResponse;
+import com.rixl.sdk.models.auth.v1.PermissionRegistryResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/policies/permissions", rawUrl);
     }
     /**
-     * Returns the registered permission names and their bit offsets.
+     * ListPermissionRegistry
      * @return a {@link PermissionRegistryResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the registered permission names and their bit offsets.
+     * ListPermissionRegistry
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PermissionRegistryResponse}
      */
@@ -53,7 +53,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, PermissionRegistryResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the registered permission names and their bit offsets.
+     * ListPermissionRegistry
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the registered permission names and their bit offsets.
+     * ListPermissionRegistry
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

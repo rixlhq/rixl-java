@@ -3,20 +3,21 @@ package com.rixl.sdk.auth.v1.memberships.item.policies.item;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.memberships.item.policies.item.attachments.AttachmentsRequestBuilder;
-import com.rixl.sdk.models.authv1.Policy;
-import com.rixl.sdk.models.gateway.PolicyBody;
+import com.rixl.sdk.models.auth.v1.Policy;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/policies/{policyId}
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/policies/{policy_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
@@ -34,7 +35,7 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPolicyItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/policies/{policyId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}{?user%2EuserId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPolicyItemRequestBuilder} and sets the default values.
@@ -42,24 +43,28 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPolicyItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/policies/{policyId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}{?user%2EuserId*}", rawUrl);
     }
     /**
-     * Deletes an authorization policy from the organization by its ID.
+     * DeletePolicy
+     * @return a {@link Empty}
      */
-    public void delete() {
-        delete(null);
+    @jakarta.annotation.Nullable
+    public Empty delete() {
+        return delete(null);
     }
     /**
-     * Deletes an authorization policy from the organization by its ID.
+     * DeletePolicy
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Returns the details of a single authorization policy in the organization by its ID.
+     * GetPolicy
      * @return a {@link Policy}
      */
     @jakarta.annotation.Nullable
@@ -67,7 +72,7 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the details of a single authorization policy in the organization by its ID.
+     * GetPolicy
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Policy}
      */
@@ -77,28 +82,28 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, Policy::createFromDiscriminatorValue);
     }
     /**
-     * Updates an existing authorization policy&apos;s name, description, and permissions.
-     * @param body Policy
+     * UpdatePolicy
+     * @param body The request body
      * @return a {@link Policy}
      */
     @jakarta.annotation.Nullable
-    public Policy put(@jakarta.annotation.Nonnull final PolicyBody body) {
+    public Policy put(@jakarta.annotation.Nonnull final WithPolicyPutRequestBody body) {
         return put(body, null);
     }
     /**
-     * Updates an existing authorization policy&apos;s name, description, and permissions.
-     * @param body Policy
+     * UpdatePolicy
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Policy}
      */
     @jakarta.annotation.Nullable
-    public Policy put(@jakarta.annotation.Nonnull final PolicyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public Policy put(@jakarta.annotation.Nonnull final WithPolicyPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, Policy::createFromDiscriminatorValue);
     }
     /**
-     * Deletes an authorization policy from the organization by its ID.
+     * DeletePolicy
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -106,18 +111,19 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Deletes an authorization policy from the organization by its ID.
+     * DeletePolicy
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new, x -> x.queryParameters);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Returns the details of a single authorization policy in the organization by its ID.
+     * GetPolicy
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -125,34 +131,34 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the details of a single authorization policy in the organization by its ID.
+     * GetPolicy
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Updates an existing authorization policy&apos;s name, description, and permissions.
-     * @param body Policy
+     * UpdatePolicy
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final PolicyBody body) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final WithPolicyPutRequestBody body) {
         return toPutRequestInformation(body, null);
     }
     /**
-     * Updates an existing authorization policy&apos;s name, description, and permissions.
-     * @param body Policy
+     * UpdatePolicy
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final PolicyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final WithPolicyPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
@@ -171,16 +177,62 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         return new WithPolicyItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * DeletePolicy
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class DeleteQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userUserId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("user%2EuserId", userUserId);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public DeleteQueryParameters queryParameters = new DeleteQueryParameters();
+    }
+    /**
+     * GetPolicy
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userUserId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("user%2EuserId", userUserId);
+            return allQueryParams;
+        }
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

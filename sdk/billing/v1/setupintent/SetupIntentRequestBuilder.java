@@ -8,7 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.SetupIntentResponse;
+import com.rixl.sdk.models.billing.v1.CreateSetupIntentRequest;
+import com.rixl.sdk.models.billing.v1.SetupIntentResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,41 +36,48 @@ public class SetupIntentRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/billing/v1/setup-intent", rawUrl);
     }
     /**
-     * Create a Stripe setup intent for adding a payment method
+     * CreateSetupIntent
+     * @param body The request body
      * @return a {@link SetupIntentResponse}
      */
     @jakarta.annotation.Nullable
-    public SetupIntentResponse post() {
-        return post(null);
+    public SetupIntentResponse post(@jakarta.annotation.Nonnull final CreateSetupIntentRequest body) {
+        return post(body, null);
     }
     /**
-     * Create a Stripe setup intent for adding a payment method
+     * CreateSetupIntent
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SetupIntentResponse}
      */
     @jakarta.annotation.Nullable
-    public SetupIntentResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
+    public SetupIntentResponse post(@jakarta.annotation.Nonnull final CreateSetupIntentRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, SetupIntentResponse::createFromDiscriminatorValue);
     }
     /**
-     * Create a Stripe setup intent for adding a payment method
+     * CreateSetupIntent
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation() {
-        return toPostRequestInformation(null);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateSetupIntentRequest body) {
+        return toPostRequestInformation(body, null);
     }
     /**
-     * Create a Stripe setup intent for adding a payment method
+     * CreateSetupIntent
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateSetupIntentRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**

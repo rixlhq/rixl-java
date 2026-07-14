@@ -10,13 +10,13 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.videos.item.audiotracks.AudioTracksRequestBuilder;
 import com.rixl.sdk.media.v1.videos.item.subtitles.SubtitlesRequestBuilder;
-import com.rixl.sdk.models.videosv1.GetVideoResponse;
+import com.rixl.sdk.models.videos.v1.GetVideoResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/videos/{videoId}
+ * Builds and executes requests for operations under /media/v1/videos/{video_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
@@ -42,7 +42,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithVideoItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/videos/{videoId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/videos/{video_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithVideoItemRequestBuilder} and sets the default values.
@@ -50,10 +50,10 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithVideoItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/videos/{videoId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/videos/{video_id}", rawUrl);
     }
     /**
-     * Returns a single video by ID.
+     * GetVideo
      * @return a {@link GetVideoResponse}
      */
     @jakarta.annotation.Nullable
@@ -61,7 +61,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns a single video by ID.
+     * GetVideo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetVideoResponse}
      */
@@ -71,7 +71,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetVideoResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns a single video by ID.
+     * GetVideo
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -79,7 +79,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns a single video by ID.
+     * GetVideo
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

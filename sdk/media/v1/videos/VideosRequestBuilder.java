@@ -12,14 +12,14 @@ import java.util.Objects;
 public class VideosRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.videos.item collection
-     * @param videoId Video ID
+     * @param video_id Unique identifier of the item
      * @return a {@link WithVideoItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithVideoItemRequestBuilder byVideoId(@jakarta.annotation.Nonnull final String videoId) {
-        Objects.requireNonNull(videoId);
+    public WithVideoItemRequestBuilder byVideo_id(@jakarta.annotation.Nonnull final String video_id) {
+        Objects.requireNonNull(video_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("videoId", videoId);
+        urlTplParams.put("video_id", video_id);
         return new WithVideoItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**

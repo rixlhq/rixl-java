@@ -15,11 +15,12 @@ import com.microsoft.kiota.serialization.TextSerializationWriterFactory;
 import com.rixl.sdk.analytics.AnalyticsRequestBuilder;
 import com.rixl.sdk.auth.AuthRequestBuilder;
 import com.rixl.sdk.billing.BillingRequestBuilder;
+import com.rixl.sdk.feeds.FeedsRequestBuilder;
+import com.rixl.sdk.internal.InternalRequestBuilder;
 import com.rixl.sdk.media.MediaRequestBuilder;
-import com.rixl.sdk.organization.OrganizationRequestBuilder;
+import com.rixl.sdk.organizations.OrganizationsRequestBuilder;
 import com.rixl.sdk.platform.PlatformRequestBuilder;
 import com.rixl.sdk.posts.PostsRequestBuilder;
-import com.rixl.sdk.projects.ProjectsRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -52,6 +53,22 @@ public class RixlClient extends BaseRequestBuilder {
         return new BillingRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The feeds property
+     * @return a {@link FeedsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public FeedsRequestBuilder feeds() {
+        return new FeedsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The internal property
+     * @return a {@link InternalRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public InternalRequestBuilder internal() {
+        return new InternalRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The media property
      * @return a {@link MediaRequestBuilder}
      */
@@ -60,12 +77,12 @@ public class RixlClient extends BaseRequestBuilder {
         return new MediaRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The organization property
-     * @return a {@link OrganizationRequestBuilder}
+     * The organizations property
+     * @return a {@link OrganizationsRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public OrganizationRequestBuilder organization() {
-        return new OrganizationRequestBuilder(pathParameters, requestAdapter);
+    public OrganizationsRequestBuilder organizations() {
+        return new OrganizationsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The platform property
@@ -84,14 +101,6 @@ public class RixlClient extends BaseRequestBuilder {
         return new PostsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The projects property
-     * @return a {@link ProjectsRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public ProjectsRequestBuilder projects() {
-        return new ProjectsRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
      * Instantiates a new {@link RixlClient} and sets the default values.
      * @param requestAdapter The request adapter to use to execute the requests.
      */
@@ -105,9 +114,5 @@ public class RixlClient extends BaseRequestBuilder {
         ApiClientBuilder.registerDefaultDeserializer(() -> new JsonParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new FormParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new TextParseNodeFactory());
-        if (requestAdapter.getBaseUrl() == null || requestAdapter.getBaseUrl().isEmpty()) {
-            requestAdapter.setBaseUrl("https://raw.githubusercontent.com");
-        }
-        pathParameters.put("baseurl", requestAdapter.getBaseUrl());
     }
 }

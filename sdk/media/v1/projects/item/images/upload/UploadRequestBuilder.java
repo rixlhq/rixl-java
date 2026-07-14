@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.CreateImageUploadBody;
-import com.rixl.sdk.models.imagesv1.ImageUploadInit;
+import com.rixl.sdk.models.images.v1.ImageUploadInit;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/images/upload
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/images/upload
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UploadRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images/upload", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images/upload", pathParameters);
     }
     /**
      * Instantiates a new {@link UploadRequestBuilder} and sets the default values.
@@ -33,46 +32,46 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UploadRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images/upload", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images/upload", rawUrl);
     }
     /**
-     * Initiates an image upload and returns upload details.
-     * @param body Image upload details
+     * CreateImageUpload
+     * @param body The request body
      * @return a {@link ImageUploadInit}
      */
     @jakarta.annotation.Nullable
-    public ImageUploadInit post(@jakarta.annotation.Nonnull final CreateImageUploadBody body) {
+    public ImageUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Initiates an image upload and returns upload details.
-     * @param body Image upload details
+     * CreateImageUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ImageUploadInit}
      */
     @jakarta.annotation.Nullable
-    public ImageUploadInit post(@jakarta.annotation.Nonnull final CreateImageUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public ImageUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, ImageUploadInit::createFromDiscriminatorValue);
     }
     /**
-     * Initiates an image upload and returns upload details.
-     * @param body Image upload details
+     * CreateImageUpload
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateImageUploadBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Initiates an image upload and returns upload details.
-     * @param body Image upload details
+     * CreateImageUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateImageUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

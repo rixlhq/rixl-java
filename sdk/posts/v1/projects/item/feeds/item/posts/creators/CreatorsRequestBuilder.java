@@ -6,20 +6,20 @@ import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.item.WithCr
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds/{feed_id}/posts/creators
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreatorsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.item collection
-     * @param creatorId Creator ID
+     * @param creator_id Unique identifier of the item
      * @return a {@link WithCreatorItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithCreatorItemRequestBuilder byCreatorId(@jakarta.annotation.Nonnull final String creatorId) {
-        Objects.requireNonNull(creatorId);
+    public WithCreatorItemRequestBuilder byCreator_id(@jakarta.annotation.Nonnull final String creator_id) {
+        Objects.requireNonNull(creator_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("creatorId", creatorId);
+        urlTplParams.put("creator_id", creator_id);
         return new WithCreatorItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
@@ -28,7 +28,7 @@ public class CreatorsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CreatorsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/creators", pathParameters);
     }
     /**
      * Instantiates a new {@link CreatorsRequestBuilder} and sets the default values.
@@ -36,6 +36,6 @@ public class CreatorsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CreatorsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/creators", rawUrl);
     }
 }

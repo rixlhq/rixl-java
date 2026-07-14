@@ -6,20 +6,20 @@ import com.rixl.sdk.posts.v1.projects.item.feeds.item.WithFeedItemRequestBuilder
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FeedsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.projects.item.feeds.item collection
-     * @param feedId Feed ID
+     * @param feed_id Unique identifier of the item
      * @return a {@link WithFeedItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithFeedItemRequestBuilder byFeedId(@jakarta.annotation.Nonnull final String feedId) {
-        Objects.requireNonNull(feedId);
+    public WithFeedItemRequestBuilder byFeed_id(@jakarta.annotation.Nonnull final String feed_id) {
+        Objects.requireNonNull(feed_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("feedId", feedId);
+        urlTplParams.put("feed_id", feed_id);
         return new WithFeedItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
@@ -28,7 +28,7 @@ public class FeedsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FeedsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds", pathParameters);
     }
     /**
      * Instantiates a new {@link FeedsRequestBuilder} and sets the default values.
@@ -36,6 +36,6 @@ public class FeedsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FeedsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds", rawUrl);
     }
 }

@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.UpgradeSubscriptionResponse;
-import com.rixl.sdk.models.gateway.UpgradeSubscriptionBody;
+import com.rixl.sdk.models.billing.v1.UpgradeSubscriptionRequest;
+import com.rixl.sdk.models.billing.v1.UpgradeSubscriptionResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class UpgradeRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/billing/v1/subscription/upgrade", rawUrl);
     }
     /**
-     * Upgrade the organization&apos;s subscription to a new plan
-     * @param body Upgrade request
+     * UpgradeSubscription
+     * @param body The request body
      * @return a {@link UpgradeSubscriptionResponse}
      */
     @jakarta.annotation.Nullable
-    public UpgradeSubscriptionResponse post(@jakarta.annotation.Nonnull final UpgradeSubscriptionBody body) {
+    public UpgradeSubscriptionResponse post(@jakarta.annotation.Nonnull final UpgradeSubscriptionRequest body) {
         return post(body, null);
     }
     /**
-     * Upgrade the organization&apos;s subscription to a new plan
-     * @param body Upgrade request
+     * UpgradeSubscription
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpgradeSubscriptionResponse}
      */
     @jakarta.annotation.Nullable
-    public UpgradeSubscriptionResponse post(@jakarta.annotation.Nonnull final UpgradeSubscriptionBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public UpgradeSubscriptionResponse post(@jakarta.annotation.Nonnull final UpgradeSubscriptionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, UpgradeSubscriptionResponse::createFromDiscriminatorValue);
     }
     /**
-     * Upgrade the organization&apos;s subscription to a new plan
-     * @param body Upgrade request
+     * UpgradeSubscription
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UpgradeSubscriptionBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UpgradeSubscriptionRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Upgrade the organization&apos;s subscription to a new plan
-     * @param body Upgrade request
+     * UpgradeSubscription
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UpgradeSubscriptionBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UpgradeSubscriptionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

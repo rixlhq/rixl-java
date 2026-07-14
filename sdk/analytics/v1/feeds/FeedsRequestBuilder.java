@@ -12,14 +12,14 @@ import java.util.Objects;
 public class FeedsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.feeds.item collection
-     * @param feedId Feed ID
+     * @param feed_id Unique identifier of the item
      * @return a {@link WithFeedItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithFeedItemRequestBuilder byFeedId(@jakarta.annotation.Nonnull final String feedId) {
-        Objects.requireNonNull(feedId);
+    public WithFeedItemRequestBuilder byFeed_id(@jakarta.annotation.Nonnull final String feed_id) {
+        Objects.requireNonNull(feed_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("feedId", feedId);
+        urlTplParams.put("feed_id", feed_id);
         return new WithFeedItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**

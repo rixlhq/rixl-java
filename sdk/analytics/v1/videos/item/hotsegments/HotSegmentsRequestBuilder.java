@@ -9,13 +9,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.analyticsv1.HotSegmentsResponse;
+import com.rixl.sdk.models.analytics.v1.HotSegmentsResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /analytics/v1/videos/{videoId}/hot-segments
+ * Builds and executes requests for operations under /analytics/v1/videos/{video_id}/hot-segments
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HotSegmentsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{videoId}/hot-segments{?end*,start*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{video_id}/hot-segments{?range%2Eend*,range%2Estart*}", pathParameters);
     }
     /**
      * Instantiates a new {@link HotSegmentsRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HotSegmentsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{videoId}/hot-segments{?end*,start*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{video_id}/hot-segments{?range%2Eend*,range%2Estart*}", rawUrl);
     }
     /**
-     * Returns the most engaging segments of a video
+     * GetHotSegments
      * @return a {@link HotSegmentsResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the most engaging segments of a video
+     * GetHotSegments
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link HotSegmentsResponse}
      */
@@ -54,7 +54,7 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, HotSegmentsResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the most engaging segments of a video
+     * GetHotSegments
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the most engaging segments of a video
+     * GetHotSegments
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,20 +84,14 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
         return new HotSegmentsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns the most engaging segments of a video
+     * GetHotSegments
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * End date (inclusive)
-         */
         @jakarta.annotation.Nullable
-        public String end;
-        /**
-         * Start date (inclusive)
-         */
+        public String rangeEnd;
         @jakarta.annotation.Nullable
-        public String start;
+        public String rangeStart;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -105,8 +99,8 @@ public class HotSegmentsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("end", end);
-            allQueryParams.put("start", start);
+            allQueryParams.put("range%2Eend", rangeEnd);
+            allQueryParams.put("range%2Estart", rangeStart);
             return allQueryParams;
         }
     }

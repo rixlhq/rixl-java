@@ -10,14 +10,13 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.projects.item.images.item.upload.UploadRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.images.item.visibility.VisibilityRequestBuilder;
-import com.rixl.sdk.models.imagesv1.DeleteResult;
-import com.rixl.sdk.models.imagesv1.GetImageResponse;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/images/{imageId}
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/images/{image_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithImageItemRequestBuilder extends BaseRequestBuilder {
@@ -43,7 +42,7 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithImageItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images/{imageId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images/{image_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithImageItemRequestBuilder} and sets the default values.
@@ -51,46 +50,28 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithImageItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images/{imageId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images/{image_id}", rawUrl);
     }
     /**
-     * Deletes an image from a project.
-     * @return a {@link DeleteResult}
+     * DeleteImage
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public DeleteResult delete() {
+    public Empty delete() {
         return delete(null);
     }
     /**
-     * Deletes an image from a project.
+     * DeleteImage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link DeleteResult}
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public DeleteResult delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DeleteResult::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Returns a single image within a project, including private media. Requires project access.
-     * @return a {@link GetImageResponse}
-     */
-    @jakarta.annotation.Nullable
-    public GetImageResponse get() {
-        return get(null);
-    }
-    /**
-     * Returns a single image within a project, including private media. Requires project access.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link GetImageResponse}
-     */
-    @jakarta.annotation.Nullable
-    public GetImageResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetImageResponse::createFromDiscriminatorValue);
-    }
-    /**
-     * Deletes an image from a project.
+     * DeleteImage
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -98,7 +79,7 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Deletes an image from a project.
+     * DeleteImage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -106,26 +87,6 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
-        requestInfo.headers.tryAdd("Accept", "application/json");
-        return requestInfo;
-    }
-    /**
-     * Returns a single image within a project, including private media. Requires project access.
-     * @return a {@link RequestInformation}
-     */
-    @jakarta.annotation.Nonnull
-    public RequestInformation toGetRequestInformation() {
-        return toGetRequestInformation(null);
-    }
-    /**
-     * Returns a single image within a project, including private media. Requires project access.
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link RequestInformation}
-     */
-    @jakarta.annotation.Nonnull
-    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -144,11 +105,5 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteRequestConfiguration extends BaseRequestConfiguration {
-    }
-    /**
-     * Configuration for the request such as headers, query parameters, and middleware options.
-     */
-    @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class GetRequestConfiguration extends BaseRequestConfiguration {
     }
 }

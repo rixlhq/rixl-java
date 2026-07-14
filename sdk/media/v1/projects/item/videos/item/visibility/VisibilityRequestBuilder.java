@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.UpdateVisibilityBody;
-import com.rixl.sdk.models.videosv1.GetVideoResponse;
+import com.rixl.sdk.models.videos.v1.GetVideoResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/videos/{videoId}/visibility
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/videos/{video_id}/visibility
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VisibilityRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class VisibilityRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public VisibilityRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/visibility", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/visibility", pathParameters);
     }
     /**
      * Instantiates a new {@link VisibilityRequestBuilder} and sets the default values.
@@ -33,49 +32,49 @@ public class VisibilityRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public VisibilityRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/visibility", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/visibility", rawUrl);
     }
     /**
-     * Updates a video&apos;s visibility (public, unlisted, or private). Requires project access.
-     * @param body Visibility
+     * UpdateVideoVisibility
+     * @param body The request body
      * @return a {@link GetVideoResponse}
      */
     @jakarta.annotation.Nullable
-    public GetVideoResponse put(@jakarta.annotation.Nonnull final UpdateVisibilityBody body) {
-        return put(body, null);
+    public GetVideoResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body) {
+        return patch(body, null);
     }
     /**
-     * Updates a video&apos;s visibility (public, unlisted, or private). Requires project access.
-     * @param body Visibility
+     * UpdateVideoVisibility
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetVideoResponse}
      */
     @jakarta.annotation.Nullable
-    public GetVideoResponse put(@jakarta.annotation.Nonnull final UpdateVisibilityBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public GetVideoResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
+        final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, GetVideoResponse::createFromDiscriminatorValue);
     }
     /**
-     * Updates a video&apos;s visibility (public, unlisted, or private). Requires project access.
-     * @param body Visibility
+     * UpdateVideoVisibility
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateVisibilityBody body) {
-        return toPutRequestInformation(body, null);
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body) {
+        return toPatchRequestInformation(body, null);
     }
     /**
-     * Updates a video&apos;s visibility (public, unlisted, or private). Requires project access.
-     * @param body Visibility
+     * UpdateVideoVisibility
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateVisibilityBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -94,6 +93,6 @@ public class VisibilityRequestBuilder extends BaseRequestBuilder {
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PutRequestConfiguration extends BaseRequestConfiguration {
+    public class PatchRequestConfiguration extends BaseRequestConfiguration {
     }
 }

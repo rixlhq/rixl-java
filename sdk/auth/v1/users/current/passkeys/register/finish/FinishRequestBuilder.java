@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.PasskeyRegisterFinishResponse;
-import com.rixl.sdk.models.gateway.PasskeyRegisterFinishBody;
+import com.rixl.sdk.models.auth.v1.PasskeyRegisterFinishRequest;
+import com.rixl.sdk.models.auth.v1.PasskeyRegisterFinishResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class FinishRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/users/current/passkeys/register/finish", rawUrl);
     }
     /**
-     * Completes passkey registration by verifying the signed WebAuthn credential and storing it under the given name for the authenticated user.
-     * @param body session_id, name and WebAuthn credential
+     * PasskeyRegisterFinish
+     * @param body The request body
      * @return a {@link PasskeyRegisterFinishResponse}
      */
     @jakarta.annotation.Nullable
-    public PasskeyRegisterFinishResponse post(@jakarta.annotation.Nonnull final PasskeyRegisterFinishBody body) {
+    public PasskeyRegisterFinishResponse post(@jakarta.annotation.Nonnull final PasskeyRegisterFinishRequest body) {
         return post(body, null);
     }
     /**
-     * Completes passkey registration by verifying the signed WebAuthn credential and storing it under the given name for the authenticated user.
-     * @param body session_id, name and WebAuthn credential
+     * PasskeyRegisterFinish
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PasskeyRegisterFinishResponse}
      */
     @jakarta.annotation.Nullable
-    public PasskeyRegisterFinishResponse post(@jakarta.annotation.Nonnull final PasskeyRegisterFinishBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public PasskeyRegisterFinishResponse post(@jakarta.annotation.Nonnull final PasskeyRegisterFinishRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, PasskeyRegisterFinishResponse::createFromDiscriminatorValue);
     }
     /**
-     * Completes passkey registration by verifying the signed WebAuthn credential and storing it under the given name for the authenticated user.
-     * @param body session_id, name and WebAuthn credential
+     * PasskeyRegisterFinish
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyRegisterFinishBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyRegisterFinishRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Completes passkey registration by verifying the signed WebAuthn credential and storing it under the given name for the authenticated user.
-     * @param body session_id, name and WebAuthn credential
+     * PasskeyRegisterFinish
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyRegisterFinishBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyRegisterFinishRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

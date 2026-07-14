@@ -9,13 +9,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.analyticsv1.VideoHeatmap;
+import com.rixl.sdk.models.analytics.v1.VideoHeatmap;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /analytics/v1/videos/{videoId}/heatmap
+ * Builds and executes requests for operations under /analytics/v1/videos/{video_id}/heatmap
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class HeatmapRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HeatmapRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{videoId}/heatmap{?buckets*,end*,start*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{video_id}/heatmap{?buckets*,range%2Eend*,range%2Estart*}", pathParameters);
     }
     /**
      * Instantiates a new {@link HeatmapRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HeatmapRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{videoId}/heatmap{?buckets*,end*,start*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{video_id}/heatmap{?buckets*,range%2Eend*,range%2Estart*}", rawUrl);
     }
     /**
-     * Returns the engagement heatmap for a video
+     * GetVideoHeatmap
      * @return a {@link VideoHeatmap}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the engagement heatmap for a video
+     * GetVideoHeatmap
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoHeatmap}
      */
@@ -54,7 +54,7 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, VideoHeatmap::createFromDiscriminatorValue);
     }
     /**
-     * Returns the engagement heatmap for a video
+     * GetVideoHeatmap
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the engagement heatmap for a video
+     * GetVideoHeatmap
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,25 +84,16 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
         return new HeatmapRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns the engagement heatmap for a video
+     * GetVideoHeatmap
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * Number of buckets
-         */
         @jakarta.annotation.Nullable
-        public String buckets;
-        /**
-         * End date (inclusive)
-         */
+        public Integer buckets;
         @jakarta.annotation.Nullable
-        public String end;
-        /**
-         * Start date (inclusive)
-         */
+        public String rangeEnd;
         @jakarta.annotation.Nullable
-        public String start;
+        public String rangeStart;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -111,8 +102,8 @@ public class HeatmapRequestBuilder extends BaseRequestBuilder {
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("buckets", buckets);
-            allQueryParams.put("end", end);
-            allQueryParams.put("start", start);
+            allQueryParams.put("range%2Eend", rangeEnd);
+            allQueryParams.put("range%2Estart", rangeStart);
             return allQueryParams;
         }
     }

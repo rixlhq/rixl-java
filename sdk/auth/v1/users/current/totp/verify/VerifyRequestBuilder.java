@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.TokenResponse;
-import com.rixl.sdk.models.gateway.VerifyOTPBody;
+import com.rixl.sdk.models.auth.v1.TokenResponse;
+import com.rixl.sdk.models.auth.v1.VerifyOTPRequest;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class VerifyRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/users/current/totp/verify", rawUrl);
     }
     /**
-     * Verifies the submitted TOTP code against the user&apos;s pending setup secret and, if valid, enables TOTP two-factor authentication and returns refreshed tokens.
-     * @param body TOTP code
+     * VerifyOTP
+     * @param body The request body
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final VerifyOTPBody body) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final VerifyOTPRequest body) {
         return post(body, null);
     }
     /**
-     * Verifies the submitted TOTP code against the user&apos;s pending setup secret and, if valid, enables TOTP two-factor authentication and returns refreshed tokens.
-     * @param body TOTP code
+     * VerifyOTP
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final VerifyOTPBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final VerifyOTPRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, TokenResponse::createFromDiscriminatorValue);
     }
     /**
-     * Verifies the submitted TOTP code against the user&apos;s pending setup secret and, if valid, enables TOTP two-factor authentication and returns refreshed tokens.
-     * @param body TOTP code
+     * VerifyOTP
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyOTPBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyOTPRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Verifies the submitted TOTP code against the user&apos;s pending setup secret and, if valid, enables TOTP two-factor authentication and returns refreshed tokens.
-     * @param body TOTP code
+     * VerifyOTP
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyOTPBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyOTPRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

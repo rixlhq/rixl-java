@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.videosv1.ListSubtitlesResponse;
+import com.rixl.sdk.models.videos.v1.ListSubtitlesResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/videos/{videoId}/subtitles
+ * Builds and executes requests for operations under /media/v1/videos/{video_id}/subtitles
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SubtitlesRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class SubtitlesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SubtitlesRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/videos/{videoId}/subtitles", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/videos/{video_id}/subtitles", pathParameters);
     }
     /**
      * Instantiates a new {@link SubtitlesRequestBuilder} and sets the default values.
@@ -32,10 +32,10 @@ public class SubtitlesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SubtitlesRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/videos/{videoId}/subtitles", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/videos/{video_id}/subtitles", rawUrl);
     }
     /**
-     * Returns the subtitles associated with a video.
+     * ListSubtitles
      * @return a {@link ListSubtitlesResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class SubtitlesRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the subtitles associated with a video.
+     * ListSubtitles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListSubtitlesResponse}
      */
@@ -53,7 +53,7 @@ public class SubtitlesRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListSubtitlesResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the subtitles associated with a video.
+     * ListSubtitles
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class SubtitlesRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the subtitles associated with a video.
+     * ListSubtitles
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

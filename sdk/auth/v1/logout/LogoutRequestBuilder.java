@@ -8,6 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.auth.v1.LogoutRequest;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,36 +36,48 @@ public class LogoutRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/logout", rawUrl);
     }
     /**
-     * Revokes the current access token so it can no longer be used.
+     * Logout
+     * @param body The request body
+     * @return a {@link Empty}
      */
-    public void post() {
-        post(null);
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nonnull final LogoutRequest body) {
+        return post(body, null);
     }
     /**
-     * Revokes the current access token so it can no longer be used.
+     * Logout
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nonnull final LogoutRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Revokes the current access token so it can no longer be used.
+     * Logout
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation() {
-        return toPostRequestInformation(null);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final LogoutRequest body) {
+        return toPostRequestInformation(body, null);
     }
     /**
-     * Revokes the current access token so it can no longer be used.
+     * Logout
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final LogoutRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**

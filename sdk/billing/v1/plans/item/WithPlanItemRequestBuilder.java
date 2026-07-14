@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.GetPlanResponse;
+import com.rixl.sdk.models.billing.v1.GetPlanResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /billing/v1/plans/{planId}
+ * Builds and executes requests for operations under /billing/v1/plans/{plan_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithPlanItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithPlanItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPlanItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/plans/{planId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/plans/{plan_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPlanItemRequestBuilder} and sets the default values.
@@ -32,10 +32,10 @@ public class WithPlanItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPlanItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/plans/{planId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/plans/{plan_id}", rawUrl);
     }
     /**
-     * Returns a single billing plan by ID.
+     * GetPlan
      * @return a {@link GetPlanResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class WithPlanItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns a single billing plan by ID.
+     * GetPlan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetPlanResponse}
      */
@@ -53,7 +53,7 @@ public class WithPlanItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetPlanResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns a single billing plan by ID.
+     * GetPlan
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class WithPlanItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns a single billing plan by ID.
+     * GetPlan
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

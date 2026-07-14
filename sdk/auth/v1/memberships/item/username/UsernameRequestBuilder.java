@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.UpdateOrgUsernameResponse;
-import com.rixl.sdk.models.gateway.UpdateOrgUsernameBody;
+import com.rixl.sdk.models.auth.v1.UpdateOrgUsernameResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/username
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/username
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UsernameRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class UsernameRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UsernameRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/username", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/username", pathParameters);
     }
     /**
      * Instantiates a new {@link UsernameRequestBuilder} and sets the default values.
@@ -33,49 +32,49 @@ public class UsernameRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UsernameRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/username", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/username", rawUrl);
     }
     /**
-     * Updates the unique username handle of the specified organization.
-     * @param body New username
+     * UpdateOrgUsername
+     * @param body The request body
      * @return a {@link UpdateOrgUsernameResponse}
      */
     @jakarta.annotation.Nullable
-    public UpdateOrgUsernameResponse put(@jakarta.annotation.Nonnull final UpdateOrgUsernameBody body) {
-        return put(body, null);
+    public UpdateOrgUsernameResponse patch(@jakarta.annotation.Nonnull final UsernamePatchRequestBody body) {
+        return patch(body, null);
     }
     /**
-     * Updates the unique username handle of the specified organization.
-     * @param body New username
+     * UpdateOrgUsername
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateOrgUsernameResponse}
      */
     @jakarta.annotation.Nullable
-    public UpdateOrgUsernameResponse put(@jakarta.annotation.Nonnull final UpdateOrgUsernameBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public UpdateOrgUsernameResponse patch(@jakarta.annotation.Nonnull final UsernamePatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
+        final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, UpdateOrgUsernameResponse::createFromDiscriminatorValue);
     }
     /**
-     * Updates the unique username handle of the specified organization.
-     * @param body New username
+     * UpdateOrgUsername
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateOrgUsernameBody body) {
-        return toPutRequestInformation(body, null);
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UsernamePatchRequestBody body) {
+        return toPatchRequestInformation(body, null);
     }
     /**
-     * Updates the unique username handle of the specified organization.
-     * @param body New username
+     * UpdateOrgUsername
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateOrgUsernameBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UsernamePatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -94,6 +93,6 @@ public class UsernameRequestBuilder extends BaseRequestBuilder {
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PutRequestConfiguration extends BaseRequestConfiguration {
+    public class PatchRequestConfiguration extends BaseRequestConfiguration {
     }
 }

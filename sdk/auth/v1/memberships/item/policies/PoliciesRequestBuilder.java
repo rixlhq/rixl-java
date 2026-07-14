@@ -3,34 +3,43 @@ package com.rixl.sdk.auth.v1.memberships.item.policies;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.auth.v1.memberships.item.policies.attachments.AttachmentsRequestBuilder;
 import com.rixl.sdk.auth.v1.memberships.item.policies.item.WithPolicyItemRequestBuilder;
-import com.rixl.sdk.models.authv1.ListPoliciesResponse;
-import com.rixl.sdk.models.authv1.Policy;
-import com.rixl.sdk.models.gateway.PolicyBody;
+import com.rixl.sdk.models.auth.v1.ListPoliciesResponse;
+import com.rixl.sdk.models.auth.v1.Policy;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/policies
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/policies
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PoliciesRequestBuilder extends BaseRequestBuilder {
     /**
+     * The attachments property
+     * @return a {@link AttachmentsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public AttachmentsRequestBuilder attachments() {
+        return new AttachmentsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.policies.item collection
-     * @param policyId Policy ID
+     * @param policy_id Unique identifier of the item
      * @return a {@link WithPolicyItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithPolicyItemRequestBuilder byPolicyId(@jakarta.annotation.Nonnull final String policyId) {
-        Objects.requireNonNull(policyId);
+    public WithPolicyItemRequestBuilder byPolicy_id(@jakarta.annotation.Nonnull final String policy_id) {
+        Objects.requireNonNull(policy_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("policyId", policyId);
+        urlTplParams.put("policy_id", policy_id);
         return new WithPolicyItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
@@ -39,7 +48,7 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PoliciesRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/policies", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies{?userId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PoliciesRequestBuilder} and sets the default values.
@@ -47,10 +56,10 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PoliciesRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/policies", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies{?userId*}", rawUrl);
     }
     /**
-     * Returns all authorization policies defined in the organization.
+     * ListPolicies
      * @return a {@link ListPoliciesResponse}
      */
     @jakarta.annotation.Nullable
@@ -58,7 +67,7 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns all authorization policies defined in the organization.
+     * ListPolicies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPoliciesResponse}
      */
@@ -68,28 +77,28 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListPoliciesResponse::createFromDiscriminatorValue);
     }
     /**
-     * Creates a new authorization policy in the organization with the given name, description, and permissions.
-     * @param body Policy
+     * CreatePolicy
+     * @param body The request body
      * @return a {@link Policy}
      */
     @jakarta.annotation.Nullable
-    public Policy post(@jakarta.annotation.Nonnull final PolicyBody body) {
+    public Policy post(@jakarta.annotation.Nonnull final PoliciesPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Creates a new authorization policy in the organization with the given name, description, and permissions.
-     * @param body Policy
+     * CreatePolicy
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Policy}
      */
     @jakarta.annotation.Nullable
-    public Policy post(@jakarta.annotation.Nonnull final PolicyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public Policy post(@jakarta.annotation.Nonnull final PoliciesPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, Policy::createFromDiscriminatorValue);
     }
     /**
-     * Returns all authorization policies defined in the organization.
+     * ListPolicies
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -97,34 +106,34 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns all authorization policies defined in the organization.
+     * ListPolicies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Creates a new authorization policy in the organization with the given name, description, and permissions.
-     * @param body Policy
+     * CreatePolicy
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PolicyBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PoliciesPostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Creates a new authorization policy in the organization with the given name, description, and permissions.
-     * @param body Policy
+     * CreatePolicy
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PolicyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PoliciesPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
@@ -143,10 +152,33 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
         return new PoliciesRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * ListPolicies
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("userId", userId);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

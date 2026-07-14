@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.videosv1.VideoChapters;
+import com.rixl.sdk.models.videos.v1.VideoChapters;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/videos/{videoId}/chapters/{startTimeSec}
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/videos/{video_id}/chapters/{start_time_sec}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithStartTimeSecItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/chapters/{startTimeSec}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/chapters/{start_time_sec}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithStartTimeSecItemRequestBuilder} and sets the default values.
@@ -32,10 +32,10 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithStartTimeSecItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/chapters/{startTimeSec}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/chapters/{start_time_sec}", rawUrl);
     }
     /**
-     * Removes one chapter identified by its start time (seconds).
+     * DeleteVideoChapter
      * @return a {@link VideoChapters}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
         return delete(null);
     }
     /**
-     * Removes one chapter identified by its start time (seconds).
+     * DeleteVideoChapter
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoChapters}
      */
@@ -53,7 +53,7 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, VideoChapters::createFromDiscriminatorValue);
     }
     /**
-     * Removes one chapter identified by its start time (seconds).
+     * DeleteVideoChapter
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Removes one chapter identified by its start time (seconds).
+     * DeleteVideoChapter
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

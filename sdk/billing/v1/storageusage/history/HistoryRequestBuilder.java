@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.GetStorageUsageHistoryResponse;
+import com.rixl.sdk.models.billing.v1.GetStorageUsageHistoryResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HistoryRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*,orgId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link HistoryRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HistoryRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*,orgId*}", rawUrl);
     }
     /**
-     * Returns the organization&apos;s storage usage history
+     * GetStorageUsageHistory
      * @return a {@link GetStorageUsageHistoryResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the organization&apos;s storage usage history
+     * GetStorageUsageHistory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetStorageUsageHistoryResponse}
      */
@@ -54,7 +54,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetStorageUsageHistoryResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the organization&apos;s storage usage history
+     * GetStorageUsageHistory
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the organization&apos;s storage usage history
+     * GetStorageUsageHistory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,15 +84,14 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return new HistoryRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns the organization&apos;s storage usage history
+     * GetStorageUsageHistory
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * Number of days of history
-         */
         @jakarta.annotation.Nullable
         public Integer days;
+        @jakarta.annotation.Nullable
+        public String orgId;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -101,6 +100,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("days", days);
+            allQueryParams.put("orgId", orgId);
             return allQueryParams;
         }
     }

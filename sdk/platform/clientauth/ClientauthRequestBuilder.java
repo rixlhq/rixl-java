@@ -2,8 +2,7 @@ package com.rixl.sdk.platform.clientauth;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixl.sdk.platform.clientauth.credentials.CredentialsRequestBuilder;
-import com.rixl.sdk.platform.clientauth.token.TokenRequestBuilder;
+import com.rixl.sdk.platform.clientauth.v1.V1RequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -12,20 +11,12 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ClientauthRequestBuilder extends BaseRequestBuilder {
     /**
-     * The credentials property
-     * @return a {@link CredentialsRequestBuilder}
+     * The v1 property
+     * @return a {@link V1RequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public CredentialsRequestBuilder credentials() {
-        return new CredentialsRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The token property
-     * @return a {@link TokenRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public TokenRequestBuilder token() {
-        return new TokenRequestBuilder(pathParameters, requestAdapter);
+    public V1RequestBuilder v1() {
+        return new V1RequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link ClientauthRequestBuilder} and sets the default values.

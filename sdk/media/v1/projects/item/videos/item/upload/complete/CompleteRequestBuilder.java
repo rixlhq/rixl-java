@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.videosv1.GetVideoResponse;
+import com.rixl.sdk.models.videos.v1.GetVideoResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/videos/{videoId}/upload/complete
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/videos/{video_id}/upload/complete
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CompleteRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CompleteRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/upload/complete", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/upload/complete", pathParameters);
     }
     /**
      * Instantiates a new {@link CompleteRequestBuilder} and sets the default values.
@@ -32,44 +32,51 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CompleteRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/upload/complete", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/upload/complete", rawUrl);
     }
     /**
-     * Finalizes a previously initiated video upload.
+     * CompleteVideoUpload
+     * @param body The request body
      * @return a {@link GetVideoResponse}
      */
     @jakarta.annotation.Nullable
-    public GetVideoResponse post() {
-        return post(null);
+    public GetVideoResponse post(@jakarta.annotation.Nonnull final CompletePostRequestBody body) {
+        return post(body, null);
     }
     /**
-     * Finalizes a previously initiated video upload.
+     * CompleteVideoUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetVideoResponse}
      */
     @jakarta.annotation.Nullable
-    public GetVideoResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
+    public GetVideoResponse post(@jakarta.annotation.Nonnull final CompletePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, GetVideoResponse::createFromDiscriminatorValue);
     }
     /**
-     * Finalizes a previously initiated video upload.
+     * CompleteVideoUpload
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation() {
-        return toPostRequestInformation(null);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CompletePostRequestBody body) {
+        return toPostRequestInformation(body, null);
     }
     /**
-     * Finalizes a previously initiated video upload.
+     * CompleteVideoUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CompletePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**

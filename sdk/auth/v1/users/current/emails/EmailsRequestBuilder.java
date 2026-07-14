@@ -10,8 +10,8 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.users.current.emails.change.ChangeRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.emails.status.StatusRequestBuilder;
-import com.rixl.sdk.models.authv1.VerificationSentResponse;
-import com.rixl.sdk.models.gateway.AddEmailBody;
+import com.rixl.sdk.models.auth.v1.AddEmailRequest;
+import com.rixl.sdk.models.auth.v1.VerificationSentResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,43 +54,43 @@ public class EmailsRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails", rawUrl);
     }
     /**
-     * Adds an email address to the authenticated account and sends a verificationcode to it. The address becomes active only once it has been verified via`POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body Email address to add
+     * AddEmail
+     * @param body The request body
      * @return a {@link VerificationSentResponse}
      */
     @jakarta.annotation.Nullable
-    public VerificationSentResponse post(@jakarta.annotation.Nonnull final AddEmailBody body) {
+    public VerificationSentResponse post(@jakarta.annotation.Nonnull final AddEmailRequest body) {
         return post(body, null);
     }
     /**
-     * Adds an email address to the authenticated account and sends a verificationcode to it. The address becomes active only once it has been verified via`POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body Email address to add
+     * AddEmail
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VerificationSentResponse}
      */
     @jakarta.annotation.Nullable
-    public VerificationSentResponse post(@jakarta.annotation.Nonnull final AddEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public VerificationSentResponse post(@jakarta.annotation.Nonnull final AddEmailRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, VerificationSentResponse::createFromDiscriminatorValue);
     }
     /**
-     * Adds an email address to the authenticated account and sends a verificationcode to it. The address becomes active only once it has been verified via`POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body Email address to add
+     * AddEmail
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AddEmailBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AddEmailRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Adds an email address to the authenticated account and sends a verificationcode to it. The address becomes active only once it has been verified via`POST /auth/v1/email/verify`. Subject to rate limiting per account.
-     * @param body Email address to add
+     * AddEmail
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AddEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final AddEmailRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

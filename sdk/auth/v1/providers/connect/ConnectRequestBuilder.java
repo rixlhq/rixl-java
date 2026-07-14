@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.TokenResponse;
-import com.rixl.sdk.models.gateway.ConnectProviderBody;
+import com.rixl.sdk.models.auth.v1.ConnectProviderRequest;
+import com.rixl.sdk.models.auth.v1.TokenResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class ConnectRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/providers/connect", rawUrl);
     }
     /**
-     * Connects a social provider to the authenticated user&apos;s account using the supplied provider token.
-     * @param body Provider token
+     * ConnectProvider
+     * @param body The request body
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final ConnectProviderBody body) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final ConnectProviderRequest body) {
         return post(body, null);
     }
     /**
-     * Connects a social provider to the authenticated user&apos;s account using the supplied provider token.
-     * @param body Provider token
+     * ConnectProvider
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final ConnectProviderBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final ConnectProviderRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, TokenResponse::createFromDiscriminatorValue);
     }
     /**
-     * Connects a social provider to the authenticated user&apos;s account using the supplied provider token.
-     * @param body Provider token
+     * ConnectProvider
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ConnectProviderBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ConnectProviderRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Connects a social provider to the authenticated user&apos;s account using the supplied provider token.
-     * @param body Provider token
+     * ConnectProvider
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ConnectProviderBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ConnectProviderRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

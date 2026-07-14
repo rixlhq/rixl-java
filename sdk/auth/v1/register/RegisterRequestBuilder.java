@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.RegisterResponse;
-import com.rixl.sdk.models.gateway.RegisterBody;
+import com.rixl.sdk.models.auth.v1.RegisterRequest;
+import com.rixl.sdk.models.auth.v1.RegisterResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class RegisterRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/register", rawUrl);
     }
     /**
-     * Registers a new user account from an email and password and starts email verification.
-     * @param body Credentials
+     * Register
+     * @param body The request body
      * @return a {@link RegisterResponse}
      */
     @jakarta.annotation.Nullable
-    public RegisterResponse post(@jakarta.annotation.Nonnull final RegisterBody body) {
+    public RegisterResponse post(@jakarta.annotation.Nonnull final RegisterRequest body) {
         return post(body, null);
     }
     /**
-     * Registers a new user account from an email and password and starts email verification.
-     * @param body Credentials
+     * Register
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RegisterResponse}
      */
     @jakarta.annotation.Nullable
-    public RegisterResponse post(@jakarta.annotation.Nonnull final RegisterBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RegisterResponse post(@jakarta.annotation.Nonnull final RegisterRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, RegisterResponse::createFromDiscriminatorValue);
     }
     /**
-     * Registers a new user account from an email and password and starts email verification.
-     * @param body Credentials
+     * Register
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final RegisterBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final RegisterRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Registers a new user account from an email and password and starts email verification.
-     * @param body Credentials
+     * Register
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final RegisterBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final RegisterRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

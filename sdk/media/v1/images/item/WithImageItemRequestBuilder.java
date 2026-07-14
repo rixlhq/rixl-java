@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.imagesv1.GetImageResponse;
+import com.rixl.sdk.models.images.v1.GetImageResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/images/{imageId}
+ * Builds and executes requests for operations under /media/v1/images/{image_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithImageItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithImageItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/images/{imageId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/images/{image_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithImageItemRequestBuilder} and sets the default values.
@@ -32,10 +32,10 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithImageItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/images/{imageId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/images/{image_id}", rawUrl);
     }
     /**
-     * Returns a single image by ID.
+     * GetImage
      * @return a {@link GetImageResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns a single image by ID.
+     * GetImage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetImageResponse}
      */
@@ -53,7 +53,7 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetImageResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns a single image by ID.
+     * GetImage
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class WithImageItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns a single image by ID.
+     * GetImage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

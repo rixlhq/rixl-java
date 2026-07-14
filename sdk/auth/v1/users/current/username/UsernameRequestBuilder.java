@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.UpdateUsernameResponse;
-import com.rixl.sdk.models.gateway.UpdateUsernameBody;
+import com.rixl.sdk.models.auth.v1.UpdateUsernameRequest;
+import com.rixl.sdk.models.auth.v1.UpdateUsernameResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class UsernameRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/users/current/username", rawUrl);
     }
     /**
-     * Updates the authenticated user&apos;s username to the provided value.
-     * @param body New username
+     * UpdateUsername
+     * @param body The request body
      * @return a {@link UpdateUsernameResponse}
      */
     @jakarta.annotation.Nullable
-    public UpdateUsernameResponse patch(@jakarta.annotation.Nonnull final UpdateUsernameBody body) {
+    public UpdateUsernameResponse patch(@jakarta.annotation.Nonnull final UpdateUsernameRequest body) {
         return patch(body, null);
     }
     /**
-     * Updates the authenticated user&apos;s username to the provided value.
-     * @param body New username
+     * UpdateUsername
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateUsernameResponse}
      */
     @jakarta.annotation.Nullable
-    public UpdateUsernameResponse patch(@jakarta.annotation.Nonnull final UpdateUsernameBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    public UpdateUsernameResponse patch(@jakarta.annotation.Nonnull final UpdateUsernameRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, UpdateUsernameResponse::createFromDiscriminatorValue);
     }
     /**
-     * Updates the authenticated user&apos;s username to the provided value.
-     * @param body New username
+     * UpdateUsername
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UpdateUsernameBody body) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UpdateUsernameRequest body) {
         return toPatchRequestInformation(body, null);
     }
     /**
-     * Updates the authenticated user&apos;s username to the provided value.
-     * @param body New username
+     * UpdateUsername
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UpdateUsernameBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final UpdateUsernameRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);

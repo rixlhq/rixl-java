@@ -2,7 +2,6 @@ package com.rixl.sdk.platform;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixl.sdk.platform.apikeys.ApiKeysRequestBuilder;
 import com.rixl.sdk.platform.auth.AuthRequestBuilder;
 import com.rixl.sdk.platform.clientauth.ClientauthRequestBuilder;
 import java.util.HashMap;
@@ -12,14 +11,6 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PlatformRequestBuilder extends BaseRequestBuilder {
-    /**
-     * The apiKeys property
-     * @return a {@link ApiKeysRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public ApiKeysRequestBuilder apiKeys() {
-        return new ApiKeysRequestBuilder(pathParameters, requestAdapter);
-    }
     /**
      * The auth property
      * @return a {@link AuthRequestBuilder}

@@ -3,21 +3,22 @@ package com.rixl.sdk.auth.v1.memberships.item.domain;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.memberships.item.domain.autojoin.AutoJoinRequestBuilder;
-import com.rixl.sdk.auth.v1.memberships.item.domain.verification.VerificationRequestBuilder;
-import com.rixl.sdk.models.authv1.DomainResponse;
-import com.rixl.sdk.models.gateway.CreateDomainBody;
+import com.rixl.sdk.auth.v1.memberships.item.domain.verify.VerifyRequestBuilder;
+import com.rixl.sdk.models.auth.v1.DomainResponse;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/domain
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/domain
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class DomainRequestBuilder extends BaseRequestBuilder {
@@ -30,12 +31,12 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
         return new AutoJoinRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The verification property
-     * @return a {@link VerificationRequestBuilder}
+     * The verify property
+     * @return a {@link VerifyRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public VerificationRequestBuilder verification() {
-        return new VerificationRequestBuilder(pathParameters, requestAdapter);
+    public VerifyRequestBuilder verify() {
+        return new VerifyRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link DomainRequestBuilder} and sets the default values.
@@ -43,7 +44,7 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DomainRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/domain", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/domain{?userId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link DomainRequestBuilder} and sets the default values.
@@ -51,24 +52,28 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DomainRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/domain", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/domain{?userId*}", rawUrl);
     }
     /**
-     * Removes the custom domain from the organization and clears its verification.
+     * RemoveDomain
+     * @return a {@link Empty}
      */
-    public void delete() {
-        delete(null);
+    @jakarta.annotation.Nullable
+    public Empty delete() {
+        return delete(null);
     }
     /**
-     * Removes the custom domain from the organization and clears its verification.
+     * RemoveDomain
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Returns the current custom domain and its verification status for the organization.
+     * GetDomainStatus
      * @return a {@link DomainResponse}
      */
     @jakarta.annotation.Nullable
@@ -76,7 +81,7 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the current custom domain and its verification status for the organization.
+     * GetDomainStatus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DomainResponse}
      */
@@ -86,28 +91,28 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, DomainResponse::createFromDiscriminatorValue);
     }
     /**
-     * Registers a custom domain for the organization and issues verification details to prove ownership.
-     * @param body Domain
+     * CreateDomainVerification
+     * @param body The request body
      * @return a {@link DomainResponse}
      */
     @jakarta.annotation.Nullable
-    public DomainResponse post(@jakarta.annotation.Nonnull final CreateDomainBody body) {
+    public DomainResponse post(@jakarta.annotation.Nonnull final DomainPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Registers a custom domain for the organization and issues verification details to prove ownership.
-     * @param body Domain
+     * CreateDomainVerification
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DomainResponse}
      */
     @jakarta.annotation.Nullable
-    public DomainResponse post(@jakarta.annotation.Nonnull final CreateDomainBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public DomainResponse post(@jakarta.annotation.Nonnull final DomainPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, DomainResponse::createFromDiscriminatorValue);
     }
     /**
-     * Removes the custom domain from the organization and clears its verification.
+     * RemoveDomain
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -115,18 +120,19 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Removes the custom domain from the organization and clears its verification.
+     * RemoveDomain
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new, x -> x.queryParameters);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Returns the current custom domain and its verification status for the organization.
+     * GetDomainStatus
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -134,34 +140,34 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the current custom domain and its verification status for the organization.
+     * GetDomainStatus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Registers a custom domain for the organization and issues verification details to prove ownership.
-     * @param body Domain
+     * CreateDomainVerification
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateDomainBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final DomainPostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Registers a custom domain for the organization and issues verification details to prove ownership.
-     * @param body Domain
+     * CreateDomainVerification
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateDomainBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final DomainPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
@@ -180,16 +186,62 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
         return new DomainRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * RemoveDomain
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class DeleteQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("userId", userId);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public DeleteQueryParameters queryParameters = new DeleteQueryParameters();
+    }
+    /**
+     * GetDomainStatus
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("userId", userId);
+            return allQueryParams;
+        }
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

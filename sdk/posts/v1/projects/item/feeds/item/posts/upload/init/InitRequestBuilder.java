@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.InitUploadBody;
-import com.rixl.sdk.models.postsv1.PostUploadInit;
+import com.rixl.sdk.models.posts.v1.PostUploadInit;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}/posts/upload/init
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds/{feed_id}/posts/upload/init
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class InitRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class InitRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public InitRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/upload/init", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/upload/init", pathParameters);
     }
     /**
      * Instantiates a new {@link InitRequestBuilder} and sets the default values.
@@ -33,46 +32,46 @@ public class InitRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public InitRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/upload/init", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/upload/init", rawUrl);
     }
     /**
-     * Begin a media upload and create a draft post
-     * @param body Upload initialization request
+     * InitPostUpload
+     * @param body The request body
      * @return a {@link PostUploadInit}
      */
     @jakarta.annotation.Nullable
-    public PostUploadInit post(@jakarta.annotation.Nonnull final InitUploadBody body) {
+    public PostUploadInit post(@jakarta.annotation.Nonnull final InitPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Begin a media upload and create a draft post
-     * @param body Upload initialization request
+     * InitPostUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PostUploadInit}
      */
     @jakarta.annotation.Nullable
-    public PostUploadInit post(@jakarta.annotation.Nonnull final InitUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public PostUploadInit post(@jakarta.annotation.Nonnull final InitPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, PostUploadInit::createFromDiscriminatorValue);
     }
     /**
-     * Begin a media upload and create a draft post
-     * @param body Upload initialization request
+     * InitPostUpload
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final InitUploadBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final InitPostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Begin a media upload and create a draft post
-     * @param body Upload initialization request
+     * InitPostUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final InitUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final InitPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

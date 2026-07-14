@@ -3,13 +3,14 @@ package com.rixl.sdk.billing.v1.address;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.BillingAddress;
-import com.rixl.sdk.models.gateway.BillingAddressBody;
+import com.rixl.sdk.models.billing.v1.BillingAddress;
+import com.rixl.sdk.models.billing.v1.UpsertBillingAddressRequest;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AddressRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/address", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/address{?orgId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link AddressRequestBuilder} and sets the default values.
@@ -33,10 +34,10 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AddressRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/address", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/address{?orgId*}", rawUrl);
     }
     /**
-     * Returns the organization&apos;s billing address
+     * GetBillingAddress
      * @return a {@link BillingAddress}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +45,7 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the organization&apos;s billing address
+     * GetBillingAddress
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link BillingAddress}
      */
@@ -54,28 +55,28 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, BillingAddress::createFromDiscriminatorValue);
     }
     /**
-     * Create or update the organization&apos;s billing address
-     * @param body Billing address
+     * UpsertBillingAddress
+     * @param body The request body
      * @return a {@link BillingAddress}
      */
     @jakarta.annotation.Nullable
-    public BillingAddress post(@jakarta.annotation.Nonnull final BillingAddressBody body) {
-        return post(body, null);
+    public BillingAddress put(@jakarta.annotation.Nonnull final UpsertBillingAddressRequest body) {
+        return put(body, null);
     }
     /**
-     * Create or update the organization&apos;s billing address
-     * @param body Billing address
+     * UpsertBillingAddress
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link BillingAddress}
      */
     @jakarta.annotation.Nullable
-    public BillingAddress post(@jakarta.annotation.Nonnull final BillingAddressBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public BillingAddress put(@jakarta.annotation.Nonnull final UpsertBillingAddressRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, BillingAddress::createFromDiscriminatorValue);
     }
     /**
-     * Returns the organization&apos;s billing address
+     * GetBillingAddress
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -83,37 +84,37 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the organization&apos;s billing address
+     * GetBillingAddress
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Create or update the organization&apos;s billing address
-     * @param body Billing address
+     * UpsertBillingAddress
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final BillingAddressBody body) {
-        return toPostRequestInformation(body, null);
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpsertBillingAddressRequest body) {
+        return toPutRequestInformation(body, null);
     }
     /**
-     * Create or update the organization&apos;s billing address
-     * @param body Billing address
+     * UpsertBillingAddress
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final BillingAddressBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpsertBillingAddressRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -129,15 +130,38 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
         return new AddressRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Configuration for the request such as headers, query parameters, and middleware options.
+     * GetBillingAddress
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class GetRequestConfiguration extends BaseRequestConfiguration {
+    public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String orgId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("orgId", orgId);
+            return allQueryParams;
+        }
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PostRequestConfiguration extends BaseRequestConfiguration {
+    public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class PutRequestConfiguration extends BaseRequestConfiguration {
     }
 }

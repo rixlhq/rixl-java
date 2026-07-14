@@ -6,7 +6,7 @@ import com.rixl.sdk.analytics.v1.posts.item.stats.StatsRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /analytics/v1/posts/{postId}
+ * Builds and executes requests for operations under /analytics/v1/posts/{post_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithPostItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPostItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/posts/{postId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/posts/{post_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPostItemRequestBuilder} and sets the default values.
@@ -32,6 +32,6 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPostItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/posts/{postId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/posts/{post_id}", rawUrl);
     }
 }

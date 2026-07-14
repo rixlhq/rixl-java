@@ -6,7 +6,7 @@ import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.PostsRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds/{feed_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithFeedItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithFeedItemRequestBuilder} and sets the default values.
@@ -32,6 +32,6 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithFeedItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}", rawUrl);
     }
 }

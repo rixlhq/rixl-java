@@ -3,7 +3,6 @@ package com.rixl.sdk.billing;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
 import com.rixl.sdk.billing.v1.V1RequestBuilder;
-import com.rixl.sdk.billing.webhooks.WebhooksRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -18,14 +17,6 @@ public class BillingRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public V1RequestBuilder v1() {
         return new V1RequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The webhooks property
-     * @return a {@link WebhooksRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public WebhooksRequestBuilder webhooks() {
-        return new WebhooksRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link BillingRequestBuilder} and sets the default values.

@@ -9,37 +9,28 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.auth.v1.memberships.item.members.invite.InviteRequestBuilder;
-import com.rixl.sdk.auth.v1.memberships.item.members.item.WithUserItemRequestBuilder;
-import com.rixl.sdk.models.authv1.ListOrgMembersResponse;
+import com.rixl.sdk.auth.v1.memberships.item.members.item.MemberItemRequestBuilder;
+import com.rixl.sdk.models.auth.v1.ListOrgMembersResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/members
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/members
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MembersRequestBuilder extends BaseRequestBuilder {
     /**
-     * The invite property
-     * @return a {@link InviteRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public InviteRequestBuilder invite() {
-        return new InviteRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.members.item collection
-     * @param userId Member user ID
-     * @return a {@link WithUserItemRequestBuilder}
+     * @param member_Id Unique identifier of the item
+     * @return a {@link MemberItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithUserItemRequestBuilder byUserId(@jakarta.annotation.Nonnull final String userId) {
-        Objects.requireNonNull(userId);
+    public MemberItemRequestBuilder byMember_Id(@jakarta.annotation.Nonnull final String member_Id) {
+        Objects.requireNonNull(member_Id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("userId", userId);
-        return new WithUserItemRequestBuilder(urlTplParams, requestAdapter);
+        urlTplParams.put("member_%2Did", member_Id);
+        return new MemberItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
      * Instantiates a new {@link MembersRequestBuilder} and sets the default values.
@@ -47,7 +38,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembersRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/members{?limit*,offset*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members{?limit*,offset*,user%2EuserId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link MembersRequestBuilder} and sets the default values.
@@ -55,10 +46,10 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembersRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/members{?limit*,offset*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members{?limit*,offset*,user%2EuserId*}", rawUrl);
     }
     /**
-     * Returns a paginated list of the members belonging to the specified organization.
+     * ListOrganizationMembers
      * @return a {@link ListOrgMembersResponse}
      */
     @jakarta.annotation.Nullable
@@ -66,7 +57,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns a paginated list of the members belonging to the specified organization.
+     * ListOrganizationMembers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListOrgMembersResponse}
      */
@@ -76,7 +67,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListOrgMembersResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns a paginated list of the members belonging to the specified organization.
+     * ListOrganizationMembers
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -84,7 +75,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns a paginated list of the members belonging to the specified organization.
+     * ListOrganizationMembers
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -106,20 +97,16 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
         return new MembersRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns a paginated list of the members belonging to the specified organization.
+     * ListOrganizationMembers
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * Limit
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
-        /**
-         * Offset
-         */
         @jakarta.annotation.Nullable
         public Integer offset;
+        @jakarta.annotation.Nullable
+        public String userUserId;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -129,6 +116,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
+            allQueryParams.put("user%2EuserId", userUserId);
             return allQueryParams;
         }
     }

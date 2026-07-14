@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.AcceptInvitationResponse;
+import com.rixl.sdk.models.auth.v1.AcceptInvitationResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class AcceptRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/invitations/{token}/accept", rawUrl);
     }
     /**
-     * Accepts the organization invitation identified by the provided token.
+     * AcceptInvitation
      * @return a {@link AcceptInvitationResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class AcceptRequestBuilder extends BaseRequestBuilder {
         return post(null);
     }
     /**
-     * Accepts the organization invitation identified by the provided token.
+     * AcceptInvitation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link AcceptInvitationResponse}
      */
@@ -53,7 +53,7 @@ public class AcceptRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, AcceptInvitationResponse::createFromDiscriminatorValue);
     }
     /**
-     * Accepts the organization invitation identified by the provided token.
+     * AcceptInvitation
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class AcceptRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(null);
     }
     /**
-     * Accepts the organization invitation identified by the provided token.
+     * AcceptInvitation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

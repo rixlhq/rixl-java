@@ -8,7 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.PasskeyBeginResponse;
+import com.rixl.sdk.models.auth.v1.PasskeyBeginResponse;
+import com.rixl.sdk.models.auth.v1.PasskeyLoginBeginRequest;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,41 +36,48 @@ public class BeginRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/passkey/login/begin", rawUrl);
     }
     /**
-     * Begins a passkey login by returning a session_id and WebAuthn challenge options for the client to sign.
+     * PasskeyLoginBegin
+     * @param body options and credential carry the WebAuthn ceremony payloads verbatim as JSON (the browser credential API consumes them as-is), so they are opaque bytes.
      * @return a {@link PasskeyBeginResponse}
      */
     @jakarta.annotation.Nullable
-    public PasskeyBeginResponse post() {
-        return post(null);
+    public PasskeyBeginResponse post(@jakarta.annotation.Nonnull final PasskeyLoginBeginRequest body) {
+        return post(body, null);
     }
     /**
-     * Begins a passkey login by returning a session_id and WebAuthn challenge options for the client to sign.
+     * PasskeyLoginBegin
+     * @param body options and credential carry the WebAuthn ceremony payloads verbatim as JSON (the browser credential API consumes them as-is), so they are opaque bytes.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PasskeyBeginResponse}
      */
     @jakarta.annotation.Nullable
-    public PasskeyBeginResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
+    public PasskeyBeginResponse post(@jakarta.annotation.Nonnull final PasskeyLoginBeginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, PasskeyBeginResponse::createFromDiscriminatorValue);
     }
     /**
-     * Begins a passkey login by returning a session_id and WebAuthn challenge options for the client to sign.
+     * PasskeyLoginBegin
+     * @param body options and credential carry the WebAuthn ceremony payloads verbatim as JSON (the browser credential API consumes them as-is), so they are opaque bytes.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation() {
-        return toPostRequestInformation(null);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyLoginBeginRequest body) {
+        return toPostRequestInformation(body, null);
     }
     /**
-     * Begins a passkey login by returning a session_id and WebAuthn challenge options for the client to sign.
+     * PasskeyLoginBegin
+     * @param body options and credential carry the WebAuthn ceremony payloads verbatim as JSON (the browser credential API consumes them as-is), so they are opaque bytes.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyLoginBeginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**

@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,21 +35,25 @@ public class DeclineRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/invitations/{token}/decline", rawUrl);
     }
     /**
-     * Declines the organization invitation identified by the provided token.
+     * DeclineInvitation
+     * @return a {@link Empty}
      */
-    public void post() {
-        post(null);
+    @jakarta.annotation.Nullable
+    public Empty post() {
+        return post(null);
     }
     /**
-     * Declines the organization invitation identified by the provided token.
+     * DeclineInvitation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Declines the organization invitation identified by the provided token.
+     * DeclineInvitation
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -56,7 +61,7 @@ public class DeclineRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(null);
     }
     /**
-     * Declines the organization invitation identified by the provided token.
+     * DeclineInvitation
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -64,6 +69,7 @@ public class DeclineRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**

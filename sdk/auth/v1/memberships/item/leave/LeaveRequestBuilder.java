@@ -3,18 +3,19 @@ package com.rixl.sdk.auth.v1.memberships.item.leave;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.StatusResponse;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/leave
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/leave
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class LeaveRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +25,7 @@ public class LeaveRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public LeaveRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/leave", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/leave{?userId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link LeaveRequestBuilder} and sets the default values.
@@ -32,43 +33,43 @@ public class LeaveRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public LeaveRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/leave", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/leave{?userId*}", rawUrl);
     }
     /**
-     * Removes the authenticated user&apos;s own membership from the organization.
-     * @return a {@link StatusResponse}
+     * LeaveOrganization
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public StatusResponse delete() {
-        return delete(null);
+    public Empty post() {
+        return post(null);
     }
     /**
-     * Removes the authenticated user&apos;s own membership from the organization.
+     * LeaveOrganization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link StatusResponse}
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public StatusResponse delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, StatusResponse::createFromDiscriminatorValue);
+    public Empty post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Removes the authenticated user&apos;s own membership from the organization.
+     * LeaveOrganization
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toDeleteRequestInformation() {
-        return toDeleteRequestInformation(null);
+    public RequestInformation toPostRequestInformation() {
+        return toPostRequestInformation(null);
     }
     /**
-     * Removes the authenticated user&apos;s own membership from the organization.
+     * LeaveOrganization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -83,9 +84,32 @@ public class LeaveRequestBuilder extends BaseRequestBuilder {
         return new LeaveRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * LeaveOrganization
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class PostQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("userId", userId);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class DeleteRequestConfiguration extends BaseRequestConfiguration {
+    public class PostRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public PostQueryParameters queryParameters = new PostQueryParameters();
     }
 }

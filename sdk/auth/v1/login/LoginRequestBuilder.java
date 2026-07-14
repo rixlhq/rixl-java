@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.LoginResponse;
-import com.rixl.sdk.models.gateway.RegisterOrLoginBody;
+import com.rixl.sdk.models.auth.v1.LoginRequest;
+import com.rixl.sdk.models.auth.v1.LoginResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class LoginRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/login", rawUrl);
     }
     /**
-     * Authenticates a user by email and password and issues access and refresh tokens.
-     * @param body Credentials
+     * Login
+     * @param body The request body
      * @return a {@link LoginResponse}
      */
     @jakarta.annotation.Nullable
-    public LoginResponse post(@jakarta.annotation.Nonnull final RegisterOrLoginBody body) {
+    public LoginResponse post(@jakarta.annotation.Nonnull final LoginRequest body) {
         return post(body, null);
     }
     /**
-     * Authenticates a user by email and password and issues access and refresh tokens.
-     * @param body Credentials
+     * Login
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link LoginResponse}
      */
     @jakarta.annotation.Nullable
-    public LoginResponse post(@jakarta.annotation.Nonnull final RegisterOrLoginBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public LoginResponse post(@jakarta.annotation.Nonnull final LoginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, LoginResponse::createFromDiscriminatorValue);
     }
     /**
-     * Authenticates a user by email and password and issues access and refresh tokens.
-     * @param body Credentials
+     * Login
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final RegisterOrLoginBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final LoginRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Authenticates a user by email and password and issues access and refresh tokens.
-     * @param body Credentials
+     * Login
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final RegisterOrLoginBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final LoginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

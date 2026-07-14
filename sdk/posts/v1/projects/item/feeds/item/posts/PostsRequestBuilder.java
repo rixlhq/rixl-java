@@ -9,9 +9,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.CreatePostBody;
-import com.rixl.sdk.models.postsv1.ListPostsResponse;
-import com.rixl.sdk.models.postsv1.Post;
+import com.rixl.sdk.models.posts.v1.ListPostsResponse;
+import com.rixl.sdk.models.posts.v1.Post;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.CreatorsRequestBuilder;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.item.WithPostItemRequestBuilder;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.upload.UploadRequestBuilder;
@@ -20,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}/posts
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds/{feed_id}/posts
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PostsRequestBuilder extends BaseRequestBuilder {
@@ -42,14 +41,14 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.item collection
-     * @param postId Post ID
+     * @param post_id Unique identifier of the item
      * @return a {@link WithPostItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithPostItemRequestBuilder byPostId(@jakarta.annotation.Nonnull final String postId) {
-        Objects.requireNonNull(postId);
+    public WithPostItemRequestBuilder byPost_id(@jakarta.annotation.Nonnull final String post_id) {
+        Objects.requireNonNull(post_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("postId", postId);
+        urlTplParams.put("post_id", post_id);
         return new WithPostItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
@@ -58,7 +57,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts{?limit*,offset*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts{?creatorId*,pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PostsRequestBuilder} and sets the default values.
@@ -66,10 +65,10 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts{?limit*,offset*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts{?creatorId*,pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
     }
     /**
-     * List posts in a feed
+     * ListPosts
      * @return a {@link ListPostsResponse}
      */
     @jakarta.annotation.Nullable
@@ -77,7 +76,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * List posts in a feed
+     * ListPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPostsResponse}
      */
@@ -87,28 +86,28 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListPostsResponse::createFromDiscriminatorValue);
     }
     /**
-     * Create a new post in a feed
-     * @param body Post to create
+     * CreatePost
+     * @param body The request body
      * @return a {@link Post}
      */
     @jakarta.annotation.Nullable
-    public Post post(@jakarta.annotation.Nonnull final CreatePostBody body) {
+    public Post post(@jakarta.annotation.Nonnull final PostsPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Create a new post in a feed
-     * @param body Post to create
+     * CreatePost
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Post}
      */
     @jakarta.annotation.Nullable
-    public Post post(@jakarta.annotation.Nonnull final CreatePostBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public Post post(@jakarta.annotation.Nonnull final PostsPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, Post::createFromDiscriminatorValue);
     }
     /**
-     * List posts in a feed
+     * ListPosts
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -116,7 +115,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * List posts in a feed
+     * ListPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -128,22 +127,22 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * Create a new post in a feed
-     * @param body Post to create
+     * CreatePost
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreatePostBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PostsPostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Create a new post in a feed
-     * @param body Post to create
+     * CreatePost
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreatePostBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PostsPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
@@ -162,20 +161,22 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return new PostsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * List posts in a feed
+     * ListPosts
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String creatorId;
         /**
-         * Page size
+         * Maximum number of items to return.
          */
         @jakarta.annotation.Nullable
-        public Integer limit;
+        public Integer paginationLimit;
         /**
-         * Page offset
+         * Number of items to skip before collecting the result set.
          */
         @jakarta.annotation.Nullable
-        public Integer offset;
+        public Integer paginationOffset;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -183,8 +184,9 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("limit", limit);
-            allQueryParams.put("offset", offset);
+            allQueryParams.put("creatorId", creatorId);
+            allQueryParams.put("pagination%2Elimit", paginationLimit);
+            allQueryParams.put("pagination%2Eoffset", paginationOffset);
             return allQueryParams;
         }
     }

@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.TokenResponse;
-import com.rixl.sdk.models.gateway.PasskeyLoginFinishBody;
+import com.rixl.sdk.models.auth.v1.PasskeyLoginFinishRequest;
+import com.rixl.sdk.models.auth.v1.TokenResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class FinishRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/passkey/login/finish", rawUrl);
     }
     /**
-     * Completes a passkey login by verifying the signed WebAuthn credential against the session and returning authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * PasskeyLoginFinish
+     * @param body The request body
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final PasskeyLoginFinishBody body) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final PasskeyLoginFinishRequest body) {
         return post(body, null);
     }
     /**
-     * Completes a passkey login by verifying the signed WebAuthn credential against the session and returning authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * PasskeyLoginFinish
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final PasskeyLoginFinishBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final PasskeyLoginFinishRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, TokenResponse::createFromDiscriminatorValue);
     }
     /**
-     * Completes a passkey login by verifying the signed WebAuthn credential against the session and returning authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * PasskeyLoginFinish
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyLoginFinishBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyLoginFinishRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Completes a passkey login by verifying the signed WebAuthn credential against the session and returning authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * PasskeyLoginFinish
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyLoginFinishBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyLoginFinishRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

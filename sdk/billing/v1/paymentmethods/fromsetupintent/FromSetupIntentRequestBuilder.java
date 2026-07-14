@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.PaymentMethodIdResponse;
+import com.rixl.sdk.models.billing.v1.PaymentMethodIdResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FromSetupIntentRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent?setup_intent_id={setup_intent_id}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent{?setupIntentId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link FromSetupIntentRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FromSetupIntentRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent?setup_intent_id={setup_intent_id}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent{?setupIntentId*}", rawUrl);
     }
     /**
-     * Returns the payment method ID associated with a setup intent
+     * GetPaymentMethodFromSetupIntent
      * @return a {@link PaymentMethodIdResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the payment method ID associated with a setup intent
+     * GetPaymentMethodFromSetupIntent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PaymentMethodIdResponse}
      */
@@ -54,7 +54,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, PaymentMethodIdResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the payment method ID associated with a setup intent
+     * GetPaymentMethodFromSetupIntent
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the payment method ID associated with a setup intent
+     * GetPaymentMethodFromSetupIntent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,13 +84,10 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
         return new FromSetupIntentRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns the payment method ID associated with a setup intent
+     * GetPaymentMethodFromSetupIntent
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * Setup intent ID
-         */
         @jakarta.annotation.Nullable
         public String setupIntentId;
         /**
@@ -100,7 +97,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("setup_intent_id", setupIntentId);
+            allQueryParams.put("setupIntentId", setupIntentId);
             return allQueryParams;
         }
     }

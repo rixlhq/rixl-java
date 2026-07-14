@@ -6,7 +6,7 @@ import com.rixl.sdk.media.v1.projects.item.images.item.upload.complete.CompleteR
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/images/{imageId}/upload
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/images/{image_id}/upload
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UploadRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images/{imageId}/upload", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images/{image_id}/upload", pathParameters);
     }
     /**
      * Instantiates a new {@link UploadRequestBuilder} and sets the default values.
@@ -32,6 +32,6 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UploadRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images/{imageId}/upload", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images/{image_id}/upload", rawUrl);
     }
 }

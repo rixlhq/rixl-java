@@ -8,7 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.analyticsv1.TrackEventsRequest;
+import com.rixl.sdk.models.analytics.v1.TrackEventsRequest;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,25 +36,29 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/analytics/v1/events", rawUrl);
     }
     /**
-     * Ingest a batch of analytics events for the authenticated organization
-     * @param body Analytics events
+     * TrackEvents
+     * @param body The request body
+     * @return a {@link Empty}
      */
-    public void post(@jakarta.annotation.Nonnull final TrackEventsRequest body) {
-        post(body, null);
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nonnull final TrackEventsRequest body) {
+        return post(body, null);
     }
     /**
-     * Ingest a batch of analytics events for the authenticated organization
-     * @param body Analytics events
+     * TrackEvents
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void post(@jakarta.annotation.Nonnull final TrackEventsRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nonnull final TrackEventsRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Ingest a batch of analytics events for the authenticated organization
-     * @param body Analytics events
+     * TrackEvents
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,8 +66,8 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Ingest a batch of analytics events for the authenticated organization
-     * @param body Analytics events
+     * TrackEvents
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -71,6 +76,7 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }

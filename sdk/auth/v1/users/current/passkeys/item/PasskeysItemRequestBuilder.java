@@ -3,12 +3,13 @@ package com.rixl.sdk.auth.v1.users.current.passkeys.item;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.RenamePasskeyBody;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class PasskeysItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PasskeysItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/users/current/passkeys/{id}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/users/current/passkeys/{id}{?userId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PasskeysItemRequestBuilder} and sets the default values.
@@ -32,41 +33,49 @@ public class PasskeysItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PasskeysItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/users/current/passkeys/{id}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/users/current/passkeys/{id}{?userId*}", rawUrl);
     }
     /**
-     * Deletes the authenticated user&apos;s passkey identified by the path ID.
+     * DeletePasskey
+     * @return a {@link Empty}
      */
-    public void delete() {
-        delete(null);
+    @jakarta.annotation.Nullable
+    public Empty delete() {
+        return delete(null);
     }
     /**
-     * Deletes the authenticated user&apos;s passkey identified by the path ID.
+     * DeletePasskey
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Renames the authenticated user&apos;s passkey identified by the path ID to the supplied name.
-     * @param body New name
+     * RenamePasskey
+     * @param body The request body
+     * @return a {@link Empty}
      */
-    public void patch(@jakarta.annotation.Nonnull final RenamePasskeyBody body) {
-        patch(body, null);
+    @jakarta.annotation.Nullable
+    public Empty patch(@jakarta.annotation.Nonnull final PasskeysPatchRequestBody body) {
+        return patch(body, null);
     }
     /**
-     * Renames the authenticated user&apos;s passkey identified by the path ID to the supplied name.
-     * @param body New name
+     * RenamePasskey
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void patch(@jakarta.annotation.Nonnull final RenamePasskeyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty patch(@jakarta.annotation.Nonnull final PasskeysPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Deletes the authenticated user&apos;s passkey identified by the path ID.
+     * DeletePasskey
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -74,36 +83,38 @@ public class PasskeysItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Deletes the authenticated user&apos;s passkey identified by the path ID.
+     * DeletePasskey
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new, x -> x.queryParameters);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * Renames the authenticated user&apos;s passkey identified by the path ID to the supplied name.
-     * @param body New name
+     * RenamePasskey
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final RenamePasskeyBody body) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final PasskeysPatchRequestBody body) {
         return toPatchRequestInformation(body, null);
     }
     /**
-     * Renames the authenticated user&apos;s passkey identified by the path ID to the supplied name.
-     * @param body New name
+     * RenamePasskey
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final RenamePasskeyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final PasskeysPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
@@ -118,10 +129,33 @@ public class PasskeysItemRequestBuilder extends BaseRequestBuilder {
         return new PasskeysItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * DeletePasskey
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class DeleteQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("userId", userId);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public DeleteQueryParameters queryParameters = new DeleteQueryParameters();
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

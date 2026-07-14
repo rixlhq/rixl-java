@@ -8,7 +8,7 @@ import com.rixl.sdk.analytics.v1.videos.item.stats.StatsRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /analytics/v1/videos/{videoId}
+ * Builds and executes requests for operations under /analytics/v1/videos/{video_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
@@ -42,7 +42,7 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithVideoItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{videoId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{video_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithVideoItemRequestBuilder} and sets the default values.
@@ -50,6 +50,6 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithVideoItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{videoId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/videos/{video_id}", rawUrl);
     }
 }

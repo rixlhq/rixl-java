@@ -8,14 +8,14 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.postsv1.DeleteResult;
-import com.rixl.sdk.models.postsv1.Post;
+import com.rixl.sdk.models.google.protobuf.Empty;
+import com.rixl.sdk.models.posts.v1.Post;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}/posts/{postId}
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds/{feed_id}/posts/{post_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithPostItemRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPostItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/{postId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/{post_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPostItemRequestBuilder} and sets the default values.
@@ -33,28 +33,28 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPostItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/{postId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/{post_id}", rawUrl);
     }
     /**
-     * Delete a post by ID
-     * @return a {@link DeleteResult}
+     * DeletePost
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public DeleteResult delete() {
+    public Empty delete() {
         return delete(null);
     }
     /**
-     * Delete a post by ID
+     * DeletePost
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link DeleteResult}
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public DeleteResult delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DeleteResult::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Get a single post by ID
+     * GetPost
      * @return a {@link Post}
      */
     @jakarta.annotation.Nullable
@@ -62,7 +62,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Get a single post by ID
+     * GetPost
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Post}
      */
@@ -72,7 +72,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, Post::createFromDiscriminatorValue);
     }
     /**
-     * Delete a post by ID
+     * DeletePost
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -80,7 +80,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Delete a post by ID
+     * DeletePost
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -92,7 +92,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * Get a single post by ID
+     * GetPost
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -100,7 +100,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Get a single post by ID
+     * GetPost
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

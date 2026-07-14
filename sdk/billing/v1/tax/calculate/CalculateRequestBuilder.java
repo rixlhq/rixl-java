@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.PlanTaxCalculationResponse;
-import com.rixl.sdk.models.gateway.CalculateTaxBody;
+import com.rixl.sdk.models.billing.v1.CalculateTaxRequest;
+import com.rixl.sdk.models.billing.v1.PlanTaxCalculationResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class CalculateRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/billing/v1/tax/calculate", rawUrl);
     }
     /**
-     * Calculate tax for a plan purchase
-     * @param body Tax calculation request
+     * CalculateTax
+     * @param body The request body
      * @return a {@link PlanTaxCalculationResponse}
      */
     @jakarta.annotation.Nullable
-    public PlanTaxCalculationResponse post(@jakarta.annotation.Nonnull final CalculateTaxBody body) {
+    public PlanTaxCalculationResponse post(@jakarta.annotation.Nonnull final CalculateTaxRequest body) {
         return post(body, null);
     }
     /**
-     * Calculate tax for a plan purchase
-     * @param body Tax calculation request
+     * CalculateTax
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PlanTaxCalculationResponse}
      */
     @jakarta.annotation.Nullable
-    public PlanTaxCalculationResponse post(@jakarta.annotation.Nonnull final CalculateTaxBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public PlanTaxCalculationResponse post(@jakarta.annotation.Nonnull final CalculateTaxRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, PlanTaxCalculationResponse::createFromDiscriminatorValue);
     }
     /**
-     * Calculate tax for a plan purchase
-     * @param body Tax calculation request
+     * CalculateTax
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CalculateTaxBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CalculateTaxRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Calculate tax for a plan purchase
-     * @param body Tax calculation request
+     * CalculateTax
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CalculateTaxBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CalculateTaxRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

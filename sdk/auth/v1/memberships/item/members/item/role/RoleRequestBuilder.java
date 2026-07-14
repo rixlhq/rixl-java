@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.MembershipMutation;
-import com.rixl.sdk.models.gateway.UpdateRoleBody;
+import com.rixl.sdk.models.auth.v1.MembershipMutation;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/memberships/{orgId}/members/{userId}/role
+ * Builds and executes requests for operations under /auth/v1/memberships/{org_-id}/members/{member_-id}/role
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RoleRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class RoleRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public RoleRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/members/{userId}/role", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members/{member_%2Did}/role", pathParameters);
     }
     /**
      * Instantiates a new {@link RoleRequestBuilder} and sets the default values.
@@ -33,49 +32,49 @@ public class RoleRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public RoleRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{orgId}/members/{userId}/role", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members/{member_%2Did}/role", rawUrl);
     }
     /**
-     * Updates the specified member&apos;s role within the organization.
-     * @param body Role
+     * UpdateMemberRole
+     * @param body The request body
      * @return a {@link MembershipMutation}
      */
     @jakarta.annotation.Nullable
-    public MembershipMutation put(@jakarta.annotation.Nonnull final UpdateRoleBody body) {
-        return put(body, null);
+    public MembershipMutation patch(@jakarta.annotation.Nonnull final RolePatchRequestBody body) {
+        return patch(body, null);
     }
     /**
-     * Updates the specified member&apos;s role within the organization.
-     * @param body Role
+     * UpdateMemberRole
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link MembershipMutation}
      */
     @jakarta.annotation.Nullable
-    public MembershipMutation put(@jakarta.annotation.Nonnull final UpdateRoleBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public MembershipMutation patch(@jakarta.annotation.Nonnull final RolePatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
+        final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, MembershipMutation::createFromDiscriminatorValue);
     }
     /**
-     * Updates the specified member&apos;s role within the organization.
-     * @param body Role
+     * UpdateMemberRole
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateRoleBody body) {
-        return toPutRequestInformation(body, null);
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final RolePatchRequestBody body) {
+        return toPatchRequestInformation(body, null);
     }
     /**
-     * Updates the specified member&apos;s role within the organization.
-     * @param body Role
+     * UpdateMemberRole
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final UpdateRoleBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final RolePatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -94,6 +93,6 @@ public class RoleRequestBuilder extends BaseRequestBuilder {
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PutRequestConfiguration extends BaseRequestConfiguration {
+    public class PatchRequestConfiguration extends BaseRequestConfiguration {
     }
 }

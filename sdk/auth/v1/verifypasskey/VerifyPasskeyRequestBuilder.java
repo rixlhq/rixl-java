@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.authv1.TokenResponse;
-import com.rixl.sdk.models.gateway.PasskeyVerifyBody;
+import com.rixl.sdk.models.auth.v1.TokenResponse;
+import com.rixl.sdk.models.auth.v1.VerifyPasskeyForLoginRequest;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class VerifyPasskeyRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/verify-passkey", rawUrl);
     }
     /**
-     * Completes the passkey step of a password login&apos;s 2FA challenge. Verifies the signed WebAuthn assertion against the challenge stored in the login session (from POST /auth/v1/login with status &quot;2fa_required&quot;) and returns authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * VerifyPasskeyForLogin
+     * @param body The request body
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final PasskeyVerifyBody body) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final VerifyPasskeyForLoginRequest body) {
         return post(body, null);
     }
     /**
-     * Completes the passkey step of a password login&apos;s 2FA challenge. Verifies the signed WebAuthn assertion against the challenge stored in the login session (from POST /auth/v1/login with status &quot;2fa_required&quot;) and returns authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * VerifyPasskeyForLogin
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TokenResponse}
      */
     @jakarta.annotation.Nullable
-    public TokenResponse post(@jakarta.annotation.Nonnull final PasskeyVerifyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public TokenResponse post(@jakarta.annotation.Nonnull final VerifyPasskeyForLoginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, TokenResponse::createFromDiscriminatorValue);
     }
     /**
-     * Completes the passkey step of a password login&apos;s 2FA challenge. Verifies the signed WebAuthn assertion against the challenge stored in the login session (from POST /auth/v1/login with status &quot;2fa_required&quot;) and returns authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * VerifyPasskeyForLogin
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyVerifyBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyPasskeyForLoginRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Completes the passkey step of a password login&apos;s 2FA challenge. Verifies the signed WebAuthn assertion against the challenge stored in the login session (from POST /auth/v1/login with status &quot;2fa_required&quot;) and returns authentication tokens.
-     * @param body session_id and WebAuthn credential
+     * VerifyPasskeyForLogin
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final PasskeyVerifyBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final VerifyPasskeyForLoginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

@@ -3,6 +3,7 @@ package com.rixl.sdk.media.v1.projects.item.images;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
@@ -10,13 +11,13 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.projects.item.images.item.WithImageItemRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.images.upload.UploadRequestBuilder;
-import com.rixl.sdk.models.imagesv1.ListImagesResponse;
+import com.rixl.sdk.models.images.v1.ListImagesResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/images
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/images
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ImagesRequestBuilder extends BaseRequestBuilder {
@@ -30,14 +31,14 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.images.item collection
-     * @param imageId Image ID
+     * @param image_id Unique identifier of the item
      * @return a {@link WithImageItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithImageItemRequestBuilder byImageId(@jakarta.annotation.Nonnull final String imageId) {
-        Objects.requireNonNull(imageId);
+    public WithImageItemRequestBuilder byImage_id(@jakarta.annotation.Nonnull final String image_id) {
+        Objects.requireNonNull(image_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("imageId", imageId);
+        urlTplParams.put("image_id", image_id);
         return new WithImageItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
@@ -46,7 +47,7 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ImagesRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images{?pagination%2Elimit*,pagination%2Eoffset*,sortDirection*,sortField*}", pathParameters);
     }
     /**
      * Instantiates a new {@link ImagesRequestBuilder} and sets the default values.
@@ -54,10 +55,10 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ImagesRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/images", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/images{?pagination%2Elimit*,pagination%2Eoffset*,sortDirection*,sortField*}", rawUrl);
     }
     /**
-     * Returns the images in a project.
+     * ListImages
      * @return a {@link ListImagesResponse}
      */
     @jakarta.annotation.Nullable
@@ -65,7 +66,7 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the images in a project.
+     * ListImages
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListImagesResponse}
      */
@@ -75,7 +76,7 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListImagesResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the images in a project.
+     * ListImages
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -83,14 +84,14 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the images in a project.
+     * ListImages
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -105,9 +106,47 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
         return new ImagesRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * ListImages
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetQueryParameters implements QueryParameters {
+        /**
+         * Maximum number of items to return.
+         */
+        @jakarta.annotation.Nullable
+        public Integer paginationLimit;
+        /**
+         * Number of items to skip before collecting the result set.
+         */
+        @jakarta.annotation.Nullable
+        public Integer paginationOffset;
+        @jakarta.annotation.Nullable
+        public String sortDirection;
+        @jakarta.annotation.Nullable
+        public String sortField;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("pagination%2Elimit", paginationLimit);
+            allQueryParams.put("pagination%2Eoffset", paginationOffset);
+            allQueryParams.put("sortDirection", sortDirection);
+            allQueryParams.put("sortField", sortField);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
 }

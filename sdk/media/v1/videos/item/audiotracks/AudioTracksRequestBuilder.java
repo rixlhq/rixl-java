@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.videosv1.ListAudioTracksResponse;
+import com.rixl.sdk.models.videos.v1.ListAudioTracksResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/videos/{videoId}/audio-tracks
+ * Builds and executes requests for operations under /media/v1/videos/{video_id}/audio-tracks
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AudioTracksRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AudioTracksRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/videos/{videoId}/audio-tracks", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/videos/{video_id}/audio-tracks", pathParameters);
     }
     /**
      * Instantiates a new {@link AudioTracksRequestBuilder} and sets the default values.
@@ -32,10 +32,10 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AudioTracksRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/videos/{videoId}/audio-tracks", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/videos/{video_id}/audio-tracks", rawUrl);
     }
     /**
-     * Returns the audio tracks associated with a video.
+     * ListAudioTracks
      * @return a {@link ListAudioTracksResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the audio tracks associated with a video.
+     * ListAudioTracks
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListAudioTracksResponse}
      */
@@ -53,7 +53,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListAudioTracksResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the audio tracks associated with a video.
+     * ListAudioTracks
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the audio tracks associated with a video.
+     * ListAudioTracks
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

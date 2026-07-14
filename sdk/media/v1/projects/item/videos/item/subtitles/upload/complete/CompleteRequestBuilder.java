@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.CompleteTrackUploadBody;
-import com.rixl.sdk.models.videosv1.UploadAck;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/videos/{videoId}/subtitles/upload/complete
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/videos/{video_id}/subtitles/upload/complete
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CompleteRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CompleteRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/subtitles/upload/complete", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/subtitles/upload/complete", pathParameters);
     }
     /**
      * Instantiates a new {@link CompleteRequestBuilder} and sets the default values.
@@ -33,46 +32,46 @@ public class CompleteRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CompleteRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/subtitles/upload/complete", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/subtitles/upload/complete", rawUrl);
     }
     /**
-     * Finalizes previously initiated subtitle uploads.
-     * @param body Uploaded subtitles
-     * @return a {@link UploadAck}
+     * CompleteSubtitleUpload
+     * @param body The request body
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public UploadAck post(@jakarta.annotation.Nonnull final CompleteTrackUploadBody body) {
+    public Empty post(@jakarta.annotation.Nonnull final CompletePostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Finalizes previously initiated subtitle uploads.
-     * @param body Uploaded subtitles
+     * CompleteSubtitleUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link UploadAck}
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public UploadAck post(@jakarta.annotation.Nonnull final CompleteTrackUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public Empty post(@jakarta.annotation.Nonnull final CompletePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, UploadAck::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Finalizes previously initiated subtitle uploads.
-     * @param body Uploaded subtitles
+     * CompleteSubtitleUpload
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CompleteTrackUploadBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CompletePostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Finalizes previously initiated subtitle uploads.
-     * @param body Uploaded subtitles
+     * CompleteSubtitleUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CompleteTrackUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CompletePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

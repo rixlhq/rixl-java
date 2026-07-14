@@ -3,12 +3,13 @@ package com.rixl.sdk.billing.v1.subscription.history;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.GetSubscriptionHistoryResponse;
+import com.rixl.sdk.models.billing.v1.GetSubscriptionHistoryResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HistoryRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/subscription/history", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/subscription/history{?orgId*,pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
     }
     /**
      * Instantiates a new {@link HistoryRequestBuilder} and sets the default values.
@@ -32,10 +33,10 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HistoryRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/subscription/history", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/subscription/history{?orgId*,pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
     }
     /**
-     * Returns the organization&apos;s subscription history.
+     * GetSubscriptionHistory
      * @return a {@link GetSubscriptionHistoryResponse}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +44,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the organization&apos;s subscription history.
+     * GetSubscriptionHistory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetSubscriptionHistoryResponse}
      */
@@ -53,7 +54,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetSubscriptionHistoryResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the organization&apos;s subscription history.
+     * GetSubscriptionHistory
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,14 +62,14 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the organization&apos;s subscription history.
+     * GetSubscriptionHistory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -83,9 +84,44 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         return new HistoryRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * GetSubscriptionHistory
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String orgId;
+        /**
+         * Maximum number of items to return.
+         */
+        @jakarta.annotation.Nullable
+        public Integer paginationLimit;
+        /**
+         * Number of items to skip before collecting the result set.
+         */
+        @jakarta.annotation.Nullable
+        public Integer paginationOffset;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("pagination%2Elimit", paginationLimit);
+            allQueryParams.put("pagination%2Eoffset", paginationOffset);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
 }

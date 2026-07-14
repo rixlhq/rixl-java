@@ -8,7 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.UnsubscribeBlogByEmailBody;
+import com.rixl.sdk.models.auth.v1.UnsubscribeBlogByEmailRequest;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,42 +36,47 @@ public class EmailRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/blog/unsubscribe/email", rawUrl);
     }
     /**
-     * Unsubscribes a recipient using the user id and email from an email-footer link. No authentication required.
-     * @param body Unsubscribe request
+     * UnsubscribeBlogByEmail
+     * @param body The request body
+     * @return a {@link Empty}
      */
-    public void post(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailBody body) {
-        post(body, null);
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailRequest body) {
+        return post(body, null);
     }
     /**
-     * Unsubscribes a recipient using the user id and email from an email-footer link. No authentication required.
-     * @param body Unsubscribe request
+     * UnsubscribeBlogByEmail
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Empty}
      */
-    public void post(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Empty post(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Unsubscribes a recipient using the user id and email from an email-footer link. No authentication required.
-     * @param body Unsubscribe request
+     * UnsubscribeBlogByEmail
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Unsubscribes a recipient using the user id and email from an email-footer link. No authentication required.
-     * @param body Unsubscribe request
+     * UnsubscribeBlogByEmail
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UnsubscribeBlogByEmailRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }

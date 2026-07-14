@@ -8,8 +8,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.HostedCheckoutSessionResponse;
-import com.rixl.sdk.models.gateway.CheckoutBody;
+import com.rixl.sdk.models.billing.v1.CreateCheckoutSessionRequest;
+import com.rixl.sdk.models.billing.v1.HostedCheckoutSessionResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,43 +36,43 @@ public class CheckoutRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/billing/v1/checkout", rawUrl);
     }
     /**
-     * Create a Stripe hosted checkout session
-     * @param body Checkout request
+     * CreateCheckoutSession
+     * @param body The request body
      * @return a {@link HostedCheckoutSessionResponse}
      */
     @jakarta.annotation.Nullable
-    public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CheckoutBody body) {
+    public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CreateCheckoutSessionRequest body) {
         return post(body, null);
     }
     /**
-     * Create a Stripe hosted checkout session
-     * @param body Checkout request
+     * CreateCheckoutSession
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link HostedCheckoutSessionResponse}
      */
     @jakarta.annotation.Nullable
-    public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CheckoutBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CreateCheckoutSessionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, HostedCheckoutSessionResponse::createFromDiscriminatorValue);
     }
     /**
-     * Create a Stripe hosted checkout session
-     * @param body Checkout request
+     * CreateCheckoutSession
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CheckoutBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateCheckoutSessionRequest body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Create a Stripe hosted checkout session
-     * @param body Checkout request
+     * CreateCheckoutSession
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CheckoutBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateCheckoutSessionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

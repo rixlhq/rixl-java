@@ -8,13 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.videosv1.DeleteResult;
+import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/videos/{videoId}/subtitles/{subtitleId}
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/videos/{video_id}/subtitles/{subtitle_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithSubtitleItemRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class WithSubtitleItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithSubtitleItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/subtitles/{subtitleId}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/subtitles/{subtitle_id}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithSubtitleItemRequestBuilder} and sets the default values.
@@ -32,28 +32,28 @@ public class WithSubtitleItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithSubtitleItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/{videoId}/subtitles/{subtitleId}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/subtitles/{subtitle_id}", rawUrl);
     }
     /**
-     * Deletes a single subtitle from a video.
-     * @return a {@link DeleteResult}
+     * DeleteSubtitle
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public DeleteResult delete() {
+    public Empty delete() {
         return delete(null);
     }
     /**
-     * Deletes a single subtitle from a video.
+     * DeleteSubtitle
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link DeleteResult}
+     * @return a {@link Empty}
      */
     @jakarta.annotation.Nullable
-    public DeleteResult delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+    public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DeleteResult::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
-     * Deletes a single subtitle from a video.
+     * DeleteSubtitle
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -61,7 +61,7 @@ public class WithSubtitleItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * Deletes a single subtitle from a video.
+     * DeleteSubtitle
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

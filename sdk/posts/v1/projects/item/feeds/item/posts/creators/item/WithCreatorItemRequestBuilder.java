@@ -9,13 +9,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.postsv1.ListPostsResponse;
+import com.rixl.sdk.models.posts.v1.ListPostsResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators/{creatorId}
+ * Builds and executes requests for operations under /posts/v1/projects/{project_id}/feeds/{feed_id}/posts/creators/{creator_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithCreatorItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators/{creatorId}{?limit*,offset*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/creators/{creator_id}{?pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithCreatorItemRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithCreatorItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{projectId}/feeds/{feedId}/posts/creators/{creatorId}{?limit*,offset*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts/creators/{creator_id}{?pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
     }
     /**
-     * List posts in a feed authored by a specific creator
+     * ListPosts
      * @return a {@link ListPostsResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * List posts in a feed authored by a specific creator
+     * ListPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPostsResponse}
      */
@@ -54,7 +54,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, ListPostsResponse::createFromDiscriminatorValue);
     }
     /**
-     * List posts in a feed authored by a specific creator
+     * ListPosts
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * List posts in a feed authored by a specific creator
+     * ListPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,20 +84,20 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
         return new WithCreatorItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * List posts in a feed authored by a specific creator
+     * ListPosts
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         /**
-         * Page size
+         * Maximum number of items to return.
          */
         @jakarta.annotation.Nullable
-        public Integer limit;
+        public Integer paginationLimit;
         /**
-         * Page offset
+         * Number of items to skip before collecting the result set.
          */
         @jakarta.annotation.Nullable
-        public Integer offset;
+        public Integer paginationOffset;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -105,8 +105,8 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("limit", limit);
-            allQueryParams.put("offset", offset);
+            allQueryParams.put("pagination%2Elimit", paginationLimit);
+            allQueryParams.put("pagination%2Eoffset", paginationOffset);
             return allQueryParams;
         }
     }

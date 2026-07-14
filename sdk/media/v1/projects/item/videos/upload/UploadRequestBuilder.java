@@ -8,14 +8,13 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.gateway.CreateVideoUploadBody;
-import com.rixl.sdk.models.videosv1.VideoUploadInit;
+import com.rixl.sdk.models.videos.v1.VideoUploadInit;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /media/v1/projects/{projectId}/videos/upload
+ * Builds and executes requests for operations under /media/v1/projects/{project_id}/videos/upload
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +24,7 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UploadRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/upload", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/upload", pathParameters);
     }
     /**
      * Instantiates a new {@link UploadRequestBuilder} and sets the default values.
@@ -33,46 +32,46 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public UploadRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{projectId}/videos/upload", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/upload", rawUrl);
     }
     /**
-     * Initiates a video upload and returns upload details.
-     * @param body Video upload details
+     * CreateVideoUpload
+     * @param body The request body
      * @return a {@link VideoUploadInit}
      */
     @jakarta.annotation.Nullable
-    public VideoUploadInit post(@jakarta.annotation.Nonnull final CreateVideoUploadBody body) {
+    public VideoUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * Initiates a video upload and returns upload details.
-     * @param body Video upload details
+     * CreateVideoUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoUploadInit}
      */
     @jakarta.annotation.Nullable
-    public VideoUploadInit post(@jakarta.annotation.Nonnull final CreateVideoUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public VideoUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, VideoUploadInit::createFromDiscriminatorValue);
     }
     /**
-     * Initiates a video upload and returns upload details.
-     * @param body Video upload details
+     * CreateVideoUpload
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateVideoUploadBody body) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Initiates a video upload and returns upload details.
-     * @param body Video upload details
+     * CreateVideoUpload
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateVideoUploadBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);

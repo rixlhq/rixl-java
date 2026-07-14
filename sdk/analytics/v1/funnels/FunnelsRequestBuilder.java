@@ -3,14 +3,13 @@ package com.rixl.sdk.analytics.v1.funnels;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
-import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.analyticsv1.FunnelAnalytics;
-import com.rixl.sdk.models.analyticsv1.FunnelRequest;
+import com.rixl.sdk.models.analytics.v1.FunnelAnalytics;
+import com.rixl.sdk.models.analytics.v1.FunnelRequest;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +25,7 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FunnelsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/funnels{?end*,start*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/funnels", pathParameters);
     }
     /**
      * Instantiates a new {@link FunnelsRequestBuilder} and sets the default values.
@@ -34,11 +33,11 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FunnelsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/funnels{?end*,start*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/funnels", rawUrl);
     }
     /**
-     * Calculate funnel conversion across a sequence of steps
-     * @param body Funnel definition
+     * GetFunnelAnalytics
+     * @param body The request body
      * @return a {@link FunnelAnalytics}
      */
     @jakarta.annotation.Nullable
@@ -46,8 +45,8 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
         return post(body, null);
     }
     /**
-     * Calculate funnel conversion across a sequence of steps
-     * @param body Funnel definition
+     * GetFunnelAnalytics
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link FunnelAnalytics}
      */
@@ -58,8 +57,8 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, FunnelAnalytics::createFromDiscriminatorValue);
     }
     /**
-     * Calculate funnel conversion across a sequence of steps
-     * @param body Funnel definition
+     * GetFunnelAnalytics
+     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -67,8 +66,8 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(body, null);
     }
     /**
-     * Calculate funnel conversion across a sequence of steps
-     * @param body Funnel definition
+     * GetFunnelAnalytics
+     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -76,7 +75,7 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final FunnelRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new, x -> x.queryParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
@@ -92,41 +91,9 @@ public class FunnelsRequestBuilder extends BaseRequestBuilder {
         return new FunnelsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Calculate funnel conversion across a sequence of steps
-     */
-    @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PostQueryParameters implements QueryParameters {
-        /**
-         * End date (inclusive)
-         */
-        @jakarta.annotation.Nullable
-        public String end;
-        /**
-         * Start date (inclusive)
-         */
-        @jakarta.annotation.Nullable
-        public String start;
-        /**
-         * Extracts the query parameters into a map for the URI template parsing.
-         * @return a {@link Map<String, Object>}
-         */
-        @jakarta.annotation.Nonnull
-        public Map<String, Object> toQueryParameters() {
-            final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("end", end);
-            allQueryParams.put("start", start);
-            return allQueryParams;
-        }
-    }
-    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostRequestConfiguration extends BaseRequestConfiguration {
-        /**
-         * Request query parameters
-         */
-        @jakarta.annotation.Nullable
-        public PostQueryParameters queryParameters = new PostQueryParameters();
     }
 }

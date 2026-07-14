@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.billingv1.PaymentMethodIdResponse;
+import com.rixl.sdk.models.billing.v1.PaymentMethodIdResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FromPaymentIntentRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-payment-intent?payment_intent_id={payment_intent_id}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-payment-intent{?paymentIntentId*}", pathParameters);
     }
     /**
      * Instantiates a new {@link FromPaymentIntentRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FromPaymentIntentRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-payment-intent?payment_intent_id={payment_intent_id}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-payment-intent{?paymentIntentId*}", rawUrl);
     }
     /**
-     * Returns the payment method ID associated with a payment intent
+     * GetPaymentMethodFromPaymentIntent
      * @return a {@link PaymentMethodIdResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the payment method ID associated with a payment intent
+     * GetPaymentMethodFromPaymentIntent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PaymentMethodIdResponse}
      */
@@ -54,7 +54,7 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, PaymentMethodIdResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the payment method ID associated with a payment intent
+     * GetPaymentMethodFromPaymentIntent
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the payment method ID associated with a payment intent
+     * GetPaymentMethodFromPaymentIntent
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,13 +84,10 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
         return new FromPaymentIntentRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns the payment method ID associated with a payment intent
+     * GetPaymentMethodFromPaymentIntent
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * Payment intent ID
-         */
         @jakarta.annotation.Nullable
         public String paymentIntentId;
         /**
@@ -100,7 +97,7 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("payment_intent_id", paymentIntentId);
+            allQueryParams.put("paymentIntentId", paymentIntentId);
             return allQueryParams;
         }
     }

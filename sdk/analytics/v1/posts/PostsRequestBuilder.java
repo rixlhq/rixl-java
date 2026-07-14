@@ -12,14 +12,14 @@ import java.util.Objects;
 public class PostsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.posts.item collection
-     * @param postId Post ID
+     * @param post_id Unique identifier of the item
      * @return a {@link WithPostItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithPostItemRequestBuilder byPostId(@jakarta.annotation.Nonnull final String postId) {
-        Objects.requireNonNull(postId);
+    public WithPostItemRequestBuilder byPost_id(@jakarta.annotation.Nonnull final String post_id) {
+        Objects.requireNonNull(post_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("postId", postId);
+        urlTplParams.put("post_id", post_id);
         return new WithPostItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**

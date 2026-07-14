@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.analyticsv1.DashboardStatsResponse;
+import com.rixl.sdk.models.analytics.v1.DashboardStatsResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DashboardRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?end_time={end_time}&interval={interval}&start_time={start_time}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?timeEnd={timeEnd}&timeStart={timeStart}{&interval*}", pathParameters);
     }
     /**
      * Instantiates a new {@link DashboardRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DashboardRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?end_time={end_time}&interval={interval}&start_time={start_time}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?timeEnd={timeEnd}&timeStart={timeStart}{&interval*}", rawUrl);
     }
     /**
-     * Returns time-bucketed dashboard statistics
+     * GetDashboardStats
      * @return a {@link DashboardStatsResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns time-bucketed dashboard statistics
+     * GetDashboardStats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DashboardStatsResponse}
      */
@@ -54,7 +54,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, DashboardStatsResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns time-bucketed dashboard statistics
+     * GetDashboardStats
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns time-bucketed dashboard statistics
+     * GetDashboardStats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,25 +84,16 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
         return new DashboardRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns time-bucketed dashboard statistics
+     * GetDashboardStats
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * End time (RFC3339)
-         */
-        @jakarta.annotation.Nullable
-        public String endTime;
-        /**
-         * Bucket interval (1m, 1h, 1d)
-         */
         @jakarta.annotation.Nullable
         public String interval;
-        /**
-         * Start time (RFC3339)
-         */
         @jakarta.annotation.Nullable
-        public String startTime;
+        public String timeEnd;
+        @jakarta.annotation.Nullable
+        public String timeStart;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -110,9 +101,9 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("end_time", endTime);
             allQueryParams.put("interval", interval);
-            allQueryParams.put("start_time", startTime);
+            allQueryParams.put("timeEnd", timeEnd);
+            allQueryParams.put("timeStart", timeStart);
             return allQueryParams;
         }
     }

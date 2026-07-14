@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.analyticsv1.TopPostsResponse;
+import com.rixl.sdk.models.analytics.v1.TopPostsResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?end*,feed_id*,limit*,start*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?feedId*,limit*,range%2Eend*,range%2Estart*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PostsRequestBuilder} and sets the default values.
@@ -33,10 +33,10 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?end*,feed_id*,limit*,start*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?feedId*,limit*,range%2Eend*,range%2Estart*}", rawUrl);
     }
     /**
-     * Returns the top posts over a date range
+     * GetTopPosts
      * @return a {@link TopPostsResponse}
      */
     @jakarta.annotation.Nullable
@@ -44,7 +44,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * Returns the top posts over a date range
+     * GetTopPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TopPostsResponse}
      */
@@ -54,7 +54,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, TopPostsResponse::createFromDiscriminatorValue);
     }
     /**
-     * Returns the top posts over a date range
+     * GetTopPosts
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -62,7 +62,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * Returns the top posts over a date range
+     * GetTopPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -84,30 +84,18 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         return new PostsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Returns the top posts over a date range
+     * GetTopPosts
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * End date (inclusive)
-         */
-        @jakarta.annotation.Nullable
-        public String end;
-        /**
-         * Filter by feed
-         */
         @jakarta.annotation.Nullable
         public String feedId;
-        /**
-         * Maximum number of results
-         */
         @jakarta.annotation.Nullable
-        public String limit;
-        /**
-         * Start date (inclusive)
-         */
+        public Integer limit;
         @jakarta.annotation.Nullable
-        public String start;
+        public String rangeEnd;
+        @jakarta.annotation.Nullable
+        public String rangeStart;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -115,10 +103,10 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("end", end);
-            allQueryParams.put("feed_id", feedId);
+            allQueryParams.put("feedId", feedId);
             allQueryParams.put("limit", limit);
-            allQueryParams.put("start", start);
+            allQueryParams.put("range%2Eend", rangeEnd);
+            allQueryParams.put("range%2Estart", rangeStart);
             return allQueryParams;
         }
     }
