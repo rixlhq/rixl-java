@@ -4,7 +4,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
 import com.microsoft.kiota.serialization.UntypedNode;
-import com.rixl.sdk.models.common.v1.MediaType;
+import com.rixl.sdk.models.analyticscommon.v1.MediaType;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
