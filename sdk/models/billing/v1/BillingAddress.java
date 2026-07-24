@@ -37,7 +37,7 @@ public class BillingAddress implements Parsable {
      */
     private String phone;
     /**
-     * The postalCode property
+     * The postal_code property
      */
     private String postalCode;
     /**
@@ -92,7 +92,7 @@ public class BillingAddress implements Parsable {
         deserializerMap.put("line2", (n) -> { this.setLine2(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("phone", (n) -> { this.setPhone(n.getStringValue()); });
-        deserializerMap.put("postalCode", (n) -> { this.setPostalCode(n.getStringValue()); });
+        deserializerMap.put("postal_code", (n) -> { this.setPostalCode(n.getStringValue()); });
         deserializerMap.put("state", (n) -> { this.setState(n.getStringValue()); });
         return deserializerMap;
     }
@@ -129,7 +129,7 @@ public class BillingAddress implements Parsable {
         return this.phone;
     }
     /**
-     * Gets the postalCode property value. The postalCode property
+     * Gets the postal_code property value. The postal_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -157,7 +157,7 @@ public class BillingAddress implements Parsable {
         writer.writeStringValue("line2", this.getLine2());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("phone", this.getPhone());
-        writer.writeStringValue("postalCode", this.getPostalCode());
+        writer.writeStringValue("postal_code", this.getPostalCode());
         writer.writeStringValue("state", this.getState());
     }
     /**
@@ -210,8 +210,8 @@ public class BillingAddress implements Parsable {
         this.phone = value;
     }
     /**
-     * Sets the postalCode property value. The postalCode property
-     * @param value Value to set for the postalCode property.
+     * Sets the postal_code property value. The postal_code property
+     * @param value Value to set for the postal_code property.
      */
     public void setPostalCode(@jakarta.annotation.Nullable final String value) {
         this.postalCode = value;

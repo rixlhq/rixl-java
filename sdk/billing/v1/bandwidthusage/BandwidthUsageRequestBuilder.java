@@ -43,7 +43,7 @@ public class BandwidthUsageRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public BandwidthUsageRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/bandwidth-usage{?orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/bandwidth-usage{?org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link BandwidthUsageRequestBuilder} and sets the default values.
@@ -51,7 +51,7 @@ public class BandwidthUsageRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public BandwidthUsageRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/bandwidth-usage{?orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/bandwidth-usage{?org_id*}", rawUrl);
     }
     /**
      * GetBandwidthUsage
@@ -115,7 +115,7 @@ public class BandwidthUsageRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

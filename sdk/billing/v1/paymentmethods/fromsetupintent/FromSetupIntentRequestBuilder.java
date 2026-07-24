@@ -25,7 +25,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FromSetupIntentRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent{?setupIntentId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent{?setup_intent_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link FromSetupIntentRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FromSetupIntentRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent{?setupIntentId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/from-setup-intent{?setup_intent_id*}", rawUrl);
     }
     /**
      * GetPaymentMethodFromSetupIntent
@@ -97,7 +97,7 @@ public class FromSetupIntentRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("setupIntentId", setupIntentId);
+            allQueryParams.put("setup_intent_id", setupIntentId);
             return allQueryParams;
         }
     }

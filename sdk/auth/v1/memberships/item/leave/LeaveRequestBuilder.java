@@ -25,7 +25,7 @@ public class LeaveRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public LeaveRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/leave{?userId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/leave{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link LeaveRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class LeaveRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public LeaveRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/leave{?userId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/leave{?user_id*}", rawUrl);
     }
     /**
      * LeaveOrganization
@@ -97,7 +97,7 @@ public class LeaveRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("userId", userId);
+            allQueryParams.put("user_id", userId);
             return allQueryParams;
         }
     }

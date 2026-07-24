@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MarkImageFailedRequest implements Parsable {
     /**
-     * The fileId property
+     * The file_id property
      */
     private String fileId;
     /**
@@ -29,11 +29,11 @@ public class MarkImageFailedRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("fileId", (n) -> { this.setFileId(n.getStringValue()); });
+        deserializerMap.put("file_id", (n) -> { this.setFileId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the fileId property value. The fileId property
+     * Gets the file_id property value. The file_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,11 +46,11 @@ public class MarkImageFailedRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("fileId", this.getFileId());
+        writer.writeStringValue("file_id", this.getFileId());
     }
     /**
-     * Sets the fileId property value. The fileId property
-     * @param value Value to set for the fileId property.
+     * Sets the file_id property value. The file_id property
+     * @param value Value to set for the file_id property.
      */
     public void setFileId(@jakarta.annotation.Nullable final String value) {
         this.fileId = value;

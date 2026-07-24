@@ -23,11 +23,11 @@ public class UnprocessedImage implements Parsable {
      */
     private String name;
     /**
-     * The projectId property
+     * The project_id property
      */
     private String projectId;
     /**
-     * The s3Path property
+     * The s3_path property
      */
     private String s3Path;
     /**
@@ -58,8 +58,8 @@ public class UnprocessedImage implements Parsable {
         deserializerMap.put("format", (n) -> { this.setFormat(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("projectId", (n) -> { this.setProjectId(n.getStringValue()); });
-        deserializerMap.put("s3Path", (n) -> { this.setS3Path(n.getStringValue()); });
+        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
+        deserializerMap.put("s3_path", (n) -> { this.setS3Path(n.getStringValue()); });
         deserializerMap.put("size", (n) -> { this.setSize(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(FileStatus::forValue)); });
         return deserializerMap;
@@ -89,7 +89,7 @@ public class UnprocessedImage implements Parsable {
         return this.name;
     }
     /**
-     * Gets the projectId property value. The projectId property
+     * Gets the project_id property value. The project_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -97,7 +97,7 @@ public class UnprocessedImage implements Parsable {
         return this.projectId;
     }
     /**
-     * Gets the s3Path property value. The s3Path property
+     * Gets the s3_path property value. The s3_path property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -129,8 +129,8 @@ public class UnprocessedImage implements Parsable {
         writer.writeStringValue("format", this.getFormat());
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("projectId", this.getProjectId());
-        writer.writeStringValue("s3Path", this.getS3Path());
+        writer.writeStringValue("project_id", this.getProjectId());
+        writer.writeStringValue("s3_path", this.getS3Path());
         writer.writeObjectValue("size", this.getSize());
         writer.writeEnumValue("status", this.getStatus());
     }
@@ -156,15 +156,15 @@ public class UnprocessedImage implements Parsable {
         this.name = value;
     }
     /**
-     * Sets the projectId property value. The projectId property
-     * @param value Value to set for the projectId property.
+     * Sets the project_id property value. The project_id property
+     * @param value Value to set for the project_id property.
      */
     public void setProjectId(@jakarta.annotation.Nullable final String value) {
         this.projectId = value;
     }
     /**
-     * Sets the s3Path property value. The s3Path property
-     * @param value Value to set for the s3Path property.
+     * Sets the s3_path property value. The s3_path property
+     * @param value Value to set for the s3_path property.
      */
     public void setS3Path(@jakarta.annotation.Nullable final String value) {
         this.s3Path = value;

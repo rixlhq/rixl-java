@@ -9,15 +9,15 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MintClientTokenRequest implements Parsable {
     /**
-     * The clientId property
+     * The client_id property
      */
     private String clientId;
     /**
-     * The clientSecret property
+     * The client_secret property
      */
     private String clientSecret;
     /**
-     * The projectId property
+     * The project_id property
      */
     private String projectId;
     /**
@@ -25,7 +25,7 @@ public class MintClientTokenRequest implements Parsable {
      */
     private String subject;
     /**
-     * The ttlMinutes property
+     * The ttl_minutes property
      */
     private Integer ttlMinutes;
     /**
@@ -39,7 +39,7 @@ public class MintClientTokenRequest implements Parsable {
         return new MintClientTokenRequest();
     }
     /**
-     * Gets the clientId property value. The clientId property
+     * Gets the client_id property value. The client_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -47,7 +47,7 @@ public class MintClientTokenRequest implements Parsable {
         return this.clientId;
     }
     /**
-     * Gets the clientSecret property value. The clientSecret property
+     * Gets the client_secret property value. The client_secret property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -61,15 +61,15 @@ public class MintClientTokenRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("clientId", (n) -> { this.setClientId(n.getStringValue()); });
-        deserializerMap.put("clientSecret", (n) -> { this.setClientSecret(n.getStringValue()); });
-        deserializerMap.put("projectId", (n) -> { this.setProjectId(n.getStringValue()); });
+        deserializerMap.put("client_id", (n) -> { this.setClientId(n.getStringValue()); });
+        deserializerMap.put("client_secret", (n) -> { this.setClientSecret(n.getStringValue()); });
+        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("subject", (n) -> { this.setSubject(n.getStringValue()); });
-        deserializerMap.put("ttlMinutes", (n) -> { this.setTtlMinutes(n.getIntegerValue()); });
+        deserializerMap.put("ttl_minutes", (n) -> { this.setTtlMinutes(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the projectId property value. The projectId property
+     * Gets the project_id property value. The project_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,7 +85,7 @@ public class MintClientTokenRequest implements Parsable {
         return this.subject;
     }
     /**
-     * Gets the ttlMinutes property value. The ttlMinutes property
+     * Gets the ttl_minutes property value. The ttl_minutes property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -98,29 +98,29 @@ public class MintClientTokenRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("clientId", this.getClientId());
-        writer.writeStringValue("clientSecret", this.getClientSecret());
-        writer.writeStringValue("projectId", this.getProjectId());
+        writer.writeStringValue("client_id", this.getClientId());
+        writer.writeStringValue("client_secret", this.getClientSecret());
+        writer.writeStringValue("project_id", this.getProjectId());
         writer.writeStringValue("subject", this.getSubject());
-        writer.writeIntegerValue("ttlMinutes", this.getTtlMinutes());
+        writer.writeIntegerValue("ttl_minutes", this.getTtlMinutes());
     }
     /**
-     * Sets the clientId property value. The clientId property
-     * @param value Value to set for the clientId property.
+     * Sets the client_id property value. The client_id property
+     * @param value Value to set for the client_id property.
      */
     public void setClientId(@jakarta.annotation.Nullable final String value) {
         this.clientId = value;
     }
     /**
-     * Sets the clientSecret property value. The clientSecret property
-     * @param value Value to set for the clientSecret property.
+     * Sets the client_secret property value. The client_secret property
+     * @param value Value to set for the client_secret property.
      */
     public void setClientSecret(@jakarta.annotation.Nullable final String value) {
         this.clientSecret = value;
     }
     /**
-     * Sets the projectId property value. The projectId property
-     * @param value Value to set for the projectId property.
+     * Sets the project_id property value. The project_id property
+     * @param value Value to set for the project_id property.
      */
     public void setProjectId(@jakarta.annotation.Nullable final String value) {
         this.projectId = value;
@@ -133,8 +133,8 @@ public class MintClientTokenRequest implements Parsable {
         this.subject = value;
     }
     /**
-     * Sets the ttlMinutes property value. The ttlMinutes property
-     * @param value Value to set for the ttlMinutes property.
+     * Sets the ttl_minutes property value. The ttl_minutes property
+     * @param value Value to set for the ttl_minutes property.
      */
     public void setTtlMinutes(@jakarta.annotation.Nullable final Integer value) {
         this.ttlMinutes = value;

@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VerificationSentResponse implements Parsable {
     /**
-     * The canResendAt property
+     * The can_resend_at property
      */
     private String canResendAt;
     /**
-     * The codeSent property
+     * The code_sent property
      */
     private Boolean codeSent;
     /**
@@ -21,7 +21,7 @@ public class VerificationSentResponse implements Parsable {
      */
     private String message;
     /**
-     * The verificationId property
+     * The verification_id property
      */
     private String verificationId;
     /**
@@ -35,7 +35,7 @@ public class VerificationSentResponse implements Parsable {
         return new VerificationSentResponse();
     }
     /**
-     * Gets the canResendAt property value. The canResendAt property
+     * Gets the can_resend_at property value. The can_resend_at property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class VerificationSentResponse implements Parsable {
         return this.canResendAt;
     }
     /**
-     * Gets the codeSent property value. The codeSent property
+     * Gets the code_sent property value. The code_sent property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -57,10 +57,10 @@ public class VerificationSentResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("canResendAt", (n) -> { this.setCanResendAt(n.getStringValue()); });
-        deserializerMap.put("codeSent", (n) -> { this.setCodeSent(n.getBooleanValue()); });
+        deserializerMap.put("can_resend_at", (n) -> { this.setCanResendAt(n.getStringValue()); });
+        deserializerMap.put("code_sent", (n) -> { this.setCodeSent(n.getBooleanValue()); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
-        deserializerMap.put("verificationId", (n) -> { this.setVerificationId(n.getStringValue()); });
+        deserializerMap.put("verification_id", (n) -> { this.setVerificationId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -72,7 +72,7 @@ public class VerificationSentResponse implements Parsable {
         return this.message;
     }
     /**
-     * Gets the verificationId property value. The verificationId property
+     * Gets the verification_id property value. The verification_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,21 +85,21 @@ public class VerificationSentResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("canResendAt", this.getCanResendAt());
-        writer.writeBooleanValue("codeSent", this.getCodeSent());
+        writer.writeStringValue("can_resend_at", this.getCanResendAt());
+        writer.writeBooleanValue("code_sent", this.getCodeSent());
         writer.writeStringValue("message", this.getMessage());
-        writer.writeStringValue("verificationId", this.getVerificationId());
+        writer.writeStringValue("verification_id", this.getVerificationId());
     }
     /**
-     * Sets the canResendAt property value. The canResendAt property
-     * @param value Value to set for the canResendAt property.
+     * Sets the can_resend_at property value. The can_resend_at property
+     * @param value Value to set for the can_resend_at property.
      */
     public void setCanResendAt(@jakarta.annotation.Nullable final String value) {
         this.canResendAt = value;
     }
     /**
-     * Sets the codeSent property value. The codeSent property
-     * @param value Value to set for the codeSent property.
+     * Sets the code_sent property value. The code_sent property
+     * @param value Value to set for the code_sent property.
      */
     public void setCodeSent(@jakarta.annotation.Nullable final Boolean value) {
         this.codeSent = value;
@@ -112,8 +112,8 @@ public class VerificationSentResponse implements Parsable {
         this.message = value;
     }
     /**
-     * Sets the verificationId property value. The verificationId property
-     * @param value Value to set for the verificationId property.
+     * Sets the verification_id property value. The verification_id property
+     * @param value Value to set for the verification_id property.
      */
     public void setVerificationId(@jakarta.annotation.Nullable final String value) {
         this.verificationId = value;

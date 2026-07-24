@@ -25,7 +25,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HistoryRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*,orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*,org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link HistoryRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public HistoryRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*,orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/history{?days*,org_id*}", rawUrl);
     }
     /**
      * GetStorageUsageHistory
@@ -100,7 +100,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("days", days);
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

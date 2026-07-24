@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RotateApiKeyResponse implements Parsable {
     /**
-     * The apiKey property
+     * The api_key property
      */
     private ApiKey apiKey;
     /**
@@ -23,7 +23,7 @@ public class RotateApiKeyResponse implements Parsable {
         return new RotateApiKeyResponse();
     }
     /**
-     * Gets the apiKey property value. The apiKey property
+     * Gets the api_key property value. The api_key property
      * @return a {@link ApiKey}
      */
     @jakarta.annotation.Nullable
@@ -37,7 +37,7 @@ public class RotateApiKeyResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("apiKey", (n) -> { this.setApiKey(n.getObjectValue(ApiKey::createFromDiscriminatorValue)); });
+        deserializerMap.put("api_key", (n) -> { this.setApiKey(n.getObjectValue(ApiKey::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -46,11 +46,11 @@ public class RotateApiKeyResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("apiKey", this.getApiKey());
+        writer.writeObjectValue("api_key", this.getApiKey());
     }
     /**
-     * Sets the apiKey property value. The apiKey property
-     * @param value Value to set for the apiKey property.
+     * Sets the api_key property value. The api_key property
+     * @param value Value to set for the api_key property.
      */
     public void setApiKey(@jakarta.annotation.Nullable final ApiKey value) {
         this.apiKey = value;

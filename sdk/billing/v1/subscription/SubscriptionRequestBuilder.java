@@ -63,7 +63,7 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SubscriptionRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/subscription{?orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/subscription{?org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link SubscriptionRequestBuilder} and sets the default values.
@@ -71,7 +71,7 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SubscriptionRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/subscription{?orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/subscription{?org_id*}", rawUrl);
     }
     /**
      * GetSubscription
@@ -180,7 +180,7 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

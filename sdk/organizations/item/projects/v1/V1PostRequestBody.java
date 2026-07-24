@@ -14,11 +14,15 @@ public class V1PostRequestBody implements Parsable {
      */
     private String name;
     /**
+     * The org_id property
+     */
+    private String orgId;
+    /**
      * The regions property
      */
     private java.util.List<String> regions;
     /**
-     * The videoQuality property
+     * The video_quality property
      */
     private VideoQuality videoQuality;
     /**
@@ -37,10 +41,11 @@ public class V1PostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("regions", (n) -> { this.setRegions(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("videoQuality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
+        deserializerMap.put("video_quality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
         return deserializerMap;
     }
     /**
@@ -52,6 +57,14 @@ public class V1PostRequestBody implements Parsable {
         return this.name;
     }
     /**
+     * Gets the org_id property value. The org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOrgId() {
+        return this.orgId;
+    }
+    /**
      * Gets the regions property value. The regions property
      * @return a {@link java.util.List<String>}
      */
@@ -60,7 +73,7 @@ public class V1PostRequestBody implements Parsable {
         return this.regions;
     }
     /**
-     * Gets the videoQuality property value. The videoQuality property
+     * Gets the video_quality property value. The video_quality property
      * @return a {@link VideoQuality}
      */
     @jakarta.annotation.Nullable
@@ -74,8 +87,9 @@ public class V1PostRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("name", this.getName());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeCollectionOfPrimitiveValues("regions", this.getRegions());
-        writer.writeEnumValue("videoQuality", this.getVideoQuality());
+        writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
     /**
      * Sets the name property value. The name property
@@ -85,6 +99,13 @@ public class V1PostRequestBody implements Parsable {
         this.name = value;
     }
     /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
+     */
+    public void setOrgId(@jakarta.annotation.Nullable final String value) {
+        this.orgId = value;
+    }
+    /**
      * Sets the regions property value. The regions property
      * @param value Value to set for the regions property.
      */
@@ -92,8 +113,8 @@ public class V1PostRequestBody implements Parsable {
         this.regions = value;
     }
     /**
-     * Sets the videoQuality property value. The videoQuality property
-     * @param value Value to set for the videoQuality property.
+     * Sets the video_quality property value. The video_quality property
+     * @param value Value to set for the video_quality property.
      */
     public void setVideoQuality(@jakarta.annotation.Nullable final VideoQuality value) {
         this.videoQuality = value;

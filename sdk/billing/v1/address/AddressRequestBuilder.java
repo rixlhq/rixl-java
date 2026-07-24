@@ -26,7 +26,7 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AddressRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/address{?orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/address{?org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link AddressRequestBuilder} and sets the default values.
@@ -34,7 +34,7 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AddressRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/address{?orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/address{?org_id*}", rawUrl);
     }
     /**
      * GetBillingAddress
@@ -143,7 +143,7 @@ public class AddressRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

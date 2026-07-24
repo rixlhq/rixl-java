@@ -17,15 +17,15 @@ public class ContactSalesRequest implements Parsable {
      */
     private String email;
     /**
-     * The firstName property
+     * The first_name property
      */
     private String firstName;
     /**
-     * The jobTitle property
+     * The job_title property
      */
     private String jobTitle;
     /**
-     * The lastName property
+     * The last_name property
      */
     private String lastName;
     /**
@@ -33,7 +33,7 @@ public class ContactSalesRequest implements Parsable {
      */
     private String message;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
@@ -79,17 +79,17 @@ public class ContactSalesRequest implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("company", (n) -> { this.setCompany(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("firstName", (n) -> { this.setFirstName(n.getStringValue()); });
-        deserializerMap.put("jobTitle", (n) -> { this.setJobTitle(n.getStringValue()); });
-        deserializerMap.put("lastName", (n) -> { this.setLastName(n.getStringValue()); });
+        deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
+        deserializerMap.put("job_title", (n) -> { this.setJobTitle(n.getStringValue()); });
+        deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("phone", (n) -> { this.setPhone(n.getStringValue()); });
         deserializerMap.put("website", (n) -> { this.setWebsite(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the firstName property value. The firstName property
+     * Gets the first_name property value. The first_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -97,7 +97,7 @@ public class ContactSalesRequest implements Parsable {
         return this.firstName;
     }
     /**
-     * Gets the jobTitle property value. The jobTitle property
+     * Gets the job_title property value. The job_title property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -105,7 +105,7 @@ public class ContactSalesRequest implements Parsable {
         return this.jobTitle;
     }
     /**
-     * Gets the lastName property value. The lastName property
+     * Gets the last_name property value. The last_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class ContactSalesRequest implements Parsable {
         return this.message;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -152,11 +152,11 @@ public class ContactSalesRequest implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("company", this.getCompany());
         writer.writeStringValue("email", this.getEmail());
-        writer.writeStringValue("firstName", this.getFirstName());
-        writer.writeStringValue("jobTitle", this.getJobTitle());
-        writer.writeStringValue("lastName", this.getLastName());
+        writer.writeStringValue("first_name", this.getFirstName());
+        writer.writeStringValue("job_title", this.getJobTitle());
+        writer.writeStringValue("last_name", this.getLastName());
         writer.writeStringValue("message", this.getMessage());
-        writer.writeStringValue("orgId", this.getOrgId());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("phone", this.getPhone());
         writer.writeStringValue("website", this.getWebsite());
     }
@@ -175,22 +175,22 @@ public class ContactSalesRequest implements Parsable {
         this.email = value;
     }
     /**
-     * Sets the firstName property value. The firstName property
-     * @param value Value to set for the firstName property.
+     * Sets the first_name property value. The first_name property
+     * @param value Value to set for the first_name property.
      */
     public void setFirstName(@jakarta.annotation.Nullable final String value) {
         this.firstName = value;
     }
     /**
-     * Sets the jobTitle property value. The jobTitle property
-     * @param value Value to set for the jobTitle property.
+     * Sets the job_title property value. The job_title property
+     * @param value Value to set for the job_title property.
      */
     public void setJobTitle(@jakarta.annotation.Nullable final String value) {
         this.jobTitle = value;
     }
     /**
-     * Sets the lastName property value. The lastName property
-     * @param value Value to set for the lastName property.
+     * Sets the last_name property value. The last_name property
+     * @param value Value to set for the last_name property.
      */
     public void setLastName(@jakarta.annotation.Nullable final String value) {
         this.lastName = value;
@@ -203,8 +203,8 @@ public class ContactSalesRequest implements Parsable {
         this.message = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;

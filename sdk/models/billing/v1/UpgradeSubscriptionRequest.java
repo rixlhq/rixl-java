@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpgradeSubscriptionRequest implements Parsable {
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The stripePriceId property
+     * The stripe_price_id property
      */
     private String stripePriceId;
     /**
@@ -33,12 +33,12 @@ public class UpgradeSubscriptionRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("stripePriceId", (n) -> { this.setStripePriceId(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("stripe_price_id", (n) -> { this.setStripePriceId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,7 +46,7 @@ public class UpgradeSubscriptionRequest implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the stripePriceId property value. The stripePriceId property
+     * Gets the stripe_price_id property value. The stripe_price_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,19 +59,19 @@ public class UpgradeSubscriptionRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("stripePriceId", this.getStripePriceId());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("stripe_price_id", this.getStripePriceId());
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the stripePriceId property value. The stripePriceId property
-     * @param value Value to set for the stripePriceId property.
+     * Sets the stripe_price_id property value. The stripe_price_id property
+     * @param value Value to set for the stripe_price_id property.
      */
     public void setStripePriceId(@jakarta.annotation.Nullable final String value) {
         this.stripePriceId = value;

@@ -13,7 +13,7 @@ public class PasskeyRegisterFinishResponse implements Parsable {
      */
     private String name;
     /**
-     * The passkeyId property
+     * The passkey_id property
      */
     private String passkeyId;
     /**
@@ -34,7 +34,7 @@ public class PasskeyRegisterFinishResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("passkeyId", (n) -> { this.setPasskeyId(n.getStringValue()); });
+        deserializerMap.put("passkey_id", (n) -> { this.setPasskeyId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -46,7 +46,7 @@ public class PasskeyRegisterFinishResponse implements Parsable {
         return this.name;
     }
     /**
-     * Gets the passkeyId property value. The passkeyId property
+     * Gets the passkey_id property value. The passkey_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class PasskeyRegisterFinishResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("passkeyId", this.getPasskeyId());
+        writer.writeStringValue("passkey_id", this.getPasskeyId());
     }
     /**
      * Sets the name property value. The name property
@@ -70,8 +70,8 @@ public class PasskeyRegisterFinishResponse implements Parsable {
         this.name = value;
     }
     /**
-     * Sets the passkeyId property value. The passkeyId property
-     * @param value Value to set for the passkeyId property.
+     * Sets the passkey_id property value. The passkey_id property
+     * @param value Value to set for the passkey_id property.
      */
     public void setPasskeyId(@jakarta.annotation.Nullable final String value) {
         this.passkeyId = value;

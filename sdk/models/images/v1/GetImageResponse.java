@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class GetImageResponse implements Parsable {
     /**
-     * The attachedToVideo property
+     * The attached_to_video property
      */
     private Boolean attachedToVideo;
     /**
@@ -48,7 +48,7 @@ public class GetImageResponse implements Parsable {
         return new GetImageResponse();
     }
     /**
-     * Gets the attachedToVideo property value. The attachedToVideo property
+     * Gets the attached_to_video property value. The attached_to_video property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -62,7 +62,7 @@ public class GetImageResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
-        deserializerMap.put("attachedToVideo", (n) -> { this.setAttachedToVideo(n.getBooleanValue()); });
+        deserializerMap.put("attached_to_video", (n) -> { this.setAttachedToVideo(n.getBooleanValue()); });
         deserializerMap.put("file", (n) -> { this.setFile(n.getObjectValue(ImageFile::createFromDiscriminatorValue)); });
         deserializerMap.put("height", (n) -> { this.setHeight(n.getIntegerValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
@@ -125,7 +125,7 @@ public class GetImageResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeBooleanValue("attachedToVideo", this.getAttachedToVideo());
+        writer.writeBooleanValue("attached_to_video", this.getAttachedToVideo());
         writer.writeObjectValue("file", this.getFile());
         writer.writeIntegerValue("height", this.getHeight());
         writer.writeStringValue("id", this.getId());
@@ -134,8 +134,8 @@ public class GetImageResponse implements Parsable {
         writer.writeIntegerValue("width", this.getWidth());
     }
     /**
-     * Sets the attachedToVideo property value. The attachedToVideo property
-     * @param value Value to set for the attachedToVideo property.
+     * Sets the attached_to_video property value. The attached_to_video property
+     * @param value Value to set for the attached_to_video property.
      */
     public void setAttachedToVideo(@jakarta.annotation.Nullable final Boolean value) {
         this.attachedToVideo = value;

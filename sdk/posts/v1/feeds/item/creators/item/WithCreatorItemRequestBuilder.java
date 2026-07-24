@@ -25,7 +25,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithCreatorItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}/creators/{creator_id}{?pagination%2Elimit*,pagination%2Eoffset*,projectId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}/creators/{creator_id}{?pagination%2Elimit*,pagination%2Eoffset*,project_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithCreatorItemRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithCreatorItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}/creators/{creator_id}{?pagination%2Elimit*,pagination%2Eoffset*,projectId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}/creators/{creator_id}{?pagination%2Elimit*,pagination%2Eoffset*,project_id*}", rawUrl);
     }
     /**
      * ListPosts
@@ -109,7 +109,7 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("pagination%2Elimit", paginationLimit);
             allQueryParams.put("pagination%2Eoffset", paginationOffset);
-            allQueryParams.put("projectId", projectId);
+            allQueryParams.put("project_id", projectId);
             return allQueryParams;
         }
     }

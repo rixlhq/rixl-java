@@ -13,7 +13,7 @@ public class VerifyEmailRequest implements Parsable {
      */
     private String code;
     /**
-     * The verificationId property
+     * The verification_id property
      */
     private String verificationId;
     /**
@@ -42,11 +42,11 @@ public class VerifyEmailRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("code", (n) -> { this.setCode(n.getStringValue()); });
-        deserializerMap.put("verificationId", (n) -> { this.setVerificationId(n.getStringValue()); });
+        deserializerMap.put("verification_id", (n) -> { this.setVerificationId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the verificationId property value. The verificationId property
+     * Gets the verification_id property value. The verification_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class VerifyEmailRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("code", this.getCode());
-        writer.writeStringValue("verificationId", this.getVerificationId());
+        writer.writeStringValue("verification_id", this.getVerificationId());
     }
     /**
      * Sets the code property value. The code property
@@ -70,8 +70,8 @@ public class VerifyEmailRequest implements Parsable {
         this.code = value;
     }
     /**
-     * Sets the verificationId property value. The verificationId property
-     * @param value Value to set for the verificationId property.
+     * Sets the verification_id property value. The verification_id property
+     * @param value Value to set for the verification_id property.
      */
     public void setVerificationId(@jakarta.annotation.Nullable final String value) {
         this.verificationId = value;

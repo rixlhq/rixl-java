@@ -14,7 +14,7 @@ public class CompleteTrackUploadItem implements Parsable {
      */
     private String id;
     /**
-     * The objectKey property
+     * The object_key property
      */
     private String objectKey;
     /**
@@ -39,7 +39,7 @@ public class CompleteTrackUploadItem implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("objectKey", (n) -> { this.setObjectKey(n.getStringValue()); });
+        deserializerMap.put("object_key", (n) -> { this.setObjectKey(n.getStringValue()); });
         deserializerMap.put("size", (n) -> { this.setSize(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -52,7 +52,7 @@ public class CompleteTrackUploadItem implements Parsable {
         return this.id;
     }
     /**
-     * Gets the objectKey property value. The objectKey property
+     * Gets the object_key property value. The object_key property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -74,7 +74,7 @@ public class CompleteTrackUploadItem implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("id", this.getId());
-        writer.writeStringValue("objectKey", this.getObjectKey());
+        writer.writeStringValue("object_key", this.getObjectKey());
         writer.writeObjectValue("size", this.getSize());
     }
     /**
@@ -85,8 +85,8 @@ public class CompleteTrackUploadItem implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the objectKey property value. The objectKey property
-     * @param value Value to set for the objectKey property.
+     * Sets the object_key property value. The object_key property
+     * @param value Value to set for the object_key property.
      */
     public void setObjectKey(@jakarta.annotation.Nullable final String value) {
         this.objectKey = value;

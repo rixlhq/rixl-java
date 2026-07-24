@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpdateNameResponse implements Parsable {
     /**
-     * The firstName property
+     * The first_name property
      */
     private String firstName;
     /**
-     * The lastName property
+     * The last_name property
      */
     private String lastName;
     /**
@@ -33,12 +33,12 @@ public class UpdateNameResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("firstName", (n) -> { this.setFirstName(n.getStringValue()); });
-        deserializerMap.put("lastName", (n) -> { this.setLastName(n.getStringValue()); });
+        deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
+        deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the firstName property value. The firstName property
+     * Gets the first_name property value. The first_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,7 +46,7 @@ public class UpdateNameResponse implements Parsable {
         return this.firstName;
     }
     /**
-     * Gets the lastName property value. The lastName property
+     * Gets the last_name property value. The last_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,19 +59,19 @@ public class UpdateNameResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("firstName", this.getFirstName());
-        writer.writeStringValue("lastName", this.getLastName());
+        writer.writeStringValue("first_name", this.getFirstName());
+        writer.writeStringValue("last_name", this.getLastName());
     }
     /**
-     * Sets the firstName property value. The firstName property
-     * @param value Value to set for the firstName property.
+     * Sets the first_name property value. The first_name property
+     * @param value Value to set for the first_name property.
      */
     public void setFirstName(@jakarta.annotation.Nullable final String value) {
         this.firstName = value;
     }
     /**
-     * Sets the lastName property value. The lastName property
-     * @param value Value to set for the lastName property.
+     * Sets the last_name property value. The last_name property
+     * @param value Value to set for the last_name property.
      */
     public void setLastName(@jakarta.annotation.Nullable final String value) {
         this.lastName = value;

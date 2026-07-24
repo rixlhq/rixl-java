@@ -14,11 +14,11 @@ public class CalculateTaxRequest implements Parsable {
      */
     private Double amount;
     /**
-     * The billingAddress property
+     * The billing_address property
      */
     private BillingAddress billingAddress;
     /**
-     * The billingCycle property
+     * The billing_cycle property
      */
     private BillingCycle billingCycle;
     /**
@@ -26,11 +26,11 @@ public class CalculateTaxRequest implements Parsable {
      */
     private String currency;
     /**
-     * The intervalCount property
+     * The interval_count property
      */
     private UntypedNode intervalCount;
     /**
-     * The lineItems property
+     * The line_items property
      */
     private java.util.List<TaxLineItem> lineItems;
     /**
@@ -38,15 +38,15 @@ public class CalculateTaxRequest implements Parsable {
      */
     private CalculateTaxRequestMetadata metadata;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The planId property
+     * The plan_id property
      */
     private String planId;
     /**
-     * The planName property
+     * The plan_name property
      */
     private String planName;
     /**
@@ -68,7 +68,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.amount;
     }
     /**
-     * Gets the billingAddress property value. The billingAddress property
+     * Gets the billing_address property value. The billing_address property
      * @return a {@link BillingAddress}
      */
     @jakarta.annotation.Nullable
@@ -76,7 +76,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.billingAddress;
     }
     /**
-     * Gets the billingCycle property value. The billingCycle property
+     * Gets the billing_cycle property value. The billing_cycle property
      * @return a {@link BillingCycle}
      */
     @jakarta.annotation.Nullable
@@ -99,19 +99,19 @@ public class CalculateTaxRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
         deserializerMap.put("amount", (n) -> { this.setAmount(n.getDoubleValue()); });
-        deserializerMap.put("billingAddress", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
-        deserializerMap.put("billingCycle", (n) -> { this.setBillingCycle(n.getEnumValue(BillingCycle::forValue)); });
+        deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
+        deserializerMap.put("billing_cycle", (n) -> { this.setBillingCycle(n.getEnumValue(BillingCycle::forValue)); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("intervalCount", (n) -> { this.setIntervalCount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("lineItems", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
+        deserializerMap.put("interval_count", (n) -> { this.setIntervalCount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("line_items", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
         deserializerMap.put("metadata", (n) -> { this.setMetadata(n.getObjectValue(CalculateTaxRequestMetadata::createFromDiscriminatorValue)); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("planId", (n) -> { this.setPlanId(n.getStringValue()); });
-        deserializerMap.put("planName", (n) -> { this.setPlanName(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("plan_id", (n) -> { this.setPlanId(n.getStringValue()); });
+        deserializerMap.put("plan_name", (n) -> { this.setPlanName(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the intervalCount property value. The intervalCount property
+     * Gets the interval_count property value. The interval_count property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -119,7 +119,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.intervalCount;
     }
     /**
-     * Gets the lineItems property value. The lineItems property
+     * Gets the line_items property value. The line_items property
      * @return a {@link java.util.List<TaxLineItem>}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.metadata;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -143,7 +143,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the planId property value. The planId property
+     * Gets the plan_id property value. The plan_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -151,7 +151,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.planId;
     }
     /**
-     * Gets the planName property value. The planName property
+     * Gets the plan_name property value. The plan_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -165,15 +165,15 @@ public class CalculateTaxRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("amount", this.getAmount());
-        writer.writeObjectValue("billingAddress", this.getBillingAddress());
-        writer.writeEnumValue("billingCycle", this.getBillingCycle());
+        writer.writeObjectValue("billing_address", this.getBillingAddress());
+        writer.writeEnumValue("billing_cycle", this.getBillingCycle());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeObjectValue("intervalCount", this.getIntervalCount());
-        writer.writeCollectionOfObjectValues("lineItems", this.getLineItems());
+        writer.writeObjectValue("interval_count", this.getIntervalCount());
+        writer.writeCollectionOfObjectValues("line_items", this.getLineItems());
         writer.writeObjectValue("metadata", this.getMetadata());
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("planId", this.getPlanId());
-        writer.writeStringValue("planName", this.getPlanName());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("plan_id", this.getPlanId());
+        writer.writeStringValue("plan_name", this.getPlanName());
     }
     /**
      * Sets the amount property value. The amount property
@@ -183,15 +183,15 @@ public class CalculateTaxRequest implements Parsable {
         this.amount = value;
     }
     /**
-     * Sets the billingAddress property value. The billingAddress property
-     * @param value Value to set for the billingAddress property.
+     * Sets the billing_address property value. The billing_address property
+     * @param value Value to set for the billing_address property.
      */
     public void setBillingAddress(@jakarta.annotation.Nullable final BillingAddress value) {
         this.billingAddress = value;
     }
     /**
-     * Sets the billingCycle property value. The billingCycle property
-     * @param value Value to set for the billingCycle property.
+     * Sets the billing_cycle property value. The billing_cycle property
+     * @param value Value to set for the billing_cycle property.
      */
     public void setBillingCycle(@jakarta.annotation.Nullable final BillingCycle value) {
         this.billingCycle = value;
@@ -204,15 +204,15 @@ public class CalculateTaxRequest implements Parsable {
         this.currency = value;
     }
     /**
-     * Sets the intervalCount property value. The intervalCount property
-     * @param value Value to set for the intervalCount property.
+     * Sets the interval_count property value. The interval_count property
+     * @param value Value to set for the interval_count property.
      */
     public void setIntervalCount(@jakarta.annotation.Nullable final UntypedNode value) {
         this.intervalCount = value;
     }
     /**
-     * Sets the lineItems property value. The lineItems property
-     * @param value Value to set for the lineItems property.
+     * Sets the line_items property value. The line_items property
+     * @param value Value to set for the line_items property.
      */
     public void setLineItems(@jakarta.annotation.Nullable final java.util.List<TaxLineItem> value) {
         this.lineItems = value;
@@ -225,22 +225,22 @@ public class CalculateTaxRequest implements Parsable {
         this.metadata = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the planId property value. The planId property
-     * @param value Value to set for the planId property.
+     * Sets the plan_id property value. The plan_id property
+     * @param value Value to set for the plan_id property.
      */
     public void setPlanId(@jakarta.annotation.Nullable final String value) {
         this.planId = value;
     }
     /**
-     * Sets the planName property value. The planName property
-     * @param value Value to set for the planName property.
+     * Sets the plan_name property value. The plan_name property
+     * @param value Value to set for the plan_name property.
      */
     public void setPlanName(@jakarta.annotation.Nullable final String value) {
         this.planName = value;

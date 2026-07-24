@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RecentEvent implements Parsable {
     /**
-     * The contentId property
+     * The content_id property
      */
     private String contentId;
     /**
-     * The eventType property
+     * The event_type property
      */
     private String eventType;
     /**
@@ -21,7 +21,7 @@ public class RecentEvent implements Parsable {
      */
     private String timestamp;
     /**
-     * The userId property
+     * The user_id property
      */
     private String userId;
     /**
@@ -35,7 +35,7 @@ public class RecentEvent implements Parsable {
         return new RecentEvent();
     }
     /**
-     * Gets the contentId property value. The contentId property
+     * Gets the content_id property value. The content_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class RecentEvent implements Parsable {
         return this.contentId;
     }
     /**
-     * Gets the eventType property value. The eventType property
+     * Gets the event_type property value. The event_type property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -57,10 +57,10 @@ public class RecentEvent implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("contentId", (n) -> { this.setContentId(n.getStringValue()); });
-        deserializerMap.put("eventType", (n) -> { this.setEventType(n.getStringValue()); });
+        deserializerMap.put("content_id", (n) -> { this.setContentId(n.getStringValue()); });
+        deserializerMap.put("event_type", (n) -> { this.setEventType(n.getStringValue()); });
         deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getStringValue()); });
-        deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
+        deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -72,7 +72,7 @@ public class RecentEvent implements Parsable {
         return this.timestamp;
     }
     /**
-     * Gets the userId property value. The userId property
+     * Gets the user_id property value. The user_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,21 +85,21 @@ public class RecentEvent implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("contentId", this.getContentId());
-        writer.writeStringValue("eventType", this.getEventType());
+        writer.writeStringValue("content_id", this.getContentId());
+        writer.writeStringValue("event_type", this.getEventType());
         writer.writeStringValue("timestamp", this.getTimestamp());
-        writer.writeStringValue("userId", this.getUserId());
+        writer.writeStringValue("user_id", this.getUserId());
     }
     /**
-     * Sets the contentId property value. The contentId property
-     * @param value Value to set for the contentId property.
+     * Sets the content_id property value. The content_id property
+     * @param value Value to set for the content_id property.
      */
     public void setContentId(@jakarta.annotation.Nullable final String value) {
         this.contentId = value;
     }
     /**
-     * Sets the eventType property value. The eventType property
-     * @param value Value to set for the eventType property.
+     * Sets the event_type property value. The event_type property
+     * @param value Value to set for the event_type property.
      */
     public void setEventType(@jakarta.annotation.Nullable final String value) {
         this.eventType = value;
@@ -112,8 +112,8 @@ public class RecentEvent implements Parsable {
         this.timestamp = value;
     }
     /**
-     * Sets the userId property value. The userId property
-     * @param value Value to set for the userId property.
+     * Sets the user_id property value. The user_id property
+     * @param value Value to set for the user_id property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;

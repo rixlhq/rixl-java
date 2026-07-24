@@ -10,11 +10,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class TaxCalculationResponse implements Parsable {
     /**
-     * The amountTotal property
+     * The amount_total property
      */
     private UntypedNode amountTotal;
     /**
-     * The calculationId property
+     * The calculation_id property
      */
     private String calculationId;
     /**
@@ -22,11 +22,11 @@ public class TaxCalculationResponse implements Parsable {
      */
     private String currency;
     /**
-     * The taxAmountExclusive property
+     * The tax_amount_exclusive property
      */
     private UntypedNode taxAmountExclusive;
     /**
-     * The taxAmountInclusive property
+     * The tax_amount_inclusive property
      */
     private UntypedNode taxAmountInclusive;
     /**
@@ -40,7 +40,7 @@ public class TaxCalculationResponse implements Parsable {
         return new TaxCalculationResponse();
     }
     /**
-     * Gets the amountTotal property value. The amountTotal property
+     * Gets the amount_total property value. The amount_total property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -48,7 +48,7 @@ public class TaxCalculationResponse implements Parsable {
         return this.amountTotal;
     }
     /**
-     * Gets the calculationId property value. The calculationId property
+     * Gets the calculation_id property value. The calculation_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -70,15 +70,15 @@ public class TaxCalculationResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("amountTotal", (n) -> { this.setAmountTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("calculationId", (n) -> { this.setCalculationId(n.getStringValue()); });
+        deserializerMap.put("amount_total", (n) -> { this.setAmountTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("calculation_id", (n) -> { this.setCalculationId(n.getStringValue()); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("taxAmountExclusive", (n) -> { this.setTaxAmountExclusive(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("taxAmountInclusive", (n) -> { this.setTaxAmountInclusive(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("tax_amount_exclusive", (n) -> { this.setTaxAmountExclusive(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("tax_amount_inclusive", (n) -> { this.setTaxAmountInclusive(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the taxAmountExclusive property value. The taxAmountExclusive property
+     * Gets the tax_amount_exclusive property value. The tax_amount_exclusive property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -86,7 +86,7 @@ public class TaxCalculationResponse implements Parsable {
         return this.taxAmountExclusive;
     }
     /**
-     * Gets the taxAmountInclusive property value. The taxAmountInclusive property
+     * Gets the tax_amount_inclusive property value. The tax_amount_inclusive property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -99,22 +99,22 @@ public class TaxCalculationResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("amountTotal", this.getAmountTotal());
-        writer.writeStringValue("calculationId", this.getCalculationId());
+        writer.writeObjectValue("amount_total", this.getAmountTotal());
+        writer.writeStringValue("calculation_id", this.getCalculationId());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeObjectValue("taxAmountExclusive", this.getTaxAmountExclusive());
-        writer.writeObjectValue("taxAmountInclusive", this.getTaxAmountInclusive());
+        writer.writeObjectValue("tax_amount_exclusive", this.getTaxAmountExclusive());
+        writer.writeObjectValue("tax_amount_inclusive", this.getTaxAmountInclusive());
     }
     /**
-     * Sets the amountTotal property value. The amountTotal property
-     * @param value Value to set for the amountTotal property.
+     * Sets the amount_total property value. The amount_total property
+     * @param value Value to set for the amount_total property.
      */
     public void setAmountTotal(@jakarta.annotation.Nullable final UntypedNode value) {
         this.amountTotal = value;
     }
     /**
-     * Sets the calculationId property value. The calculationId property
-     * @param value Value to set for the calculationId property.
+     * Sets the calculation_id property value. The calculation_id property
+     * @param value Value to set for the calculation_id property.
      */
     public void setCalculationId(@jakarta.annotation.Nullable final String value) {
         this.calculationId = value;
@@ -127,15 +127,15 @@ public class TaxCalculationResponse implements Parsable {
         this.currency = value;
     }
     /**
-     * Sets the taxAmountExclusive property value. The taxAmountExclusive property
-     * @param value Value to set for the taxAmountExclusive property.
+     * Sets the tax_amount_exclusive property value. The tax_amount_exclusive property
+     * @param value Value to set for the tax_amount_exclusive property.
      */
     public void setTaxAmountExclusive(@jakarta.annotation.Nullable final UntypedNode value) {
         this.taxAmountExclusive = value;
     }
     /**
-     * Sets the taxAmountInclusive property value. The taxAmountInclusive property
-     * @param value Value to set for the taxAmountInclusive property.
+     * Sets the tax_amount_inclusive property value. The tax_amount_inclusive property
+     * @param value Value to set for the tax_amount_inclusive property.
      */
     public void setTaxAmountInclusive(@jakarta.annotation.Nullable final UntypedNode value) {
         this.taxAmountInclusive = value;

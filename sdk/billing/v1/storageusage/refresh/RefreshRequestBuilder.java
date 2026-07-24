@@ -25,7 +25,7 @@ public class RefreshRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public RefreshRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/refresh{?orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/refresh{?org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link RefreshRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class RefreshRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public RefreshRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/refresh{?orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/storage-usage/refresh{?org_id*}", rawUrl);
     }
     /**
      * RefreshStorageUsage
@@ -97,7 +97,7 @@ public class RefreshRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ExchangeAPIKeyRequest implements Parsable {
     /**
-     * The apiKey property
+     * The api_key property
      */
     private String apiKey;
     /**
@@ -23,7 +23,7 @@ public class ExchangeAPIKeyRequest implements Parsable {
         return new ExchangeAPIKeyRequest();
     }
     /**
-     * Gets the apiKey property value. The apiKey property
+     * Gets the api_key property value. The api_key property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -37,7 +37,7 @@ public class ExchangeAPIKeyRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("apiKey", (n) -> { this.setApiKey(n.getStringValue()); });
+        deserializerMap.put("api_key", (n) -> { this.setApiKey(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -46,11 +46,11 @@ public class ExchangeAPIKeyRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("apiKey", this.getApiKey());
+        writer.writeStringValue("api_key", this.getApiKey());
     }
     /**
-     * Sets the apiKey property value. The apiKey property
-     * @param value Value to set for the apiKey property.
+     * Sets the api_key property value. The api_key property
+     * @param value Value to set for the api_key property.
      */
     public void setApiKey(@jakarta.annotation.Nullable final String value) {
         this.apiKey = value;

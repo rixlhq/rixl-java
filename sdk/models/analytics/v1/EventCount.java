@@ -14,7 +14,7 @@ public class EventCount implements Parsable {
      */
     private UntypedNode count;
     /**
-     * The eventType property
+     * The event_type property
      */
     private String eventType;
     /**
@@ -36,7 +36,7 @@ public class EventCount implements Parsable {
         return this.count;
     }
     /**
-     * Gets the eventType property value. The eventType property
+     * Gets the event_type property value. The event_type property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -51,7 +51,7 @@ public class EventCount implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("count", (n) -> { this.setCount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("eventType", (n) -> { this.setEventType(n.getStringValue()); });
+        deserializerMap.put("event_type", (n) -> { this.setEventType(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -61,7 +61,7 @@ public class EventCount implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("count", this.getCount());
-        writer.writeStringValue("eventType", this.getEventType());
+        writer.writeStringValue("event_type", this.getEventType());
     }
     /**
      * Sets the count property value. The count property
@@ -71,8 +71,8 @@ public class EventCount implements Parsable {
         this.count = value;
     }
     /**
-     * Sets the eventType property value. The eventType property
-     * @param value Value to set for the eventType property.
+     * Sets the event_type property value. The event_type property
+     * @param value Value to set for the event_type property.
      */
     public void setEventType(@jakarta.annotation.Nullable final String value) {
         this.eventType = value;

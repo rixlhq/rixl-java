@@ -9,15 +9,15 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpsertPaymentMethodRequest implements Parsable {
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The paymentMethodId property
+     * The payment_method_id property
      */
     private String paymentMethodId;
     /**
-     * The setAsDefault property
+     * The set_as_default property
      */
     private Boolean setAsDefault;
     /**
@@ -37,13 +37,13 @@ public class UpsertPaymentMethodRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("paymentMethodId", (n) -> { this.setPaymentMethodId(n.getStringValue()); });
-        deserializerMap.put("setAsDefault", (n) -> { this.setSetAsDefault(n.getBooleanValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("payment_method_id", (n) -> { this.setPaymentMethodId(n.getStringValue()); });
+        deserializerMap.put("set_as_default", (n) -> { this.setSetAsDefault(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -51,7 +51,7 @@ public class UpsertPaymentMethodRequest implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the paymentMethodId property value. The paymentMethodId property
+     * Gets the payment_method_id property value. The payment_method_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,7 +59,7 @@ public class UpsertPaymentMethodRequest implements Parsable {
         return this.paymentMethodId;
     }
     /**
-     * Gets the setAsDefault property value. The setAsDefault property
+     * Gets the set_as_default property value. The set_as_default property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -72,27 +72,27 @@ public class UpsertPaymentMethodRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("paymentMethodId", this.getPaymentMethodId());
-        writer.writeBooleanValue("setAsDefault", this.getSetAsDefault());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("payment_method_id", this.getPaymentMethodId());
+        writer.writeBooleanValue("set_as_default", this.getSetAsDefault());
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the paymentMethodId property value. The paymentMethodId property
-     * @param value Value to set for the paymentMethodId property.
+     * Sets the payment_method_id property value. The payment_method_id property
+     * @param value Value to set for the payment_method_id property.
      */
     public void setPaymentMethodId(@jakarta.annotation.Nullable final String value) {
         this.paymentMethodId = value;
     }
     /**
-     * Sets the setAsDefault property value. The setAsDefault property
-     * @param value Value to set for the setAsDefault property.
+     * Sets the set_as_default property value. The set_as_default property
+     * @param value Value to set for the set_as_default property.
      */
     public void setSetAsDefault(@jakarta.annotation.Nullable final Boolean value) {
         this.setAsDefault = value;

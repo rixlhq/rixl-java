@@ -13,15 +13,15 @@ public class TrackUploadTarget implements Parsable {
      */
     private String id;
     /**
-     * The languageCode property
+     * The language_code property
      */
     private String languageCode;
     /**
-     * The objectKey property
+     * The object_key property
      */
     private String objectKey;
     /**
-     * The uploadUrl property
+     * The upload_url property
      */
     private String uploadUrl;
     /**
@@ -42,9 +42,9 @@ public class TrackUploadTarget implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("languageCode", (n) -> { this.setLanguageCode(n.getStringValue()); });
-        deserializerMap.put("objectKey", (n) -> { this.setObjectKey(n.getStringValue()); });
-        deserializerMap.put("uploadUrl", (n) -> { this.setUploadUrl(n.getStringValue()); });
+        deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
+        deserializerMap.put("object_key", (n) -> { this.setObjectKey(n.getStringValue()); });
+        deserializerMap.put("upload_url", (n) -> { this.setUploadUrl(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -56,7 +56,7 @@ public class TrackUploadTarget implements Parsable {
         return this.id;
     }
     /**
-     * Gets the languageCode property value. The languageCode property
+     * Gets the language_code property value. The language_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -64,7 +64,7 @@ public class TrackUploadTarget implements Parsable {
         return this.languageCode;
     }
     /**
-     * Gets the objectKey property value. The objectKey property
+     * Gets the object_key property value. The object_key property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class TrackUploadTarget implements Parsable {
         return this.objectKey;
     }
     /**
-     * Gets the uploadUrl property value. The uploadUrl property
+     * Gets the upload_url property value. The upload_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -86,9 +86,9 @@ public class TrackUploadTarget implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("id", this.getId());
-        writer.writeStringValue("languageCode", this.getLanguageCode());
-        writer.writeStringValue("objectKey", this.getObjectKey());
-        writer.writeStringValue("uploadUrl", this.getUploadUrl());
+        writer.writeStringValue("language_code", this.getLanguageCode());
+        writer.writeStringValue("object_key", this.getObjectKey());
+        writer.writeStringValue("upload_url", this.getUploadUrl());
     }
     /**
      * Sets the id property value. The id property
@@ -98,22 +98,22 @@ public class TrackUploadTarget implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the languageCode property value. The languageCode property
-     * @param value Value to set for the languageCode property.
+     * Sets the language_code property value. The language_code property
+     * @param value Value to set for the language_code property.
      */
     public void setLanguageCode(@jakarta.annotation.Nullable final String value) {
         this.languageCode = value;
     }
     /**
-     * Sets the objectKey property value. The objectKey property
-     * @param value Value to set for the objectKey property.
+     * Sets the object_key property value. The object_key property
+     * @param value Value to set for the object_key property.
      */
     public void setObjectKey(@jakarta.annotation.Nullable final String value) {
         this.objectKey = value;
     }
     /**
-     * Sets the uploadUrl property value. The uploadUrl property
-     * @param value Value to set for the uploadUrl property.
+     * Sets the upload_url property value. The upload_url property
+     * @param value Value to set for the upload_url property.
      */
     public void setUploadUrl(@jakarta.annotation.Nullable final String value) {
         this.uploadUrl = value;

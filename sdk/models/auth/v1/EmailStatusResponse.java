@@ -13,7 +13,7 @@ public class EmailStatusResponse implements Parsable {
      */
     private String email;
     /**
-     * The hasEmail property
+     * The has_email property
      */
     private Boolean hasEmail;
     /**
@@ -46,12 +46,12 @@ public class EmailStatusResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("hasEmail", (n) -> { this.setHasEmail(n.getBooleanValue()); });
+        deserializerMap.put("has_email", (n) -> { this.setHasEmail(n.getBooleanValue()); });
         deserializerMap.put("verified", (n) -> { this.setVerified(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the hasEmail property value. The hasEmail property
+     * Gets the has_email property value. The has_email property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -73,7 +73,7 @@ public class EmailStatusResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("email", this.getEmail());
-        writer.writeBooleanValue("hasEmail", this.getHasEmail());
+        writer.writeBooleanValue("has_email", this.getHasEmail());
         writer.writeBooleanValue("verified", this.getVerified());
     }
     /**
@@ -84,8 +84,8 @@ public class EmailStatusResponse implements Parsable {
         this.email = value;
     }
     /**
-     * Sets the hasEmail property value. The hasEmail property
-     * @param value Value to set for the hasEmail property.
+     * Sets the has_email property value. The has_email property
+     * @param value Value to set for the has_email property.
      */
     public void setHasEmail(@jakarta.annotation.Nullable final Boolean value) {
         this.hasEmail = value;

@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RegisterRequest implements Parsable {
     /**
-     * The countryCode property
+     * The country_code property
      */
     private String countryCode;
     /**
@@ -21,7 +21,7 @@ public class RegisterRequest implements Parsable {
      */
     private String password;
     /**
-     * The subscribeToBlog property
+     * The subscribe_to_blog property
      */
     private Boolean subscribeToBlog;
     /**
@@ -35,7 +35,7 @@ public class RegisterRequest implements Parsable {
         return new RegisterRequest();
     }
     /**
-     * Gets the countryCode property value. The countryCode property
+     * Gets the country_code property value. The country_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -57,10 +57,10 @@ public class RegisterRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("countryCode", (n) -> { this.setCountryCode(n.getStringValue()); });
+        deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("password", (n) -> { this.setPassword(n.getStringValue()); });
-        deserializerMap.put("subscribeToBlog", (n) -> { this.setSubscribeToBlog(n.getBooleanValue()); });
+        deserializerMap.put("subscribe_to_blog", (n) -> { this.setSubscribeToBlog(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
@@ -72,7 +72,7 @@ public class RegisterRequest implements Parsable {
         return this.password;
     }
     /**
-     * Gets the subscribeToBlog property value. The subscribeToBlog property
+     * Gets the subscribe_to_blog property value. The subscribe_to_blog property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -85,14 +85,14 @@ public class RegisterRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("countryCode", this.getCountryCode());
+        writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("email", this.getEmail());
         writer.writeStringValue("password", this.getPassword());
-        writer.writeBooleanValue("subscribeToBlog", this.getSubscribeToBlog());
+        writer.writeBooleanValue("subscribe_to_blog", this.getSubscribeToBlog());
     }
     /**
-     * Sets the countryCode property value. The countryCode property
-     * @param value Value to set for the countryCode property.
+     * Sets the country_code property value. The country_code property
+     * @param value Value to set for the country_code property.
      */
     public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
@@ -112,8 +112,8 @@ public class RegisterRequest implements Parsable {
         this.password = value;
     }
     /**
-     * Sets the subscribeToBlog property value. The subscribeToBlog property
-     * @param value Value to set for the subscribeToBlog property.
+     * Sets the subscribe_to_blog property value. The subscribe_to_blog property
+     * @param value Value to set for the subscribe_to_blog property.
      */
     public void setSubscribeToBlog(@jakarta.annotation.Nullable final Boolean value) {
         this.subscribeToBlog = value;

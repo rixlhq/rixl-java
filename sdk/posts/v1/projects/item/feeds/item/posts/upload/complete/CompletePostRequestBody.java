@@ -9,13 +9,21 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CompletePostRequestBody implements Parsable {
     /**
-     * The orgId property
+     * The feed_id property
+     */
+    private String feedId;
+    /**
+     * The org_id property
      */
     private String orgId;
     /**
-     * The postId property
+     * The post_id property
      */
     private String postId;
+    /**
+     * The project_id property
+     */
+    private String projectId;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -27,18 +35,28 @@ public class CompletePostRequestBody implements Parsable {
         return new CompletePostRequestBody();
     }
     /**
+     * Gets the feed_id property value. The feed_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getFeedId() {
+        return this.feedId;
+    }
+    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("postId", (n) -> { this.setPostId(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("post_id", (n) -> { this.setPostId(n.getStringValue()); });
+        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,7 +64,7 @@ public class CompletePostRequestBody implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the postId property value. The postId property
+     * Gets the post_id property value. The post_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -54,26 +72,50 @@ public class CompletePostRequestBody implements Parsable {
         return this.postId;
     }
     /**
+     * Gets the project_id property value. The project_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getProjectId() {
+        return this.projectId;
+    }
+    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("postId", this.getPostId());
+        writer.writeStringValue("feed_id", this.getFeedId());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("post_id", this.getPostId());
+        writer.writeStringValue("project_id", this.getProjectId());
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the feed_id property value. The feed_id property
+     * @param value Value to set for the feed_id property.
+     */
+    public void setFeedId(@jakarta.annotation.Nullable final String value) {
+        this.feedId = value;
+    }
+    /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the postId property value. The postId property
-     * @param value Value to set for the postId property.
+     * Sets the post_id property value. The post_id property
+     * @param value Value to set for the post_id property.
      */
     public void setPostId(@jakarta.annotation.Nullable final String value) {
         this.postId = value;
+    }
+    /**
+     * Sets the project_id property value. The project_id property
+     * @param value Value to set for the project_id property.
+     */
+    public void setProjectId(@jakarta.annotation.Nullable final String value) {
+        this.projectId = value;
     }
 }

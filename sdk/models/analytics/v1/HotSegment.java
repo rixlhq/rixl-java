@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class HotSegment implements Parsable {
     /**
-     * The endSecond property
+     * The end_second property
      */
     private Integer endSecond;
     /**
@@ -17,7 +17,7 @@ public class HotSegment implements Parsable {
      */
     private Double multiplier;
     /**
-     * The startSecond property
+     * The start_second property
      */
     private Integer startSecond;
     /**
@@ -31,7 +31,7 @@ public class HotSegment implements Parsable {
         return new HotSegment();
     }
     /**
-     * Gets the endSecond property value. The endSecond property
+     * Gets the end_second property value. The end_second property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -45,9 +45,9 @@ public class HotSegment implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("endSecond", (n) -> { this.setEndSecond(n.getIntegerValue()); });
+        deserializerMap.put("end_second", (n) -> { this.setEndSecond(n.getIntegerValue()); });
         deserializerMap.put("multiplier", (n) -> { this.setMultiplier(n.getDoubleValue()); });
-        deserializerMap.put("startSecond", (n) -> { this.setStartSecond(n.getIntegerValue()); });
+        deserializerMap.put("start_second", (n) -> { this.setStartSecond(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
@@ -59,7 +59,7 @@ public class HotSegment implements Parsable {
         return this.multiplier;
     }
     /**
-     * Gets the startSecond property value. The startSecond property
+     * Gets the start_second property value. The start_second property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -72,13 +72,13 @@ public class HotSegment implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeIntegerValue("endSecond", this.getEndSecond());
+        writer.writeIntegerValue("end_second", this.getEndSecond());
         writer.writeDoubleValue("multiplier", this.getMultiplier());
-        writer.writeIntegerValue("startSecond", this.getStartSecond());
+        writer.writeIntegerValue("start_second", this.getStartSecond());
     }
     /**
-     * Sets the endSecond property value. The endSecond property
-     * @param value Value to set for the endSecond property.
+     * Sets the end_second property value. The end_second property
+     * @param value Value to set for the end_second property.
      */
     public void setEndSecond(@jakarta.annotation.Nullable final Integer value) {
         this.endSecond = value;
@@ -91,8 +91,8 @@ public class HotSegment implements Parsable {
         this.multiplier = value;
     }
     /**
-     * Sets the startSecond property value. The startSecond property
-     * @param value Value to set for the startSecond property.
+     * Sets the start_second property value. The start_second property
+     * @param value Value to set for the start_second property.
      */
     public void setStartSecond(@jakarta.annotation.Nullable final Integer value) {
         this.startSecond = value;

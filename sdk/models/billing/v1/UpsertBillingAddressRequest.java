@@ -13,7 +13,7 @@ public class UpsertBillingAddressRequest implements Parsable {
      */
     private BillingAddress address;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
@@ -42,11 +42,11 @@ public class UpsertBillingAddressRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("address", (n) -> { this.setAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class UpsertBillingAddressRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("address", this.getAddress());
-        writer.writeStringValue("orgId", this.getOrgId());
+        writer.writeStringValue("org_id", this.getOrgId());
     }
     /**
      * Sets the address property value. The address property
@@ -70,8 +70,8 @@ public class UpsertBillingAddressRequest implements Parsable {
         this.address = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;

@@ -25,7 +25,7 @@ public class WithPaymentMethodItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPaymentMethodItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/{payment_method_id}{?orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/{payment_method_id}{?org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPaymentMethodItemRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class WithPaymentMethodItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPaymentMethodItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/{payment_method_id}{?orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods/{payment_method_id}{?org_id*}", rawUrl);
     }
     /**
      * DeletePaymentMethod
@@ -97,7 +97,7 @@ public class WithPaymentMethodItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

@@ -38,7 +38,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembersRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members{?limit*,offset*,user%2EuserId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members{?limit*,offset*,user%2Euser_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link MembersRequestBuilder} and sets the default values.
@@ -46,7 +46,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembersRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members{?limit*,offset*,user%2EuserId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/members{?limit*,offset*,user%2Euser_id*}", rawUrl);
     }
     /**
      * ListOrganizationMembers
@@ -116,7 +116,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
-            allQueryParams.put("user%2EuserId", userUserId);
+            allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }
     }

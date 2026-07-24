@@ -10,27 +10,27 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FeedStats implements Parsable {
     /**
-     * The avgTimePerVisitMs property
+     * The avg_time_per_visit_ms property
      */
     private Double avgTimePerVisitMs;
     /**
-     * The feedId property
+     * The feed_id property
      */
     private String feedId;
     /**
-     * The totalPosts property
+     * The total_posts property
      */
     private UntypedNode totalPosts;
     /**
-     * The totalViews property
+     * The total_views property
      */
     private UntypedNode totalViews;
     /**
-     * The totalWatchTimeMs property
+     * The total_watch_time_ms property
      */
     private Double totalWatchTimeMs;
     /**
-     * The uniqueViewers property
+     * The unique_viewers property
      */
     private UntypedNode uniqueViewers;
     /**
@@ -44,7 +44,7 @@ public class FeedStats implements Parsable {
         return new FeedStats();
     }
     /**
-     * Gets the avgTimePerVisitMs property value. The avgTimePerVisitMs property
+     * Gets the avg_time_per_visit_ms property value. The avg_time_per_visit_ms property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -52,7 +52,7 @@ public class FeedStats implements Parsable {
         return this.avgTimePerVisitMs;
     }
     /**
-     * Gets the feedId property value. The feedId property
+     * Gets the feed_id property value. The feed_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -66,16 +66,16 @@ public class FeedStats implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
-        deserializerMap.put("avgTimePerVisitMs", (n) -> { this.setAvgTimePerVisitMs(n.getDoubleValue()); });
-        deserializerMap.put("feedId", (n) -> { this.setFeedId(n.getStringValue()); });
-        deserializerMap.put("totalPosts", (n) -> { this.setTotalPosts(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("totalViews", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("totalWatchTimeMs", (n) -> { this.setTotalWatchTimeMs(n.getDoubleValue()); });
-        deserializerMap.put("uniqueViewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("avg_time_per_visit_ms", (n) -> { this.setAvgTimePerVisitMs(n.getDoubleValue()); });
+        deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
+        deserializerMap.put("total_posts", (n) -> { this.setTotalPosts(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total_watch_time_ms", (n) -> { this.setTotalWatchTimeMs(n.getDoubleValue()); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the totalPosts property value. The totalPosts property
+     * Gets the total_posts property value. The total_posts property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -83,7 +83,7 @@ public class FeedStats implements Parsable {
         return this.totalPosts;
     }
     /**
-     * Gets the totalViews property value. The totalViews property
+     * Gets the total_views property value. The total_views property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -91,7 +91,7 @@ public class FeedStats implements Parsable {
         return this.totalViews;
     }
     /**
-     * Gets the totalWatchTimeMs property value. The totalWatchTimeMs property
+     * Gets the total_watch_time_ms property value. The total_watch_time_ms property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -99,7 +99,7 @@ public class FeedStats implements Parsable {
         return this.totalWatchTimeMs;
     }
     /**
-     * Gets the uniqueViewers property value. The uniqueViewers property
+     * Gets the unique_viewers property value. The unique_viewers property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -112,51 +112,51 @@ public class FeedStats implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeDoubleValue("avgTimePerVisitMs", this.getAvgTimePerVisitMs());
-        writer.writeStringValue("feedId", this.getFeedId());
-        writer.writeObjectValue("totalPosts", this.getTotalPosts());
-        writer.writeObjectValue("totalViews", this.getTotalViews());
-        writer.writeDoubleValue("totalWatchTimeMs", this.getTotalWatchTimeMs());
-        writer.writeObjectValue("uniqueViewers", this.getUniqueViewers());
+        writer.writeDoubleValue("avg_time_per_visit_ms", this.getAvgTimePerVisitMs());
+        writer.writeStringValue("feed_id", this.getFeedId());
+        writer.writeObjectValue("total_posts", this.getTotalPosts());
+        writer.writeObjectValue("total_views", this.getTotalViews());
+        writer.writeDoubleValue("total_watch_time_ms", this.getTotalWatchTimeMs());
+        writer.writeObjectValue("unique_viewers", this.getUniqueViewers());
     }
     /**
-     * Sets the avgTimePerVisitMs property value. The avgTimePerVisitMs property
-     * @param value Value to set for the avgTimePerVisitMs property.
+     * Sets the avg_time_per_visit_ms property value. The avg_time_per_visit_ms property
+     * @param value Value to set for the avg_time_per_visit_ms property.
      */
     public void setAvgTimePerVisitMs(@jakarta.annotation.Nullable final Double value) {
         this.avgTimePerVisitMs = value;
     }
     /**
-     * Sets the feedId property value. The feedId property
-     * @param value Value to set for the feedId property.
+     * Sets the feed_id property value. The feed_id property
+     * @param value Value to set for the feed_id property.
      */
     public void setFeedId(@jakarta.annotation.Nullable final String value) {
         this.feedId = value;
     }
     /**
-     * Sets the totalPosts property value. The totalPosts property
-     * @param value Value to set for the totalPosts property.
+     * Sets the total_posts property value. The total_posts property
+     * @param value Value to set for the total_posts property.
      */
     public void setTotalPosts(@jakarta.annotation.Nullable final UntypedNode value) {
         this.totalPosts = value;
     }
     /**
-     * Sets the totalViews property value. The totalViews property
-     * @param value Value to set for the totalViews property.
+     * Sets the total_views property value. The total_views property
+     * @param value Value to set for the total_views property.
      */
     public void setTotalViews(@jakarta.annotation.Nullable final UntypedNode value) {
         this.totalViews = value;
     }
     /**
-     * Sets the totalWatchTimeMs property value. The totalWatchTimeMs property
-     * @param value Value to set for the totalWatchTimeMs property.
+     * Sets the total_watch_time_ms property value. The total_watch_time_ms property
+     * @param value Value to set for the total_watch_time_ms property.
      */
     public void setTotalWatchTimeMs(@jakarta.annotation.Nullable final Double value) {
         this.totalWatchTimeMs = value;
     }
     /**
-     * Sets the uniqueViewers property value. The uniqueViewers property
-     * @param value Value to set for the uniqueViewers property.
+     * Sets the unique_viewers property value. The unique_viewers property
+     * @param value Value to set for the unique_viewers property.
      */
     public void setUniqueViewers(@jakarta.annotation.Nullable final UntypedNode value) {
         this.uniqueViewers = value;

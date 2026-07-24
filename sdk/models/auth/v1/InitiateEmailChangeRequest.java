@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class InitiateEmailChangeRequest implements Parsable {
     /**
-     * The newEmail property
+     * The new_email property
      */
     private String newEmail;
     /**
-     * The userId property
+     * The user_id property
      */
     private String userId;
     /**
@@ -33,12 +33,12 @@ public class InitiateEmailChangeRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("newEmail", (n) -> { this.setNewEmail(n.getStringValue()); });
-        deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
+        deserializerMap.put("new_email", (n) -> { this.setNewEmail(n.getStringValue()); });
+        deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the newEmail property value. The newEmail property
+     * Gets the new_email property value. The new_email property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,7 +46,7 @@ public class InitiateEmailChangeRequest implements Parsable {
         return this.newEmail;
     }
     /**
-     * Gets the userId property value. The userId property
+     * Gets the user_id property value. The user_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,19 +59,19 @@ public class InitiateEmailChangeRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("newEmail", this.getNewEmail());
-        writer.writeStringValue("userId", this.getUserId());
+        writer.writeStringValue("new_email", this.getNewEmail());
+        writer.writeStringValue("user_id", this.getUserId());
     }
     /**
-     * Sets the newEmail property value. The newEmail property
-     * @param value Value to set for the newEmail property.
+     * Sets the new_email property value. The new_email property
+     * @param value Value to set for the new_email property.
      */
     public void setNewEmail(@jakarta.annotation.Nullable final String value) {
         this.newEmail = value;
     }
     /**
-     * Sets the userId property value. The userId property
-     * @param value Value to set for the userId property.
+     * Sets the user_id property value. The user_id property
+     * @param value Value to set for the user_id property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;

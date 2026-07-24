@@ -25,7 +25,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DashboardRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?timeEnd={timeEnd}&timeStart={timeStart}{&interval*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?time_end={time_end}&time_start={time_start}{&interval*}", pathParameters);
     }
     /**
      * Instantiates a new {@link DashboardRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DashboardRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?timeEnd={timeEnd}&timeStart={timeStart}{&interval*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?time_end={time_end}&time_start={time_start}{&interval*}", rawUrl);
     }
     /**
      * GetDashboardStats
@@ -102,8 +102,8 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("interval", interval);
-            allQueryParams.put("timeEnd", timeEnd);
-            allQueryParams.put("timeStart", timeStart);
+            allQueryParams.put("time_end", timeEnd);
+            allQueryParams.put("time_start", timeStart);
             return allQueryParams;
         }
     }

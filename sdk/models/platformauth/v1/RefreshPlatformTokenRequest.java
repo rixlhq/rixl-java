@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RefreshPlatformTokenRequest implements Parsable {
     /**
-     * The refreshToken property
+     * The refresh_token property
      */
     private String refreshToken;
     /**
@@ -29,11 +29,11 @@ public class RefreshPlatformTokenRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("refreshToken", (n) -> { this.setRefreshToken(n.getStringValue()); });
+        deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the refreshToken property value. The refreshToken property
+     * Gets the refresh_token property value. The refresh_token property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,11 +46,11 @@ public class RefreshPlatformTokenRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("refreshToken", this.getRefreshToken());
+        writer.writeStringValue("refresh_token", this.getRefreshToken());
     }
     /**
-     * Sets the refreshToken property value. The refreshToken property
-     * @param value Value to set for the refreshToken property.
+     * Sets the refresh_token property value. The refresh_token property
+     * @param value Value to set for the refresh_token property.
      */
     public void setRefreshToken(@jakarta.annotation.Nullable final String value) {
         this.refreshToken = value;

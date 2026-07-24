@@ -13,11 +13,11 @@ public class GetUserResponse implements Parsable {
      */
     private String email;
     /**
-     * The emailVerified property
+     * The email_verified property
      */
     private Boolean emailVerified;
     /**
-     * The userId property
+     * The user_id property
      */
     private String userId;
     /**
@@ -39,7 +39,7 @@ public class GetUserResponse implements Parsable {
         return this.email;
     }
     /**
-     * Gets the emailVerified property value. The emailVerified property
+     * Gets the email_verified property value. The email_verified property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -54,12 +54,12 @@ public class GetUserResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("emailVerified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
-        deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
+        deserializerMap.put("email_verified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
+        deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the userId property value. The userId property
+     * Gets the user_id property value. The user_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -73,8 +73,8 @@ public class GetUserResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("email", this.getEmail());
-        writer.writeBooleanValue("emailVerified", this.getEmailVerified());
-        writer.writeStringValue("userId", this.getUserId());
+        writer.writeBooleanValue("email_verified", this.getEmailVerified());
+        writer.writeStringValue("user_id", this.getUserId());
     }
     /**
      * Sets the email property value. The email property
@@ -84,15 +84,15 @@ public class GetUserResponse implements Parsable {
         this.email = value;
     }
     /**
-     * Sets the emailVerified property value. The emailVerified property
-     * @param value Value to set for the emailVerified property.
+     * Sets the email_verified property value. The email_verified property
+     * @param value Value to set for the email_verified property.
      */
     public void setEmailVerified(@jakarta.annotation.Nullable final Boolean value) {
         this.emailVerified = value;
     }
     /**
-     * Sets the userId property value. The userId property
-     * @param value Value to set for the userId property.
+     * Sets the user_id property value. The user_id property
+     * @param value Value to set for the user_id property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;

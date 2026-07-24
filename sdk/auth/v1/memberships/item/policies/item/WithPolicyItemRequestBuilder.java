@@ -35,7 +35,7 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPolicyItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}{?user%2EuserId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}{?user%2Euser_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPolicyItemRequestBuilder} and sets the default values.
@@ -43,7 +43,7 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPolicyItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}{?user%2EuserId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}{?user%2Euser_id*}", rawUrl);
     }
     /**
      * DeletePolicy
@@ -190,7 +190,7 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("user%2EuserId", userUserId);
+            allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }
     }
@@ -219,7 +219,7 @@ public class WithPolicyItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("user%2EuserId", userUserId);
+            allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }
     }

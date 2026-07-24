@@ -25,7 +25,7 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatusRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails/status{?userId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails/status{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link StatusRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public StatusRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails/status{?userId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails/status{?user_id*}", rawUrl);
     }
     /**
      * GetUserEmailStatus
@@ -97,7 +97,7 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("userId", userId);
+            allQueryParams.put("user_id", userId);
             return allQueryParams;
         }
     }

@@ -22,15 +22,15 @@ public class Subtitle implements Parsable {
      */
     private String label;
     /**
-     * The languageCode property
+     * The language_code property
      */
     private String languageCode;
     /**
-     * The videoId property
+     * The video_id property
      */
     private String videoId;
     /**
-     * The vttPath property
+     * The vtt_path property
      */
     private String vttPath;
     /**
@@ -53,9 +53,9 @@ public class Subtitle implements Parsable {
         deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(SubtitleFormat::forValue)); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("label", (n) -> { this.setLabel(n.getStringValue()); });
-        deserializerMap.put("languageCode", (n) -> { this.setLanguageCode(n.getStringValue()); });
-        deserializerMap.put("videoId", (n) -> { this.setVideoId(n.getStringValue()); });
-        deserializerMap.put("vttPath", (n) -> { this.setVttPath(n.getStringValue()); });
+        deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
+        deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
+        deserializerMap.put("vtt_path", (n) -> { this.setVttPath(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -83,7 +83,7 @@ public class Subtitle implements Parsable {
         return this.label;
     }
     /**
-     * Gets the languageCode property value. The languageCode property
+     * Gets the language_code property value. The language_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -91,7 +91,7 @@ public class Subtitle implements Parsable {
         return this.languageCode;
     }
     /**
-     * Gets the videoId property value. The videoId property
+     * Gets the video_id property value. The video_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -99,7 +99,7 @@ public class Subtitle implements Parsable {
         return this.videoId;
     }
     /**
-     * Gets the vttPath property value. The vttPath property
+     * Gets the vtt_path property value. The vtt_path property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -115,9 +115,9 @@ public class Subtitle implements Parsable {
         writer.writeEnumValue("format", this.getFormat());
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("label", this.getLabel());
-        writer.writeStringValue("languageCode", this.getLanguageCode());
-        writer.writeStringValue("videoId", this.getVideoId());
-        writer.writeStringValue("vttPath", this.getVttPath());
+        writer.writeStringValue("language_code", this.getLanguageCode());
+        writer.writeStringValue("video_id", this.getVideoId());
+        writer.writeStringValue("vtt_path", this.getVttPath());
     }
     /**
      * Sets the format property value. The format property
@@ -141,22 +141,22 @@ public class Subtitle implements Parsable {
         this.label = value;
     }
     /**
-     * Sets the languageCode property value. The languageCode property
-     * @param value Value to set for the languageCode property.
+     * Sets the language_code property value. The language_code property
+     * @param value Value to set for the language_code property.
      */
     public void setLanguageCode(@jakarta.annotation.Nullable final String value) {
         this.languageCode = value;
     }
     /**
-     * Sets the videoId property value. The videoId property
-     * @param value Value to set for the videoId property.
+     * Sets the video_id property value. The video_id property
+     * @param value Value to set for the video_id property.
      */
     public void setVideoId(@jakarta.annotation.Nullable final String value) {
         this.videoId = value;
     }
     /**
-     * Sets the vttPath property value. The vttPath property
-     * @param value Value to set for the vttPath property.
+     * Sets the vtt_path property value. The vtt_path property
+     * @param value Value to set for the vtt_path property.
      */
     public void setVttPath(@jakarta.annotation.Nullable final String value) {
         this.vttPath = value;

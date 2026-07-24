@@ -10,11 +10,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VideoStats implements Parsable {
     /**
-     * The avgWatchTimeMs property
+     * The avg_watch_time_ms property
      */
     private Double avgWatchTimeMs;
     /**
-     * The completionRate property
+     * The completion_rate property
      */
     private Double completionRate;
     /**
@@ -26,19 +26,19 @@ public class VideoStats implements Parsable {
      */
     private UntypedNode starts;
     /**
-     * The totalViews property
+     * The total_views property
      */
     private UntypedNode totalViews;
     /**
-     * The totalWatchTimeMs property
+     * The total_watch_time_ms property
      */
     private Double totalWatchTimeMs;
     /**
-     * The uniqueViewers property
+     * The unique_viewers property
      */
     private UntypedNode uniqueViewers;
     /**
-     * The videoId property
+     * The video_id property
      */
     private String videoId;
     /**
@@ -56,7 +56,7 @@ public class VideoStats implements Parsable {
         return new VideoStats();
     }
     /**
-     * Gets the avgWatchTimeMs property value. The avgWatchTimeMs property
+     * Gets the avg_watch_time_ms property value. The avg_watch_time_ms property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -64,7 +64,7 @@ public class VideoStats implements Parsable {
         return this.avgWatchTimeMs;
     }
     /**
-     * Gets the completionRate property value. The completionRate property
+     * Gets the completion_rate property value. The completion_rate property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -86,14 +86,14 @@ public class VideoStats implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
-        deserializerMap.put("avgWatchTimeMs", (n) -> { this.setAvgWatchTimeMs(n.getDoubleValue()); });
-        deserializerMap.put("completionRate", (n) -> { this.setCompletionRate(n.getDoubleValue()); });
+        deserializerMap.put("avg_watch_time_ms", (n) -> { this.setAvgWatchTimeMs(n.getDoubleValue()); });
+        deserializerMap.put("completion_rate", (n) -> { this.setCompletionRate(n.getDoubleValue()); });
         deserializerMap.put("completions", (n) -> { this.setCompletions(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("starts", (n) -> { this.setStarts(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("totalViews", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("totalWatchTimeMs", (n) -> { this.setTotalWatchTimeMs(n.getDoubleValue()); });
-        deserializerMap.put("uniqueViewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("videoId", (n) -> { this.setVideoId(n.getStringValue()); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total_watch_time_ms", (n) -> { this.setTotalWatchTimeMs(n.getDoubleValue()); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
         deserializerMap.put("watches", (n) -> { this.setWatches(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -106,7 +106,7 @@ public class VideoStats implements Parsable {
         return this.starts;
     }
     /**
-     * Gets the totalViews property value. The totalViews property
+     * Gets the total_views property value. The total_views property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -114,7 +114,7 @@ public class VideoStats implements Parsable {
         return this.totalViews;
     }
     /**
-     * Gets the totalWatchTimeMs property value. The totalWatchTimeMs property
+     * Gets the total_watch_time_ms property value. The total_watch_time_ms property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -122,7 +122,7 @@ public class VideoStats implements Parsable {
         return this.totalWatchTimeMs;
     }
     /**
-     * Gets the uniqueViewers property value. The uniqueViewers property
+     * Gets the unique_viewers property value. The unique_viewers property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -130,7 +130,7 @@ public class VideoStats implements Parsable {
         return this.uniqueViewers;
     }
     /**
-     * Gets the videoId property value. The videoId property
+     * Gets the video_id property value. The video_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -151,26 +151,26 @@ public class VideoStats implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeDoubleValue("avgWatchTimeMs", this.getAvgWatchTimeMs());
-        writer.writeDoubleValue("completionRate", this.getCompletionRate());
+        writer.writeDoubleValue("avg_watch_time_ms", this.getAvgWatchTimeMs());
+        writer.writeDoubleValue("completion_rate", this.getCompletionRate());
         writer.writeObjectValue("completions", this.getCompletions());
         writer.writeObjectValue("starts", this.getStarts());
-        writer.writeObjectValue("totalViews", this.getTotalViews());
-        writer.writeDoubleValue("totalWatchTimeMs", this.getTotalWatchTimeMs());
-        writer.writeObjectValue("uniqueViewers", this.getUniqueViewers());
-        writer.writeStringValue("videoId", this.getVideoId());
+        writer.writeObjectValue("total_views", this.getTotalViews());
+        writer.writeDoubleValue("total_watch_time_ms", this.getTotalWatchTimeMs());
+        writer.writeObjectValue("unique_viewers", this.getUniqueViewers());
+        writer.writeStringValue("video_id", this.getVideoId());
         writer.writeObjectValue("watches", this.getWatches());
     }
     /**
-     * Sets the avgWatchTimeMs property value. The avgWatchTimeMs property
-     * @param value Value to set for the avgWatchTimeMs property.
+     * Sets the avg_watch_time_ms property value. The avg_watch_time_ms property
+     * @param value Value to set for the avg_watch_time_ms property.
      */
     public void setAvgWatchTimeMs(@jakarta.annotation.Nullable final Double value) {
         this.avgWatchTimeMs = value;
     }
     /**
-     * Sets the completionRate property value. The completionRate property
-     * @param value Value to set for the completionRate property.
+     * Sets the completion_rate property value. The completion_rate property
+     * @param value Value to set for the completion_rate property.
      */
     public void setCompletionRate(@jakarta.annotation.Nullable final Double value) {
         this.completionRate = value;
@@ -190,29 +190,29 @@ public class VideoStats implements Parsable {
         this.starts = value;
     }
     /**
-     * Sets the totalViews property value. The totalViews property
-     * @param value Value to set for the totalViews property.
+     * Sets the total_views property value. The total_views property
+     * @param value Value to set for the total_views property.
      */
     public void setTotalViews(@jakarta.annotation.Nullable final UntypedNode value) {
         this.totalViews = value;
     }
     /**
-     * Sets the totalWatchTimeMs property value. The totalWatchTimeMs property
-     * @param value Value to set for the totalWatchTimeMs property.
+     * Sets the total_watch_time_ms property value. The total_watch_time_ms property
+     * @param value Value to set for the total_watch_time_ms property.
      */
     public void setTotalWatchTimeMs(@jakarta.annotation.Nullable final Double value) {
         this.totalWatchTimeMs = value;
     }
     /**
-     * Sets the uniqueViewers property value. The uniqueViewers property
-     * @param value Value to set for the uniqueViewers property.
+     * Sets the unique_viewers property value. The unique_viewers property
+     * @param value Value to set for the unique_viewers property.
      */
     public void setUniqueViewers(@jakarta.annotation.Nullable final UntypedNode value) {
         this.uniqueViewers = value;
     }
     /**
-     * Sets the videoId property value. The videoId property
-     * @param value Value to set for the videoId property.
+     * Sets the video_id property value. The video_id property
+     * @param value Value to set for the video_id property.
      */
     public void setVideoId(@jakarta.annotation.Nullable final String value) {
         this.videoId = value;

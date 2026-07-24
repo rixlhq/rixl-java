@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RefreshTokenRequest implements Parsable {
     /**
-     * The countryCode property
+     * The country_code property
      */
     private String countryCode;
     /**
@@ -17,11 +17,11 @@ public class RefreshTokenRequest implements Parsable {
      */
     private String origin;
     /**
-     * The refreshToken property
+     * The refresh_token property
      */
     private String refreshToken;
     /**
-     * The tokenType property
+     * The token_type property
      */
     private String tokenType;
     /**
@@ -35,7 +35,7 @@ public class RefreshTokenRequest implements Parsable {
         return new RefreshTokenRequest();
     }
     /**
-     * Gets the countryCode property value. The countryCode property
+     * Gets the country_code property value. The country_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -49,10 +49,10 @@ public class RefreshTokenRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("countryCode", (n) -> { this.setCountryCode(n.getStringValue()); });
+        deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("origin", (n) -> { this.setOrigin(n.getStringValue()); });
-        deserializerMap.put("refreshToken", (n) -> { this.setRefreshToken(n.getStringValue()); });
-        deserializerMap.put("tokenType", (n) -> { this.setTokenType(n.getStringValue()); });
+        deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
+        deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -64,7 +64,7 @@ public class RefreshTokenRequest implements Parsable {
         return this.origin;
     }
     /**
-     * Gets the refreshToken property value. The refreshToken property
+     * Gets the refresh_token property value. The refresh_token property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class RefreshTokenRequest implements Parsable {
         return this.refreshToken;
     }
     /**
-     * Gets the tokenType property value. The tokenType property
+     * Gets the token_type property value. The token_type property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,14 +85,14 @@ public class RefreshTokenRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("countryCode", this.getCountryCode());
+        writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("origin", this.getOrigin());
-        writer.writeStringValue("refreshToken", this.getRefreshToken());
-        writer.writeStringValue("tokenType", this.getTokenType());
+        writer.writeStringValue("refresh_token", this.getRefreshToken());
+        writer.writeStringValue("token_type", this.getTokenType());
     }
     /**
-     * Sets the countryCode property value. The countryCode property
-     * @param value Value to set for the countryCode property.
+     * Sets the country_code property value. The country_code property
+     * @param value Value to set for the country_code property.
      */
     public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
@@ -105,15 +105,15 @@ public class RefreshTokenRequest implements Parsable {
         this.origin = value;
     }
     /**
-     * Sets the refreshToken property value. The refreshToken property
-     * @param value Value to set for the refreshToken property.
+     * Sets the refresh_token property value. The refresh_token property
+     * @param value Value to set for the refresh_token property.
      */
     public void setRefreshToken(@jakarta.annotation.Nullable final String value) {
         this.refreshToken = value;
     }
     /**
-     * Sets the tokenType property value. The tokenType property
-     * @param value Value to set for the tokenType property.
+     * Sets the token_type property value. The token_type property
+     * @param value Value to set for the token_type property.
      */
     public void setTokenType(@jakarta.annotation.Nullable final String value) {
         this.tokenType = value;

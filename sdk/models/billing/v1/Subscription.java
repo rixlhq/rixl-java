@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Subscription implements Parsable {
     /**
-     * The cancelAtPeriodEnd property
+     * The cancel_at_period_end property
      */
     private Boolean cancelAtPeriodEnd;
     /**
@@ -22,7 +22,7 @@ public class Subscription implements Parsable {
      */
     private OffsetDateTime currentPeriodEnd;
     /**
-     * The expiringSoon property
+     * The expiring_soon property
      */
     private Boolean expiringSoon;
     /**
@@ -30,19 +30,19 @@ public class Subscription implements Parsable {
      */
     private String id;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The planId property
+     * The plan_id property
      */
     private String planId;
     /**
-     * The planName property
+     * The plan_name property
      */
     private String planName;
     /**
-     * The planType property
+     * The plan_type property
      */
     private PlanType planType;
     /**
@@ -54,7 +54,7 @@ public class Subscription implements Parsable {
      */
     private SubscriptionStatus status;
     /**
-     * The trialsEndingSoon property
+     * The trials_ending_soon property
      */
     private Boolean trialsEndingSoon;
     /**
@@ -68,7 +68,7 @@ public class Subscription implements Parsable {
         return new Subscription();
     }
     /**
-     * Gets the cancelAtPeriodEnd property value. The cancelAtPeriodEnd property
+     * Gets the cancel_at_period_end property value. The cancel_at_period_end property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -84,7 +84,7 @@ public class Subscription implements Parsable {
         return this.currency;
     }
     /**
-     * Gets the currentPeriodEnd property value. A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are &quot;smeared&quot; so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. # Examples Example 1: Compute Timestamp from POSIX `time()`.     Timestamp timestamp;     timestamp.set_seconds(time(NULL));     timestamp.set_nanos(0); Example 2: Compute Timestamp from POSIX `gettimeofday()`.     struct timeval tv;     gettimeofday(&amp;tv, NULL);     Timestamp timestamp;     timestamp.set_seconds(tv.tv_sec);     timestamp.set_nanos(tv.tv_usec * 1000); Example 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.     FILETIME ft;     GetSystemTimeAsFileTime(&amp;ft);     UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;     // A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z     // is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.     Timestamp timestamp;     timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));     timestamp.set_nanos((INT32) ((ticks % 10000000) * 100)); Example 4: Compute Timestamp from Java `System.currentTimeMillis()`.     long millis = System.currentTimeMillis();     Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)         .setNanos((int) ((millis % 1000) * 1000000)).build(); Example 5: Compute Timestamp from Java `Instant.now()`.     Instant now = Instant.now();     Timestamp timestamp =         Timestamp.newBuilder().setSeconds(now.getEpochSecond())             .setNanos(now.getNano()).build(); Example 6: Compute Timestamp from current time in Python.     timestamp = Timestamp()     timestamp.GetCurrentTime() # JSON Mapping In JSON format, the Timestamp type is encoded as a string in the [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the format is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot; where {year} is always expressed using four digits while {month}, {day}, {hour}, {min}, and {sec} are zero-padded to two digits each. The fractional seconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution), are optional. The &quot;Z&quot; suffix indicates the timezone (&quot;UTC&quot;); the timezone is required. A proto3 JSON serializer should always use UTC (as indicated by &quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be able to accept both UTC and other timezones (as indicated by an offset). For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past 01:30 UTC on January 15, 2017. In JavaScript, one can convert a Date object to this format using the standard [toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) method. In Python, a standard `datetime.datetime` object can be converted to this format using [`strftime`](https://docs.python.org/2/library/time.html#time.strftime) with the time format spec &apos;%Y-%m-%dT%H:%M:%S.%fZ&apos;. Likewise, in Java, one can use the Joda Time&apos;s [`ISODateTimeFormat.dateTime()`]( http://joda-time.sourceforge.net/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime() ) to obtain a formatter capable of generating timestamps in this format.
+     * Gets the current_period_end property value. A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are &quot;smeared&quot; so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. # Examples Example 1: Compute Timestamp from POSIX `time()`.     Timestamp timestamp;     timestamp.set_seconds(time(NULL));     timestamp.set_nanos(0); Example 2: Compute Timestamp from POSIX `gettimeofday()`.     struct timeval tv;     gettimeofday(&amp;tv, NULL);     Timestamp timestamp;     timestamp.set_seconds(tv.tv_sec);     timestamp.set_nanos(tv.tv_usec * 1000); Example 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.     FILETIME ft;     GetSystemTimeAsFileTime(&amp;ft);     UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;     // A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z     // is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.     Timestamp timestamp;     timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));     timestamp.set_nanos((INT32) ((ticks % 10000000) * 100)); Example 4: Compute Timestamp from Java `System.currentTimeMillis()`.     long millis = System.currentTimeMillis();     Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)         .setNanos((int) ((millis % 1000) * 1000000)).build(); Example 5: Compute Timestamp from Java `Instant.now()`.     Instant now = Instant.now();     Timestamp timestamp =         Timestamp.newBuilder().setSeconds(now.getEpochSecond())             .setNanos(now.getNano()).build(); Example 6: Compute Timestamp from current time in Python.     timestamp = Timestamp()     timestamp.GetCurrentTime() # JSON Mapping In JSON format, the Timestamp type is encoded as a string in the [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the format is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot; where {year} is always expressed using four digits while {month}, {day}, {hour}, {min}, and {sec} are zero-padded to two digits each. The fractional seconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution), are optional. The &quot;Z&quot; suffix indicates the timezone (&quot;UTC&quot;); the timezone is required. A proto3 JSON serializer should always use UTC (as indicated by &quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be able to accept both UTC and other timezones (as indicated by an offset). For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past 01:30 UTC on January 15, 2017. In JavaScript, one can convert a Date object to this format using the standard [toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) method. In Python, a standard `datetime.datetime` object can be converted to this format using [`strftime`](https://docs.python.org/2/library/time.html#time.strftime) with the time format spec &apos;%Y-%m-%dT%H:%M:%S.%fZ&apos;. Likewise, in Java, one can use the Joda Time&apos;s [`ISODateTimeFormat.dateTime()`]( http://joda-time.sourceforge.net/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime() ) to obtain a formatter capable of generating timestamps in this format.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -92,7 +92,7 @@ public class Subscription implements Parsable {
         return this.currentPeriodEnd;
     }
     /**
-     * Gets the expiringSoon property value. The expiringSoon property
+     * Gets the expiring_soon property value. The expiring_soon property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -106,18 +106,18 @@ public class Subscription implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
-        deserializerMap.put("cancelAtPeriodEnd", (n) -> { this.setCancelAtPeriodEnd(n.getBooleanValue()); });
+        deserializerMap.put("cancel_at_period_end", (n) -> { this.setCancelAtPeriodEnd(n.getBooleanValue()); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("currentPeriodEnd", (n) -> { this.setCurrentPeriodEnd(n.getOffsetDateTimeValue()); });
-        deserializerMap.put("expiringSoon", (n) -> { this.setExpiringSoon(n.getBooleanValue()); });
+        deserializerMap.put("current_period_end", (n) -> { this.setCurrentPeriodEnd(n.getOffsetDateTimeValue()); });
+        deserializerMap.put("expiring_soon", (n) -> { this.setExpiringSoon(n.getBooleanValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("planId", (n) -> { this.setPlanId(n.getStringValue()); });
-        deserializerMap.put("planName", (n) -> { this.setPlanName(n.getStringValue()); });
-        deserializerMap.put("planType", (n) -> { this.setPlanType(n.getEnumValue(PlanType::forValue)); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("plan_id", (n) -> { this.setPlanId(n.getStringValue()); });
+        deserializerMap.put("plan_name", (n) -> { this.setPlanName(n.getStringValue()); });
+        deserializerMap.put("plan_type", (n) -> { this.setPlanType(n.getEnumValue(PlanType::forValue)); });
         deserializerMap.put("price", (n) -> { this.setPrice(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(SubscriptionStatus::forValue)); });
-        deserializerMap.put("trialsEndingSoon", (n) -> { this.setTrialsEndingSoon(n.getBooleanValue()); });
+        deserializerMap.put("trials_ending_soon", (n) -> { this.setTrialsEndingSoon(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
@@ -129,7 +129,7 @@ public class Subscription implements Parsable {
         return this.id;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -137,7 +137,7 @@ public class Subscription implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the planId property value. The planId property
+     * Gets the plan_id property value. The plan_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -145,7 +145,7 @@ public class Subscription implements Parsable {
         return this.planId;
     }
     /**
-     * Gets the planName property value. The planName property
+     * Gets the plan_name property value. The plan_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -153,7 +153,7 @@ public class Subscription implements Parsable {
         return this.planName;
     }
     /**
-     * Gets the planType property value. The planType property
+     * Gets the plan_type property value. The plan_type property
      * @return a {@link PlanType}
      */
     @jakarta.annotation.Nullable
@@ -177,7 +177,7 @@ public class Subscription implements Parsable {
         return this.status;
     }
     /**
-     * Gets the trialsEndingSoon property value. The trialsEndingSoon property
+     * Gets the trials_ending_soon property value. The trials_ending_soon property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -190,22 +190,22 @@ public class Subscription implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeBooleanValue("cancelAtPeriodEnd", this.getCancelAtPeriodEnd());
+        writer.writeBooleanValue("cancel_at_period_end", this.getCancelAtPeriodEnd());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeOffsetDateTimeValue("currentPeriodEnd", this.getCurrentPeriodEnd());
-        writer.writeBooleanValue("expiringSoon", this.getExpiringSoon());
+        writer.writeOffsetDateTimeValue("current_period_end", this.getCurrentPeriodEnd());
+        writer.writeBooleanValue("expiring_soon", this.getExpiringSoon());
         writer.writeStringValue("id", this.getId());
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("planId", this.getPlanId());
-        writer.writeStringValue("planName", this.getPlanName());
-        writer.writeEnumValue("planType", this.getPlanType());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("plan_id", this.getPlanId());
+        writer.writeStringValue("plan_name", this.getPlanName());
+        writer.writeEnumValue("plan_type", this.getPlanType());
         writer.writeStringValue("price", this.getPrice());
         writer.writeEnumValue("status", this.getStatus());
-        writer.writeBooleanValue("trialsEndingSoon", this.getTrialsEndingSoon());
+        writer.writeBooleanValue("trials_ending_soon", this.getTrialsEndingSoon());
     }
     /**
-     * Sets the cancelAtPeriodEnd property value. The cancelAtPeriodEnd property
-     * @param value Value to set for the cancelAtPeriodEnd property.
+     * Sets the cancel_at_period_end property value. The cancel_at_period_end property
+     * @param value Value to set for the cancel_at_period_end property.
      */
     public void setCancelAtPeriodEnd(@jakarta.annotation.Nullable final Boolean value) {
         this.cancelAtPeriodEnd = value;
@@ -218,15 +218,15 @@ public class Subscription implements Parsable {
         this.currency = value;
     }
     /**
-     * Sets the currentPeriodEnd property value. A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are &quot;smeared&quot; so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. # Examples Example 1: Compute Timestamp from POSIX `time()`.     Timestamp timestamp;     timestamp.set_seconds(time(NULL));     timestamp.set_nanos(0); Example 2: Compute Timestamp from POSIX `gettimeofday()`.     struct timeval tv;     gettimeofday(&amp;tv, NULL);     Timestamp timestamp;     timestamp.set_seconds(tv.tv_sec);     timestamp.set_nanos(tv.tv_usec * 1000); Example 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.     FILETIME ft;     GetSystemTimeAsFileTime(&amp;ft);     UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;     // A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z     // is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.     Timestamp timestamp;     timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));     timestamp.set_nanos((INT32) ((ticks % 10000000) * 100)); Example 4: Compute Timestamp from Java `System.currentTimeMillis()`.     long millis = System.currentTimeMillis();     Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)         .setNanos((int) ((millis % 1000) * 1000000)).build(); Example 5: Compute Timestamp from Java `Instant.now()`.     Instant now = Instant.now();     Timestamp timestamp =         Timestamp.newBuilder().setSeconds(now.getEpochSecond())             .setNanos(now.getNano()).build(); Example 6: Compute Timestamp from current time in Python.     timestamp = Timestamp()     timestamp.GetCurrentTime() # JSON Mapping In JSON format, the Timestamp type is encoded as a string in the [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the format is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot; where {year} is always expressed using four digits while {month}, {day}, {hour}, {min}, and {sec} are zero-padded to two digits each. The fractional seconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution), are optional. The &quot;Z&quot; suffix indicates the timezone (&quot;UTC&quot;); the timezone is required. A proto3 JSON serializer should always use UTC (as indicated by &quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be able to accept both UTC and other timezones (as indicated by an offset). For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past 01:30 UTC on January 15, 2017. In JavaScript, one can convert a Date object to this format using the standard [toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) method. In Python, a standard `datetime.datetime` object can be converted to this format using [`strftime`](https://docs.python.org/2/library/time.html#time.strftime) with the time format spec &apos;%Y-%m-%dT%H:%M:%S.%fZ&apos;. Likewise, in Java, one can use the Joda Time&apos;s [`ISODateTimeFormat.dateTime()`]( http://joda-time.sourceforge.net/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime() ) to obtain a formatter capable of generating timestamps in this format.
-     * @param value Value to set for the currentPeriodEnd property.
+     * Sets the current_period_end property value. A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are &quot;smeared&quot; so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings. # Examples Example 1: Compute Timestamp from POSIX `time()`.     Timestamp timestamp;     timestamp.set_seconds(time(NULL));     timestamp.set_nanos(0); Example 2: Compute Timestamp from POSIX `gettimeofday()`.     struct timeval tv;     gettimeofday(&amp;tv, NULL);     Timestamp timestamp;     timestamp.set_seconds(tv.tv_sec);     timestamp.set_nanos(tv.tv_usec * 1000); Example 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.     FILETIME ft;     GetSystemTimeAsFileTime(&amp;ft);     UINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;     // A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z     // is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.     Timestamp timestamp;     timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));     timestamp.set_nanos((INT32) ((ticks % 10000000) * 100)); Example 4: Compute Timestamp from Java `System.currentTimeMillis()`.     long millis = System.currentTimeMillis();     Timestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)         .setNanos((int) ((millis % 1000) * 1000000)).build(); Example 5: Compute Timestamp from Java `Instant.now()`.     Instant now = Instant.now();     Timestamp timestamp =         Timestamp.newBuilder().setSeconds(now.getEpochSecond())             .setNanos(now.getNano()).build(); Example 6: Compute Timestamp from current time in Python.     timestamp = Timestamp()     timestamp.GetCurrentTime() # JSON Mapping In JSON format, the Timestamp type is encoded as a string in the [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the format is &quot;{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z&quot; where {year} is always expressed using four digits while {month}, {day}, {hour}, {min}, and {sec} are zero-padded to two digits each. The fractional seconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution), are optional. The &quot;Z&quot; suffix indicates the timezone (&quot;UTC&quot;); the timezone is required. A proto3 JSON serializer should always use UTC (as indicated by &quot;Z&quot;) when printing the Timestamp type and a proto3 JSON parser should be able to accept both UTC and other timezones (as indicated by an offset). For example, &quot;2017-01-15T01:30:15.01Z&quot; encodes 15.01 seconds past 01:30 UTC on January 15, 2017. In JavaScript, one can convert a Date object to this format using the standard [toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) method. In Python, a standard `datetime.datetime` object can be converted to this format using [`strftime`](https://docs.python.org/2/library/time.html#time.strftime) with the time format spec &apos;%Y-%m-%dT%H:%M:%S.%fZ&apos;. Likewise, in Java, one can use the Joda Time&apos;s [`ISODateTimeFormat.dateTime()`]( http://joda-time.sourceforge.net/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime() ) to obtain a formatter capable of generating timestamps in this format.
+     * @param value Value to set for the current_period_end property.
      */
     public void setCurrentPeriodEnd(@jakarta.annotation.Nullable final OffsetDateTime value) {
         this.currentPeriodEnd = value;
     }
     /**
-     * Sets the expiringSoon property value. The expiringSoon property
-     * @param value Value to set for the expiringSoon property.
+     * Sets the expiring_soon property value. The expiring_soon property
+     * @param value Value to set for the expiring_soon property.
      */
     public void setExpiringSoon(@jakarta.annotation.Nullable final Boolean value) {
         this.expiringSoon = value;
@@ -239,29 +239,29 @@ public class Subscription implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the planId property value. The planId property
-     * @param value Value to set for the planId property.
+     * Sets the plan_id property value. The plan_id property
+     * @param value Value to set for the plan_id property.
      */
     public void setPlanId(@jakarta.annotation.Nullable final String value) {
         this.planId = value;
     }
     /**
-     * Sets the planName property value. The planName property
-     * @param value Value to set for the planName property.
+     * Sets the plan_name property value. The plan_name property
+     * @param value Value to set for the plan_name property.
      */
     public void setPlanName(@jakarta.annotation.Nullable final String value) {
         this.planName = value;
     }
     /**
-     * Sets the planType property value. The planType property
-     * @param value Value to set for the planType property.
+     * Sets the plan_type property value. The plan_type property
+     * @param value Value to set for the plan_type property.
      */
     public void setPlanType(@jakarta.annotation.Nullable final PlanType value) {
         this.planType = value;
@@ -281,8 +281,8 @@ public class Subscription implements Parsable {
         this.status = value;
     }
     /**
-     * Sets the trialsEndingSoon property value. The trialsEndingSoon property
-     * @param value Value to set for the trialsEndingSoon property.
+     * Sets the trials_ending_soon property value. The trials_ending_soon property
+     * @param value Value to set for the trials_ending_soon property.
      */
     public void setTrialsEndingSoon(@jakarta.annotation.Nullable final Boolean value) {
         this.trialsEndingSoon = value;

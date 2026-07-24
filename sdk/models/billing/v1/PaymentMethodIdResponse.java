@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PaymentMethodIdResponse implements Parsable {
     /**
-     * The paymentMethodId property
+     * The payment_method_id property
      */
     private String paymentMethodId;
     /**
@@ -29,11 +29,11 @@ public class PaymentMethodIdResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("paymentMethodId", (n) -> { this.setPaymentMethodId(n.getStringValue()); });
+        deserializerMap.put("payment_method_id", (n) -> { this.setPaymentMethodId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the paymentMethodId property value. The paymentMethodId property
+     * Gets the payment_method_id property value. The payment_method_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,11 +46,11 @@ public class PaymentMethodIdResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("paymentMethodId", this.getPaymentMethodId());
+        writer.writeStringValue("payment_method_id", this.getPaymentMethodId());
     }
     /**
-     * Sets the paymentMethodId property value. The paymentMethodId property
-     * @param value Value to set for the paymentMethodId property.
+     * Sets the payment_method_id property value. The payment_method_id property
+     * @param value Value to set for the payment_method_id property.
      */
     public void setPaymentMethodId(@jakarta.annotation.Nullable final String value) {
         this.paymentMethodId = value;

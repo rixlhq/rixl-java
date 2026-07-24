@@ -9,19 +9,19 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ConnectedProvider implements Parsable {
     /**
-     * The emailAddress property
+     * The email_address property
      */
     private String emailAddress;
     /**
-     * The firstName property
+     * The first_name property
      */
     private String firstName;
     /**
-     * The imageUrl property
+     * The image_url property
      */
     private String imageUrl;
     /**
-     * The lastName property
+     * The last_name property
      */
     private String lastName;
     /**
@@ -43,7 +43,7 @@ public class ConnectedProvider implements Parsable {
         return new ConnectedProvider();
     }
     /**
-     * Gets the emailAddress property value. The emailAddress property
+     * Gets the email_address property value. The email_address property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -57,16 +57,16 @@ public class ConnectedProvider implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
-        deserializerMap.put("emailAddress", (n) -> { this.setEmailAddress(n.getStringValue()); });
-        deserializerMap.put("firstName", (n) -> { this.setFirstName(n.getStringValue()); });
-        deserializerMap.put("imageUrl", (n) -> { this.setImageUrl(n.getStringValue()); });
-        deserializerMap.put("lastName", (n) -> { this.setLastName(n.getStringValue()); });
+        deserializerMap.put("email_address", (n) -> { this.setEmailAddress(n.getStringValue()); });
+        deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
+        deserializerMap.put("image_url", (n) -> { this.setImageUrl(n.getStringValue()); });
+        deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         deserializerMap.put("provider", (n) -> { this.setProvider(n.getEnumValue(ExternalAccountProvider::forValue)); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the firstName property value. The firstName property
+     * Gets the first_name property value. The first_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -74,7 +74,7 @@ public class ConnectedProvider implements Parsable {
         return this.firstName;
     }
     /**
-     * Gets the imageUrl property value. The imageUrl property
+     * Gets the image_url property value. The image_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class ConnectedProvider implements Parsable {
         return this.imageUrl;
     }
     /**
-     * Gets the lastName property value. The lastName property
+     * Gets the last_name property value. The last_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -111,37 +111,37 @@ public class ConnectedProvider implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("emailAddress", this.getEmailAddress());
-        writer.writeStringValue("firstName", this.getFirstName());
-        writer.writeStringValue("imageUrl", this.getImageUrl());
-        writer.writeStringValue("lastName", this.getLastName());
+        writer.writeStringValue("email_address", this.getEmailAddress());
+        writer.writeStringValue("first_name", this.getFirstName());
+        writer.writeStringValue("image_url", this.getImageUrl());
+        writer.writeStringValue("last_name", this.getLastName());
         writer.writeEnumValue("provider", this.getProvider());
         writer.writeStringValue("username", this.getUsername());
     }
     /**
-     * Sets the emailAddress property value. The emailAddress property
-     * @param value Value to set for the emailAddress property.
+     * Sets the email_address property value. The email_address property
+     * @param value Value to set for the email_address property.
      */
     public void setEmailAddress(@jakarta.annotation.Nullable final String value) {
         this.emailAddress = value;
     }
     /**
-     * Sets the firstName property value. The firstName property
-     * @param value Value to set for the firstName property.
+     * Sets the first_name property value. The first_name property
+     * @param value Value to set for the first_name property.
      */
     public void setFirstName(@jakarta.annotation.Nullable final String value) {
         this.firstName = value;
     }
     /**
-     * Sets the imageUrl property value. The imageUrl property
-     * @param value Value to set for the imageUrl property.
+     * Sets the image_url property value. The image_url property
+     * @param value Value to set for the image_url property.
      */
     public void setImageUrl(@jakarta.annotation.Nullable final String value) {
         this.imageUrl = value;
     }
     /**
-     * Sets the lastName property value. The lastName property
-     * @param value Value to set for the lastName property.
+     * Sets the last_name property value. The last_name property
+     * @param value Value to set for the last_name property.
      */
     public void setLastName(@jakarta.annotation.Nullable final String value) {
         this.lastName = value;

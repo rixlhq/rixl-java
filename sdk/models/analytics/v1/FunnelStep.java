@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FunnelStep implements Parsable {
     /**
-     * The eventType property
+     * The event_type property
      */
     private String eventType;
     /**
@@ -21,7 +21,7 @@ public class FunnelStep implements Parsable {
      */
     private String name;
     /**
-     * The pageType property
+     * The page_type property
      */
     private String pageType;
     /**
@@ -35,7 +35,7 @@ public class FunnelStep implements Parsable {
         return new FunnelStep();
     }
     /**
-     * Gets the eventType property value. The eventType property
+     * Gets the event_type property value. The event_type property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -49,10 +49,10 @@ public class FunnelStep implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("eventType", (n) -> { this.setEventType(n.getStringValue()); });
+        deserializerMap.put("event_type", (n) -> { this.setEventType(n.getStringValue()); });
         deserializerMap.put("filters", (n) -> { this.setFilters(n.getObjectValue(FunnelStepFilters::createFromDiscriminatorValue)); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("pageType", (n) -> { this.setPageType(n.getStringValue()); });
+        deserializerMap.put("page_type", (n) -> { this.setPageType(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -72,7 +72,7 @@ public class FunnelStep implements Parsable {
         return this.name;
     }
     /**
-     * Gets the pageType property value. The pageType property
+     * Gets the page_type property value. The page_type property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,14 +85,14 @@ public class FunnelStep implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("eventType", this.getEventType());
+        writer.writeStringValue("event_type", this.getEventType());
         writer.writeObjectValue("filters", this.getFilters());
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("pageType", this.getPageType());
+        writer.writeStringValue("page_type", this.getPageType());
     }
     /**
-     * Sets the eventType property value. The eventType property
-     * @param value Value to set for the eventType property.
+     * Sets the event_type property value. The event_type property
+     * @param value Value to set for the event_type property.
      */
     public void setEventType(@jakarta.annotation.Nullable final String value) {
         this.eventType = value;
@@ -112,8 +112,8 @@ public class FunnelStep implements Parsable {
         this.name = value;
     }
     /**
-     * Sets the pageType property value. The pageType property
-     * @param value Value to set for the pageType property.
+     * Sets the page_type property value. The page_type property
+     * @param value Value to set for the page_type property.
      */
     public void setPageType(@jakarta.annotation.Nullable final String value) {
         this.pageType = value;

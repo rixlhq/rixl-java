@@ -38,7 +38,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ChaptersRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/chapters{?chapters%2EstartTimeSec*,chapters%2Etitle*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/chapters{?chapters%2Estart_time_sec*,chapters%2Etitle*}", pathParameters);
     }
     /**
      * Instantiates a new {@link ChaptersRequestBuilder} and sets the default values.
@@ -46,7 +46,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ChaptersRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/chapters{?chapters%2EstartTimeSec*,chapters%2Etitle*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/chapters{?chapters%2Estart_time_sec*,chapters%2Etitle*}", rawUrl);
     }
     /**
      * UpdateVideoChapters
@@ -150,7 +150,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("chapters%2EstartTimeSec", chaptersStartTimeSec);
+            allQueryParams.put("chapters%2Estart_time_sec", chaptersStartTimeSec);
             allQueryParams.put("chapters%2Etitle", chaptersTitle);
             return allQueryParams;
         }

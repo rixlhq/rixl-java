@@ -47,7 +47,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithFeedItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}{?creatorId*,pagination%2Elimit*,pagination%2Eoffset*,projectId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}{?creator_id*,pagination%2Elimit*,pagination%2Eoffset*,project_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithFeedItemRequestBuilder} and sets the default values.
@@ -55,7 +55,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithFeedItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}{?creatorId*,pagination%2Elimit*,pagination%2Eoffset*,projectId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/feeds/{feed_id}{?creator_id*,pagination%2Elimit*,pagination%2Eoffset*,project_id*}", rawUrl);
     }
     /**
      * ListPosts
@@ -131,10 +131,10 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("creatorId", creatorId);
+            allQueryParams.put("creator_id", creatorId);
             allQueryParams.put("pagination%2Elimit", paginationLimit);
             allQueryParams.put("pagination%2Eoffset", paginationOffset);
-            allQueryParams.put("projectId", projectId);
+            allQueryParams.put("project_id", projectId);
             return allQueryParams;
         }
     }

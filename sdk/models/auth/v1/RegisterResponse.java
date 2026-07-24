@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RegisterResponse implements Parsable {
     /**
-     * The emailVerificationSent property
+     * The email_verification_sent property
      */
     private Boolean emailVerificationSent;
     /**
@@ -17,11 +17,11 @@ public class RegisterResponse implements Parsable {
      */
     private String message;
     /**
-     * The userId property
+     * The user_id property
      */
     private String userId;
     /**
-     * The verificationId property
+     * The verification_id property
      */
     private String verificationId;
     /**
@@ -35,7 +35,7 @@ public class RegisterResponse implements Parsable {
         return new RegisterResponse();
     }
     /**
-     * Gets the emailVerificationSent property value. The emailVerificationSent property
+     * Gets the email_verification_sent property value. The email_verification_sent property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -49,10 +49,10 @@ public class RegisterResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("emailVerificationSent", (n) -> { this.setEmailVerificationSent(n.getBooleanValue()); });
+        deserializerMap.put("email_verification_sent", (n) -> { this.setEmailVerificationSent(n.getBooleanValue()); });
         deserializerMap.put("message", (n) -> { this.setMessage(n.getStringValue()); });
-        deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
-        deserializerMap.put("verificationId", (n) -> { this.setVerificationId(n.getStringValue()); });
+        deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
+        deserializerMap.put("verification_id", (n) -> { this.setVerificationId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -64,7 +64,7 @@ public class RegisterResponse implements Parsable {
         return this.message;
     }
     /**
-     * Gets the userId property value. The userId property
+     * Gets the user_id property value. The user_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class RegisterResponse implements Parsable {
         return this.userId;
     }
     /**
-     * Gets the verificationId property value. The verificationId property
+     * Gets the verification_id property value. The verification_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,14 +85,14 @@ public class RegisterResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeBooleanValue("emailVerificationSent", this.getEmailVerificationSent());
+        writer.writeBooleanValue("email_verification_sent", this.getEmailVerificationSent());
         writer.writeStringValue("message", this.getMessage());
-        writer.writeStringValue("userId", this.getUserId());
-        writer.writeStringValue("verificationId", this.getVerificationId());
+        writer.writeStringValue("user_id", this.getUserId());
+        writer.writeStringValue("verification_id", this.getVerificationId());
     }
     /**
-     * Sets the emailVerificationSent property value. The emailVerificationSent property
-     * @param value Value to set for the emailVerificationSent property.
+     * Sets the email_verification_sent property value. The email_verification_sent property
+     * @param value Value to set for the email_verification_sent property.
      */
     public void setEmailVerificationSent(@jakarta.annotation.Nullable final Boolean value) {
         this.emailVerificationSent = value;
@@ -105,15 +105,15 @@ public class RegisterResponse implements Parsable {
         this.message = value;
     }
     /**
-     * Sets the userId property value. The userId property
-     * @param value Value to set for the userId property.
+     * Sets the user_id property value. The user_id property
+     * @param value Value to set for the user_id property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;
     }
     /**
-     * Sets the verificationId property value. The verificationId property
-     * @param value Value to set for the verificationId property.
+     * Sets the verification_id property value. The verification_id property
+     * @param value Value to set for the verification_id property.
      */
     public void setVerificationId(@jakarta.annotation.Nullable final String value) {
         this.verificationId = value;

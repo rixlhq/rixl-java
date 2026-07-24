@@ -17,11 +17,11 @@ public class HostedCheckoutSessionResponse implements Parsable {
      */
     private String currency;
     /**
-     * The sessionId property
+     * The session_id property
      */
     private String sessionId;
     /**
-     * The sessionUrl property
+     * The session_url property
      */
     private String sessionUrl;
     /**
@@ -59,12 +59,12 @@ public class HostedCheckoutSessionResponse implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("amount", (n) -> { this.setAmount(n.getDoubleValue()); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("sessionId", (n) -> { this.setSessionId(n.getStringValue()); });
-        deserializerMap.put("sessionUrl", (n) -> { this.setSessionUrl(n.getStringValue()); });
+        deserializerMap.put("session_id", (n) -> { this.setSessionId(n.getStringValue()); });
+        deserializerMap.put("session_url", (n) -> { this.setSessionUrl(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the sessionId property value. The sessionId property
+     * Gets the session_id property value. The session_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class HostedCheckoutSessionResponse implements Parsable {
         return this.sessionId;
     }
     /**
-     * Gets the sessionUrl property value. The sessionUrl property
+     * Gets the session_url property value. The session_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -87,8 +87,8 @@ public class HostedCheckoutSessionResponse implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("amount", this.getAmount());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeStringValue("sessionId", this.getSessionId());
-        writer.writeStringValue("sessionUrl", this.getSessionUrl());
+        writer.writeStringValue("session_id", this.getSessionId());
+        writer.writeStringValue("session_url", this.getSessionUrl());
     }
     /**
      * Sets the amount property value. The amount property
@@ -105,15 +105,15 @@ public class HostedCheckoutSessionResponse implements Parsable {
         this.currency = value;
     }
     /**
-     * Sets the sessionId property value. The sessionId property
-     * @param value Value to set for the sessionId property.
+     * Sets the session_id property value. The session_id property
+     * @param value Value to set for the session_id property.
      */
     public void setSessionId(@jakarta.annotation.Nullable final String value) {
         this.sessionId = value;
     }
     /**
-     * Sets the sessionUrl property value. The sessionUrl property
-     * @param value Value to set for the sessionUrl property.
+     * Sets the session_url property value. The session_url property
+     * @param value Value to set for the session_url property.
      */
     public void setSessionUrl(@jakarta.annotation.Nullable final String value) {
         this.sessionUrl = value;

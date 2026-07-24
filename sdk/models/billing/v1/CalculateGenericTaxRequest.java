@@ -14,7 +14,7 @@ public class CalculateGenericTaxRequest implements Parsable {
      */
     private UntypedNode amount;
     /**
-     * The billingAddress property
+     * The billing_address property
      */
     private BillingAddress billingAddress;
     /**
@@ -22,11 +22,11 @@ public class CalculateGenericTaxRequest implements Parsable {
      */
     private String currency;
     /**
-     * The lineItems property
+     * The line_items property
      */
     private java.util.List<TaxLineItem> lineItems;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
@@ -48,7 +48,7 @@ public class CalculateGenericTaxRequest implements Parsable {
         return this.amount;
     }
     /**
-     * Gets the billingAddress property value. The billingAddress property
+     * Gets the billing_address property value. The billing_address property
      * @return a {@link BillingAddress}
      */
     @jakarta.annotation.Nullable
@@ -71,14 +71,14 @@ public class CalculateGenericTaxRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("amount", (n) -> { this.setAmount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("billingAddress", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
+        deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("lineItems", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("line_items", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the lineItems property value. The lineItems property
+     * Gets the line_items property value. The line_items property
      * @return a {@link java.util.List<TaxLineItem>}
      */
     @jakarta.annotation.Nullable
@@ -86,7 +86,7 @@ public class CalculateGenericTaxRequest implements Parsable {
         return this.lineItems;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -100,10 +100,10 @@ public class CalculateGenericTaxRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("amount", this.getAmount());
-        writer.writeObjectValue("billingAddress", this.getBillingAddress());
+        writer.writeObjectValue("billing_address", this.getBillingAddress());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeCollectionOfObjectValues("lineItems", this.getLineItems());
-        writer.writeStringValue("orgId", this.getOrgId());
+        writer.writeCollectionOfObjectValues("line_items", this.getLineItems());
+        writer.writeStringValue("org_id", this.getOrgId());
     }
     /**
      * Sets the amount property value. The amount property
@@ -113,8 +113,8 @@ public class CalculateGenericTaxRequest implements Parsable {
         this.amount = value;
     }
     /**
-     * Sets the billingAddress property value. The billingAddress property
-     * @param value Value to set for the billingAddress property.
+     * Sets the billing_address property value. The billing_address property
+     * @param value Value to set for the billing_address property.
      */
     public void setBillingAddress(@jakarta.annotation.Nullable final BillingAddress value) {
         this.billingAddress = value;
@@ -127,15 +127,15 @@ public class CalculateGenericTaxRequest implements Parsable {
         this.currency = value;
     }
     /**
-     * Sets the lineItems property value. The lineItems property
-     * @param value Value to set for the lineItems property.
+     * Sets the line_items property value. The line_items property
+     * @param value Value to set for the line_items property.
      */
     public void setLineItems(@jakarta.annotation.Nullable final java.util.List<TaxLineItem> value) {
         this.lineItems = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;

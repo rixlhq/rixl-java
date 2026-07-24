@@ -38,7 +38,7 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public InvoicesRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/invoices{?orgId*,pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/invoices{?org_id*,pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
     }
     /**
      * Instantiates a new {@link InvoicesRequestBuilder} and sets the default values.
@@ -46,7 +46,7 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public InvoicesRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/invoices{?orgId*,pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/invoices{?org_id*,pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
     }
     /**
      * ListInvoices
@@ -120,7 +120,7 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             allQueryParams.put("pagination%2Elimit", paginationLimit);
             allQueryParams.put("pagination%2Eoffset", paginationOffset);
             return allQueryParams;

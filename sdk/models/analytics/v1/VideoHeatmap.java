@@ -14,11 +14,11 @@ public class VideoHeatmap implements Parsable {
      */
     private java.util.List<Double> data;
     /**
-     * The totalDurationMs property
+     * The total_duration_ms property
      */
     private UntypedNode totalDurationMs;
     /**
-     * The videoId property
+     * The video_id property
      */
     private String videoId;
     /**
@@ -47,12 +47,12 @@ public class VideoHeatmap implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("data", (n) -> { this.setData(n.getCollectionOfPrimitiveValues(Double.class)); });
-        deserializerMap.put("totalDurationMs", (n) -> { this.setTotalDurationMs(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("videoId", (n) -> { this.setVideoId(n.getStringValue()); });
+        deserializerMap.put("total_duration_ms", (n) -> { this.setTotalDurationMs(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the totalDurationMs property value. The totalDurationMs property
+     * Gets the total_duration_ms property value. The total_duration_ms property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class VideoHeatmap implements Parsable {
         return this.totalDurationMs;
     }
     /**
-     * Gets the videoId property value. The videoId property
+     * Gets the video_id property value. The video_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -74,8 +74,8 @@ public class VideoHeatmap implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfPrimitiveValues("data", this.getData());
-        writer.writeObjectValue("totalDurationMs", this.getTotalDurationMs());
-        writer.writeStringValue("videoId", this.getVideoId());
+        writer.writeObjectValue("total_duration_ms", this.getTotalDurationMs());
+        writer.writeStringValue("video_id", this.getVideoId());
     }
     /**
      * Sets the data property value. The data property
@@ -85,15 +85,15 @@ public class VideoHeatmap implements Parsable {
         this.data = value;
     }
     /**
-     * Sets the totalDurationMs property value. The totalDurationMs property
-     * @param value Value to set for the totalDurationMs property.
+     * Sets the total_duration_ms property value. The total_duration_ms property
+     * @param value Value to set for the total_duration_ms property.
      */
     public void setTotalDurationMs(@jakarta.annotation.Nullable final UntypedNode value) {
         this.totalDurationMs = value;
     }
     /**
-     * Sets the videoId property value. The videoId property
-     * @param value Value to set for the videoId property.
+     * Sets the video_id property value. The video_id property
+     * @param value Value to set for the video_id property.
      */
     public void setVideoId(@jakarta.annotation.Nullable final String value) {
         this.videoId = value;

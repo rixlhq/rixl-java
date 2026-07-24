@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UserInfo implements Parsable {
     /**
-     * The activeOrgId property
+     * The active_org_id property
      */
     private String activeOrgId;
     /**
-     * The countryCode property
+     * The country_code property
      */
     private String countryCode;
     /**
@@ -21,11 +21,11 @@ public class UserInfo implements Parsable {
      */
     private String email;
     /**
-     * The emailVerified property
+     * The email_verified property
      */
     private Boolean emailVerified;
     /**
-     * The firstName property
+     * The first_name property
      */
     private String firstName;
     /**
@@ -33,15 +33,15 @@ public class UserInfo implements Parsable {
      */
     private String id;
     /**
-     * The imageUrl property
+     * The image_url property
      */
     private String imageUrl;
     /**
-     * The languageCode property
+     * The language_code property
      */
     private String languageCode;
     /**
-     * The lastName property
+     * The last_name property
      */
     private String lastName;
     /**
@@ -59,7 +59,7 @@ public class UserInfo implements Parsable {
         return new UserInfo();
     }
     /**
-     * Gets the activeOrgId property value. The activeOrgId property
+     * Gets the active_org_id property value. The active_org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -67,7 +67,7 @@ public class UserInfo implements Parsable {
         return this.activeOrgId;
     }
     /**
-     * Gets the countryCode property value. The countryCode property
+     * Gets the country_code property value. The country_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -83,7 +83,7 @@ public class UserInfo implements Parsable {
         return this.email;
     }
     /**
-     * Gets the emailVerified property value. The emailVerified property
+     * Gets the email_verified property value. The email_verified property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -97,20 +97,20 @@ public class UserInfo implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
-        deserializerMap.put("activeOrgId", (n) -> { this.setActiveOrgId(n.getStringValue()); });
-        deserializerMap.put("countryCode", (n) -> { this.setCountryCode(n.getStringValue()); });
+        deserializerMap.put("active_org_id", (n) -> { this.setActiveOrgId(n.getStringValue()); });
+        deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("emailVerified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
-        deserializerMap.put("firstName", (n) -> { this.setFirstName(n.getStringValue()); });
+        deserializerMap.put("email_verified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
+        deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("imageUrl", (n) -> { this.setImageUrl(n.getStringValue()); });
-        deserializerMap.put("languageCode", (n) -> { this.setLanguageCode(n.getStringValue()); });
-        deserializerMap.put("lastName", (n) -> { this.setLastName(n.getStringValue()); });
+        deserializerMap.put("image_url", (n) -> { this.setImageUrl(n.getStringValue()); });
+        deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
+        deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the firstName property value. The firstName property
+     * Gets the first_name property value. The first_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -126,7 +126,7 @@ public class UserInfo implements Parsable {
         return this.id;
     }
     /**
-     * Gets the imageUrl property value. The imageUrl property
+     * Gets the image_url property value. The image_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -134,7 +134,7 @@ public class UserInfo implements Parsable {
         return this.imageUrl;
     }
     /**
-     * Gets the languageCode property value. The languageCode property
+     * Gets the language_code property value. The language_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -142,7 +142,7 @@ public class UserInfo implements Parsable {
         return this.languageCode;
     }
     /**
-     * Gets the lastName property value. The lastName property
+     * Gets the last_name property value. The last_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -163,27 +163,27 @@ public class UserInfo implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("activeOrgId", this.getActiveOrgId());
-        writer.writeStringValue("countryCode", this.getCountryCode());
+        writer.writeStringValue("active_org_id", this.getActiveOrgId());
+        writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("email", this.getEmail());
-        writer.writeBooleanValue("emailVerified", this.getEmailVerified());
-        writer.writeStringValue("firstName", this.getFirstName());
+        writer.writeBooleanValue("email_verified", this.getEmailVerified());
+        writer.writeStringValue("first_name", this.getFirstName());
         writer.writeStringValue("id", this.getId());
-        writer.writeStringValue("imageUrl", this.getImageUrl());
-        writer.writeStringValue("languageCode", this.getLanguageCode());
-        writer.writeStringValue("lastName", this.getLastName());
+        writer.writeStringValue("image_url", this.getImageUrl());
+        writer.writeStringValue("language_code", this.getLanguageCode());
+        writer.writeStringValue("last_name", this.getLastName());
         writer.writeStringValue("username", this.getUsername());
     }
     /**
-     * Sets the activeOrgId property value. The activeOrgId property
-     * @param value Value to set for the activeOrgId property.
+     * Sets the active_org_id property value. The active_org_id property
+     * @param value Value to set for the active_org_id property.
      */
     public void setActiveOrgId(@jakarta.annotation.Nullable final String value) {
         this.activeOrgId = value;
     }
     /**
-     * Sets the countryCode property value. The countryCode property
-     * @param value Value to set for the countryCode property.
+     * Sets the country_code property value. The country_code property
+     * @param value Value to set for the country_code property.
      */
     public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
@@ -196,15 +196,15 @@ public class UserInfo implements Parsable {
         this.email = value;
     }
     /**
-     * Sets the emailVerified property value. The emailVerified property
-     * @param value Value to set for the emailVerified property.
+     * Sets the email_verified property value. The email_verified property
+     * @param value Value to set for the email_verified property.
      */
     public void setEmailVerified(@jakarta.annotation.Nullable final Boolean value) {
         this.emailVerified = value;
     }
     /**
-     * Sets the firstName property value. The firstName property
-     * @param value Value to set for the firstName property.
+     * Sets the first_name property value. The first_name property
+     * @param value Value to set for the first_name property.
      */
     public void setFirstName(@jakarta.annotation.Nullable final String value) {
         this.firstName = value;
@@ -217,22 +217,22 @@ public class UserInfo implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the imageUrl property value. The imageUrl property
-     * @param value Value to set for the imageUrl property.
+     * Sets the image_url property value. The image_url property
+     * @param value Value to set for the image_url property.
      */
     public void setImageUrl(@jakarta.annotation.Nullable final String value) {
         this.imageUrl = value;
     }
     /**
-     * Sets the languageCode property value. The languageCode property
-     * @param value Value to set for the languageCode property.
+     * Sets the language_code property value. The language_code property
+     * @param value Value to set for the language_code property.
      */
     public void setLanguageCode(@jakarta.annotation.Nullable final String value) {
         this.languageCode = value;
     }
     /**
-     * Sets the lastName property value. The lastName property
-     * @param value Value to set for the lastName property.
+     * Sets the last_name property value. The last_name property
+     * @param value Value to set for the last_name property.
      */
     public void setLastName(@jakarta.annotation.Nullable final String value) {
         this.lastName = value;

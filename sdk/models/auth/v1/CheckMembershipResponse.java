@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CheckMembershipResponse implements Parsable {
     /**
-     * The isMember property
+     * The is_member property
      */
     private Boolean isMember;
     /**
@@ -29,11 +29,11 @@ public class CheckMembershipResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("isMember", (n) -> { this.setIsMember(n.getBooleanValue()); });
+        deserializerMap.put("is_member", (n) -> { this.setIsMember(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the isMember property value. The isMember property
+     * Gets the is_member property value. The is_member property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -46,11 +46,11 @@ public class CheckMembershipResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeBooleanValue("isMember", this.getIsMember());
+        writer.writeBooleanValue("is_member", this.getIsMember());
     }
     /**
-     * Sets the isMember property value. The isMember property
-     * @param value Value to set for the isMember property.
+     * Sets the is_member property value. The is_member property
+     * @param value Value to set for the is_member property.
      */
     public void setIsMember(@jakarta.annotation.Nullable final Boolean value) {
         this.isMember = value;

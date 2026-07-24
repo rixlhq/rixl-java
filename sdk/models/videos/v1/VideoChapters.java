@@ -13,7 +13,7 @@ public class VideoChapters implements Parsable {
      */
     private java.util.List<Chapter> chapters;
     /**
-     * The videoId property
+     * The video_id property
      */
     private String videoId;
     /**
@@ -42,11 +42,11 @@ public class VideoChapters implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("chapters", (n) -> { this.setChapters(n.getCollectionOfObjectValues(Chapter::createFromDiscriminatorValue)); });
-        deserializerMap.put("videoId", (n) -> { this.setVideoId(n.getStringValue()); });
+        deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the videoId property value. The videoId property
+     * Gets the video_id property value. The video_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class VideoChapters implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("chapters", this.getChapters());
-        writer.writeStringValue("videoId", this.getVideoId());
+        writer.writeStringValue("video_id", this.getVideoId());
     }
     /**
      * Sets the chapters property value. The chapters property
@@ -70,8 +70,8 @@ public class VideoChapters implements Parsable {
         this.chapters = value;
     }
     /**
-     * Sets the videoId property value. The videoId property
-     * @param value Value to set for the videoId property.
+     * Sets the video_id property value. The video_id property
+     * @param value Value to set for the video_id property.
      */
     public void setVideoId(@jakarta.annotation.Nullable final String value) {
         this.videoId = value;

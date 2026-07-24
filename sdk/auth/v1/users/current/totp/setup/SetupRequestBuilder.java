@@ -25,7 +25,7 @@ public class SetupRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SetupRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/users/current/totp/setup{?userId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/users/current/totp/setup{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link SetupRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class SetupRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SetupRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/users/current/totp/setup{?userId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/users/current/totp/setup{?user_id*}", rawUrl);
     }
     /**
      * SetupOTP
@@ -97,7 +97,7 @@ public class SetupRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("userId", userId);
+            allQueryParams.put("user_id", userId);
             return allQueryParams;
         }
     }

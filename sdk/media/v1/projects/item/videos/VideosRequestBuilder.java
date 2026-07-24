@@ -47,7 +47,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public VideosRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos{?pagination%2Elimit*,pagination%2Eoffset*,sortDirection*,sortField*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos{?pagination%2Elimit*,pagination%2Eoffset*,sort_direction*,sort_field*}", pathParameters);
     }
     /**
      * Instantiates a new {@link VideosRequestBuilder} and sets the default values.
@@ -55,7 +55,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public VideosRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos{?pagination%2Elimit*,pagination%2Eoffset*,sortDirection*,sortField*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos{?pagination%2Elimit*,pagination%2Eoffset*,sort_direction*,sort_field*}", rawUrl);
     }
     /**
      * ListVideos
@@ -133,8 +133,8 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("pagination%2Elimit", paginationLimit);
             allQueryParams.put("pagination%2Eoffset", paginationOffset);
-            allQueryParams.put("sortDirection", sortDirection);
-            allQueryParams.put("sortField", sortField);
+            allQueryParams.put("sort_direction", sortDirection);
+            allQueryParams.put("sort_field", sortField);
             return allQueryParams;
         }
     }

@@ -9,15 +9,15 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RetentionCohort implements Parsable {
     /**
-     * The cohortDate property
+     * The cohort_date property
      */
     private String cohortDate;
     /**
-     * The cohortSize property
+     * The cohort_size property
      */
     private Integer cohortSize;
     /**
-     * The retentionData property
+     * The retention_data property
      */
     private java.util.List<Double> retentionData;
     /**
@@ -31,7 +31,7 @@ public class RetentionCohort implements Parsable {
         return new RetentionCohort();
     }
     /**
-     * Gets the cohortDate property value. The cohortDate property
+     * Gets the cohort_date property value. The cohort_date property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -39,7 +39,7 @@ public class RetentionCohort implements Parsable {
         return this.cohortDate;
     }
     /**
-     * Gets the cohortSize property value. The cohortSize property
+     * Gets the cohort_size property value. The cohort_size property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -53,13 +53,13 @@ public class RetentionCohort implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("cohortDate", (n) -> { this.setCohortDate(n.getStringValue()); });
-        deserializerMap.put("cohortSize", (n) -> { this.setCohortSize(n.getIntegerValue()); });
-        deserializerMap.put("retentionData", (n) -> { this.setRetentionData(n.getCollectionOfPrimitiveValues(Double.class)); });
+        deserializerMap.put("cohort_date", (n) -> { this.setCohortDate(n.getStringValue()); });
+        deserializerMap.put("cohort_size", (n) -> { this.setCohortSize(n.getIntegerValue()); });
+        deserializerMap.put("retention_data", (n) -> { this.setRetentionData(n.getCollectionOfPrimitiveValues(Double.class)); });
         return deserializerMap;
     }
     /**
-     * Gets the retentionData property value. The retentionData property
+     * Gets the retention_data property value. The retention_data property
      * @return a {@link java.util.List<Double>}
      */
     @jakarta.annotation.Nullable
@@ -72,27 +72,27 @@ public class RetentionCohort implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("cohortDate", this.getCohortDate());
-        writer.writeIntegerValue("cohortSize", this.getCohortSize());
-        writer.writeCollectionOfPrimitiveValues("retentionData", this.getRetentionData());
+        writer.writeStringValue("cohort_date", this.getCohortDate());
+        writer.writeIntegerValue("cohort_size", this.getCohortSize());
+        writer.writeCollectionOfPrimitiveValues("retention_data", this.getRetentionData());
     }
     /**
-     * Sets the cohortDate property value. The cohortDate property
-     * @param value Value to set for the cohortDate property.
+     * Sets the cohort_date property value. The cohort_date property
+     * @param value Value to set for the cohort_date property.
      */
     public void setCohortDate(@jakarta.annotation.Nullable final String value) {
         this.cohortDate = value;
     }
     /**
-     * Sets the cohortSize property value. The cohortSize property
-     * @param value Value to set for the cohortSize property.
+     * Sets the cohort_size property value. The cohort_size property
+     * @param value Value to set for the cohort_size property.
      */
     public void setCohortSize(@jakarta.annotation.Nullable final Integer value) {
         this.cohortSize = value;
     }
     /**
-     * Sets the retentionData property value. The retentionData property
-     * @param value Value to set for the retentionData property.
+     * Sets the retention_data property value. The retention_data property
+     * @param value Value to set for the retention_data property.
      */
     public void setRetentionData(@jakarta.annotation.Nullable final java.util.List<Double> value) {
         this.retentionData = value;

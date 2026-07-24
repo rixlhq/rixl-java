@@ -14,7 +14,7 @@ public class DashboardPoint implements Parsable {
      */
     private String timestamp;
     /**
-     * The uniqueUsers property
+     * The unique_users property
      */
     private UntypedNode uniqueUsers;
     /**
@@ -39,7 +39,7 @@ public class DashboardPoint implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getStringValue()); });
-        deserializerMap.put("uniqueUsers", (n) -> { this.setUniqueUsers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("unique_users", (n) -> { this.setUniqueUsers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("views", (n) -> { this.setViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -52,7 +52,7 @@ public class DashboardPoint implements Parsable {
         return this.timestamp;
     }
     /**
-     * Gets the uniqueUsers property value. The uniqueUsers property
+     * Gets the unique_users property value. The unique_users property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -74,7 +74,7 @@ public class DashboardPoint implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("timestamp", this.getTimestamp());
-        writer.writeObjectValue("uniqueUsers", this.getUniqueUsers());
+        writer.writeObjectValue("unique_users", this.getUniqueUsers());
         writer.writeObjectValue("views", this.getViews());
     }
     /**
@@ -85,8 +85,8 @@ public class DashboardPoint implements Parsable {
         this.timestamp = value;
     }
     /**
-     * Sets the uniqueUsers property value. The uniqueUsers property
-     * @param value Value to set for the uniqueUsers property.
+     * Sets the unique_users property value. The unique_users property
+     * @param value Value to set for the unique_users property.
      */
     public void setUniqueUsers(@jakarta.annotation.Nullable final UntypedNode value) {
         this.uniqueUsers = value;

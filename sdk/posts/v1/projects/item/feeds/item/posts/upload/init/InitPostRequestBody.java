@@ -12,11 +12,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class InitPostRequestBody implements Parsable {
     /**
-     * The contentType property
+     * The content_type property
      */
     private MediaType contentType;
     /**
-     * The creatorId property
+     * The creator_id property
      */
     private String creatorId;
     /**
@@ -24,7 +24,11 @@ public class InitPostRequestBody implements Parsable {
      */
     private String description;
     /**
-     * The fileName property
+     * The feed_id property
+     */
+    private String feedId;
+    /**
+     * The file_name property
      */
     private String fileName;
     /**
@@ -32,15 +36,19 @@ public class InitPostRequestBody implements Parsable {
      */
     private String format;
     /**
-     * The imageFormat property
+     * The image_format property
      */
     private ImageFormat imageFormat;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The videoQuality property
+     * The project_id property
+     */
+    private String projectId;
+    /**
+     * The video_quality property
      */
     private VideoQuality videoQuality;
     /**
@@ -54,7 +62,7 @@ public class InitPostRequestBody implements Parsable {
         return new InitPostRequestBody();
     }
     /**
-     * Gets the contentType property value. The contentType property
+     * Gets the content_type property value. The content_type property
      * @return a {@link MediaType}
      */
     @jakarta.annotation.Nullable
@@ -62,7 +70,7 @@ public class InitPostRequestBody implements Parsable {
         return this.contentType;
     }
     /**
-     * Gets the creatorId property value. The creatorId property
+     * Gets the creator_id property value. The creator_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -78,24 +86,34 @@ public class InitPostRequestBody implements Parsable {
         return this.description;
     }
     /**
+     * Gets the feed_id property value. The feed_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getFeedId() {
+        return this.feedId;
+    }
+    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
-        deserializerMap.put("contentType", (n) -> { this.setContentType(n.getEnumValue(MediaType::forValue)); });
-        deserializerMap.put("creatorId", (n) -> { this.setCreatorId(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        deserializerMap.put("content_type", (n) -> { this.setContentType(n.getEnumValue(MediaType::forValue)); });
+        deserializerMap.put("creator_id", (n) -> { this.setCreatorId(n.getStringValue()); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
-        deserializerMap.put("fileName", (n) -> { this.setFileName(n.getStringValue()); });
+        deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
+        deserializerMap.put("file_name", (n) -> { this.setFileName(n.getStringValue()); });
         deserializerMap.put("format", (n) -> { this.setFormat(n.getStringValue()); });
-        deserializerMap.put("imageFormat", (n) -> { this.setImageFormat(n.getEnumValue(ImageFormat::forValue)); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("videoQuality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
+        deserializerMap.put("image_format", (n) -> { this.setImageFormat(n.getEnumValue(ImageFormat::forValue)); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
+        deserializerMap.put("video_quality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the fileName property value. The fileName property
+     * Gets the file_name property value. The file_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -111,7 +129,7 @@ public class InitPostRequestBody implements Parsable {
         return this.format;
     }
     /**
-     * Gets the imageFormat property value. The imageFormat property
+     * Gets the image_format property value. The image_format property
      * @return a {@link ImageFormat}
      */
     @jakarta.annotation.Nullable
@@ -119,7 +137,7 @@ public class InitPostRequestBody implements Parsable {
         return this.imageFormat;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -127,7 +145,15 @@ public class InitPostRequestBody implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the videoQuality property value. The videoQuality property
+     * Gets the project_id property value. The project_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getProjectId() {
+        return this.projectId;
+    }
+    /**
+     * Gets the video_quality property value. The video_quality property
      * @return a {@link VideoQuality}
      */
     @jakarta.annotation.Nullable
@@ -140,25 +166,27 @@ public class InitPostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeEnumValue("contentType", this.getContentType());
-        writer.writeStringValue("creatorId", this.getCreatorId());
+        writer.writeEnumValue("content_type", this.getContentType());
+        writer.writeStringValue("creator_id", this.getCreatorId());
         writer.writeStringValue("description", this.getDescription());
-        writer.writeStringValue("fileName", this.getFileName());
+        writer.writeStringValue("feed_id", this.getFeedId());
+        writer.writeStringValue("file_name", this.getFileName());
         writer.writeStringValue("format", this.getFormat());
-        writer.writeEnumValue("imageFormat", this.getImageFormat());
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeEnumValue("videoQuality", this.getVideoQuality());
+        writer.writeEnumValue("image_format", this.getImageFormat());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("project_id", this.getProjectId());
+        writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
     /**
-     * Sets the contentType property value. The contentType property
-     * @param value Value to set for the contentType property.
+     * Sets the content_type property value. The content_type property
+     * @param value Value to set for the content_type property.
      */
     public void setContentType(@jakarta.annotation.Nullable final MediaType value) {
         this.contentType = value;
     }
     /**
-     * Sets the creatorId property value. The creatorId property
-     * @param value Value to set for the creatorId property.
+     * Sets the creator_id property value. The creator_id property
+     * @param value Value to set for the creator_id property.
      */
     public void setCreatorId(@jakarta.annotation.Nullable final String value) {
         this.creatorId = value;
@@ -171,8 +199,15 @@ public class InitPostRequestBody implements Parsable {
         this.description = value;
     }
     /**
-     * Sets the fileName property value. The fileName property
-     * @param value Value to set for the fileName property.
+     * Sets the feed_id property value. The feed_id property
+     * @param value Value to set for the feed_id property.
+     */
+    public void setFeedId(@jakarta.annotation.Nullable final String value) {
+        this.feedId = value;
+    }
+    /**
+     * Sets the file_name property value. The file_name property
+     * @param value Value to set for the file_name property.
      */
     public void setFileName(@jakarta.annotation.Nullable final String value) {
         this.fileName = value;
@@ -185,22 +220,29 @@ public class InitPostRequestBody implements Parsable {
         this.format = value;
     }
     /**
-     * Sets the imageFormat property value. The imageFormat property
-     * @param value Value to set for the imageFormat property.
+     * Sets the image_format property value. The image_format property
+     * @param value Value to set for the image_format property.
      */
     public void setImageFormat(@jakarta.annotation.Nullable final ImageFormat value) {
         this.imageFormat = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the videoQuality property value. The videoQuality property
-     * @param value Value to set for the videoQuality property.
+     * Sets the project_id property value. The project_id property
+     * @param value Value to set for the project_id property.
+     */
+    public void setProjectId(@jakarta.annotation.Nullable final String value) {
+        this.projectId = value;
+    }
+    /**
+     * Sets the video_quality property value. The video_quality property
+     * @param value Value to set for the video_quality property.
      */
     public void setVideoQuality(@jakarta.annotation.Nullable final VideoQuality value) {
         this.videoQuality = value;

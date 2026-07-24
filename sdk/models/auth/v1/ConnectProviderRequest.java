@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ConnectProviderRequest implements Parsable {
     /**
-     * The countryCode property
+     * The country_code property
      */
     private String countryCode;
     /**
@@ -39,7 +39,7 @@ public class ConnectProviderRequest implements Parsable {
         return new ConnectProviderRequest();
     }
     /**
-     * Gets the countryCode property value. The countryCode property
+     * Gets the country_code property value. The country_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -53,7 +53,7 @@ public class ConnectProviderRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("countryCode", (n) -> { this.setCountryCode(n.getStringValue()); });
+        deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("origin", (n) -> { this.setOrigin(n.getStringValue()); });
         deserializerMap.put("provider", (n) -> { this.setProvider(n.getEnumValue(ExternalAccountProvider::forValue)); });
         deserializerMap.put("token", (n) -> { this.setToken(n.getStringValue()); });
@@ -98,15 +98,15 @@ public class ConnectProviderRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("countryCode", this.getCountryCode());
+        writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("origin", this.getOrigin());
         writer.writeEnumValue("provider", this.getProvider());
         writer.writeStringValue("token", this.getToken());
         writer.writeObjectValue("user", this.getUser());
     }
     /**
-     * Sets the countryCode property value. The countryCode property
-     * @param value Value to set for the countryCode property.
+     * Sets the country_code property value. The country_code property
+     * @param value Value to set for the country_code property.
      */
     public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;

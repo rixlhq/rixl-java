@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SetupIntentResponse implements Parsable {
     /**
-     * The clientSecret property
+     * The client_secret property
      */
     private String clientSecret;
     /**
-     * The setupIntentId property
+     * The setup_intent_id property
      */
     private String setupIntentId;
     /**
@@ -27,7 +27,7 @@ public class SetupIntentResponse implements Parsable {
         return new SetupIntentResponse();
     }
     /**
-     * Gets the clientSecret property value. The clientSecret property
+     * Gets the client_secret property value. The client_secret property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -41,12 +41,12 @@ public class SetupIntentResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("clientSecret", (n) -> { this.setClientSecret(n.getStringValue()); });
-        deserializerMap.put("setupIntentId", (n) -> { this.setSetupIntentId(n.getStringValue()); });
+        deserializerMap.put("client_secret", (n) -> { this.setClientSecret(n.getStringValue()); });
+        deserializerMap.put("setup_intent_id", (n) -> { this.setSetupIntentId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the setupIntentId property value. The setupIntentId property
+     * Gets the setup_intent_id property value. The setup_intent_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,19 +59,19 @@ public class SetupIntentResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("clientSecret", this.getClientSecret());
-        writer.writeStringValue("setupIntentId", this.getSetupIntentId());
+        writer.writeStringValue("client_secret", this.getClientSecret());
+        writer.writeStringValue("setup_intent_id", this.getSetupIntentId());
     }
     /**
-     * Sets the clientSecret property value. The clientSecret property
-     * @param value Value to set for the clientSecret property.
+     * Sets the client_secret property value. The client_secret property
+     * @param value Value to set for the client_secret property.
      */
     public void setClientSecret(@jakarta.annotation.Nullable final String value) {
         this.clientSecret = value;
     }
     /**
-     * Sets the setupIntentId property value. The setupIntentId property
-     * @param value Value to set for the setupIntentId property.
+     * Sets the setup_intent_id property value. The setup_intent_id property
+     * @param value Value to set for the setup_intent_id property.
      */
     public void setSetupIntentId(@jakarta.annotation.Nullable final String value) {
         this.setupIntentId = value;

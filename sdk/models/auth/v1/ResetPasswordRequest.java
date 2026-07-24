@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ResetPasswordRequest implements Parsable {
     /**
-     * The newPassword property
+     * The new_password property
      */
     private String newPassword;
     /**
@@ -33,12 +33,12 @@ public class ResetPasswordRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("newPassword", (n) -> { this.setNewPassword(n.getStringValue()); });
+        deserializerMap.put("new_password", (n) -> { this.setNewPassword(n.getStringValue()); });
         deserializerMap.put("token", (n) -> { this.setToken(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the newPassword property value. The newPassword property
+     * Gets the new_password property value. The new_password property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,12 +59,12 @@ public class ResetPasswordRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("newPassword", this.getNewPassword());
+        writer.writeStringValue("new_password", this.getNewPassword());
         writer.writeStringValue("token", this.getToken());
     }
     /**
-     * Sets the newPassword property value. The newPassword property
-     * @param value Value to set for the newPassword property.
+     * Sets the new_password property value. The new_password property
+     * @param value Value to set for the new_password property.
      */
     public void setNewPassword(@jakarta.annotation.Nullable final String value) {
         this.newPassword = value;

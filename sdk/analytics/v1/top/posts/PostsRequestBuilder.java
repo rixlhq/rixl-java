@@ -25,7 +25,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?feedId*,limit*,range%2Eend*,range%2Estart*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?feed_id*,limit*,range%2Eend*,range%2Estart*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PostsRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?feedId*,limit*,range%2Eend*,range%2Estart*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/top/posts{?feed_id*,limit*,range%2Eend*,range%2Estart*}", rawUrl);
     }
     /**
      * GetTopPosts
@@ -103,7 +103,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("feedId", feedId);
+            allQueryParams.put("feed_id", feedId);
             allQueryParams.put("limit", limit);
             allQueryParams.put("range%2Eend", rangeEnd);
             allQueryParams.put("range%2Estart", rangeStart);

@@ -13,7 +13,7 @@ public class AddEmailRequest implements Parsable {
      */
     private String email;
     /**
-     * The userId property
+     * The user_id property
      */
     private String userId;
     /**
@@ -42,11 +42,11 @@ public class AddEmailRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
+        deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the userId property value. The userId property
+     * Gets the user_id property value. The user_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class AddEmailRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("email", this.getEmail());
-        writer.writeStringValue("userId", this.getUserId());
+        writer.writeStringValue("user_id", this.getUserId());
     }
     /**
      * Sets the email property value. The email property
@@ -70,8 +70,8 @@ public class AddEmailRequest implements Parsable {
         this.email = value;
     }
     /**
-     * Sets the userId property value. The userId property
-     * @param value Value to set for the userId property.
+     * Sets the user_id property value. The user_id property
+     * @param value Value to set for the user_id property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;

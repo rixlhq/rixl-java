@@ -9,19 +9,19 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FunnelStepResult implements Parsable {
     /**
-     * The conversionRate property
+     * The conversion_rate property
      */
     private Double conversionRate;
     /**
-     * The dropoffRate property
+     * The dropoff_rate property
      */
     private Double dropoffRate;
     /**
-     * The stepName property
+     * The step_name property
      */
     private String stepName;
     /**
-     * The userCount property
+     * The user_count property
      */
     private Integer userCount;
     /**
@@ -35,7 +35,7 @@ public class FunnelStepResult implements Parsable {
         return new FunnelStepResult();
     }
     /**
-     * Gets the conversionRate property value. The conversionRate property
+     * Gets the conversion_rate property value. The conversion_rate property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -43,7 +43,7 @@ public class FunnelStepResult implements Parsable {
         return this.conversionRate;
     }
     /**
-     * Gets the dropoffRate property value. The dropoffRate property
+     * Gets the dropoff_rate property value. The dropoff_rate property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -57,14 +57,14 @@ public class FunnelStepResult implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("conversionRate", (n) -> { this.setConversionRate(n.getDoubleValue()); });
-        deserializerMap.put("dropoffRate", (n) -> { this.setDropoffRate(n.getDoubleValue()); });
-        deserializerMap.put("stepName", (n) -> { this.setStepName(n.getStringValue()); });
-        deserializerMap.put("userCount", (n) -> { this.setUserCount(n.getIntegerValue()); });
+        deserializerMap.put("conversion_rate", (n) -> { this.setConversionRate(n.getDoubleValue()); });
+        deserializerMap.put("dropoff_rate", (n) -> { this.setDropoffRate(n.getDoubleValue()); });
+        deserializerMap.put("step_name", (n) -> { this.setStepName(n.getStringValue()); });
+        deserializerMap.put("user_count", (n) -> { this.setUserCount(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the stepName property value. The stepName property
+     * Gets the step_name property value. The step_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class FunnelStepResult implements Parsable {
         return this.stepName;
     }
     /**
-     * Gets the userCount property value. The userCount property
+     * Gets the user_count property value. The user_count property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -85,35 +85,35 @@ public class FunnelStepResult implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeDoubleValue("conversionRate", this.getConversionRate());
-        writer.writeDoubleValue("dropoffRate", this.getDropoffRate());
-        writer.writeStringValue("stepName", this.getStepName());
-        writer.writeIntegerValue("userCount", this.getUserCount());
+        writer.writeDoubleValue("conversion_rate", this.getConversionRate());
+        writer.writeDoubleValue("dropoff_rate", this.getDropoffRate());
+        writer.writeStringValue("step_name", this.getStepName());
+        writer.writeIntegerValue("user_count", this.getUserCount());
     }
     /**
-     * Sets the conversionRate property value. The conversionRate property
-     * @param value Value to set for the conversionRate property.
+     * Sets the conversion_rate property value. The conversion_rate property
+     * @param value Value to set for the conversion_rate property.
      */
     public void setConversionRate(@jakarta.annotation.Nullable final Double value) {
         this.conversionRate = value;
     }
     /**
-     * Sets the dropoffRate property value. The dropoffRate property
-     * @param value Value to set for the dropoffRate property.
+     * Sets the dropoff_rate property value. The dropoff_rate property
+     * @param value Value to set for the dropoff_rate property.
      */
     public void setDropoffRate(@jakarta.annotation.Nullable final Double value) {
         this.dropoffRate = value;
     }
     /**
-     * Sets the stepName property value. The stepName property
-     * @param value Value to set for the stepName property.
+     * Sets the step_name property value. The step_name property
+     * @param value Value to set for the step_name property.
      */
     public void setStepName(@jakarta.annotation.Nullable final String value) {
         this.stepName = value;
     }
     /**
-     * Sets the userCount property value. The userCount property
-     * @param value Value to set for the userCount property.
+     * Sets the user_count property value. The user_count property
+     * @param value Value to set for the user_count property.
      */
     public void setUserCount(@jakarta.annotation.Nullable final Integer value) {
         this.userCount = value;

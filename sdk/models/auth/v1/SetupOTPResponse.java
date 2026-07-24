@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SetupOTPResponse implements Parsable {
     /**
-     * The qrCodeUrl property
+     * The qr_code_url property
      */
     private String qrCodeUrl;
     /**
@@ -33,12 +33,12 @@ public class SetupOTPResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("qrCodeUrl", (n) -> { this.setQrCodeUrl(n.getStringValue()); });
+        deserializerMap.put("qr_code_url", (n) -> { this.setQrCodeUrl(n.getStringValue()); });
         deserializerMap.put("secret", (n) -> { this.setSecret(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the qrCodeUrl property value. The qrCodeUrl property
+     * Gets the qr_code_url property value. The qr_code_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,12 +59,12 @@ public class SetupOTPResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("qrCodeUrl", this.getQrCodeUrl());
+        writer.writeStringValue("qr_code_url", this.getQrCodeUrl());
         writer.writeStringValue("secret", this.getSecret());
     }
     /**
-     * Sets the qrCodeUrl property value. The qrCodeUrl property
-     * @param value Value to set for the qrCodeUrl property.
+     * Sets the qr_code_url property value. The qr_code_url property
+     * @param value Value to set for the qr_code_url property.
      */
     public void setQrCodeUrl(@jakarta.annotation.Nullable final String value) {
         this.qrCodeUrl = value;

@@ -17,7 +17,7 @@ public class FunnelRequest implements Parsable {
      */
     private java.util.List<FunnelStep> steps;
     /**
-     * The timeWindow property
+     * The time_window property
      */
     private Integer timeWindow;
     /**
@@ -39,7 +39,7 @@ public class FunnelRequest implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("range", (n) -> { this.setRange(n.getObjectValue(DateRange::createFromDiscriminatorValue)); });
         deserializerMap.put("steps", (n) -> { this.setSteps(n.getCollectionOfObjectValues(FunnelStep::createFromDiscriminatorValue)); });
-        deserializerMap.put("timeWindow", (n) -> { this.setTimeWindow(n.getIntegerValue()); });
+        deserializerMap.put("time_window", (n) -> { this.setTimeWindow(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
@@ -59,7 +59,7 @@ public class FunnelRequest implements Parsable {
         return this.steps;
     }
     /**
-     * Gets the timeWindow property value. The timeWindow property
+     * Gets the time_window property value. The time_window property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -74,7 +74,7 @@ public class FunnelRequest implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("range", this.getRange());
         writer.writeCollectionOfObjectValues("steps", this.getSteps());
-        writer.writeIntegerValue("timeWindow", this.getTimeWindow());
+        writer.writeIntegerValue("time_window", this.getTimeWindow());
     }
     /**
      * Sets the range property value. The range property
@@ -91,8 +91,8 @@ public class FunnelRequest implements Parsable {
         this.steps = value;
     }
     /**
-     * Sets the timeWindow property value. The timeWindow property
-     * @param value Value to set for the timeWindow property.
+     * Sets the time_window property value. The time_window property
+     * @param value Value to set for the time_window property.
      */
     public void setTimeWindow(@jakarta.annotation.Nullable final Integer value) {
         this.timeWindow = value;

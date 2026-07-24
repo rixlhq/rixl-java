@@ -26,7 +26,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPostItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/posts/{post_id}{?feedId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/posts/{post_id}{?feed_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link WithPostItemRequestBuilder} and sets the default values.
@@ -34,7 +34,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public WithPostItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/posts/{post_id}{?feedId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/posts/{post_id}{?feed_id*}", rawUrl);
     }
     /**
      * DeletePost
@@ -139,7 +139,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("feedId", feedId);
+            allQueryParams.put("feed_id", feedId);
             return allQueryParams;
         }
     }
@@ -171,7 +171,7 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("feedId", feedId);
+            allQueryParams.put("feed_id", feedId);
             return allQueryParams;
         }
     }

@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ListApiKeysResponse implements Parsable {
     /**
-     * The apiKeys property
+     * The api_keys property
      */
     private java.util.List<ApiKey> apiKeys;
     /**
@@ -28,7 +28,7 @@ public class ListApiKeysResponse implements Parsable {
         return new ListApiKeysResponse();
     }
     /**
-     * Gets the apiKeys property value. The apiKeys property
+     * Gets the api_keys property value. The api_keys property
      * @return a {@link java.util.List<ApiKey>}
      */
     @jakarta.annotation.Nullable
@@ -42,7 +42,7 @@ public class ListApiKeysResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("apiKeys", (n) -> { this.setApiKeys(n.getCollectionOfObjectValues(ApiKey::createFromDiscriminatorValue)); });
+        deserializerMap.put("api_keys", (n) -> { this.setApiKeys(n.getCollectionOfObjectValues(ApiKey::createFromDiscriminatorValue)); });
         deserializerMap.put("total", (n) -> { this.setTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -60,12 +60,12 @@ public class ListApiKeysResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeCollectionOfObjectValues("apiKeys", this.getApiKeys());
+        writer.writeCollectionOfObjectValues("api_keys", this.getApiKeys());
         writer.writeObjectValue("total", this.getTotal());
     }
     /**
-     * Sets the apiKeys property value. The apiKeys property
-     * @param value Value to set for the apiKeys property.
+     * Sets the api_keys property value. The api_keys property
+     * @param value Value to set for the api_keys property.
      */
     public void setApiKeys(@jakarta.annotation.Nullable final java.util.List<ApiKey> value) {
         this.apiKeys = value;

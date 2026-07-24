@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Chapter implements Parsable {
     /**
-     * The startTimeSec property
+     * The start_time_sec property
      */
     private Double startTimeSec;
     /**
@@ -33,12 +33,12 @@ public class Chapter implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("startTimeSec", (n) -> { this.setStartTimeSec(n.getDoubleValue()); });
+        deserializerMap.put("start_time_sec", (n) -> { this.setStartTimeSec(n.getDoubleValue()); });
         deserializerMap.put("title", (n) -> { this.setTitle(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the startTimeSec property value. The startTimeSec property
+     * Gets the start_time_sec property value. The start_time_sec property
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -59,12 +59,12 @@ public class Chapter implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeDoubleValue("startTimeSec", this.getStartTimeSec());
+        writer.writeDoubleValue("start_time_sec", this.getStartTimeSec());
         writer.writeStringValue("title", this.getTitle());
     }
     /**
-     * Sets the startTimeSec property value. The startTimeSec property
-     * @param value Value to set for the startTimeSec property.
+     * Sets the start_time_sec property value. The start_time_sec property
+     * @param value Value to set for the start_time_sec property.
      */
     public void setStartTimeSec(@jakarta.annotation.Nullable final Double value) {
         this.startTimeSec = value;

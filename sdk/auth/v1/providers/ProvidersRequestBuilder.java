@@ -47,7 +47,7 @@ public class ProvidersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ProvidersRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/providers{?userId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/providers{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link ProvidersRequestBuilder} and sets the default values.
@@ -55,7 +55,7 @@ public class ProvidersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ProvidersRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/providers{?userId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/providers{?user_id*}", rawUrl);
     }
     /**
      * ListProviders
@@ -119,7 +119,7 @@ public class ProvidersRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("userId", userId);
+            allQueryParams.put("user_id", userId);
             return allQueryParams;
         }
     }

@@ -18,7 +18,7 @@ public class TaxLineItem implements Parsable {
      */
     private String reference;
     /**
-     * The taxCode property
+     * The tax_code property
      */
     private String taxCode;
     /**
@@ -48,7 +48,7 @@ public class TaxLineItem implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("amount", (n) -> { this.setAmount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("reference", (n) -> { this.setReference(n.getStringValue()); });
-        deserializerMap.put("taxCode", (n) -> { this.setTaxCode(n.getStringValue()); });
+        deserializerMap.put("tax_code", (n) -> { this.setTaxCode(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -60,7 +60,7 @@ public class TaxLineItem implements Parsable {
         return this.reference;
     }
     /**
-     * Gets the taxCode property value. The taxCode property
+     * Gets the tax_code property value. The tax_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -75,7 +75,7 @@ public class TaxLineItem implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("amount", this.getAmount());
         writer.writeStringValue("reference", this.getReference());
-        writer.writeStringValue("taxCode", this.getTaxCode());
+        writer.writeStringValue("tax_code", this.getTaxCode());
     }
     /**
      * Sets the amount property value. The amount property
@@ -92,8 +92,8 @@ public class TaxLineItem implements Parsable {
         this.reference = value;
     }
     /**
-     * Sets the taxCode property value. The taxCode property
-     * @param value Value to set for the taxCode property.
+     * Sets the tax_code property value. The tax_code property
+     * @param value Value to set for the tax_code property.
      */
     public void setTaxCode(@jakarta.annotation.Nullable final String value) {
         this.taxCode = value;

@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpdateNameRequest implements Parsable {
     /**
-     * The fullName property
+     * The full_name property
      */
     private String fullName;
     /**
-     * The userId property
+     * The user_id property
      */
     private String userId;
     /**
@@ -33,12 +33,12 @@ public class UpdateNameRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("fullName", (n) -> { this.setFullName(n.getStringValue()); });
-        deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
+        deserializerMap.put("full_name", (n) -> { this.setFullName(n.getStringValue()); });
+        deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the fullName property value. The fullName property
+     * Gets the full_name property value. The full_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -46,7 +46,7 @@ public class UpdateNameRequest implements Parsable {
         return this.fullName;
     }
     /**
-     * Gets the userId property value. The userId property
+     * Gets the user_id property value. The user_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,19 +59,19 @@ public class UpdateNameRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("fullName", this.getFullName());
-        writer.writeStringValue("userId", this.getUserId());
+        writer.writeStringValue("full_name", this.getFullName());
+        writer.writeStringValue("user_id", this.getUserId());
     }
     /**
-     * Sets the fullName property value. The fullName property
-     * @param value Value to set for the fullName property.
+     * Sets the full_name property value. The full_name property
+     * @param value Value to set for the full_name property.
      */
     public void setFullName(@jakarta.annotation.Nullable final String value) {
         this.fullName = value;
     }
     /**
-     * Sets the userId property value. The userId property
-     * @param value Value to set for the userId property.
+     * Sets the user_id property value. The user_id property
+     * @param value Value to set for the user_id property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;

@@ -9,19 +9,19 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreateCheckoutSessionRequest implements Parsable {
     /**
-     * The cancelUrl property
+     * The cancel_url property
      */
     private String cancelUrl;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The stripePriceId property
+     * The stripe_price_id property
      */
     private String stripePriceId;
     /**
-     * The successUrl property
+     * The success_url property
      */
     private String successUrl;
     /**
@@ -35,7 +35,7 @@ public class CreateCheckoutSessionRequest implements Parsable {
         return new CreateCheckoutSessionRequest();
     }
     /**
-     * Gets the cancelUrl property value. The cancelUrl property
+     * Gets the cancel_url property value. The cancel_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -49,14 +49,14 @@ public class CreateCheckoutSessionRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("cancelUrl", (n) -> { this.setCancelUrl(n.getStringValue()); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("stripePriceId", (n) -> { this.setStripePriceId(n.getStringValue()); });
-        deserializerMap.put("successUrl", (n) -> { this.setSuccessUrl(n.getStringValue()); });
+        deserializerMap.put("cancel_url", (n) -> { this.setCancelUrl(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("stripe_price_id", (n) -> { this.setStripePriceId(n.getStringValue()); });
+        deserializerMap.put("success_url", (n) -> { this.setSuccessUrl(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -64,7 +64,7 @@ public class CreateCheckoutSessionRequest implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the stripePriceId property value. The stripePriceId property
+     * Gets the stripe_price_id property value. The stripe_price_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class CreateCheckoutSessionRequest implements Parsable {
         return this.stripePriceId;
     }
     /**
-     * Gets the successUrl property value. The successUrl property
+     * Gets the success_url property value. The success_url property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,35 +85,35 @@ public class CreateCheckoutSessionRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("cancelUrl", this.getCancelUrl());
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("stripePriceId", this.getStripePriceId());
-        writer.writeStringValue("successUrl", this.getSuccessUrl());
+        writer.writeStringValue("cancel_url", this.getCancelUrl());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("stripe_price_id", this.getStripePriceId());
+        writer.writeStringValue("success_url", this.getSuccessUrl());
     }
     /**
-     * Sets the cancelUrl property value. The cancelUrl property
-     * @param value Value to set for the cancelUrl property.
+     * Sets the cancel_url property value. The cancel_url property
+     * @param value Value to set for the cancel_url property.
      */
     public void setCancelUrl(@jakarta.annotation.Nullable final String value) {
         this.cancelUrl = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the stripePriceId property value. The stripePriceId property
-     * @param value Value to set for the stripePriceId property.
+     * Sets the stripe_price_id property value. The stripe_price_id property
+     * @param value Value to set for the stripe_price_id property.
      */
     public void setStripePriceId(@jakarta.annotation.Nullable final String value) {
         this.stripePriceId = value;
     }
     /**
-     * Sets the successUrl property value. The successUrl property
-     * @param value Value to set for the successUrl property.
+     * Sets the success_url property value. The success_url property
+     * @param value Value to set for the success_url property.
      */
     public void setSuccessUrl(@jakarta.annotation.Nullable final String value) {
         this.successUrl = value;

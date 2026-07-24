@@ -48,7 +48,7 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembershipsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships{?limit*,offset*,state*,user%2EuserId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships{?limit*,offset*,state*,user%2Euser_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link MembershipsRequestBuilder} and sets the default values.
@@ -56,7 +56,7 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembershipsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships{?limit*,offset*,state*,user%2EuserId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships{?limit*,offset*,state*,user%2Euser_id*}", rawUrl);
     }
     /**
      * ListMemberships
@@ -129,7 +129,7 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
             allQueryParams.put("state", state);
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
-            allQueryParams.put("user%2EuserId", userUserId);
+            allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }
     }

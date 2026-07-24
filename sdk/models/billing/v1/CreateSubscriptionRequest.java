@@ -9,19 +9,19 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreateSubscriptionRequest implements Parsable {
     /**
-     * The billingAddress property
+     * The billing_address property
      */
     private BillingAddress billingAddress;
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The paymentMethodId property
+     * The payment_method_id property
      */
     private String paymentMethodId;
     /**
-     * The stripePriceId property
+     * The stripe_price_id property
      */
     private String stripePriceId;
     /**
@@ -35,7 +35,7 @@ public class CreateSubscriptionRequest implements Parsable {
         return new CreateSubscriptionRequest();
     }
     /**
-     * Gets the billingAddress property value. The billingAddress property
+     * Gets the billing_address property value. The billing_address property
      * @return a {@link BillingAddress}
      */
     @jakarta.annotation.Nullable
@@ -49,14 +49,14 @@ public class CreateSubscriptionRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("billingAddress", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("paymentMethodId", (n) -> { this.setPaymentMethodId(n.getStringValue()); });
-        deserializerMap.put("stripePriceId", (n) -> { this.setStripePriceId(n.getStringValue()); });
+        deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("payment_method_id", (n) -> { this.setPaymentMethodId(n.getStringValue()); });
+        deserializerMap.put("stripe_price_id", (n) -> { this.setStripePriceId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -64,7 +64,7 @@ public class CreateSubscriptionRequest implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the paymentMethodId property value. The paymentMethodId property
+     * Gets the payment_method_id property value. The payment_method_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class CreateSubscriptionRequest implements Parsable {
         return this.paymentMethodId;
     }
     /**
-     * Gets the stripePriceId property value. The stripePriceId property
+     * Gets the stripe_price_id property value. The stripe_price_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,35 +85,35 @@ public class CreateSubscriptionRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("billingAddress", this.getBillingAddress());
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("paymentMethodId", this.getPaymentMethodId());
-        writer.writeStringValue("stripePriceId", this.getStripePriceId());
+        writer.writeObjectValue("billing_address", this.getBillingAddress());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("payment_method_id", this.getPaymentMethodId());
+        writer.writeStringValue("stripe_price_id", this.getStripePriceId());
     }
     /**
-     * Sets the billingAddress property value. The billingAddress property
-     * @param value Value to set for the billingAddress property.
+     * Sets the billing_address property value. The billing_address property
+     * @param value Value to set for the billing_address property.
      */
     public void setBillingAddress(@jakarta.annotation.Nullable final BillingAddress value) {
         this.billingAddress = value;
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the paymentMethodId property value. The paymentMethodId property
-     * @param value Value to set for the paymentMethodId property.
+     * Sets the payment_method_id property value. The payment_method_id property
+     * @param value Value to set for the payment_method_id property.
      */
     public void setPaymentMethodId(@jakarta.annotation.Nullable final String value) {
         this.paymentMethodId = value;
     }
     /**
-     * Sets the stripePriceId property value. The stripePriceId property
-     * @param value Value to set for the stripePriceId property.
+     * Sets the stripe_price_id property value. The stripe_price_id property
+     * @param value Value to set for the stripe_price_id property.
      */
     public void setStripePriceId(@jakarta.annotation.Nullable final String value) {
         this.stripePriceId = value;

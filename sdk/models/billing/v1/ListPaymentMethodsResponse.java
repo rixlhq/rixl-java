@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ListPaymentMethodsResponse implements Parsable {
     /**
-     * The paymentMethods property
+     * The payment_methods property
      */
     private java.util.List<PaymentMethod> paymentMethods;
     /**
@@ -29,11 +29,11 @@ public class ListPaymentMethodsResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("paymentMethods", (n) -> { this.setPaymentMethods(n.getCollectionOfObjectValues(PaymentMethod::createFromDiscriminatorValue)); });
+        deserializerMap.put("payment_methods", (n) -> { this.setPaymentMethods(n.getCollectionOfObjectValues(PaymentMethod::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the paymentMethods property value. The paymentMethods property
+     * Gets the payment_methods property value. The payment_methods property
      * @return a {@link java.util.List<PaymentMethod>}
      */
     @jakarta.annotation.Nullable
@@ -46,11 +46,11 @@ public class ListPaymentMethodsResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeCollectionOfObjectValues("paymentMethods", this.getPaymentMethods());
+        writer.writeCollectionOfObjectValues("payment_methods", this.getPaymentMethods());
     }
     /**
-     * Sets the paymentMethods property value. The paymentMethods property
-     * @param value Value to set for the paymentMethods property.
+     * Sets the payment_methods property value. The payment_methods property
+     * @param value Value to set for the payment_methods property.
      */
     public void setPaymentMethods(@jakarta.annotation.Nullable final java.util.List<PaymentMethod> value) {
         this.paymentMethods = value;

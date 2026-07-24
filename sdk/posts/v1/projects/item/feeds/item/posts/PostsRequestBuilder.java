@@ -57,7 +57,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts{?creatorId*,pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts{?creator_id*,pagination%2Elimit*,pagination%2Eoffset*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PostsRequestBuilder} and sets the default values.
@@ -65,7 +65,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PostsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts{?creatorId*,pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/posts/v1/projects/{project_id}/feeds/{feed_id}/posts{?creator_id*,pagination%2Elimit*,pagination%2Eoffset*}", rawUrl);
     }
     /**
      * ListPosts
@@ -184,7 +184,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("creatorId", creatorId);
+            allQueryParams.put("creator_id", creatorId);
             allQueryParams.put("pagination%2Elimit", paginationLimit);
             allQueryParams.put("pagination%2Eoffset", paginationOffset);
             return allQueryParams;

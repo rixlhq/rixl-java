@@ -25,7 +25,7 @@ public class Plan implements Parsable {
      */
     private String interval;
     /**
-     * The intervalCount property
+     * The interval_count property
      */
     private Integer intervalCount;
     /**
@@ -33,7 +33,7 @@ public class Plan implements Parsable {
      */
     private String name;
     /**
-     * The planType property
+     * The plan_type property
      */
     private PlanType planType;
     /**
@@ -41,7 +41,7 @@ public class Plan implements Parsable {
      */
     private String price;
     /**
-     * The sortOrder property
+     * The sort_order property
      */
     private Integer sortOrder;
     /**
@@ -81,11 +81,11 @@ public class Plan implements Parsable {
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("interval", (n) -> { this.setInterval(n.getStringValue()); });
-        deserializerMap.put("intervalCount", (n) -> { this.setIntervalCount(n.getIntegerValue()); });
+        deserializerMap.put("interval_count", (n) -> { this.setIntervalCount(n.getIntegerValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("planType", (n) -> { this.setPlanType(n.getEnumValue(PlanType::forValue)); });
+        deserializerMap.put("plan_type", (n) -> { this.setPlanType(n.getEnumValue(PlanType::forValue)); });
         deserializerMap.put("price", (n) -> { this.setPrice(n.getStringValue()); });
-        deserializerMap.put("sortOrder", (n) -> { this.setSortOrder(n.getIntegerValue()); });
+        deserializerMap.put("sort_order", (n) -> { this.setSortOrder(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
@@ -105,7 +105,7 @@ public class Plan implements Parsable {
         return this.interval;
     }
     /**
-     * Gets the intervalCount property value. The intervalCount property
+     * Gets the interval_count property value. The interval_count property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class Plan implements Parsable {
         return this.name;
     }
     /**
-     * Gets the planType property value. The planType property
+     * Gets the plan_type property value. The plan_type property
      * @return a {@link PlanType}
      */
     @jakarta.annotation.Nullable
@@ -137,7 +137,7 @@ public class Plan implements Parsable {
         return this.price;
     }
     /**
-     * Gets the sortOrder property value. The sortOrder property
+     * Gets the sort_order property value. The sort_order property
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -154,11 +154,11 @@ public class Plan implements Parsable {
         writer.writeStringValue("description", this.getDescription());
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("interval", this.getInterval());
-        writer.writeIntegerValue("intervalCount", this.getIntervalCount());
+        writer.writeIntegerValue("interval_count", this.getIntervalCount());
         writer.writeStringValue("name", this.getName());
-        writer.writeEnumValue("planType", this.getPlanType());
+        writer.writeEnumValue("plan_type", this.getPlanType());
         writer.writeStringValue("price", this.getPrice());
-        writer.writeIntegerValue("sortOrder", this.getSortOrder());
+        writer.writeIntegerValue("sort_order", this.getSortOrder());
     }
     /**
      * Sets the currency property value. The currency property
@@ -189,8 +189,8 @@ public class Plan implements Parsable {
         this.interval = value;
     }
     /**
-     * Sets the intervalCount property value. The intervalCount property
-     * @param value Value to set for the intervalCount property.
+     * Sets the interval_count property value. The interval_count property
+     * @param value Value to set for the interval_count property.
      */
     public void setIntervalCount(@jakarta.annotation.Nullable final Integer value) {
         this.intervalCount = value;
@@ -203,8 +203,8 @@ public class Plan implements Parsable {
         this.name = value;
     }
     /**
-     * Sets the planType property value. The planType property
-     * @param value Value to set for the planType property.
+     * Sets the plan_type property value. The plan_type property
+     * @param value Value to set for the plan_type property.
      */
     public void setPlanType(@jakarta.annotation.Nullable final PlanType value) {
         this.planType = value;
@@ -217,8 +217,8 @@ public class Plan implements Parsable {
         this.price = value;
     }
     /**
-     * Sets the sortOrder property value. The sortOrder property
-     * @param value Value to set for the sortOrder property.
+     * Sets the sort_order property value. The sort_order property
+     * @param value Value to set for the sort_order property.
      */
     public void setSortOrder(@jakarta.annotation.Nullable final Integer value) {
         this.sortOrder = value;

@@ -13,7 +13,7 @@ public class VerifyTOTPForLoginRequest implements Parsable {
      */
     private String code;
     /**
-     * The sessionId property
+     * The session_id property
      */
     private String sessionId;
     /**
@@ -42,11 +42,11 @@ public class VerifyTOTPForLoginRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("code", (n) -> { this.setCode(n.getStringValue()); });
-        deserializerMap.put("sessionId", (n) -> { this.setSessionId(n.getStringValue()); });
+        deserializerMap.put("session_id", (n) -> { this.setSessionId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the sessionId property value. The sessionId property
+     * Gets the session_id property value. The session_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class VerifyTOTPForLoginRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("code", this.getCode());
-        writer.writeStringValue("sessionId", this.getSessionId());
+        writer.writeStringValue("session_id", this.getSessionId());
     }
     /**
      * Sets the code property value. The code property
@@ -70,8 +70,8 @@ public class VerifyTOTPForLoginRequest implements Parsable {
         this.code = value;
     }
     /**
-     * Sets the sessionId property value. The sessionId property
-     * @param value Value to set for the sessionId property.
+     * Sets the session_id property value. The session_id property
+     * @param value Value to set for the session_id property.
      */
     public void setSessionId(@jakarta.annotation.Nullable final String value) {
         this.sessionId = value;

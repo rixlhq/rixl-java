@@ -10,15 +10,15 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RealtimeStats implements Parsable {
     /**
-     * The activeUsers property
+     * The active_users property
      */
     private UntypedNode activeUsers;
     /**
-     * The eventsPerMinute property
+     * The events_per_minute property
      */
     private UntypedNode eventsPerMinute;
     /**
-     * The recentEvents property
+     * The recent_events property
      */
     private java.util.List<RecentEvent> recentEvents;
     /**
@@ -26,11 +26,11 @@ public class RealtimeStats implements Parsable {
      */
     private String timestamp;
     /**
-     * The topCountries property
+     * The top_countries property
      */
     private java.util.List<CountryCount> topCountries;
     /**
-     * The topEvents property
+     * The top_events property
      */
     private java.util.List<EventCount> topEvents;
     /**
@@ -44,7 +44,7 @@ public class RealtimeStats implements Parsable {
         return new RealtimeStats();
     }
     /**
-     * Gets the activeUsers property value. The activeUsers property
+     * Gets the active_users property value. The active_users property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -52,7 +52,7 @@ public class RealtimeStats implements Parsable {
         return this.activeUsers;
     }
     /**
-     * Gets the eventsPerMinute property value. The eventsPerMinute property
+     * Gets the events_per_minute property value. The events_per_minute property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -66,16 +66,16 @@ public class RealtimeStats implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
-        deserializerMap.put("activeUsers", (n) -> { this.setActiveUsers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("eventsPerMinute", (n) -> { this.setEventsPerMinute(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("recentEvents", (n) -> { this.setRecentEvents(n.getCollectionOfObjectValues(RecentEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("active_users", (n) -> { this.setActiveUsers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("events_per_minute", (n) -> { this.setEventsPerMinute(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("recent_events", (n) -> { this.setRecentEvents(n.getCollectionOfObjectValues(RecentEvent::createFromDiscriminatorValue)); });
         deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getStringValue()); });
-        deserializerMap.put("topCountries", (n) -> { this.setTopCountries(n.getCollectionOfObjectValues(CountryCount::createFromDiscriminatorValue)); });
-        deserializerMap.put("topEvents", (n) -> { this.setTopEvents(n.getCollectionOfObjectValues(EventCount::createFromDiscriminatorValue)); });
+        deserializerMap.put("top_countries", (n) -> { this.setTopCountries(n.getCollectionOfObjectValues(CountryCount::createFromDiscriminatorValue)); });
+        deserializerMap.put("top_events", (n) -> { this.setTopEvents(n.getCollectionOfObjectValues(EventCount::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the recentEvents property value. The recentEvents property
+     * Gets the recent_events property value. The recent_events property
      * @return a {@link java.util.List<RecentEvent>}
      */
     @jakarta.annotation.Nullable
@@ -91,7 +91,7 @@ public class RealtimeStats implements Parsable {
         return this.timestamp;
     }
     /**
-     * Gets the topCountries property value. The topCountries property
+     * Gets the top_countries property value. The top_countries property
      * @return a {@link java.util.List<CountryCount>}
      */
     @jakarta.annotation.Nullable
@@ -99,7 +99,7 @@ public class RealtimeStats implements Parsable {
         return this.topCountries;
     }
     /**
-     * Gets the topEvents property value. The topEvents property
+     * Gets the top_events property value. The top_events property
      * @return a {@link java.util.List<EventCount>}
      */
     @jakarta.annotation.Nullable
@@ -112,30 +112,30 @@ public class RealtimeStats implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("activeUsers", this.getActiveUsers());
-        writer.writeObjectValue("eventsPerMinute", this.getEventsPerMinute());
-        writer.writeCollectionOfObjectValues("recentEvents", this.getRecentEvents());
+        writer.writeObjectValue("active_users", this.getActiveUsers());
+        writer.writeObjectValue("events_per_minute", this.getEventsPerMinute());
+        writer.writeCollectionOfObjectValues("recent_events", this.getRecentEvents());
         writer.writeStringValue("timestamp", this.getTimestamp());
-        writer.writeCollectionOfObjectValues("topCountries", this.getTopCountries());
-        writer.writeCollectionOfObjectValues("topEvents", this.getTopEvents());
+        writer.writeCollectionOfObjectValues("top_countries", this.getTopCountries());
+        writer.writeCollectionOfObjectValues("top_events", this.getTopEvents());
     }
     /**
-     * Sets the activeUsers property value. The activeUsers property
-     * @param value Value to set for the activeUsers property.
+     * Sets the active_users property value. The active_users property
+     * @param value Value to set for the active_users property.
      */
     public void setActiveUsers(@jakarta.annotation.Nullable final UntypedNode value) {
         this.activeUsers = value;
     }
     /**
-     * Sets the eventsPerMinute property value. The eventsPerMinute property
-     * @param value Value to set for the eventsPerMinute property.
+     * Sets the events_per_minute property value. The events_per_minute property
+     * @param value Value to set for the events_per_minute property.
      */
     public void setEventsPerMinute(@jakarta.annotation.Nullable final UntypedNode value) {
         this.eventsPerMinute = value;
     }
     /**
-     * Sets the recentEvents property value. The recentEvents property
-     * @param value Value to set for the recentEvents property.
+     * Sets the recent_events property value. The recent_events property
+     * @param value Value to set for the recent_events property.
      */
     public void setRecentEvents(@jakarta.annotation.Nullable final java.util.List<RecentEvent> value) {
         this.recentEvents = value;
@@ -148,15 +148,15 @@ public class RealtimeStats implements Parsable {
         this.timestamp = value;
     }
     /**
-     * Sets the topCountries property value. The topCountries property
-     * @param value Value to set for the topCountries property.
+     * Sets the top_countries property value. The top_countries property
+     * @param value Value to set for the top_countries property.
      */
     public void setTopCountries(@jakarta.annotation.Nullable final java.util.List<CountryCount> value) {
         this.topCountries = value;
     }
     /**
-     * Sets the topEvents property value. The topEvents property
-     * @param value Value to set for the topEvents property.
+     * Sets the top_events property value. The top_events property
+     * @param value Value to set for the top_events property.
      */
     public void setTopEvents(@jakarta.annotation.Nullable final java.util.List<EventCount> value) {
         this.topEvents = value;

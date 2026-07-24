@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class TrackUploadItem implements Parsable {
     /**
-     * The fileName property
+     * The file_name property
      */
     private String fileName;
     /**
@@ -22,7 +22,7 @@ public class TrackUploadItem implements Parsable {
      */
     private String label;
     /**
-     * The languageCode property
+     * The language_code property
      */
     private String languageCode;
     /**
@@ -46,15 +46,15 @@ public class TrackUploadItem implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("fileName", (n) -> { this.setFileName(n.getStringValue()); });
+        deserializerMap.put("file_name", (n) -> { this.setFileName(n.getStringValue()); });
         deserializerMap.put("format", (n) -> { this.setFormat(n.getStringValue()); });
         deserializerMap.put("label", (n) -> { this.setLabel(n.getStringValue()); });
-        deserializerMap.put("languageCode", (n) -> { this.setLanguageCode(n.getStringValue()); });
+        deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
         deserializerMap.put("size", (n) -> { this.setSize(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the fileName property value. The fileName property
+     * Gets the file_name property value. The file_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -78,7 +78,7 @@ public class TrackUploadItem implements Parsable {
         return this.label;
     }
     /**
-     * Gets the languageCode property value. The languageCode property
+     * Gets the language_code property value. The language_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -99,15 +99,15 @@ public class TrackUploadItem implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("fileName", this.getFileName());
+        writer.writeStringValue("file_name", this.getFileName());
         writer.writeStringValue("format", this.getFormat());
         writer.writeStringValue("label", this.getLabel());
-        writer.writeStringValue("languageCode", this.getLanguageCode());
+        writer.writeStringValue("language_code", this.getLanguageCode());
         writer.writeObjectValue("size", this.getSize());
     }
     /**
-     * Sets the fileName property value. The fileName property
-     * @param value Value to set for the fileName property.
+     * Sets the file_name property value. The file_name property
+     * @param value Value to set for the file_name property.
      */
     public void setFileName(@jakarta.annotation.Nullable final String value) {
         this.fileName = value;
@@ -127,8 +127,8 @@ public class TrackUploadItem implements Parsable {
         this.label = value;
     }
     /**
-     * Sets the languageCode property value. The languageCode property
-     * @param value Value to set for the languageCode property.
+     * Sets the language_code property value. The language_code property
+     * @param value Value to set for the language_code property.
      */
     public void setLanguageCode(@jakarta.annotation.Nullable final String value) {
         this.languageCode = value;

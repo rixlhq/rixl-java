@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpgradeSubscriptionResponse implements Parsable {
     /**
-     * The clientSecret property
+     * The client_secret property
      */
     private String clientSecret;
     /**
@@ -23,7 +23,7 @@ public class UpgradeSubscriptionResponse implements Parsable {
         return new UpgradeSubscriptionResponse();
     }
     /**
-     * Gets the clientSecret property value. The clientSecret property
+     * Gets the client_secret property value. The client_secret property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -37,7 +37,7 @@ public class UpgradeSubscriptionResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("clientSecret", (n) -> { this.setClientSecret(n.getStringValue()); });
+        deserializerMap.put("client_secret", (n) -> { this.setClientSecret(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -46,11 +46,11 @@ public class UpgradeSubscriptionResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("clientSecret", this.getClientSecret());
+        writer.writeStringValue("client_secret", this.getClientSecret());
     }
     /**
-     * Sets the clientSecret property value. The clientSecret property
-     * @param value Value to set for the clientSecret property.
+     * Sets the client_secret property value. The client_secret property
+     * @param value Value to set for the client_secret property.
      */
     public void setClientSecret(@jakarta.annotation.Nullable final String value) {
         this.clientSecret = value;

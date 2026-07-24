@@ -24,7 +24,7 @@ public class ImageFile implements Parsable {
      */
     private String name;
     /**
-     * The projectId property
+     * The project_id property
      */
     private String projectId;
     /**
@@ -59,7 +59,7 @@ public class ImageFile implements Parsable {
         deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ImageFormat::forValue)); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("projectId", (n) -> { this.setProjectId(n.getStringValue()); });
+        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("size", (n) -> { this.setSize(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(FileStatus::forValue)); });
         deserializerMap.put("url", (n) -> { this.setUrl(n.getStringValue()); });
@@ -90,7 +90,7 @@ public class ImageFile implements Parsable {
         return this.name;
     }
     /**
-     * Gets the projectId property value. The projectId property
+     * Gets the project_id property value. The project_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -130,7 +130,7 @@ public class ImageFile implements Parsable {
         writer.writeEnumValue("format", this.getFormat());
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("projectId", this.getProjectId());
+        writer.writeStringValue("project_id", this.getProjectId());
         writer.writeObjectValue("size", this.getSize());
         writer.writeEnumValue("status", this.getStatus());
         writer.writeStringValue("url", this.getUrl());
@@ -157,8 +157,8 @@ public class ImageFile implements Parsable {
         this.name = value;
     }
     /**
-     * Sets the projectId property value. The projectId property
-     * @param value Value to set for the projectId property.
+     * Sets the project_id property value. The project_id property
+     * @param value Value to set for the project_id property.
      */
     public void setProjectId(@jakarta.annotation.Nullable final String value) {
         this.projectId = value;

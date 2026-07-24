@@ -10,23 +10,23 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class TokenResponse implements Parsable {
     /**
-     * The accessToken property
+     * The access_token property
      */
     private String accessToken;
     /**
-     * The expiresIn property
+     * The expires_in property
      */
     private UntypedNode expiresIn;
     /**
-     * The refreshToken property
+     * The refresh_token property
      */
     private String refreshToken;
     /**
-     * The requiresAction property
+     * The requires_action property
      */
     private String requiresAction;
     /**
-     * The tokenType property
+     * The token_type property
      */
     private String tokenType;
     /**
@@ -40,7 +40,7 @@ public class TokenResponse implements Parsable {
         return new TokenResponse();
     }
     /**
-     * Gets the accessToken property value. The accessToken property
+     * Gets the access_token property value. The access_token property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -48,7 +48,7 @@ public class TokenResponse implements Parsable {
         return this.accessToken;
     }
     /**
-     * Gets the expiresIn property value. The expiresIn property
+     * Gets the expires_in property value. The expires_in property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -62,15 +62,15 @@ public class TokenResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("accessToken", (n) -> { this.setAccessToken(n.getStringValue()); });
-        deserializerMap.put("expiresIn", (n) -> { this.setExpiresIn(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("refreshToken", (n) -> { this.setRefreshToken(n.getStringValue()); });
-        deserializerMap.put("requiresAction", (n) -> { this.setRequiresAction(n.getStringValue()); });
-        deserializerMap.put("tokenType", (n) -> { this.setTokenType(n.getStringValue()); });
+        deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
+        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
+        deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
+        deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the refreshToken property value. The refreshToken property
+     * Gets the refresh_token property value. The refresh_token property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -78,7 +78,7 @@ public class TokenResponse implements Parsable {
         return this.refreshToken;
     }
     /**
-     * Gets the requiresAction property value. The requiresAction property
+     * Gets the requires_action property value. The requires_action property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -86,7 +86,7 @@ public class TokenResponse implements Parsable {
         return this.requiresAction;
     }
     /**
-     * Gets the tokenType property value. The tokenType property
+     * Gets the token_type property value. The token_type property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -99,43 +99,43 @@ public class TokenResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("accessToken", this.getAccessToken());
-        writer.writeObjectValue("expiresIn", this.getExpiresIn());
-        writer.writeStringValue("refreshToken", this.getRefreshToken());
-        writer.writeStringValue("requiresAction", this.getRequiresAction());
-        writer.writeStringValue("tokenType", this.getTokenType());
+        writer.writeStringValue("access_token", this.getAccessToken());
+        writer.writeObjectValue("expires_in", this.getExpiresIn());
+        writer.writeStringValue("refresh_token", this.getRefreshToken());
+        writer.writeStringValue("requires_action", this.getRequiresAction());
+        writer.writeStringValue("token_type", this.getTokenType());
     }
     /**
-     * Sets the accessToken property value. The accessToken property
-     * @param value Value to set for the accessToken property.
+     * Sets the access_token property value. The access_token property
+     * @param value Value to set for the access_token property.
      */
     public void setAccessToken(@jakarta.annotation.Nullable final String value) {
         this.accessToken = value;
     }
     /**
-     * Sets the expiresIn property value. The expiresIn property
-     * @param value Value to set for the expiresIn property.
+     * Sets the expires_in property value. The expires_in property
+     * @param value Value to set for the expires_in property.
      */
     public void setExpiresIn(@jakarta.annotation.Nullable final UntypedNode value) {
         this.expiresIn = value;
     }
     /**
-     * Sets the refreshToken property value. The refreshToken property
-     * @param value Value to set for the refreshToken property.
+     * Sets the refresh_token property value. The refresh_token property
+     * @param value Value to set for the refresh_token property.
      */
     public void setRefreshToken(@jakarta.annotation.Nullable final String value) {
         this.refreshToken = value;
     }
     /**
-     * Sets the requiresAction property value. The requiresAction property
-     * @param value Value to set for the requiresAction property.
+     * Sets the requires_action property value. The requires_action property
+     * @param value Value to set for the requires_action property.
      */
     public void setRequiresAction(@jakarta.annotation.Nullable final String value) {
         this.requiresAction = value;
     }
     /**
-     * Sets the tokenType property value. The tokenType property
-     * @param value Value to set for the tokenType property.
+     * Sets the token_type property value. The token_type property
+     * @param value Value to set for the token_type property.
      */
     public void setTokenType(@jakarta.annotation.Nullable final String value) {
         this.tokenType = value;

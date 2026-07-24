@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpdateActiveMembershipRequest implements Parsable {
     /**
-     * The membershipId property
+     * The membership_id property
      */
     private String membershipId;
     /**
@@ -33,12 +33,12 @@ public class UpdateActiveMembershipRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("membershipId", (n) -> { this.setMembershipId(n.getStringValue()); });
+        deserializerMap.put("membership_id", (n) -> { this.setMembershipId(n.getStringValue()); });
         deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(UserOrgRequest::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the membershipId property value. The membershipId property
+     * Gets the membership_id property value. The membership_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -59,12 +59,12 @@ public class UpdateActiveMembershipRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("membershipId", this.getMembershipId());
+        writer.writeStringValue("membership_id", this.getMembershipId());
         writer.writeObjectValue("user", this.getUser());
     }
     /**
-     * Sets the membershipId property value. The membershipId property
-     * @param value Value to set for the membershipId property.
+     * Sets the membership_id property value. The membership_id property
+     * @param value Value to set for the membership_id property.
      */
     public void setMembershipId(@jakarta.annotation.Nullable final String value) {
         this.membershipId = value;

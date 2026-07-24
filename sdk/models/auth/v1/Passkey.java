@@ -13,15 +13,15 @@ public class Passkey implements Parsable {
      */
     private String aaguid;
     /**
-     * The backupState property
+     * The backup_state property
      */
     private Boolean backupState;
     /**
-     * The createdAt property
+     * The created_at property
      */
     private String createdAt;
     /**
-     * The credentialId property
+     * The credential_id property
      */
     private String credentialId;
     /**
@@ -29,7 +29,7 @@ public class Passkey implements Parsable {
      */
     private String id;
     /**
-     * The lastUsedAt property
+     * The last_used_at property
      */
     private String lastUsedAt;
     /**
@@ -59,7 +59,7 @@ public class Passkey implements Parsable {
         return this.aaguid;
     }
     /**
-     * Gets the backupState property value. The backupState property
+     * Gets the backup_state property value. The backup_state property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -67,7 +67,7 @@ public class Passkey implements Parsable {
         return this.backupState;
     }
     /**
-     * Gets the createdAt property value. The createdAt property
+     * Gets the created_at property value. The created_at property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -75,7 +75,7 @@ public class Passkey implements Parsable {
         return this.createdAt;
     }
     /**
-     * Gets the credentialId property value. The credentialId property
+     * Gets the credential_id property value. The credential_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -90,11 +90,11 @@ public class Passkey implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
         deserializerMap.put("aaguid", (n) -> { this.setAaguid(n.getStringValue()); });
-        deserializerMap.put("backupState", (n) -> { this.setBackupState(n.getBooleanValue()); });
-        deserializerMap.put("createdAt", (n) -> { this.setCreatedAt(n.getStringValue()); });
-        deserializerMap.put("credentialId", (n) -> { this.setCredentialId(n.getStringValue()); });
+        deserializerMap.put("backup_state", (n) -> { this.setBackupState(n.getBooleanValue()); });
+        deserializerMap.put("created_at", (n) -> { this.setCreatedAt(n.getStringValue()); });
+        deserializerMap.put("credential_id", (n) -> { this.setCredentialId(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("lastUsedAt", (n) -> { this.setLastUsedAt(n.getStringValue()); });
+        deserializerMap.put("last_used_at", (n) -> { this.setLastUsedAt(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("transports", (n) -> { this.setTransports(n.getCollectionOfPrimitiveValues(String.class)); });
         return deserializerMap;
@@ -108,7 +108,7 @@ public class Passkey implements Parsable {
         return this.id;
     }
     /**
-     * Gets the lastUsedAt property value. The lastUsedAt property
+     * Gets the last_used_at property value. The last_used_at property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -138,11 +138,11 @@ public class Passkey implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("aaguid", this.getAaguid());
-        writer.writeBooleanValue("backupState", this.getBackupState());
-        writer.writeStringValue("createdAt", this.getCreatedAt());
-        writer.writeStringValue("credentialId", this.getCredentialId());
+        writer.writeBooleanValue("backup_state", this.getBackupState());
+        writer.writeStringValue("created_at", this.getCreatedAt());
+        writer.writeStringValue("credential_id", this.getCredentialId());
         writer.writeStringValue("id", this.getId());
-        writer.writeStringValue("lastUsedAt", this.getLastUsedAt());
+        writer.writeStringValue("last_used_at", this.getLastUsedAt());
         writer.writeStringValue("name", this.getName());
         writer.writeCollectionOfPrimitiveValues("transports", this.getTransports());
     }
@@ -154,22 +154,22 @@ public class Passkey implements Parsable {
         this.aaguid = value;
     }
     /**
-     * Sets the backupState property value. The backupState property
-     * @param value Value to set for the backupState property.
+     * Sets the backup_state property value. The backup_state property
+     * @param value Value to set for the backup_state property.
      */
     public void setBackupState(@jakarta.annotation.Nullable final Boolean value) {
         this.backupState = value;
     }
     /**
-     * Sets the createdAt property value. The createdAt property
-     * @param value Value to set for the createdAt property.
+     * Sets the created_at property value. The created_at property
+     * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final String value) {
         this.createdAt = value;
     }
     /**
-     * Sets the credentialId property value. The credentialId property
-     * @param value Value to set for the credentialId property.
+     * Sets the credential_id property value. The credential_id property
+     * @param value Value to set for the credential_id property.
      */
     public void setCredentialId(@jakarta.annotation.Nullable final String value) {
         this.credentialId = value;
@@ -182,8 +182,8 @@ public class Passkey implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the lastUsedAt property value. The lastUsedAt property
-     * @param value Value to set for the lastUsedAt property.
+     * Sets the last_used_at property value. The last_used_at property
+     * @param value Value to set for the last_used_at property.
      */
     public void setLastUsedAt(@jakarta.annotation.Nullable final String value) {
         this.lastUsedAt = value;

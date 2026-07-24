@@ -14,11 +14,11 @@ public class PaymentMethodDetails implements Parsable {
      */
     private String brand;
     /**
-     * The expMonth property
+     * The exp_month property
      */
     private UntypedNode expMonth;
     /**
-     * The expYear property
+     * The exp_year property
      */
     private UntypedNode expYear;
     /**
@@ -26,7 +26,7 @@ public class PaymentMethodDetails implements Parsable {
      */
     private String id;
     /**
-     * The isDefault property
+     * The is_default property
      */
     private Boolean isDefault;
     /**
@@ -56,7 +56,7 @@ public class PaymentMethodDetails implements Parsable {
         return this.brand;
     }
     /**
-     * Gets the expMonth property value. The expMonth property
+     * Gets the exp_month property value. The exp_month property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -64,7 +64,7 @@ public class PaymentMethodDetails implements Parsable {
         return this.expMonth;
     }
     /**
-     * Gets the expYear property value. The expYear property
+     * Gets the exp_year property value. The exp_year property
      * @return a {@link UntypedNode}
      */
     @jakarta.annotation.Nullable
@@ -79,10 +79,10 @@ public class PaymentMethodDetails implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("brand", (n) -> { this.setBrand(n.getStringValue()); });
-        deserializerMap.put("expMonth", (n) -> { this.setExpMonth(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("expYear", (n) -> { this.setExpYear(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("exp_month", (n) -> { this.setExpMonth(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("exp_year", (n) -> { this.setExpYear(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("isDefault", (n) -> { this.setIsDefault(n.getBooleanValue()); });
+        deserializerMap.put("is_default", (n) -> { this.setIsDefault(n.getBooleanValue()); });
         deserializerMap.put("last4", (n) -> { this.setLast4(n.getStringValue()); });
         deserializerMap.put("type", (n) -> { this.setType(n.getStringValue()); });
         return deserializerMap;
@@ -96,7 +96,7 @@ public class PaymentMethodDetails implements Parsable {
         return this.id;
     }
     /**
-     * Gets the isDefault property value. The isDefault property
+     * Gets the is_default property value. The is_default property
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -126,10 +126,10 @@ public class PaymentMethodDetails implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("brand", this.getBrand());
-        writer.writeObjectValue("expMonth", this.getExpMonth());
-        writer.writeObjectValue("expYear", this.getExpYear());
+        writer.writeObjectValue("exp_month", this.getExpMonth());
+        writer.writeObjectValue("exp_year", this.getExpYear());
         writer.writeStringValue("id", this.getId());
-        writer.writeBooleanValue("isDefault", this.getIsDefault());
+        writer.writeBooleanValue("is_default", this.getIsDefault());
         writer.writeStringValue("last4", this.getLast4());
         writer.writeStringValue("type", this.getType());
     }
@@ -141,15 +141,15 @@ public class PaymentMethodDetails implements Parsable {
         this.brand = value;
     }
     /**
-     * Sets the expMonth property value. The expMonth property
-     * @param value Value to set for the expMonth property.
+     * Sets the exp_month property value. The exp_month property
+     * @param value Value to set for the exp_month property.
      */
     public void setExpMonth(@jakarta.annotation.Nullable final UntypedNode value) {
         this.expMonth = value;
     }
     /**
-     * Sets the expYear property value. The expYear property
-     * @param value Value to set for the expYear property.
+     * Sets the exp_year property value. The exp_year property
+     * @param value Value to set for the exp_year property.
      */
     public void setExpYear(@jakarta.annotation.Nullable final UntypedNode value) {
         this.expYear = value;
@@ -162,8 +162,8 @@ public class PaymentMethodDetails implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the isDefault property value. The isDefault property
-     * @param value Value to set for the isDefault property.
+     * Sets the is_default property value. The is_default property
+     * @param value Value to set for the is_default property.
      */
     public void setIsDefault(@jakarta.annotation.Nullable final Boolean value) {
         this.isDefault = value;

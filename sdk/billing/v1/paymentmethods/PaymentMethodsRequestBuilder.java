@@ -58,7 +58,7 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PaymentMethodsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods{?orgId*,refresh*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods{?org_id*,refresh*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PaymentMethodsRequestBuilder} and sets the default values.
@@ -66,7 +66,7 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PaymentMethodsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods{?orgId*,refresh*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/payment-methods{?org_id*,refresh*}", rawUrl);
     }
     /**
      * ListPaymentMethods
@@ -177,7 +177,7 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             allQueryParams.put("refresh", refresh);
             return allQueryParams;
         }

@@ -25,7 +25,7 @@ public class CancelRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CancelRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/subscription/cancel{?orgId*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/billing/v1/subscription/cancel{?org_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link CancelRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class CancelRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CancelRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/billing/v1/subscription/cancel{?orgId*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/billing/v1/subscription/cancel{?org_id*}", rawUrl);
     }
     /**
      * CancelSubscription
@@ -97,7 +97,7 @@ public class CancelRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("orgId", orgId);
+            allQueryParams.put("org_id", orgId);
             return allQueryParams;
         }
     }

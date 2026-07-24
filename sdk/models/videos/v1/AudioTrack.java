@@ -21,11 +21,11 @@ public class AudioTrack implements Parsable {
      */
     private String label;
     /**
-     * The languageCode property
+     * The language_code property
      */
     private String languageCode;
     /**
-     * The videoId property
+     * The video_id property
      */
     private String videoId;
     /**
@@ -56,8 +56,8 @@ public class AudioTrack implements Parsable {
         deserializerMap.put("codec", (n) -> { this.setCodec(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("label", (n) -> { this.setLabel(n.getStringValue()); });
-        deserializerMap.put("languageCode", (n) -> { this.setLanguageCode(n.getStringValue()); });
-        deserializerMap.put("videoId", (n) -> { this.setVideoId(n.getStringValue()); });
+        deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
+        deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -77,7 +77,7 @@ public class AudioTrack implements Parsable {
         return this.label;
     }
     /**
-     * Gets the languageCode property value. The languageCode property
+     * Gets the language_code property value. The language_code property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -85,7 +85,7 @@ public class AudioTrack implements Parsable {
         return this.languageCode;
     }
     /**
-     * Gets the videoId property value. The videoId property
+     * Gets the video_id property value. The video_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -101,8 +101,8 @@ public class AudioTrack implements Parsable {
         writer.writeStringValue("codec", this.getCodec());
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("label", this.getLabel());
-        writer.writeStringValue("languageCode", this.getLanguageCode());
-        writer.writeStringValue("videoId", this.getVideoId());
+        writer.writeStringValue("language_code", this.getLanguageCode());
+        writer.writeStringValue("video_id", this.getVideoId());
     }
     /**
      * Sets the codec property value. The codec property
@@ -126,15 +126,15 @@ public class AudioTrack implements Parsable {
         this.label = value;
     }
     /**
-     * Sets the languageCode property value. The languageCode property
-     * @param value Value to set for the languageCode property.
+     * Sets the language_code property value. The language_code property
+     * @param value Value to set for the language_code property.
      */
     public void setLanguageCode(@jakarta.annotation.Nullable final String value) {
         this.languageCode = value;
     }
     /**
-     * Sets the videoId property value. The videoId property
-     * @param value Value to set for the videoId property.
+     * Sets the video_id property value. The video_id property
+     * @param value Value to set for the video_id property.
      */
     public void setVideoId(@jakarta.annotation.Nullable final String value) {
         this.videoId = value;

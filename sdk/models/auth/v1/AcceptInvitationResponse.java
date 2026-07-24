@@ -9,11 +9,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AcceptInvitationResponse implements Parsable {
     /**
-     * The orgId property
+     * The org_id property
      */
     private String orgId;
     /**
-     * The orgName property
+     * The org_name property
      */
     private String orgName;
     /**
@@ -37,13 +37,13 @@ public class AcceptInvitationResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("orgId", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("orgName", (n) -> { this.setOrgName(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("org_name", (n) -> { this.setOrgName(n.getStringValue()); });
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the orgId property value. The orgId property
+     * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -51,7 +51,7 @@ public class AcceptInvitationResponse implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the orgName property value. The orgName property
+     * Gets the org_name property value. The org_name property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -72,20 +72,20 @@ public class AcceptInvitationResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("orgId", this.getOrgId());
-        writer.writeStringValue("orgName", this.getOrgName());
+        writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeStringValue("org_name", this.getOrgName());
         writer.writeEnumValue("role", this.getRole());
     }
     /**
-     * Sets the orgId property value. The orgId property
-     * @param value Value to set for the orgId property.
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
     }
     /**
-     * Sets the orgName property value. The orgName property
-     * @param value Value to set for the orgName property.
+     * Sets the org_name property value. The org_name property
+     * @param value Value to set for the org_name property.
      */
     public void setOrgName(@jakarta.annotation.Nullable final String value) {
         this.orgName = value;
