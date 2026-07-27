@@ -3,7 +3,7 @@ package com.rixl.sdk.auth.v1.memberships.item.state;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.auth.v1.MembershipState;
+import com.rixl.sdk.models.auth.v1.MembershipApplicationState;
 import com.rixl.sdk.models.auth.v1.UserOrgRequest;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ public class StatePatchRequestBody implements Parsable {
     /**
      * The state property
      */
-    private MembershipState state;
+    private MembershipApplicationState state;
     /**
      * The user property
      */
@@ -35,16 +35,16 @@ public class StatePatchRequestBody implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipState::forValue)); });
+        deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipApplicationState::forValue)); });
         deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(UserOrgRequest::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
      * Gets the state property value. The state property
-     * @return a {@link MembershipState}
+     * @return a {@link MembershipApplicationState}
      */
     @jakarta.annotation.Nullable
-    public MembershipState getState() {
+    public MembershipApplicationState getState() {
         return this.state;
     }
     /**
@@ -68,7 +68,7 @@ public class StatePatchRequestBody implements Parsable {
      * Sets the state property value. The state property
      * @param value Value to set for the state property.
      */
-    public void setState(@jakarta.annotation.Nullable final MembershipState value) {
+    public void setState(@jakarta.annotation.Nullable final MembershipApplicationState value) {
         this.state = value;
     }
     /**

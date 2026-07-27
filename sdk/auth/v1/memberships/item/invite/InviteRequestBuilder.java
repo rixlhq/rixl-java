@@ -8,8 +8,9 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.auth.v1.memberships.item.invite.item.WithUserItemRequestBuilder;
 import com.rixl.sdk.auth.v1.memberships.item.invite.resend.ResendRequestBuilder;
-import com.rixl.sdk.models.auth.v1.MembershipMutation;
+import com.rixl.sdk.models.auth.v1.MembershipApplication;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +27,18 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public ResendRequestBuilder resend() {
         return new ResendRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.invite.item collection
+     * @param user_id Unique identifier of the item
+     * @return a {@link WithUserItemRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WithUserItemRequestBuilder byUser_id(@jakarta.annotation.Nonnull final String user_id) {
+        Objects.requireNonNull(user_id);
+        final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
+        urlTplParams.put("user_id", user_id);
+        return new WithUserItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
      * Instantiates a new {@link InviteRequestBuilder} and sets the default values.
@@ -46,23 +59,23 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     /**
      * InviteMember
      * @param body The request body
-     * @return a {@link MembershipMutation}
+     * @return a {@link MembershipApplication}
      */
     @jakarta.annotation.Nullable
-    public MembershipMutation post(@jakarta.annotation.Nonnull final InvitePostRequestBody body) {
+    public MembershipApplication post(@jakarta.annotation.Nonnull final InvitePostRequestBody body) {
         return post(body, null);
     }
     /**
      * InviteMember
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link MembershipMutation}
+     * @return a {@link MembershipApplication}
      */
     @jakarta.annotation.Nullable
-    public MembershipMutation post(@jakarta.annotation.Nonnull final InvitePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public MembershipApplication post(@jakarta.annotation.Nonnull final InvitePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, MembershipMutation::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, MembershipApplication::createFromDiscriminatorValue);
     }
     /**
      * InviteMember

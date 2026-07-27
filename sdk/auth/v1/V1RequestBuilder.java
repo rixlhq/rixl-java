@@ -7,6 +7,7 @@ import com.rixl.sdk.auth.v1.email.EmailRequestBuilder;
 import com.rixl.sdk.auth.v1.invitations.InvitationsRequestBuilder;
 import com.rixl.sdk.auth.v1.login.LoginRequestBuilder;
 import com.rixl.sdk.auth.v1.logout.LogoutRequestBuilder;
+import com.rixl.sdk.auth.v1.membershipapplications.MembershipApplicationsRequestBuilder;
 import com.rixl.sdk.auth.v1.memberships.MembershipsRequestBuilder;
 import com.rixl.sdk.auth.v1.passkey.PasskeyRequestBuilder;
 import com.rixl.sdk.auth.v1.password.PasswordRequestBuilder;
@@ -64,6 +65,14 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public LogoutRequestBuilder logout() {
         return new LogoutRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The membershipApplications property
+     * @return a {@link MembershipApplicationsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public MembershipApplicationsRequestBuilder membershipApplications() {
+        return new MembershipApplicationsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The memberships property

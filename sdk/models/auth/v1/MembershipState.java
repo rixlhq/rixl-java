@@ -6,9 +6,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public enum MembershipState implements ValuedEnum {
     MEMBERSHIP_STATE_UNSPECIFIED("MEMBERSHIP_STATE_UNSPECIFIED"),
-    MEMBERSHIP_STATE_PENDING("MEMBERSHIP_STATE_PENDING"),
-    MEMBERSHIP_STATE_ACCEPTED("MEMBERSHIP_STATE_ACCEPTED"),
-    MEMBERSHIP_STATE_DECLINED("MEMBERSHIP_STATE_DECLINED");
+    MEMBERSHIP_STATE_ACTIVE("MEMBERSHIP_STATE_ACTIVE"),
+    MEMBERSHIP_STATE_SUSPENDED("MEMBERSHIP_STATE_SUSPENDED"),
+    MEMBERSHIP_STATE_LEFT("MEMBERSHIP_STATE_LEFT"),
+    MEMBERSHIP_STATE_REMOVED("MEMBERSHIP_STATE_REMOVED");
     public final String value;
     MembershipState(final String value) {
         this.value = value;
@@ -20,9 +21,10 @@ public enum MembershipState implements ValuedEnum {
         Objects.requireNonNull(searchValue);
         switch(searchValue) {
             case "MEMBERSHIP_STATE_UNSPECIFIED": return MEMBERSHIP_STATE_UNSPECIFIED;
-            case "MEMBERSHIP_STATE_PENDING": return MEMBERSHIP_STATE_PENDING;
-            case "MEMBERSHIP_STATE_ACCEPTED": return MEMBERSHIP_STATE_ACCEPTED;
-            case "MEMBERSHIP_STATE_DECLINED": return MEMBERSHIP_STATE_DECLINED;
+            case "MEMBERSHIP_STATE_ACTIVE": return MEMBERSHIP_STATE_ACTIVE;
+            case "MEMBERSHIP_STATE_SUSPENDED": return MEMBERSHIP_STATE_SUSPENDED;
+            case "MEMBERSHIP_STATE_LEFT": return MEMBERSHIP_STATE_LEFT;
+            case "MEMBERSHIP_STATE_REMOVED": return MEMBERSHIP_STATE_REMOVED;
             default: return null;
         }
     }
