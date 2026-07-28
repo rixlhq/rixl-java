@@ -8,7 +8,6 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.media.v1.projects.item.images.item.upload.UploadRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.images.item.visibility.VisibilityRequestBuilder;
 import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
@@ -20,14 +19,6 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WithImageItemRequestBuilder extends BaseRequestBuilder {
-    /**
-     * The upload property
-     * @return a {@link UploadRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public UploadRequestBuilder upload() {
-        return new UploadRequestBuilder(pathParameters, requestAdapter);
-    }
     /**
      * The visibility property
      * @return a {@link VisibilityRequestBuilder}

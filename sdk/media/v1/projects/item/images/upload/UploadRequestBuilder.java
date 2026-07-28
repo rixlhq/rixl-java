@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.images.v1.ImageUploadInit;
+import com.rixl.sdk.models.images.v1.ImageUpload;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,23 +37,23 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
     /**
      * CreateImageUpload
      * @param body The request body
-     * @return a {@link ImageUploadInit}
+     * @return a {@link ImageUpload}
      */
     @jakarta.annotation.Nullable
-    public ImageUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
+    public ImageUpload post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
         return post(body, null);
     }
     /**
      * CreateImageUpload
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link ImageUploadInit}
+     * @return a {@link ImageUpload}
      */
     @jakarta.annotation.Nullable
-    public ImageUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public ImageUpload post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ImageUploadInit::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, ImageUpload::createFromDiscriminatorValue);
     }
     /**
      * CreateImageUpload

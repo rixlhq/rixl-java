@@ -1,4 +1,4 @@
-package com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.upload.init;
+package com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.upload;
 
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class InitPostRequestBody implements Parsable {
+public class UploadPostRequestBody implements Parsable {
     /**
      * The content_type property
      */
@@ -54,12 +54,12 @@ public class InitPostRequestBody implements Parsable {
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link InitPostRequestBody}
+     * @return a {@link UploadPostRequestBody}
      */
     @jakarta.annotation.Nonnull
-    public static InitPostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static UploadPostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new InitPostRequestBody();
+        return new UploadPostRequestBody();
     }
     /**
      * Gets the content_type property value. The content_type property

@@ -8,8 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.media.v1.projects.item.videos.item.audiotracks.upload.complete.CompleteRequestBuilder;
-import com.rixl.sdk.models.videos.v1.TrackUploadInit;
+import com.rixl.sdk.models.videos.v1.TrackUpload;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,14 +18,6 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadRequestBuilder extends BaseRequestBuilder {
-    /**
-     * The complete property
-     * @return a {@link CompleteRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public CompleteRequestBuilder complete() {
-        return new CompleteRequestBuilder(pathParameters, requestAdapter);
-    }
     /**
      * Instantiates a new {@link UploadRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
@@ -44,28 +35,28 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/media/v1/projects/{project_id}/videos/{video_id}/audio-tracks/upload", rawUrl);
     }
     /**
-     * InitAudioTrackUpload
+     * CreateAudioTrackUpload
      * @param body The request body
-     * @return a {@link TrackUploadInit}
+     * @return a {@link TrackUpload}
      */
     @jakarta.annotation.Nullable
-    public TrackUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
+    public TrackUpload post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
         return post(body, null);
     }
     /**
-     * InitAudioTrackUpload
+     * CreateAudioTrackUpload
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link TrackUploadInit}
+     * @return a {@link TrackUpload}
      */
     @jakarta.annotation.Nullable
-    public TrackUploadInit post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public TrackUpload post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, TrackUploadInit::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, TrackUpload::createFromDiscriminatorValue);
     }
     /**
-     * InitAudioTrackUpload
+     * CreateAudioTrackUpload
      * @param body The request body
      * @return a {@link RequestInformation}
      */
@@ -74,7 +65,7 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(body, null);
     }
     /**
-     * InitAudioTrackUpload
+     * CreateAudioTrackUpload
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}

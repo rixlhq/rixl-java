@@ -11,7 +11,6 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.projects.item.videos.item.audiotracks.AudioTracksRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.videos.item.chapters.ChaptersRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.videos.item.subtitles.SubtitlesRequestBuilder;
-import com.rixl.sdk.media.v1.projects.item.videos.item.upload.UploadRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.videos.item.visibility.VisibilityRequestBuilder;
 import com.rixl.sdk.models.google.protobuf.Empty;
 import java.util.Collection;
@@ -46,14 +45,6 @@ public class WithVideoItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public SubtitlesRequestBuilder subtitles() {
         return new SubtitlesRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The upload property
-     * @return a {@link UploadRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public UploadRequestBuilder upload() {
-        return new UploadRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The visibility property

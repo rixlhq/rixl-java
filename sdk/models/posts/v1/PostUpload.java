@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class PostUploadInit implements Parsable {
+public class PostUpload implements Parsable {
     /**
      * The content_id property
      */
@@ -36,12 +36,12 @@ public class PostUploadInit implements Parsable {
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link PostUploadInit}
+     * @return a {@link PostUpload}
      */
     @jakarta.annotation.Nonnull
-    public static PostUploadInit createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static PostUpload createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new PostUploadInit();
+        return new PostUpload();
     }
     /**
      * Gets the content_id property value. The content_id property
