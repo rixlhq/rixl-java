@@ -2,7 +2,7 @@
 
 The official Java client for the [Rixl](https://rixl.com) API.
 
-Rixl handles the media side of your product — uploading and delivering images
+Rixl handles the media side of your product: uploading and delivering images
 and videos, organising them into feeds and posts, and reporting on how people
 engage with them. It also covers the account layer around that: users and
 organisations, sign-in, subscriptions and invoices. This SDK gives you all of it
@@ -29,7 +29,7 @@ Gradle:
 implementation("com.rixl:sdk:1.1.0")
 ```
 
-That pulls in the Kiota runtime the generated code is built on — the
+That pulls in the Kiota runtime the generated code is built on: the
 abstractions, the OkHttp transport and the JSON, form, text and multipart
 serializers.
 
@@ -64,7 +64,7 @@ public class Example {
 }
 ```
 
-The adapter has no base URL of its own, so `setBaseUrl` is not optional — call
+The adapter has no base URL of its own, so `setBaseUrl` is not optional. Call
 it before you make a request, and point it somewhere else when you are testing
 against another environment.
 
@@ -74,7 +74,7 @@ Calls are synchronous: each one returns the parsed response, or throws.
 
 There are two ways to identify yourself, and they answer different questions.
 
-### API keys — your backend calling as itself
+### API keys, for your backend calling as itself
 
 An API key represents your organisation. Use it for work your own systems do:
 importing a catalogue, running a nightly report, reconciling invoices. Keep it
@@ -86,10 +86,10 @@ var auth = new ApiKeyAuthenticationProvider(
 ```
 
 The key travels as the `X-API-Key` header. Anyone holding it can do anything
-your organisation can, so it belongs on a server — never in a browser, a mobile
+your organisation can, so it belongs on a server. Never put one in a browser, a mobile
 app, or anything you ship to users.
 
-### Client credentials — acting on behalf of one of your users
+### Client credentials, for acting on behalf of your users
 
 If you are building on top of Rixl and your own users each need their own slice
 of it, use client credentials. You exchange a client ID and secret for a
@@ -110,7 +110,7 @@ System.out.println(created.getCredential().getClientId());
 System.out.println(created.getClientSecret());
 ```
 
-Then mint a token per user. `subject` is your own identifier for that person —
+Then mint a token per user. `subject` is your own identifier for that person,
 whatever your database calls them:
 
 ```java
@@ -126,7 +126,7 @@ mint.setTtlMinutes(15);
 var token = client.platform().clientauth().v1().token().post(mint);
 ```
 
-Tokens last at most 15 minutes and there is no refresh token — when one expires
+Tokens last at most 15 minutes and there is no refresh token. When one expires
 you mint another. Nothing in the SDK does that for you, so wrap the mint call in
 an `AccessTokenProvider` and let the bearer provider ask for a token whenever it
 needs one:
@@ -153,7 +153,7 @@ new tokens immediately; ones already issued die within 15 minutes.
 
 ### Public endpoints
 
-Some reads need no credentials at all — fetching a public image or video,
+Some reads need no credentials at all: fetching a public image or video,
 reading a public feed, listing supported languages, and the sign-in flows under
 `/auth/v1`. Point an anonymous provider at those:
 
@@ -178,30 +178,30 @@ authenticated collection you list, upload to and delete from.
 Every area of the API is a method on the client, and the path you type mirrors
 the URL.
 
-**Media** — `client.media().v1()`. `images()` and `videos()` for public reads,
+**Media**: `client.media().v1()`. `images()` and `videos()` for public reads,
 and `projects().byProject_id(id)` for everything else: listing, uploading,
 deleting, visibility, plus `audioTracks()`, `chapters()` and `subtitles()` on a
 video. `languages()` lists what you can localise into.
 
-**Content** — `client.posts().v1()` for posts and feeds,
+**Content**: `client.posts().v1()` for posts and feeds,
 `client.feeds().v1().projects().byProject_id(id).feeds()` for feed
 configuration, and `client.organizations().byOrg_id(id).projects()` for the
 projects everything else hangs off. That is why so many calls take a project ID.
 
-**Analytics** — `client.analytics().v1()`: `dashboard()`, `events()`, `posts()`,
+**Analytics**: `client.analytics().v1()`: `dashboard()`, `events()`, `posts()`,
 `videos()`, `feeds()`, `funnels()`, `retention()`, `realtime()`, `top()`. Track
 events and read back engagement, playback and live activity.
 
-**Billing** — `client.billing().v1()`: `plans()`, `subscription()`,
+**Billing**: `client.billing().v1()`: `plans()`, `subscription()`,
 `invoices()`, `paymentMethods()`, `checkout()`, `storageUsage()`,
 `bandwidthUsage()`, `tax()`, `address()`.
 
-**Accounts** — `client.auth().v1()`: `register()`, `login()`, `token()`,
+**Account management**: `client.auth().v1()`: `register()`, `login()`, `token()`,
 `users()`, `passkey()`, `password()`, `providers()`, `memberships()`,
 `policies()`, `email()`, `blog()`. Sign-in flows including passkeys and TOTP,
 organisation membership and roles, and transactional email.
 
-**Platform** — `client.platform()` for `auth().v1()` and `clientauth().v1()`,
+**Platform**: `client.platform()` for `auth().v1()` and `clientauth().v1()`,
 and `client.organizations().byOrg_id(id).apiKeys()` for API keys.
 
 `client.internal()` is storage-callback plumbing that Rixl calls itself. You
@@ -232,13 +232,13 @@ var upload = images.upload().post(body);
 ```
 
 Everything is nullable. A field you never set is left out of the request rather
-than sent empty, and a field the API omits comes back as `null` — check before
+than sent empty, and a field the API omits comes back as `null`, so check before
 you dereference.
 
 ## Uploading files
 
 Uploads happen in two steps. You ask Rixl for a URL, then send the bytes
-straight to storage — they never pass through the API, so large files stay fast:
+straight to storage. The bytes never pass through the API, so large files stay fast:
 
 ```java
 import java.net.URI;
@@ -259,7 +259,7 @@ HttpClient.newHttpClient().send(put, HttpResponse.BodyHandlers.discarding());
 ```
 
 Videos work the same way through `videos().upload()`, except the response gives
-you two URLs — `getVideoUploadUrl()` for the file and `getPosterUploadUrl()` for
+you two URLs: `getVideoUploadUrl()` for the file and `getPosterUploadUrl()` for
 its poster image.
 
 There is no "finish" call to make. Storage tells Rixl when the object lands and
@@ -289,7 +289,7 @@ while (true) {
 }
 ```
 
-Nothing pages for you — ask for the next offset yourself. Responses also carry
+Nothing pages for you. Ask for the next offset yourself. Responses also carry
 `getTotal()`, but it deserialises as an untyped node rather than a number, so
 stopping on a short page is the simpler test.
 
@@ -347,7 +347,7 @@ outbound request.
 
 This package follows [SemVer](https://semver.org/spec/v2.0.0.html). New API
 resources arrive in minor releases; renamed or removed operations only in major
-ones. If an upgrade breaks you unexpectedly, please open an issue — we would
+ones. If an upgrade breaks you unexpectedly, please open an issue. We would
 rather hear about it.
 
 ## Support
