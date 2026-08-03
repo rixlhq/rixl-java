@@ -3,16 +3,11 @@ package com.rixl.sdk.media.v1.projects.item.images.upload;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.common.v1.ImageFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadPostRequestBody implements Parsable {
-    /**
-     * The format property
-     */
-    private ImageFormat format;
     /**
      * The name property
      */
@@ -41,20 +36,11 @@ public class UploadPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ImageFormat::forValue)); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         return deserializerMap;
-    }
-    /**
-     * Gets the format property value. The format property
-     * @return a {@link ImageFormat}
-     */
-    @jakarta.annotation.Nullable
-    public ImageFormat getFormat() {
-        return this.format;
     }
     /**
      * Gets the name property value. The name property
@@ -86,17 +72,9 @@ public class UploadPostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeEnumValue("format", this.getFormat());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("project_id", this.getProjectId());
-    }
-    /**
-     * Sets the format property value. The format property
-     * @param value Value to set for the format property.
-     */
-    public void setFormat(@jakarta.annotation.Nullable final ImageFormat value) {
-        this.format = value;
     }
     /**
      * Sets the name property value. The name property

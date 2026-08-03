@@ -10,7 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.google.protobuf.Empty;
-import com.rixl.sdk.models.posts.v1.Post;
+import com.rixl.sdk.models.posts.v1.GetPostResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,21 +56,21 @@ public class WithPostItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * GetPost
-     * @return a {@link Post}
+     * @return a {@link GetPostResponse}
      */
     @jakarta.annotation.Nullable
-    public Post get() {
+    public GetPostResponse get() {
         return get(null);
     }
     /**
      * GetPost
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link Post}
+     * @return a {@link GetPostResponse}
      */
     @jakarta.annotation.Nullable
-    public Post get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+    public GetPostResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Post::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, GetPostResponse::createFromDiscriminatorValue);
     }
     /**
      * DeletePost

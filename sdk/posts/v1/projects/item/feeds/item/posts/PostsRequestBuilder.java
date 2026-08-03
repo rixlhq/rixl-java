@@ -9,8 +9,8 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.posts.v1.CreatePostResponse;
 import com.rixl.sdk.models.posts.v1.ListPostsResponse;
-import com.rixl.sdk.models.posts.v1.Post;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.CreatorsRequestBuilder;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.item.WithPostItemRequestBuilder;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.upload.UploadRequestBuilder;
@@ -88,23 +88,23 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
     /**
      * CreatePost
      * @param body The request body
-     * @return a {@link Post}
+     * @return a {@link CreatePostResponse}
      */
     @jakarta.annotation.Nullable
-    public Post post(@jakarta.annotation.Nonnull final PostsPostRequestBody body) {
+    public CreatePostResponse post(@jakarta.annotation.Nonnull final PostsPostRequestBody body) {
         return post(body, null);
     }
     /**
      * CreatePost
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link Post}
+     * @return a {@link CreatePostResponse}
      */
     @jakarta.annotation.Nullable
-    public Post post(@jakarta.annotation.Nonnull final PostsPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    public CreatePostResponse post(@jakarta.annotation.Nonnull final PostsPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Post::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, CreatePostResponse::createFromDiscriminatorValue);
     }
     /**
      * ListPosts

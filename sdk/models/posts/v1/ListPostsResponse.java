@@ -10,6 +10,14 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ListPostsResponse implements Parsable {
     /**
+     * Maximum number of items returned.
+     */
+    private Integer limit;
+    /**
+     * Number of items skipped before this page.
+     */
+    private Integer offset;
+    /**
      * The posts property
      */
     private java.util.List<Post> posts;
@@ -33,10 +41,28 @@ public class ListPostsResponse implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        deserializerMap.put("limit", (n) -> { this.setLimit(n.getIntegerValue()); });
+        deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
         deserializerMap.put("posts", (n) -> { this.setPosts(n.getCollectionOfObjectValues(Post::createFromDiscriminatorValue)); });
         deserializerMap.put("total", (n) -> { this.setTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
         return deserializerMap;
+    }
+    /**
+     * Gets the limit property value. Maximum number of items returned.
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getLimit() {
+        return this.limit;
+    }
+    /**
+     * Gets the offset property value. Number of items skipped before this page.
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getOffset() {
+        return this.offset;
     }
     /**
      * Gets the posts property value. The posts property
@@ -60,8 +86,24 @@ public class ListPostsResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeIntegerValue("limit", this.getLimit());
+        writer.writeIntegerValue("offset", this.getOffset());
         writer.writeCollectionOfObjectValues("posts", this.getPosts());
         writer.writeObjectValue("total", this.getTotal());
+    }
+    /**
+     * Sets the limit property value. Maximum number of items returned.
+     * @param value Value to set for the limit property.
+     */
+    public void setLimit(@jakarta.annotation.Nullable final Integer value) {
+        this.limit = value;
+    }
+    /**
+     * Sets the offset property value. Number of items skipped before this page.
+     * @param value Value to set for the offset property.
+     */
+    public void setOffset(@jakarta.annotation.Nullable final Integer value) {
+        this.offset = value;
     }
     /**
      * Sets the posts property value. The posts property

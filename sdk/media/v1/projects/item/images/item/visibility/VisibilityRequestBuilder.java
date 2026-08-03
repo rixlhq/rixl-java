@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.images.v1.GetImageResponse;
+import com.rixl.sdk.models.images.v1.UpdateImageVisibilityResponse;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,23 +37,23 @@ public class VisibilityRequestBuilder extends BaseRequestBuilder {
     /**
      * UpdateImageVisibility
      * @param body The request body
-     * @return a {@link GetImageResponse}
+     * @return a {@link UpdateImageVisibilityResponse}
      */
     @jakarta.annotation.Nullable
-    public GetImageResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body) {
+    public UpdateImageVisibilityResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body) {
         return patch(body, null);
     }
     /**
      * UpdateImageVisibility
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link GetImageResponse}
+     * @return a {@link UpdateImageVisibilityResponse}
      */
     @jakarta.annotation.Nullable
-    public GetImageResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    public UpdateImageVisibilityResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetImageResponse::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, null, UpdateImageVisibilityResponse::createFromDiscriminatorValue);
     }
     /**
      * UpdateImageVisibility

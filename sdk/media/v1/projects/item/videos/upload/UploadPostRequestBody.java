@@ -3,17 +3,12 @@ package com.rixl.sdk.media.v1.projects.item.videos.upload;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.common.v1.ImageFormat;
 import com.rixl.sdk.models.common.v1.VideoQuality;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadPostRequestBody implements Parsable {
-    /**
-     * The image_format property
-     */
-    private ImageFormat imageFormat;
     /**
      * The name property
      */
@@ -46,21 +41,12 @@ public class UploadPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("image_format", (n) -> { this.setImageFormat(n.getEnumValue(ImageFormat::forValue)); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("video_quality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
         return deserializerMap;
-    }
-    /**
-     * Gets the image_format property value. The image_format property
-     * @return a {@link ImageFormat}
-     */
-    @jakarta.annotation.Nullable
-    public ImageFormat getImageFormat() {
-        return this.imageFormat;
     }
     /**
      * Gets the name property value. The name property
@@ -100,18 +86,10 @@ public class UploadPostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeEnumValue("image_format", this.getImageFormat());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("project_id", this.getProjectId());
         writer.writeEnumValue("video_quality", this.getVideoQuality());
-    }
-    /**
-     * Sets the image_format property value. The image_format property
-     * @param value Value to set for the image_format property.
-     */
-    public void setImageFormat(@jakarta.annotation.Nullable final ImageFormat value) {
-        this.imageFormat = value;
     }
     /**
      * Sets the name property value. The name property

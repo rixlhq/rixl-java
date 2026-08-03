@@ -1,4 +1,4 @@
-package com.rixl.sdk.models.videos.v1;
+package com.rixl.sdk.models.posts.v1;
 
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
@@ -7,20 +7,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class GetVideoResponse implements Parsable {
+public class GetPostResponse implements Parsable {
     /**
-     * The video property
+     * The post property
      */
-    private Video video;
+    private Post post;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link GetVideoResponse}
+     * @return a {@link GetPostResponse}
      */
     @jakarta.annotation.Nonnull
-    public static GetVideoResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static GetPostResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new GetVideoResponse();
+        return new GetPostResponse();
     }
     /**
      * The deserialization information for the current model
@@ -29,16 +29,16 @@ public class GetVideoResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("video", (n) -> { this.setVideo(n.getObjectValue(Video::createFromDiscriminatorValue)); });
+        deserializerMap.put("post", (n) -> { this.setPost(n.getObjectValue(Post::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the video property value. The video property
-     * @return a {@link Video}
+     * Gets the post property value. The post property
+     * @return a {@link Post}
      */
     @jakarta.annotation.Nullable
-    public Video getVideo() {
-        return this.video;
+    public Post getPost() {
+        return this.post;
     }
     /**
      * Serializes information the current object
@@ -46,13 +46,13 @@ public class GetVideoResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("video", this.getVideo());
+        writer.writeObjectValue("post", this.getPost());
     }
     /**
-     * Sets the video property value. The video property
-     * @param value Value to set for the video property.
+     * Sets the post property value. The post property
+     * @param value Value to set for the post property.
      */
-    public void setVideo(@jakarta.annotation.Nullable final Video value) {
-        this.video = value;
+    public void setPost(@jakarta.annotation.Nullable final Post value) {
+        this.post = value;
     }
 }

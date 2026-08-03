@@ -3,7 +3,6 @@ package com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.upload;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.common.v1.ImageFormat;
 import com.rixl.sdk.models.common.v1.MediaType;
 import com.rixl.sdk.models.common.v1.VideoQuality;
 import java.util.HashMap;
@@ -31,14 +30,6 @@ public class UploadPostRequestBody implements Parsable {
      * The file_name property
      */
     private String fileName;
-    /**
-     * The format property
-     */
-    private String format;
-    /**
-     * The image_format property
-     */
-    private ImageFormat imageFormat;
     /**
      * The org_id property
      */
@@ -99,14 +90,12 @@ public class UploadPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
         deserializerMap.put("content_type", (n) -> { this.setContentType(n.getEnumValue(MediaType::forValue)); });
         deserializerMap.put("creator_id", (n) -> { this.setCreatorId(n.getStringValue()); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
         deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
         deserializerMap.put("file_name", (n) -> { this.setFileName(n.getStringValue()); });
-        deserializerMap.put("format", (n) -> { this.setFormat(n.getStringValue()); });
-        deserializerMap.put("image_format", (n) -> { this.setImageFormat(n.getEnumValue(ImageFormat::forValue)); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("video_quality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
@@ -119,22 +108,6 @@ public class UploadPostRequestBody implements Parsable {
     @jakarta.annotation.Nullable
     public String getFileName() {
         return this.fileName;
-    }
-    /**
-     * Gets the format property value. The format property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getFormat() {
-        return this.format;
-    }
-    /**
-     * Gets the image_format property value. The image_format property
-     * @return a {@link ImageFormat}
-     */
-    @jakarta.annotation.Nullable
-    public ImageFormat getImageFormat() {
-        return this.imageFormat;
     }
     /**
      * Gets the org_id property value. The org_id property
@@ -171,8 +144,6 @@ public class UploadPostRequestBody implements Parsable {
         writer.writeStringValue("description", this.getDescription());
         writer.writeStringValue("feed_id", this.getFeedId());
         writer.writeStringValue("file_name", this.getFileName());
-        writer.writeStringValue("format", this.getFormat());
-        writer.writeEnumValue("image_format", this.getImageFormat());
         writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("project_id", this.getProjectId());
         writer.writeEnumValue("video_quality", this.getVideoQuality());
@@ -211,20 +182,6 @@ public class UploadPostRequestBody implements Parsable {
      */
     public void setFileName(@jakarta.annotation.Nullable final String value) {
         this.fileName = value;
-    }
-    /**
-     * Sets the format property value. The format property
-     * @param value Value to set for the format property.
-     */
-    public void setFormat(@jakarta.annotation.Nullable final String value) {
-        this.format = value;
-    }
-    /**
-     * Sets the image_format property value. The image_format property
-     * @param value Value to set for the image_format property.
-     */
-    public void setImageFormat(@jakarta.annotation.Nullable final ImageFormat value) {
-        this.imageFormat = value;
     }
     /**
      * Sets the org_id property value. The org_id property
