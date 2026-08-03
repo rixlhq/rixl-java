@@ -1,6 +1,6 @@
 # Contributing
 
-Everything under `sdk/` is generated. Do not edit it by hand — the next
+Everything under `sdk/` is generated. Do not edit it by hand, because the next
 regeneration will overwrite your changes. Fix the OpenAPI spec instead, then
 regenerate.
 
@@ -43,5 +43,5 @@ Java 17.
 
 Releases are cut by release-please from conventional commits. The version lives
 in `pom.xml` and `.release-please-manifest.json`, and both are updated by the
-release PR — do not bump them by hand. When the version changes, update the
+release PR, so do not bump them by hand. When the version changes, update the
 install snippets in `README.md` to match.
