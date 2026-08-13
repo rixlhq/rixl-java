@@ -9,6 +9,9 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.analytics.v1.dashboard.chartquery.ChartQueryRequestBuilder;
+import com.rixl.sdk.analytics.v1.dashboard.datasets.DatasetsRequestBuilder;
+import com.rixl.sdk.analytics.v1.dashboard.filteroptions.FilterOptionsRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.DashboardStatsResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -20,12 +23,36 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class DashboardRequestBuilder extends BaseRequestBuilder {
     /**
+     * The chartQuery property
+     * @return a {@link ChartQueryRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ChartQueryRequestBuilder chartQuery() {
+        return new ChartQueryRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The datasets property
+     * @return a {@link DatasetsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public DatasetsRequestBuilder datasets() {
+        return new DatasetsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The filterOptions property
+     * @return a {@link FilterOptionsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public FilterOptionsRequestBuilder filterOptions() {
+        return new FilterOptionsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * Instantiates a new {@link DashboardRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DashboardRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?time_end={time_end}&time_start={time_start}{&interval*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?time_end={time_end}&time_start={time_start}{&filter%2Ebrowsers*,filter%2Ecities*,filter%2Ecountries*,filter%2Edevices*,filter%2Elanguages*,filter%2Eos*,filter%2Eos_versions*,filter%2Eregions*,interval*}", pathParameters);
     }
     /**
      * Instantiates a new {@link DashboardRequestBuilder} and sets the default values.
@@ -33,7 +60,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public DashboardRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?time_end={time_end}&time_start={time_start}{&interval*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/analytics/v1/dashboard?time_end={time_end}&time_start={time_start}{&filter%2Ebrowsers*,filter%2Ecities*,filter%2Ecountries*,filter%2Edevices*,filter%2Elanguages*,filter%2Eos*,filter%2Eos_versions*,filter%2Eregions*,interval*}", rawUrl);
     }
     /**
      * GetDashboardStats
@@ -89,6 +116,22 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         @jakarta.annotation.Nullable
+        public String[] filterBrowsers;
+        @jakarta.annotation.Nullable
+        public String[] filterCities;
+        @jakarta.annotation.Nullable
+        public String[] filterCountries;
+        @jakarta.annotation.Nullable
+        public String[] filterDevices;
+        @jakarta.annotation.Nullable
+        public String[] filterLanguages;
+        @jakarta.annotation.Nullable
+        public String[] filterOs;
+        @jakarta.annotation.Nullable
+        public String[] filterOsVersions;
+        @jakarta.annotation.Nullable
+        public String[] filterRegions;
+        @jakarta.annotation.Nullable
         public String interval;
         @jakarta.annotation.Nullable
         public String timeEnd;
@@ -104,6 +147,14 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
             allQueryParams.put("interval", interval);
             allQueryParams.put("time_end", timeEnd);
             allQueryParams.put("time_start", timeStart);
+            allQueryParams.put("filter%2Ebrowsers", filterBrowsers);
+            allQueryParams.put("filter%2Ecities", filterCities);
+            allQueryParams.put("filter%2Ecountries", filterCountries);
+            allQueryParams.put("filter%2Edevices", filterDevices);
+            allQueryParams.put("filter%2Elanguages", filterLanguages);
+            allQueryParams.put("filter%2Eos", filterOs);
+            allQueryParams.put("filter%2Eos_versions", filterOsVersions);
+            allQueryParams.put("filter%2Eregions", filterRegions);
             return allQueryParams;
         }
     }
