@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.analytics.v1.dashboards.item.defaultescaped.DefaultRequestBuilder;
+import com.rixl.sdk.analytics.v1.dashboards.item.export.ExportRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboards.item.layout.LayoutRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboards.item.widgets.WidgetsRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.Dashboard;
@@ -30,6 +31,14 @@ public class DashboardItemRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public DefaultRequestBuilder defaultEscaped() {
         return new DefaultRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The export property
+     * @return a {@link ExportRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ExportRequestBuilder export() {
+        return new ExportRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The layout property
