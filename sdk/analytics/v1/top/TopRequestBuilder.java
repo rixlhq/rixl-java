@@ -3,6 +3,7 @@ package com.rixl.sdk.analytics.v1.top;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
 import com.rixl.sdk.analytics.v1.top.feeds.FeedsRequestBuilder;
+import com.rixl.sdk.analytics.v1.top.images.ImagesRequestBuilder;
 import com.rixl.sdk.analytics.v1.top.posts.PostsRequestBuilder;
 import com.rixl.sdk.analytics.v1.top.videos.VideosRequestBuilder;
 import java.util.HashMap;
@@ -19,6 +20,14 @@ public class TopRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public FeedsRequestBuilder feeds() {
         return new FeedsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The images property
+     * @return a {@link ImagesRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ImagesRequestBuilder images() {
+        return new ImagesRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The posts property

@@ -12,6 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.analytics.v1.dashboard.chartquery.ChartQueryRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboard.datasets.DatasetsRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboard.filteroptions.FilterOptionsRequestBuilder;
+import com.rixl.sdk.analytics.v1.dashboard.scopetree.ScopeTreeRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.DashboardStatsResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -45,6 +46,14 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public FilterOptionsRequestBuilder filterOptions() {
         return new FilterOptionsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The scopeTree property
+     * @return a {@link ScopeTreeRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ScopeTreeRequestBuilder scopeTree() {
+        return new ScopeTreeRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link DashboardRequestBuilder} and sets the default values.

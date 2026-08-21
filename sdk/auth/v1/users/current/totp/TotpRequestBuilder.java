@@ -2,6 +2,7 @@ package com.rixl.sdk.auth.v1.users.current.totp;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
+import com.rixl.sdk.auth.v1.users.current.totp.backupcodes.BackupCodesRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.totp.delete.DeleteRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.totp.setup.SetupRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.totp.status.StatusRequestBuilder;
@@ -13,6 +14,14 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class TotpRequestBuilder extends BaseRequestBuilder {
+    /**
+     * The backupCodes property
+     * @return a {@link BackupCodesRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public BackupCodesRequestBuilder backupCodes() {
+        return new BackupCodesRequestBuilder(pathParameters, requestAdapter);
+    }
     /**
      * The deletePath property
      * @return a {@link DeleteRequestBuilder}

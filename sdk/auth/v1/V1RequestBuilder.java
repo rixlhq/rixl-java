@@ -11,7 +11,6 @@ import com.rixl.sdk.auth.v1.membershipapplications.MembershipApplicationsRequest
 import com.rixl.sdk.auth.v1.memberships.MembershipsRequestBuilder;
 import com.rixl.sdk.auth.v1.passkey.PasskeyRequestBuilder;
 import com.rixl.sdk.auth.v1.password.PasswordRequestBuilder;
-import com.rixl.sdk.auth.v1.policies.PoliciesRequestBuilder;
 import com.rixl.sdk.auth.v1.providers.ProvidersRequestBuilder;
 import com.rixl.sdk.auth.v1.register.RegisterRequestBuilder;
 import com.rixl.sdk.auth.v1.token.TokenRequestBuilder;
@@ -97,14 +96,6 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public PasswordRequestBuilder password() {
         return new PasswordRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The policies property
-     * @return a {@link PoliciesRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public PoliciesRequestBuilder policies() {
-        return new PoliciesRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The providers property

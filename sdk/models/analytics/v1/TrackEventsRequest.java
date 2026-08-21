@@ -41,6 +41,10 @@ public class TrackEventsRequest implements Parsable {
      */
     private String osVersion;
     /**
+     * Project the events belong to (Organization &gt; Project &gt; Videos/Images/Posts/Feeds). Sent alongside the other envelope-level context because a client session is scoped to one project. org_id is still derived server-side from the credential and is never taken from the body, so a wrong project_id can only mis-attribute within the caller&apos;s own organization.
+     */
+    private String projectId;
+    /**
      * The region property
      */
     private String region;
@@ -104,7 +108,7 @@ public class TrackEventsRequest implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("browser", (n) -> { this.setBrowser(n.getStringValue()); });
         deserializerMap.put("city", (n) -> { this.setCity(n.getStringValue()); });
         deserializerMap.put("country", (n) -> { this.setCountry(n.getStringValue()); });
@@ -113,6 +117,7 @@ public class TrackEventsRequest implements Parsable {
         deserializerMap.put("language", (n) -> { this.setLanguage(n.getStringValue()); });
         deserializerMap.put("os", (n) -> { this.setOs(n.getStringValue()); });
         deserializerMap.put("os_version", (n) -> { this.setOsVersion(n.getStringValue()); });
+        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("region", (n) -> { this.setRegion(n.getStringValue()); });
         deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
@@ -140,6 +145,14 @@ public class TrackEventsRequest implements Parsable {
     @jakarta.annotation.Nullable
     public String getOsVersion() {
         return this.osVersion;
+    }
+    /**
+     * Gets the project_id property value. Project the events belong to (Organization &gt; Project &gt; Videos/Images/Posts/Feeds). Sent alongside the other envelope-level context because a client session is scoped to one project. org_id is still derived server-side from the credential and is never taken from the body, so a wrong project_id can only mis-attribute within the caller&apos;s own organization.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getProjectId() {
+        return this.projectId;
     }
     /**
      * Gets the region property value. The region property
@@ -171,6 +184,7 @@ public class TrackEventsRequest implements Parsable {
         writer.writeStringValue("language", this.getLanguage());
         writer.writeStringValue("os", this.getOs());
         writer.writeStringValue("os_version", this.getOsVersion());
+        writer.writeStringValue("project_id", this.getProjectId());
         writer.writeStringValue("region", this.getRegion());
         writer.writeStringValue("user_id", this.getUserId());
     }
@@ -229,6 +243,13 @@ public class TrackEventsRequest implements Parsable {
      */
     public void setOsVersion(@jakarta.annotation.Nullable final String value) {
         this.osVersion = value;
+    }
+    /**
+     * Sets the project_id property value. Project the events belong to (Organization &gt; Project &gt; Videos/Images/Posts/Feeds). Sent alongside the other envelope-level context because a client session is scoped to one project. org_id is still derived server-side from the credential and is never taken from the body, so a wrong project_id can only mis-attribute within the caller&apos;s own organization.
+     * @param value Value to set for the project_id property.
+     */
+    public void setProjectId(@jakarta.annotation.Nullable final String value) {
+        this.projectId = value;
     }
     /**
      * Sets the region property value. The region property

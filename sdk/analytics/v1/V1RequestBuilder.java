@@ -3,9 +3,11 @@ package com.rixl.sdk.analytics.v1;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
 import com.rixl.sdk.analytics.v1.dashboard.DashboardRequestBuilder;
+import com.rixl.sdk.analytics.v1.dashboards.DashboardsRequestBuilder;
 import com.rixl.sdk.analytics.v1.events.EventsRequestBuilder;
 import com.rixl.sdk.analytics.v1.feeds.FeedsRequestBuilder;
 import com.rixl.sdk.analytics.v1.funnels.FunnelsRequestBuilder;
+import com.rixl.sdk.analytics.v1.images.ImagesRequestBuilder;
 import com.rixl.sdk.analytics.v1.posts.PostsRequestBuilder;
 import com.rixl.sdk.analytics.v1.realtime.RealtimeRequestBuilder;
 import com.rixl.sdk.analytics.v1.retention.RetentionRequestBuilder;
@@ -25,6 +27,14 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public DashboardRequestBuilder dashboard() {
         return new DashboardRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The dashboards property
+     * @return a {@link DashboardsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public DashboardsRequestBuilder dashboards() {
+        return new DashboardsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The events property
@@ -49,6 +59,14 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public FunnelsRequestBuilder funnels() {
         return new FunnelsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The images property
+     * @return a {@link ImagesRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ImagesRequestBuilder images() {
+        return new ImagesRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The posts property

@@ -12,7 +12,14 @@ public enum ChartFilterOperator implements ValuedEnum {
     Lt("lt"),
     Lte("lte"),
     In("in"),
-    Contains("contains");
+    Not_in("not_in"),
+    Contains("contains"),
+    Not_contains("not_contains"),
+    Starts_with("starts_with"),
+    Ends_with("ends_with"),
+    Between("between"),
+    Is_empty("is_empty"),
+    Is_not_empty("is_not_empty");
     public final String value;
     ChartFilterOperator(final String value) {
         this.value = value;
@@ -30,7 +37,14 @@ public enum ChartFilterOperator implements ValuedEnum {
             case "lt": return Lt;
             case "lte": return Lte;
             case "in": return In;
+            case "not_in": return Not_in;
             case "contains": return Contains;
+            case "not_contains": return Not_contains;
+            case "starts_with": return Starts_with;
+            case "ends_with": return Ends_with;
+            case "between": return Between;
+            case "is_empty": return Is_empty;
+            case "is_not_empty": return Is_not_empty;
             default: return null;
         }
     }
