@@ -33,6 +33,10 @@ public class UserInfo implements Parsable {
      */
     private String id;
     /**
+     * The image_id property
+     */
+    private String imageId;
+    /**
      * The image_url property
      */
     private String imageUrl;
@@ -96,13 +100,14 @@ public class UserInfo implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("active_org_id", (n) -> { this.setActiveOrgId(n.getStringValue()); });
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("email_verified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
         deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
+        deserializerMap.put("image_id", (n) -> { this.setImageId(n.getStringValue()); });
         deserializerMap.put("image_url", (n) -> { this.setImageUrl(n.getStringValue()); });
         deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
         deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
@@ -124,6 +129,14 @@ public class UserInfo implements Parsable {
     @jakarta.annotation.Nullable
     public String getId() {
         return this.id;
+    }
+    /**
+     * Gets the image_id property value. The image_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getImageId() {
+        return this.imageId;
     }
     /**
      * Gets the image_url property value. The image_url property
@@ -169,6 +182,7 @@ public class UserInfo implements Parsable {
         writer.writeBooleanValue("email_verified", this.getEmailVerified());
         writer.writeStringValue("first_name", this.getFirstName());
         writer.writeStringValue("id", this.getId());
+        writer.writeStringValue("image_id", this.getImageId());
         writer.writeStringValue("image_url", this.getImageUrl());
         writer.writeStringValue("language_code", this.getLanguageCode());
         writer.writeStringValue("last_name", this.getLastName());
@@ -215,6 +229,13 @@ public class UserInfo implements Parsable {
      */
     public void setId(@jakarta.annotation.Nullable final String value) {
         this.id = value;
+    }
+    /**
+     * Sets the image_id property value. The image_id property
+     * @param value Value to set for the image_id property.
+     */
+    public void setImageId(@jakarta.annotation.Nullable final String value) {
+        this.imageId = value;
     }
     /**
      * Sets the image_url property value. The image_url property

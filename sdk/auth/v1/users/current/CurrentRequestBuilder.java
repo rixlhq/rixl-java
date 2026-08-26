@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.auth.v1.users.current.avatar.AvatarRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.emails.EmailsRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.name.NameRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.passkeys.PasskeysRequestBuilder;
@@ -24,6 +25,14 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CurrentRequestBuilder extends BaseRequestBuilder {
+    /**
+     * The avatar property
+     * @return a {@link AvatarRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public AvatarRequestBuilder avatar() {
+        return new AvatarRequestBuilder(pathParameters, requestAdapter);
+    }
     /**
      * The emails property
      * @return a {@link EmailsRequestBuilder}
