@@ -21,6 +21,7 @@ import com.rixl.sdk.media.MediaRequestBuilder;
 import com.rixl.sdk.organizations.OrganizationsRequestBuilder;
 import com.rixl.sdk.platform.PlatformRequestBuilder;
 import com.rixl.sdk.posts.PostsRequestBuilder;
+import com.rixl.sdk.support.SupportRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -99,6 +100,14 @@ public class RixlClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public PostsRequestBuilder posts() {
         return new PostsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The support property
+     * @return a {@link SupportRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public SupportRequestBuilder support() {
+        return new SupportRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link RixlClient} and sets the default values.
