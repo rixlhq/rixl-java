@@ -49,6 +49,14 @@ public class UserInfo implements Parsable {
      */
     private String lastName;
     /**
+     * The permissions property
+     */
+    private java.util.List<String> permissions;
+    /**
+     * The policies property
+     */
+    private java.util.List<Policy> policies;
+    /**
      * The username property
      */
     private String username;
@@ -100,7 +108,7 @@ public class UserInfo implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
         deserializerMap.put("active_org_id", (n) -> { this.setActiveOrgId(n.getStringValue()); });
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
@@ -111,6 +119,8 @@ public class UserInfo implements Parsable {
         deserializerMap.put("image_url", (n) -> { this.setImageUrl(n.getStringValue()); });
         deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
         deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
+        deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("policies", (n) -> { this.setPolicies(n.getCollectionOfObjectValues(Policy::createFromDiscriminatorValue)); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }
@@ -163,6 +173,22 @@ public class UserInfo implements Parsable {
         return this.lastName;
     }
     /**
+     * Gets the permissions property value. The permissions property
+     * @return a {@link java.util.List<String>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<String> getPermissions() {
+        return this.permissions;
+    }
+    /**
+     * Gets the policies property value. The policies property
+     * @return a {@link java.util.List<Policy>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<Policy> getPolicies() {
+        return this.policies;
+    }
+    /**
      * Gets the username property value. The username property
      * @return a {@link String}
      */
@@ -186,6 +212,8 @@ public class UserInfo implements Parsable {
         writer.writeStringValue("image_url", this.getImageUrl());
         writer.writeStringValue("language_code", this.getLanguageCode());
         writer.writeStringValue("last_name", this.getLastName());
+        writer.writeCollectionOfPrimitiveValues("permissions", this.getPermissions());
+        writer.writeCollectionOfObjectValues("policies", this.getPolicies());
         writer.writeStringValue("username", this.getUsername());
     }
     /**
@@ -257,6 +285,20 @@ public class UserInfo implements Parsable {
      */
     public void setLastName(@jakarta.annotation.Nullable final String value) {
         this.lastName = value;
+    }
+    /**
+     * Sets the permissions property value. The permissions property
+     * @param value Value to set for the permissions property.
+     */
+    public void setPermissions(@jakarta.annotation.Nullable final java.util.List<String> value) {
+        this.permissions = value;
+    }
+    /**
+     * Sets the policies property value. The policies property
+     * @param value Value to set for the policies property.
+     */
+    public void setPolicies(@jakarta.annotation.Nullable final java.util.List<Policy> value) {
+        this.policies = value;
     }
     /**
      * Sets the username property value. The username property
