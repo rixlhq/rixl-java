@@ -9,6 +9,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CheckMembershipResponse implements Parsable {
     /**
+     * The is_internal_org property
+     */
+    private Boolean isInternalOrg;
+    /**
      * The is_member property
      */
     private Boolean isMember;
@@ -28,9 +32,18 @@ public class CheckMembershipResponse implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("is_internal_org", (n) -> { this.setIsInternalOrg(n.getBooleanValue()); });
         deserializerMap.put("is_member", (n) -> { this.setIsMember(n.getBooleanValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the is_internal_org property value. The is_internal_org property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getIsInternalOrg() {
+        return this.isInternalOrg;
     }
     /**
      * Gets the is_member property value. The is_member property
@@ -46,7 +59,15 @@ public class CheckMembershipResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeBooleanValue("is_internal_org", this.getIsInternalOrg());
         writer.writeBooleanValue("is_member", this.getIsMember());
+    }
+    /**
+     * Sets the is_internal_org property value. The is_internal_org property
+     * @param value Value to set for the is_internal_org property.
+     */
+    public void setIsInternalOrg(@jakarta.annotation.Nullable final Boolean value) {
+        this.isInternalOrg = value;
     }
     /**
      * Sets the is_member property value. The is_member property
