@@ -22,6 +22,10 @@ public class V1PostRequestBody implements Parsable {
      */
     private String orgId;
     /**
+     * The policy_ids property
+     */
+    private java.util.List<String> policyIds;
+    /**
      * The project_id property
      */
     private String projectId;
@@ -49,10 +53,11 @@ public class V1PostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("expiring_at", (n) -> { this.setExpiringAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("policy_ids", (n) -> { this.setPolicyIds(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         return deserializerMap;
     }
@@ -73,6 +78,14 @@ public class V1PostRequestBody implements Parsable {
         return this.orgId;
     }
     /**
+     * Gets the policy_ids property value. The policy_ids property
+     * @return a {@link java.util.List<String>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<String> getPolicyIds() {
+        return this.policyIds;
+    }
+    /**
      * Gets the project_id property value. The project_id property
      * @return a {@link String}
      */
@@ -89,6 +102,7 @@ public class V1PostRequestBody implements Parsable {
         writer.writeOffsetDateTimeValue("expiring_at", this.getExpiringAt());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeCollectionOfPrimitiveValues("policy_ids", this.getPolicyIds());
         writer.writeStringValue("project_id", this.getProjectId());
     }
     /**
@@ -111,6 +125,13 @@ public class V1PostRequestBody implements Parsable {
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
+    }
+    /**
+     * Sets the policy_ids property value. The policy_ids property
+     * @param value Value to set for the policy_ids property.
+     */
+    public void setPolicyIds(@jakarta.annotation.Nullable final java.util.List<String> value) {
+        this.policyIds = value;
     }
     /**
      * Sets the project_id property value. The project_id property

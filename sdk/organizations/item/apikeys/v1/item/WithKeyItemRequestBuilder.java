@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.apikeys.v1.UpdateApiKeyResponse;
 import com.rixl.sdk.models.google.protobuf.Empty;
 import com.rixl.sdk.organizations.item.apikeys.v1.item.rotate.RotateRequestBuilder;
 import java.util.Collection;
@@ -62,6 +63,27 @@ public class WithKeyItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
     }
     /**
+     * UpdateApiKey
+     * @param body The request body
+     * @return a {@link UpdateApiKeyResponse}
+     */
+    @jakarta.annotation.Nullable
+    public UpdateApiKeyResponse patch(@jakarta.annotation.Nonnull final WithKeyPatchRequestBody body) {
+        return patch(body, null);
+    }
+    /**
+     * UpdateApiKey
+     * @param body The request body
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link UpdateApiKeyResponse}
+     */
+    @jakarta.annotation.Nullable
+    public UpdateApiKeyResponse patch(@jakarta.annotation.Nonnull final WithKeyPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
+        return this.requestAdapter.send(requestInfo, null, UpdateApiKeyResponse::createFromDiscriminatorValue);
+    }
+    /**
      * DeleteApiKey
      * @return a {@link RequestInformation}
      */
@@ -82,6 +104,30 @@ public class WithKeyItemRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
+     * UpdateApiKey
+     * @param body The request body
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final WithKeyPatchRequestBody body) {
+        return toPatchRequestInformation(body, null);
+    }
+    /**
+     * UpdateApiKey
+     * @param body The request body
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final WithKeyPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
+        return requestInfo;
+    }
+    /**
      * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
      * @param rawUrl The raw URL to use for the request builder.
      * @return a {@link WithKeyItemRequestBuilder}
@@ -96,5 +142,11 @@ public class WithKeyItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteRequestConfiguration extends BaseRequestConfiguration {
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class PatchRequestConfiguration extends BaseRequestConfiguration {
     }
 }

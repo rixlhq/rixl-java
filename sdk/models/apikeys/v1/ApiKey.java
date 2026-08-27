@@ -34,6 +34,14 @@ public class ApiKey implements Parsable {
      */
     private String orgId;
     /**
+     * The permissions property
+     */
+    private java.util.List<String> permissions;
+    /**
+     * The policy_ids property
+     */
+    private java.util.List<String> policyIds;
+    /**
      * The project_id property
      */
     private String projectId;
@@ -77,13 +85,15 @@ public class ApiKey implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("created_at", (n) -> { this.setCreatedAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("expiring_at", (n) -> { this.setExpiringAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("last_used", (n) -> { this.setLastUsed(n.getOffsetDateTimeValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("policy_ids", (n) -> { this.setPolicyIds(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("project_name", (n) -> { this.setProjectName(n.getStringValue()); });
         deserializerMap.put("secret", (n) -> { this.setSecret(n.getStringValue()); });
@@ -122,6 +132,22 @@ public class ApiKey implements Parsable {
         return this.orgId;
     }
     /**
+     * Gets the permissions property value. The permissions property
+     * @return a {@link java.util.List<String>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<String> getPermissions() {
+        return this.permissions;
+    }
+    /**
+     * Gets the policy_ids property value. The policy_ids property
+     * @return a {@link java.util.List<String>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<String> getPolicyIds() {
+        return this.policyIds;
+    }
+    /**
      * Gets the project_id property value. The project_id property
      * @return a {@link String}
      */
@@ -157,6 +183,8 @@ public class ApiKey implements Parsable {
         writer.writeOffsetDateTimeValue("last_used", this.getLastUsed());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("org_id", this.getOrgId());
+        writer.writeCollectionOfPrimitiveValues("permissions", this.getPermissions());
+        writer.writeCollectionOfPrimitiveValues("policy_ids", this.getPolicyIds());
         writer.writeStringValue("project_id", this.getProjectId());
         writer.writeStringValue("project_name", this.getProjectName());
         writer.writeStringValue("secret", this.getSecret());
@@ -202,6 +230,20 @@ public class ApiKey implements Parsable {
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
+    }
+    /**
+     * Sets the permissions property value. The permissions property
+     * @param value Value to set for the permissions property.
+     */
+    public void setPermissions(@jakarta.annotation.Nullable final java.util.List<String> value) {
+        this.permissions = value;
+    }
+    /**
+     * Sets the policy_ids property value. The policy_ids property
+     * @param value Value to set for the policy_ids property.
+     */
+    public void setPolicyIds(@jakarta.annotation.Nullable final java.util.List<String> value) {
+        this.policyIds = value;
     }
     /**
      * Sets the project_id property value. The project_id property
