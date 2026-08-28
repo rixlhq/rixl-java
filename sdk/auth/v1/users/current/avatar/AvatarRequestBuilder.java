@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.auth.v1.users.current.avatar.upload.UploadRequestBuilder;
 import com.rixl.sdk.models.auth.v1.UpdateUserAvatarRequest;
 import com.rixl.sdk.models.auth.v1.UpdateUserAvatarResponse;
 import java.util.Collection;
@@ -19,6 +20,14 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AvatarRequestBuilder extends BaseRequestBuilder {
+    /**
+     * The upload property
+     * @return a {@link UploadRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public UploadRequestBuilder upload() {
+        return new UploadRequestBuilder(pathParameters, requestAdapter);
+    }
     /**
      * Instantiates a new {@link AvatarRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
