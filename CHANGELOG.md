@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.0](https://github.com/rixlhq/rixl-java/compare/v1.1.0...v1.2.0) (2026-08-28)
+## [1.2.0](https://github.com/rixlhq/rixl-java/compare/v1.1.0...v1.2.0) (2026-08-29)
 
 
 ### Features
@@ -32,6 +32,8 @@
 ### Documentation
 
 * add LICENSE file ([2654e80](https://github.com/rixlhq/rixl-java/commit/2654e80a33ab8854b6c277f9d72d83aa173200f7))
+* rewrite README for third-party developers ([d460832](https://github.com/rixlhq/rixl-java/commit/d460832ce53cf963b7dd3828a606768de43acd36))
+* simplify punctuation and group resources by area ([a8e8b09](https://github.com/rixlhq/rixl-java/commit/a8e8b099aaf371a3aed8a3a04dcea8a95e3c70e0))
 
 ## [1.1.0](https://github.com/rixlhq/rixl-java/compare/v1.0.2...v1.1.0) (2026-05-07)
 
