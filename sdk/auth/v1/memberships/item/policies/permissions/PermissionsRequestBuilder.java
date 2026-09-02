@@ -25,7 +25,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PermissionsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*,user%2Euser_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PermissionsRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PermissionsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*,user%2Euser_id*}", rawUrl);
     }
     /**
      * ListPermissionRegistry
@@ -94,6 +94,8 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
         public Integer offset;
         @jakarta.annotation.Nullable
         public String[] types;
+        @jakarta.annotation.Nullable
+        public String userUserId;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -103,6 +105,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
+            allQueryParams.put("user%2Euser_id", userUserId);
             allQueryParams.put("types", types);
             return allQueryParams;
         }
