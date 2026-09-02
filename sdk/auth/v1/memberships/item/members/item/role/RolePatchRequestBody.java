@@ -3,7 +3,6 @@ package com.rixl.sdk.auth.v1.memberships.item.members.item.role;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.auth.v1.ActorOrgRequest;
 import com.rixl.sdk.models.auth.v1.MembershipRole;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,10 +13,6 @@ public class RolePatchRequestBody implements Parsable {
      * The role property
      */
     private MembershipRole role;
-    /**
-     * The user property
-     */
-    private ActorOrgRequest user;
     /**
      * The user_id property
      */
@@ -38,9 +33,8 @@ public class RolePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
-        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(ActorOrgRequest::createFromDiscriminatorValue)); });
         deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
@@ -51,14 +45,6 @@ public class RolePatchRequestBody implements Parsable {
     @jakarta.annotation.Nullable
     public MembershipRole getRole() {
         return this.role;
-    }
-    /**
-     * Gets the user property value. The user property
-     * @return a {@link ActorOrgRequest}
-     */
-    @jakarta.annotation.Nullable
-    public ActorOrgRequest getUser() {
-        return this.user;
     }
     /**
      * Gets the user_id property value. The user_id property
@@ -75,7 +61,6 @@ public class RolePatchRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("role", this.getRole());
-        writer.writeObjectValue("user", this.getUser());
         writer.writeStringValue("user_id", this.getUserId());
     }
     /**
@@ -84,13 +69,6 @@ public class RolePatchRequestBody implements Parsable {
      */
     public void setRole(@jakarta.annotation.Nullable final MembershipRole value) {
         this.role = value;
-    }
-    /**
-     * Sets the user property value. The user property
-     * @param value Value to set for the user property.
-     */
-    public void setUser(@jakarta.annotation.Nullable final ActorOrgRequest value) {
-        this.user = value;
     }
     /**
      * Sets the user_id property value. The user_id property

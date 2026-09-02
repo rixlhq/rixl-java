@@ -3,7 +3,6 @@ package com.rixl.sdk.auth.v1.memberships.item.policies;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.auth.v1.UserOrgRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -21,10 +20,6 @@ public class PoliciesPostRequestBody implements Parsable {
      * The permissions property
      */
     private java.util.List<String> permissions;
-    /**
-     * The user property
-     */
-    private UserOrgRequest user;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -49,11 +44,10 @@ public class PoliciesPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(UserOrgRequest::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -73,14 +67,6 @@ public class PoliciesPostRequestBody implements Parsable {
         return this.permissions;
     }
     /**
-     * Gets the user property value. The user property
-     * @return a {@link UserOrgRequest}
-     */
-    @jakarta.annotation.Nullable
-    public UserOrgRequest getUser() {
-        return this.user;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -89,7 +75,6 @@ public class PoliciesPostRequestBody implements Parsable {
         writer.writeStringValue("description", this.getDescription());
         writer.writeStringValue("name", this.getName());
         writer.writeCollectionOfPrimitiveValues("permissions", this.getPermissions());
-        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the description property value. The description property
@@ -111,12 +96,5 @@ public class PoliciesPostRequestBody implements Parsable {
      */
     public void setPermissions(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.permissions = value;
-    }
-    /**
-     * Sets the user property value. The user property
-     * @param value Value to set for the user property.
-     */
-    public void setUser(@jakarta.annotation.Nullable final UserOrgRequest value) {
-        this.user = value;
     }
 }
