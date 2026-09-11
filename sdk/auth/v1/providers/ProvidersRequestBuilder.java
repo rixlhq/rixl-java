@@ -31,7 +31,7 @@ public class ProvidersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.providers.item collection
-     * @param provider Unique identifier of the item
+     * @param provider The provider path parameter.
      * @return a {@link WithProviderItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -110,6 +110,9 @@ public class ProvidersRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The user_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

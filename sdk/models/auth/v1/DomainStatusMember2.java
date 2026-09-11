@@ -1,4 +1,4 @@
-package com.rixl.sdk.posts.v1.projects.item.feeds.item.posts;
+package com.rixl.sdk.models.auth.v1;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
@@ -8,26 +8,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class PostsPostRequestBody implements AdditionalDataHolder, Parsable {
+public class DomainStatusMember2 implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
     private Map<String, Object> additionalData;
     /**
-     * Instantiates a new {@link PostsPostRequestBody} and sets the default values.
+     * The verified property
      */
-    public PostsPostRequestBody() {
+    private VerifiedDomain verified;
+    /**
+     * Instantiates a new {@link DomainStatusMember2} and sets the default values.
+     */
+    public DomainStatusMember2() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link PostsPostRequestBody}
+     * @return a {@link DomainStatusMember2}
      */
     @jakarta.annotation.Nonnull
-    public static PostsPostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static DomainStatusMember2 createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new PostsPostRequestBody();
+        return new DomainStatusMember2();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -43,8 +47,17 @@ public class PostsPostRequestBody implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(0);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        deserializerMap.put("verified", (n) -> { this.setVerified(n.getObjectValue(VerifiedDomain::createFromDiscriminatorValue)); });
         return deserializerMap;
+    }
+    /**
+     * Gets the verified property value. The verified property
+     * @return a {@link VerifiedDomain}
+     */
+    @jakarta.annotation.Nullable
+    public VerifiedDomain getVerified() {
+        return this.verified;
     }
     /**
      * Serializes information the current object
@@ -52,6 +65,7 @@ public class PostsPostRequestBody implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeObjectValue("verified", this.getVerified());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -60,5 +74,12 @@ public class PostsPostRequestBody implements AdditionalDataHolder, Parsable {
      */
     public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
+    }
+    /**
+     * Sets the verified property value. The verified property
+     * @param value Value to set for the verified property.
+     */
+    public void setVerified(@jakarta.annotation.Nullable final VerifiedDomain value) {
+        this.verified = value;
     }
 }

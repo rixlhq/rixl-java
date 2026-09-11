@@ -41,7 +41,7 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.policies.item collection
-     * @param policy_id Unique identifier of the item
+     * @param policy_id The policy_id path parameter.
      * @return a {@link WithPolicyItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -165,6 +165,9 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The user_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

@@ -88,8 +88,14 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The days query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer days;
+        /**
+         * The org_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

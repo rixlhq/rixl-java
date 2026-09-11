@@ -15,11 +15,11 @@ public class DashboardPoint implements Parsable {
     /**
      * The unique_users property
      */
-    private Long uniqueUsers;
+    private String uniqueUsers;
     /**
      * The views property
      */
-    private Long views;
+    private String views;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -38,8 +38,8 @@ public class DashboardPoint implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getStringValue()); });
-        deserializerMap.put("unique_users", (n) -> { this.setUniqueUsers(n.getLongValue()); });
-        deserializerMap.put("views", (n) -> { this.setViews(n.getLongValue()); });
+        deserializerMap.put("unique_users", (n) -> { this.setUniqueUsers(n.getStringValue()); });
+        deserializerMap.put("views", (n) -> { this.setViews(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -52,18 +52,18 @@ public class DashboardPoint implements Parsable {
     }
     /**
      * Gets the unique_users property value. The unique_users property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getUniqueUsers() {
+    public String getUniqueUsers() {
         return this.uniqueUsers;
     }
     /**
      * Gets the views property value. The views property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getViews() {
+    public String getViews() {
         return this.views;
     }
     /**
@@ -73,8 +73,8 @@ public class DashboardPoint implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("timestamp", this.getTimestamp());
-        writer.writeLongValue("unique_users", this.getUniqueUsers());
-        writer.writeLongValue("views", this.getViews());
+        writer.writeStringValue("unique_users", this.getUniqueUsers());
+        writer.writeStringValue("views", this.getViews());
     }
     /**
      * Sets the timestamp property value. The timestamp property
@@ -87,14 +87,14 @@ public class DashboardPoint implements Parsable {
      * Sets the unique_users property value. The unique_users property
      * @param value Value to set for the unique_users property.
      */
-    public void setUniqueUsers(@jakarta.annotation.Nullable final Long value) {
+    public void setUniqueUsers(@jakarta.annotation.Nullable final String value) {
         this.uniqueUsers = value;
     }
     /**
      * Sets the views property value. The views property
      * @param value Value to set for the views property.
      */
-    public void setViews(@jakarta.annotation.Nullable final Long value) {
+    public void setViews(@jakarta.annotation.Nullable final String value) {
         this.views = value;
     }
 }

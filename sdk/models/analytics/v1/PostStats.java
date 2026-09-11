@@ -20,7 +20,7 @@ public class PostStats implements Parsable {
     /**
      * The completions property
      */
-    private Long completions;
+    private String completions;
     /**
      * The content_type property
      */
@@ -36,19 +36,19 @@ public class PostStats implements Parsable {
     /**
      * The starts property
      */
-    private Long starts;
+    private String starts;
     /**
      * The total_views property
      */
-    private Long totalViews;
+    private String totalViews;
     /**
      * The total_watch_time_ms property
      */
-    private Long totalWatchTimeMs;
+    private String totalWatchTimeMs;
     /**
      * The unique_viewers property
      */
-    private Long uniqueViewers;
+    private String uniqueViewers;
     /**
      * The views_by_page property
      */
@@ -81,10 +81,10 @@ public class PostStats implements Parsable {
     }
     /**
      * Gets the completions property value. The completions property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getCompletions() {
+    public String getCompletions() {
         return this.completions;
     }
     /**
@@ -112,14 +112,14 @@ public class PostStats implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("avg_watch_time_ms", (n) -> { this.setAvgWatchTimeMs(n.getDoubleValue()); });
         deserializerMap.put("completion_rate", (n) -> { this.setCompletionRate(n.getDoubleValue()); });
-        deserializerMap.put("completions", (n) -> { this.setCompletions(n.getLongValue()); });
+        deserializerMap.put("completions", (n) -> { this.setCompletions(n.getStringValue()); });
         deserializerMap.put("content_type", (n) -> { this.setContentType(n.getEnumValue(MediaType::forValue)); });
         deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
         deserializerMap.put("post_id", (n) -> { this.setPostId(n.getStringValue()); });
-        deserializerMap.put("starts", (n) -> { this.setStarts(n.getLongValue()); });
-        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getLongValue()); });
-        deserializerMap.put("total_watch_time_ms", (n) -> { this.setTotalWatchTimeMs(n.getLongValue()); });
-        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getLongValue()); });
+        deserializerMap.put("starts", (n) -> { this.setStarts(n.getStringValue()); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getStringValue()); });
+        deserializerMap.put("total_watch_time_ms", (n) -> { this.setTotalWatchTimeMs(n.getStringValue()); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getStringValue()); });
         deserializerMap.put("views_by_page", (n) -> { this.setViewsByPage(n.getObjectValue(PostStatsViewsByPage::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -133,34 +133,34 @@ public class PostStats implements Parsable {
     }
     /**
      * Gets the starts property value. The starts property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getStarts() {
+    public String getStarts() {
         return this.starts;
     }
     /**
      * Gets the total_views property value. The total_views property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getTotalViews() {
+    public String getTotalViews() {
         return this.totalViews;
     }
     /**
      * Gets the total_watch_time_ms property value. The total_watch_time_ms property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getTotalWatchTimeMs() {
+    public String getTotalWatchTimeMs() {
         return this.totalWatchTimeMs;
     }
     /**
      * Gets the unique_viewers property value. The unique_viewers property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getUniqueViewers() {
+    public String getUniqueViewers() {
         return this.uniqueViewers;
     }
     /**
@@ -179,14 +179,14 @@ public class PostStats implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("avg_watch_time_ms", this.getAvgWatchTimeMs());
         writer.writeDoubleValue("completion_rate", this.getCompletionRate());
-        writer.writeLongValue("completions", this.getCompletions());
+        writer.writeStringValue("completions", this.getCompletions());
         writer.writeEnumValue("content_type", this.getContentType());
         writer.writeStringValue("feed_id", this.getFeedId());
         writer.writeStringValue("post_id", this.getPostId());
-        writer.writeLongValue("starts", this.getStarts());
-        writer.writeLongValue("total_views", this.getTotalViews());
-        writer.writeLongValue("total_watch_time_ms", this.getTotalWatchTimeMs());
-        writer.writeLongValue("unique_viewers", this.getUniqueViewers());
+        writer.writeStringValue("starts", this.getStarts());
+        writer.writeStringValue("total_views", this.getTotalViews());
+        writer.writeStringValue("total_watch_time_ms", this.getTotalWatchTimeMs());
+        writer.writeStringValue("unique_viewers", this.getUniqueViewers());
         writer.writeObjectValue("views_by_page", this.getViewsByPage());
     }
     /**
@@ -207,7 +207,7 @@ public class PostStats implements Parsable {
      * Sets the completions property value. The completions property
      * @param value Value to set for the completions property.
      */
-    public void setCompletions(@jakarta.annotation.Nullable final Long value) {
+    public void setCompletions(@jakarta.annotation.Nullable final String value) {
         this.completions = value;
     }
     /**
@@ -235,28 +235,28 @@ public class PostStats implements Parsable {
      * Sets the starts property value. The starts property
      * @param value Value to set for the starts property.
      */
-    public void setStarts(@jakarta.annotation.Nullable final Long value) {
+    public void setStarts(@jakarta.annotation.Nullable final String value) {
         this.starts = value;
     }
     /**
      * Sets the total_views property value. The total_views property
      * @param value Value to set for the total_views property.
      */
-    public void setTotalViews(@jakarta.annotation.Nullable final Long value) {
+    public void setTotalViews(@jakarta.annotation.Nullable final String value) {
         this.totalViews = value;
     }
     /**
      * Sets the total_watch_time_ms property value. The total_watch_time_ms property
      * @param value Value to set for the total_watch_time_ms property.
      */
-    public void setTotalWatchTimeMs(@jakarta.annotation.Nullable final Long value) {
+    public void setTotalWatchTimeMs(@jakarta.annotation.Nullable final String value) {
         this.totalWatchTimeMs = value;
     }
     /**
      * Sets the unique_viewers property value. The unique_viewers property
      * @param value Value to set for the unique_viewers property.
      */
-    public void setUniqueViewers(@jakarta.annotation.Nullable final Long value) {
+    public void setUniqueViewers(@jakarta.annotation.Nullable final String value) {
         this.uniqueViewers = value;
     }
     /**

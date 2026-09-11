@@ -42,7 +42,7 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.billing.v1.paymentMethods.item collection
-     * @param payment_method_id Unique identifier of the item
+     * @param payment_method_id The payment_method_id path parameter.
      * @return a {@link WithPaymentMethodItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -166,8 +166,14 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The org_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String orgId;
+        /**
+         * The refresh query parameter.
+         */
         @jakarta.annotation.Nullable
         public Boolean refresh;
         /**

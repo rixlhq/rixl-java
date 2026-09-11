@@ -39,7 +39,7 @@ public class SubtitlesRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.subtitles.item collection
-     * @param subtitle_id Unique identifier of the item
+     * @param subtitle_id The subtitle_id path parameter.
      * @return a {@link WithSubtitleItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

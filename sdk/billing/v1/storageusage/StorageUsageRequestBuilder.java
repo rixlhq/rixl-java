@@ -106,6 +106,9 @@ public class StorageUsageRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The org_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

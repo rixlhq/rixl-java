@@ -23,7 +23,7 @@ import java.util.Objects;
 public class V1RequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.organizations.item.apiKeys.v1.item collection
-     * @param key_id Unique identifier of the item
+     * @param key_id The key_id path parameter.
      * @return a {@link WithKeyItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

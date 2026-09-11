@@ -22,11 +22,11 @@ import java.util.Objects;
 public class ChaptersRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.chapters.item collection
-     * @param start_time_sec Unique identifier of the item
+     * @param start_time_sec The start_time_sec path parameter.
      * @return a {@link WithStartTimeSecItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithStartTimeSecItemRequestBuilder byStart_time_sec(@jakarta.annotation.Nonnull final Long start_time_sec) {
+    public WithStartTimeSecItemRequestBuilder byStart_time_sec(@jakarta.annotation.Nonnull final String start_time_sec) {
         Objects.requireNonNull(start_time_sec);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("start_time_sec", start_time_sec);
@@ -184,8 +184,14 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteQueryParameters implements QueryParameters {
+        /**
+         * The chapters.start_time_sec query parameter.
+         */
         @jakarta.annotation.Nullable
         public Double chaptersStartTimeSec;
+        /**
+         * The chapters.title query parameter.
+         */
         @jakarta.annotation.Nullable
         public String chaptersTitle;
         /**

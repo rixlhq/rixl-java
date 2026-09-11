@@ -31,7 +31,7 @@ public class ListImagesResponse implements Parsable {
     /**
      * The total property
      */
-    private Long total;
+    private String total;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -54,7 +54,7 @@ public class ListImagesResponse implements Parsable {
         deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
         deserializerMap.put("sort_direction", (n) -> { this.setSortDirection(n.getStringValue()); });
         deserializerMap.put("sort_field", (n) -> { this.setSortField(n.getStringValue()); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -99,10 +99,10 @@ public class ListImagesResponse implements Parsable {
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getTotal() {
+    public String getTotal() {
         return this.total;
     }
     /**
@@ -116,7 +116,7 @@ public class ListImagesResponse implements Parsable {
         writer.writeIntegerValue("offset", this.getOffset());
         writer.writeStringValue("sort_direction", this.getSortDirection());
         writer.writeStringValue("sort_field", this.getSortField());
-        writer.writeLongValue("total", this.getTotal());
+        writer.writeStringValue("total", this.getTotal());
     }
     /**
      * Sets the images property value. The images property
@@ -157,7 +157,7 @@ public class ListImagesResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final Long value) {
+    public void setTotal(@jakarta.annotation.Nullable final String value) {
         this.total = value;
     }
 }

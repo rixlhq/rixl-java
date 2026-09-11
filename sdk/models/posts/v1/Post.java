@@ -1,24 +1,26 @@
 package com.rixl.sdk.models.posts.v1;
 
-import com.microsoft.kiota.serialization.AdditionalDataHolder;
+import com.microsoft.kiota.serialization.ComposedTypeWrapper;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
+import com.microsoft.kiota.serialization.ParseNodeHelper;
 import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * Composed type wrapper for classes {@link PostMember1}, {@link PostMember2}
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class Post implements AdditionalDataHolder, Parsable {
+public class Post implements ComposedTypeWrapper, Parsable {
     /**
-     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * Composed type representation for type {@link PostMember1}
      */
-    private Map<String, Object> additionalData;
+    private PostMember1 postMember1;
     /**
-     * Instantiates a new {@link Post} and sets the default values.
+     * Composed type representation for type {@link PostMember2}
      */
-    public Post() {
-        this.setAdditionalData(new HashMap<>());
-    }
+    private PostMember2 postMember2;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -27,15 +29,10 @@ public class Post implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public static Post createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new Post();
-    }
-    /**
-     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     * @return a {@link Map<String, Object>}
-     */
-    @jakarta.annotation.Nonnull
-    public Map<String, Object> getAdditionalData() {
-        return this.additionalData;
+        final Post result = new Post();
+        result.setPostMember1(new PostMember1());
+        result.setPostMember2(new PostMember2());
+        return result;
     }
     /**
      * The deserialization information for the current model
@@ -43,8 +40,26 @@ public class Post implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(0);
-        return deserializerMap;
+        if (this.getPostMember1() != null || this.getPostMember2() != null) {
+            return ParseNodeHelper.mergeDeserializersForIntersectionWrapper(this.getPostMember1(), this.getPostMember2());
+        }
+        return new HashMap<String, java.util.function.Consumer<ParseNode>>();
+    }
+    /**
+     * Gets the PostMember1 property value. Composed type representation for type {@link PostMember1}
+     * @return a {@link PostMember1}
+     */
+    @jakarta.annotation.Nullable
+    public PostMember1 getPostMember1() {
+        return this.postMember1;
+    }
+    /**
+     * Gets the PostMember2 property value. Composed type representation for type {@link PostMember2}
+     * @return a {@link PostMember2}
+     */
+    @jakarta.annotation.Nullable
+    public PostMember2 getPostMember2() {
+        return this.postMember2;
     }
     /**
      * Serializes information the current object
@@ -52,13 +67,20 @@ public class Post implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeAdditionalData(this.getAdditionalData());
+        writer.writeObjectValue(null, this.getPostMember1(), this.getPostMember2());
     }
     /**
-     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-     * @param value Value to set for the AdditionalData property.
+     * Sets the PostMember1 property value. Composed type representation for type {@link PostMember1}
+     * @param value Value to set for the PostMember1 property.
      */
-    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
-        this.additionalData = value;
+    public void setPostMember1(@jakarta.annotation.Nullable final PostMember1 value) {
+        this.postMember1 = value;
+    }
+    /**
+     * Sets the PostMember2 property value. Composed type representation for type {@link PostMember2}
+     * @param value Value to set for the PostMember2 property.
+     */
+    public void setPostMember2(@jakarta.annotation.Nullable final PostMember2 value) {
+        this.postMember2 = value;
     }
 }

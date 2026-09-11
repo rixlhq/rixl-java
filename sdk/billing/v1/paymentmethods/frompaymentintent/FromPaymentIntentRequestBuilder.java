@@ -88,6 +88,9 @@ public class FromPaymentIntentRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The payment_intent_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String paymentIntentId;
         /**

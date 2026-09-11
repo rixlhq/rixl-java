@@ -39,7 +39,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.audioTracks.item collection
-     * @param track_id Unique identifier of the item
+     * @param track_id The track_id path parameter.
      * @return a {@link WithTrackItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

@@ -88,12 +88,24 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The feed_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String feedId;
+        /**
+         * The limit query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer limit;
+        /**
+         * The range.end query parameter.
+         */
         @jakarta.annotation.Nullable
         public String rangeEnd;
+        /**
+         * The range.start query parameter.
+         */
         @jakarta.annotation.Nullable
         public String rangeStart;
         /**

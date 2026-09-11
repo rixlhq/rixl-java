@@ -12,7 +12,7 @@ import java.util.Objects;
 public class CreatorsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.item collection
-     * @param creator_id Unique identifier of the item
+     * @param creator_id The creator_id path parameter.
      * @return a {@link WithCreatorItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

@@ -30,7 +30,7 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.invite.item collection
-     * @param user_id Unique identifier of the item
+     * @param user_id The user_id path parameter.
      * @return a {@link WithUserItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

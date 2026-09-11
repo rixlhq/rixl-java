@@ -7,8 +7,12 @@ import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
+import com.microsoft.kiota.serialization.ComposedTypeWrapper;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.microsoft.kiota.serialization.ParseNode;
+import com.microsoft.kiota.serialization.ParseNodeHelper;
+import com.microsoft.kiota.serialization.SerializationWriter;
 import com.rixl.sdk.models.posts.v1.CreatePostResponse;
 import com.rixl.sdk.models.posts.v1.ListPostsResponse;
 import com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.creators.CreatorsRequestBuilder;
@@ -41,7 +45,7 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.projects.item.feeds.item.posts.item collection
-     * @param post_id Unique identifier of the item
+     * @param post_id The post_id path parameter.
      * @return a {@link WithPostItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -165,6 +169,9 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The creator_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String creatorId;
         /**
@@ -206,5 +213,81 @@ public class PostsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostRequestConfiguration extends BaseRequestConfiguration {
+    }
+    /**
+     * Composed type wrapper for classes {@link PostsPostRequestBodyMember1}, {@link PostsPostRequestBodyMember2}
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public static class PostsPostRequestBody implements ComposedTypeWrapper, Parsable {
+        /**
+         * Composed type representation for type {@link PostsPostRequestBodyMember1}
+         */
+        private PostsPostRequestBodyMember1 postsPostRequestBodyMember1;
+        /**
+         * Composed type representation for type {@link PostsPostRequestBodyMember2}
+         */
+        private PostsPostRequestBodyMember2 postsPostRequestBodyMember2;
+        /**
+         * Creates a new instance of the appropriate class based on discriminator value
+         * @param parseNode The parse node to use to read the discriminator value and create the object
+         * @return a {@link PostsPostRequestBody}
+         */
+        @jakarta.annotation.Nonnull
+        public static PostsPostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+            Objects.requireNonNull(parseNode);
+            final PostsPostRequestBody result = new PostsPostRequestBody();
+            result.setPostsPostRequestBodyMember1(new PostsPostRequestBodyMember1());
+            result.setPostsPostRequestBodyMember2(new PostsPostRequestBodyMember2());
+            return result;
+        }
+        /**
+         * The deserialization information for the current model
+         * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
+            if (this.getPostsPostRequestBodyMember1() != null || this.getPostsPostRequestBodyMember2() != null) {
+                return ParseNodeHelper.mergeDeserializersForIntersectionWrapper(this.getPostsPostRequestBodyMember1(), this.getPostsPostRequestBodyMember2());
+            }
+            return new HashMap<String, java.util.function.Consumer<ParseNode>>();
+        }
+        /**
+         * Gets the postsPostRequestBodyMember1 property value. Composed type representation for type {@link PostsPostRequestBodyMember1}
+         * @return a {@link PostsPostRequestBodyMember1}
+         */
+        @jakarta.annotation.Nullable
+        public PostsPostRequestBodyMember1 getPostsPostRequestBodyMember1() {
+            return this.postsPostRequestBodyMember1;
+        }
+        /**
+         * Gets the postsPostRequestBodyMember2 property value. Composed type representation for type {@link PostsPostRequestBodyMember2}
+         * @return a {@link PostsPostRequestBodyMember2}
+         */
+        @jakarta.annotation.Nullable
+        public PostsPostRequestBodyMember2 getPostsPostRequestBodyMember2() {
+            return this.postsPostRequestBodyMember2;
+        }
+        /**
+         * Serializes information the current object
+         * @param writer Serialization writer to use to serialize this model
+         */
+        public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
+            Objects.requireNonNull(writer);
+            writer.writeObjectValue(null, this.getPostsPostRequestBodyMember1(), this.getPostsPostRequestBodyMember2());
+        }
+        /**
+         * Sets the postsPostRequestBodyMember1 property value. Composed type representation for type {@link PostsPostRequestBodyMember1}
+         * @param value Value to set for the postsPostRequestBodyMember1 property.
+         */
+        public void setPostsPostRequestBodyMember1(@jakarta.annotation.Nullable final PostsPostRequestBodyMember1 value) {
+            this.postsPostRequestBodyMember1 = value;
+        }
+        /**
+         * Sets the postsPostRequestBodyMember2 property value. Composed type representation for type {@link PostsPostRequestBodyMember2}
+         * @param value Value to set for the postsPostRequestBodyMember2 property.
+         */
+        public void setPostsPostRequestBodyMember2(@jakarta.annotation.Nullable final PostsPostRequestBodyMember2 value) {
+            this.postsPostRequestBodyMember2 = value;
+        }
     }
 }

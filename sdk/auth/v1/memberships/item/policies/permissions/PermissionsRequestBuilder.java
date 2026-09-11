@@ -88,10 +88,19 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The limit query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer limit;
+        /**
+         * The offset query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer offset;
+        /**
+         * The types query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] types;
         /**

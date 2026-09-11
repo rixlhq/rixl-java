@@ -12,7 +12,6 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.support.v1.CreateTicketRequest;
 import com.rixl.sdk.models.support.v1.CreateTicketResponse;
 import com.rixl.sdk.models.support.v1.ListTicketsResponse;
-import com.rixl.sdk.models.support.v1.TicketStatus;
 import com.rixl.sdk.support.v1.tickets.item.WithTicketItemRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
@@ -25,7 +24,7 @@ import java.util.Objects;
 public class TicketsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.support.v1.tickets.item collection
-     * @param ticket_id Unique identifier of the item
+     * @param ticket_id The ticket_id path parameter.
      * @return a {@link WithTicketItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -159,8 +158,11 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
+        /**
+         * The status query parameter.
+         */
         @jakarta.annotation.Nullable
-        public TicketStatus status;
+        public String status;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -168,9 +170,9 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("status", status);
             allQueryParams.put("pagination%2Elimit", paginationLimit);
             allQueryParams.put("pagination%2Eoffset", paginationOffset);
+            allQueryParams.put("status", status);
             return allQueryParams;
         }
     }

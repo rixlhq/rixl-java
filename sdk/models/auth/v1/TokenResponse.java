@@ -15,7 +15,7 @@ public class TokenResponse implements Parsable {
     /**
      * The expires_in property
      */
-    private Long expiresIn;
+    private String expiresIn;
     /**
      * The refresh_token property
      */
@@ -48,10 +48,10 @@ public class TokenResponse implements Parsable {
     }
     /**
      * Gets the expires_in property value. The expires_in property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getExpiresIn() {
+    public String getExpiresIn() {
         return this.expiresIn;
     }
     /**
@@ -62,7 +62,7 @@ public class TokenResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
-        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getLongValue()); });
+        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getStringValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
@@ -99,7 +99,7 @@ public class TokenResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_token", this.getAccessToken());
-        writer.writeLongValue("expires_in", this.getExpiresIn());
+        writer.writeStringValue("expires_in", this.getExpiresIn());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
         writer.writeStringValue("token_type", this.getTokenType());
@@ -115,7 +115,7 @@ public class TokenResponse implements Parsable {
      * Sets the expires_in property value. The expires_in property
      * @param value Value to set for the expires_in property.
      */
-    public void setExpiresIn(@jakarta.annotation.Nullable final Long value) {
+    public void setExpiresIn(@jakarta.annotation.Nullable final String value) {
         this.expiresIn = value;
     }
     /**
