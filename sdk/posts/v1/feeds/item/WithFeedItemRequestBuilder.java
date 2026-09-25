@@ -31,7 +31,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.feeds.item.item collection
-     * @param post_id The post_id path parameter.
+     * @param post_id Unique identifier of the item
      * @return a {@link WithPostItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -110,9 +110,6 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The creator_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String creatorId;
         /**
@@ -125,9 +122,6 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
-        /**
-         * The project_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String projectId;
         /**

@@ -11,7 +11,7 @@ public class TaxCalculationResponse implements Parsable {
     /**
      * The amount_total property
      */
-    private String amountTotal;
+    private Long amountTotal;
     /**
      * The calculation_id property
      */
@@ -23,11 +23,11 @@ public class TaxCalculationResponse implements Parsable {
     /**
      * The tax_amount_exclusive property
      */
-    private String taxAmountExclusive;
+    private Long taxAmountExclusive;
     /**
      * The tax_amount_inclusive property
      */
-    private String taxAmountInclusive;
+    private Long taxAmountInclusive;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -40,10 +40,10 @@ public class TaxCalculationResponse implements Parsable {
     }
     /**
      * Gets the amount_total property value. The amount_total property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getAmountTotal() {
+    public Long getAmountTotal() {
         return this.amountTotal;
     }
     /**
@@ -69,27 +69,27 @@ public class TaxCalculationResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("amount_total", (n) -> { this.setAmountTotal(n.getStringValue()); });
+        deserializerMap.put("amount_total", (n) -> { this.setAmountTotal(n.getLongValue()); });
         deserializerMap.put("calculation_id", (n) -> { this.setCalculationId(n.getStringValue()); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("tax_amount_exclusive", (n) -> { this.setTaxAmountExclusive(n.getStringValue()); });
-        deserializerMap.put("tax_amount_inclusive", (n) -> { this.setTaxAmountInclusive(n.getStringValue()); });
+        deserializerMap.put("tax_amount_exclusive", (n) -> { this.setTaxAmountExclusive(n.getLongValue()); });
+        deserializerMap.put("tax_amount_inclusive", (n) -> { this.setTaxAmountInclusive(n.getLongValue()); });
         return deserializerMap;
     }
     /**
      * Gets the tax_amount_exclusive property value. The tax_amount_exclusive property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getTaxAmountExclusive() {
+    public Long getTaxAmountExclusive() {
         return this.taxAmountExclusive;
     }
     /**
      * Gets the tax_amount_inclusive property value. The tax_amount_inclusive property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getTaxAmountInclusive() {
+    public Long getTaxAmountInclusive() {
         return this.taxAmountInclusive;
     }
     /**
@@ -98,17 +98,17 @@ public class TaxCalculationResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("amount_total", this.getAmountTotal());
+        writer.writeLongValue("amount_total", this.getAmountTotal());
         writer.writeStringValue("calculation_id", this.getCalculationId());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeStringValue("tax_amount_exclusive", this.getTaxAmountExclusive());
-        writer.writeStringValue("tax_amount_inclusive", this.getTaxAmountInclusive());
+        writer.writeLongValue("tax_amount_exclusive", this.getTaxAmountExclusive());
+        writer.writeLongValue("tax_amount_inclusive", this.getTaxAmountInclusive());
     }
     /**
      * Sets the amount_total property value. The amount_total property
      * @param value Value to set for the amount_total property.
      */
-    public void setAmountTotal(@jakarta.annotation.Nullable final String value) {
+    public void setAmountTotal(@jakarta.annotation.Nullable final Long value) {
         this.amountTotal = value;
     }
     /**
@@ -129,14 +129,14 @@ public class TaxCalculationResponse implements Parsable {
      * Sets the tax_amount_exclusive property value. The tax_amount_exclusive property
      * @param value Value to set for the tax_amount_exclusive property.
      */
-    public void setTaxAmountExclusive(@jakarta.annotation.Nullable final String value) {
+    public void setTaxAmountExclusive(@jakarta.annotation.Nullable final Long value) {
         this.taxAmountExclusive = value;
     }
     /**
      * Sets the tax_amount_inclusive property value. The tax_amount_inclusive property
      * @param value Value to set for the tax_amount_inclusive property.
      */
-    public void setTaxAmountInclusive(@jakarta.annotation.Nullable final String value) {
+    public void setTaxAmountInclusive(@jakarta.annotation.Nullable final Long value) {
         this.taxAmountInclusive = value;
     }
 }

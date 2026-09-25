@@ -31,7 +31,7 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.users.current.passkeys.item collection
-     * @param id The id path parameter.
+     * @param id Unique identifier of the item
      * @return a {@link PasskeysItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -110,9 +110,6 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

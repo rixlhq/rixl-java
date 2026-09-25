@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.ListMembershipApplicationsResponse;
+import com.rixl.sdk.models.auth.v1.MembershipApplicationState;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -88,24 +89,12 @@ public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The limit query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
-        /**
-         * The offset query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer offset;
-        /**
-         * The state query parameter.
-         */
         @jakarta.annotation.Nullable
-        public String state;
-        /**
-         * The user.user_id query parameter.
-         */
+        public MembershipApplicationState state;
         @jakarta.annotation.Nullable
         public String userUserId;
         /**
@@ -115,9 +104,9 @@ public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("state", state);
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
-            allQueryParams.put("state", state);
             allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }

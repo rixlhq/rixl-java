@@ -14,6 +14,10 @@ public class V1PostRequestBody implements Parsable {
      */
     private String name;
     /**
+     * The org_id property
+     */
+    private String orgId;
+    /**
      * The regions property
      */
     private java.util.List<String> regions;
@@ -37,8 +41,9 @@ public class V1PostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("regions", (n) -> { this.setRegions(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("video_quality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
         return deserializerMap;
@@ -50,6 +55,14 @@ public class V1PostRequestBody implements Parsable {
     @jakarta.annotation.Nullable
     public String getName() {
         return this.name;
+    }
+    /**
+     * Gets the org_id property value. The org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOrgId() {
+        return this.orgId;
     }
     /**
      * Gets the regions property value. The regions property
@@ -74,6 +87,7 @@ public class V1PostRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("name", this.getName());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeCollectionOfPrimitiveValues("regions", this.getRegions());
         writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
@@ -83,6 +97,13 @@ public class V1PostRequestBody implements Parsable {
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
+    }
+    /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
+     */
+    public void setOrgId(@jakarta.annotation.Nullable final String value) {
+        this.orgId = value;
     }
     /**
      * Sets the regions property value. The regions property

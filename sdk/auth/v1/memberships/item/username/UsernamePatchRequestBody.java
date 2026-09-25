@@ -3,11 +3,16 @@ package com.rixl.sdk.auth.v1.memberships.item.username;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import com.rixl.sdk.models.auth.v1.ActorOrgRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UsernamePatchRequestBody implements Parsable {
+    /**
+     * The user property
+     */
+    private ActorOrgRequest user;
     /**
      * The username property
      */
@@ -28,9 +33,18 @@ public class UsernamePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(ActorOrgRequest::createFromDiscriminatorValue)); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the user property value. The user property
+     * @return a {@link ActorOrgRequest}
+     */
+    @jakarta.annotation.Nullable
+    public ActorOrgRequest getUser() {
+        return this.user;
     }
     /**
      * Gets the username property value. The username property
@@ -46,7 +60,15 @@ public class UsernamePatchRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeObjectValue("user", this.getUser());
         writer.writeStringValue("username", this.getUsername());
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final ActorOrgRequest value) {
+        this.user = value;
     }
     /**
      * Sets the username property value. The username property

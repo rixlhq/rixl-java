@@ -11,7 +11,7 @@ public class TaxLineItem implements Parsable {
     /**
      * The amount property
      */
-    private String amount;
+    private Long amount;
     /**
      * The reference property
      */
@@ -32,10 +32,10 @@ public class TaxLineItem implements Parsable {
     }
     /**
      * Gets the amount property value. The amount property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getAmount() {
+    public Long getAmount() {
         return this.amount;
     }
     /**
@@ -45,7 +45,7 @@ public class TaxLineItem implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("amount", (n) -> { this.setAmount(n.getStringValue()); });
+        deserializerMap.put("amount", (n) -> { this.setAmount(n.getLongValue()); });
         deserializerMap.put("reference", (n) -> { this.setReference(n.getStringValue()); });
         deserializerMap.put("tax_code", (n) -> { this.setTaxCode(n.getStringValue()); });
         return deserializerMap;
@@ -72,7 +72,7 @@ public class TaxLineItem implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("amount", this.getAmount());
+        writer.writeLongValue("amount", this.getAmount());
         writer.writeStringValue("reference", this.getReference());
         writer.writeStringValue("tax_code", this.getTaxCode());
     }
@@ -80,7 +80,7 @@ public class TaxLineItem implements Parsable {
      * Sets the amount property value. The amount property
      * @param value Value to set for the amount property.
      */
-    public void setAmount(@jakarta.annotation.Nullable final String value) {
+    public void setAmount(@jakarta.annotation.Nullable final Long value) {
         this.amount = value;
     }
     /**

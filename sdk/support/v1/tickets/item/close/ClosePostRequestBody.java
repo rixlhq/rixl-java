@@ -1,27 +1,26 @@
-package com.rixl.sdk.models.auth.v1;
+package com.rixl.sdk.support.v1.tickets.item.close;
 
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class VerifiedDomain implements Parsable {
+public class ClosePostRequestBody implements Parsable {
     /**
-     * The verified_at property
+     * The ticket_id property
      */
-    private OffsetDateTime verifiedAt;
+    private String ticketId;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link VerifiedDomain}
+     * @return a {@link ClosePostRequestBody}
      */
     @jakarta.annotation.Nonnull
-    public static VerifiedDomain createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static ClosePostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new VerifiedDomain();
+        return new ClosePostRequestBody();
     }
     /**
      * The deserialization information for the current model
@@ -30,16 +29,16 @@ public class VerifiedDomain implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("verified_at", (n) -> { this.setVerifiedAt(n.getOffsetDateTimeValue()); });
+        deserializerMap.put("ticket_id", (n) -> { this.setTicketId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the verified_at property value. The verified_at property
-     * @return a {@link OffsetDateTime}
+     * Gets the ticket_id property value. The ticket_id property
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public OffsetDateTime getVerifiedAt() {
-        return this.verifiedAt;
+    public String getTicketId() {
+        return this.ticketId;
     }
     /**
      * Serializes information the current object
@@ -47,13 +46,13 @@ public class VerifiedDomain implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeOffsetDateTimeValue("verified_at", this.getVerifiedAt());
+        writer.writeStringValue("ticket_id", this.getTicketId());
     }
     /**
-     * Sets the verified_at property value. The verified_at property
-     * @param value Value to set for the verified_at property.
+     * Sets the ticket_id property value. The ticket_id property
+     * @param value Value to set for the ticket_id property.
      */
-    public void setVerifiedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
-        this.verifiedAt = value;
+    public void setTicketId(@jakarta.annotation.Nullable final String value) {
+        this.ticketId = value;
     }
 }

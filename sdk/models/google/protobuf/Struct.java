@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * A JSON object whose property values may be any JSON value.
+ * `Struct` represents a structured data value, consisting of fields which map to dynamically typed values. In some languages, `Struct` might be supported by a native representation. For example, in scripting languages like JS a struct is represented as an object. The details of that representation are described together with the proto support for the language. The JSON representation for `Struct` is JSON object.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Struct implements AdditionalDataHolder, Parsable {

@@ -11,7 +11,7 @@ public class CalculateGenericTaxRequest implements Parsable {
     /**
      * The amount property
      */
-    private String amount;
+    private Long amount;
     /**
      * The billing_address property
      */
@@ -40,10 +40,10 @@ public class CalculateGenericTaxRequest implements Parsable {
     }
     /**
      * Gets the amount property value. The amount property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getAmount() {
+    public Long getAmount() {
         return this.amount;
     }
     /**
@@ -69,7 +69,7 @@ public class CalculateGenericTaxRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("amount", (n) -> { this.setAmount(n.getStringValue()); });
+        deserializerMap.put("amount", (n) -> { this.setAmount(n.getLongValue()); });
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
         deserializerMap.put("line_items", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
@@ -98,7 +98,7 @@ public class CalculateGenericTaxRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("amount", this.getAmount());
+        writer.writeLongValue("amount", this.getAmount());
         writer.writeObjectValue("billing_address", this.getBillingAddress());
         writer.writeStringValue("currency", this.getCurrency());
         writer.writeCollectionOfObjectValues("line_items", this.getLineItems());
@@ -108,7 +108,7 @@ public class CalculateGenericTaxRequest implements Parsable {
      * Sets the amount property value. The amount property
      * @param value Value to set for the amount property.
      */
-    public void setAmount(@jakarta.annotation.Nullable final String value) {
+    public void setAmount(@jakarta.annotation.Nullable final Long value) {
         this.amount = value;
     }
     /**

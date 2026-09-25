@@ -12,7 +12,7 @@ import java.util.Objects;
 public class FeedsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.feeds.item collection
-     * @param feed_id The feed_id path parameter.
+     * @param feed_id Unique identifier of the item
      * @return a {@link WithFeedItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
