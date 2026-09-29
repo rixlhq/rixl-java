@@ -12,7 +12,7 @@ import java.util.Objects;
 public class PostsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.posts.item collection
-     * @param post_id Unique identifier of the item
+     * @param post_id The post_id path parameter.
      * @return a {@link WithPostItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

@@ -88,6 +88,9 @@ public class WithProviderItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteQueryParameters implements QueryParameters {
+        /**
+         * The user.user_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String userUserId;
         /**

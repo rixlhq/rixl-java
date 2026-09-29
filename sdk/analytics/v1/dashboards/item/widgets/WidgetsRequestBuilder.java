@@ -96,6 +96,9 @@ public class WidgetsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostQueryParameters implements QueryParameters {
+        /**
+         * The expected_revision query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer expectedRevision;
         /**

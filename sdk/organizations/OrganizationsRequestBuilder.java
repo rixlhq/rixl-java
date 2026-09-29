@@ -12,7 +12,7 @@ import java.util.Objects;
 public class OrganizationsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.organizations.item collection
-     * @param org_id Unique identifier of the item
+     * @param org_id The org_id path parameter.
      * @return a {@link WithOrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

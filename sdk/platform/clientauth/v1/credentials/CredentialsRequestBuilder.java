@@ -24,7 +24,7 @@ import java.util.Objects;
 public class CredentialsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.platform.clientauth.v1.credentials.item collection
-     * @param credential_id Unique identifier of the item
+     * @param credential_id The credential_id path parameter.
      * @return a {@link WithCredentialItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -148,6 +148,9 @@ public class CredentialsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The org_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

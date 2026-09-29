@@ -12,7 +12,7 @@ import java.util.Objects;
 public class ProjectsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.feeds.v1.projects.item collection
-     * @param project_id Unique identifier of the item
+     * @param project_id The project_id path parameter.
      * @return a {@link WithProjectItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

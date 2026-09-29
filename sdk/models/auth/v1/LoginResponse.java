@@ -23,7 +23,7 @@ public class LoginResponse implements Parsable {
     /**
      * The expires_in property
      */
-    private Long expiresIn;
+    private String expiresIn;
     /**
      * passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON, present only when &quot;passkey&quot; is one of the authentication methods.
      */
@@ -84,10 +84,10 @@ public class LoginResponse implements Parsable {
     }
     /**
      * Gets the expires_in property value. The expires_in property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getExpiresIn() {
+    public String getExpiresIn() {
         return this.expiresIn;
     }
     /**
@@ -100,7 +100,7 @@ public class LoginResponse implements Parsable {
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
         deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getCollectionOfEnumValues(AuthMethod::forValue)); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getLongValue()); });
+        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getStringValue()); });
         deserializerMap.put("passkey_options", (n) -> { this.setPasskeyOptions(n.getByteArrayValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
@@ -166,7 +166,7 @@ public class LoginResponse implements Parsable {
         writer.writeStringValue("access_token", this.getAccessToken());
         writer.writeCollectionOfEnumValues("authentication", this.getAuthentication());
         writer.writeStringValue("email", this.getEmail());
-        writer.writeLongValue("expires_in", this.getExpiresIn());
+        writer.writeStringValue("expires_in", this.getExpiresIn());
         writer.writeByteArrayValue("passkey_options", this.getPasskeyOptions());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
@@ -199,7 +199,7 @@ public class LoginResponse implements Parsable {
      * Sets the expires_in property value. The expires_in property
      * @param value Value to set for the expires_in property.
      */
-    public void setExpiresIn(@jakarta.annotation.Nullable final Long value) {
+    public void setExpiresIn(@jakarta.annotation.Nullable final String value) {
         this.expiresIn = value;
     }
     /**

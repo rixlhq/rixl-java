@@ -3,7 +3,6 @@ package com.rixl.sdk.auth.v1.memberships.item.name;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.rixl.sdk.models.auth.v1.ActorOrgRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -13,10 +12,6 @@ public class NamePatchRequestBody implements Parsable {
      * The full_name property
      */
     private String fullName;
-    /**
-     * The user property
-     */
-    private ActorOrgRequest user;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -33,9 +28,8 @@ public class NamePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
         deserializerMap.put("full_name", (n) -> { this.setFullName(n.getStringValue()); });
-        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(ActorOrgRequest::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -47,21 +41,12 @@ public class NamePatchRequestBody implements Parsable {
         return this.fullName;
     }
     /**
-     * Gets the user property value. The user property
-     * @return a {@link ActorOrgRequest}
-     */
-    @jakarta.annotation.Nullable
-    public ActorOrgRequest getUser() {
-        return this.user;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("full_name", this.getFullName());
-        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the full_name property value. The full_name property
@@ -69,12 +54,5 @@ public class NamePatchRequestBody implements Parsable {
      */
     public void setFullName(@jakarta.annotation.Nullable final String value) {
         this.fullName = value;
-    }
-    /**
-     * Sets the user property value. The user property
-     * @param value Value to set for the user property.
-     */
-    public void setUser(@jakarta.annotation.Nullable final ActorOrgRequest value) {
-        this.user = value;
     }
 }

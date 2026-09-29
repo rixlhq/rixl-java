@@ -12,7 +12,7 @@ import java.util.Objects;
 public class ImagesRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.images.item collection
-     * @param image_id Unique identifier of the item
+     * @param image_id The image_id path parameter.
      * @return a {@link WithImageItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

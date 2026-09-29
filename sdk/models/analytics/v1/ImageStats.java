@@ -15,7 +15,7 @@ public class ImageStats implements Parsable {
     /**
      * The feed_views property
      */
-    private Long feedViews;
+    private String feedViews;
     /**
      * The image_id property
      */
@@ -23,7 +23,7 @@ public class ImageStats implements Parsable {
     /**
      * The standalone_views property
      */
-    private Long standaloneViews;
+    private String standaloneViews;
     /**
      * The total_view_duration_ms property
      */
@@ -31,11 +31,11 @@ public class ImageStats implements Parsable {
     /**
      * The total_views property
      */
-    private Long totalViews;
+    private String totalViews;
     /**
      * The unique_viewers property
      */
-    private Long uniqueViewers;
+    private String uniqueViewers;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -56,10 +56,10 @@ public class ImageStats implements Parsable {
     }
     /**
      * Gets the feed_views property value. The feed_views property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getFeedViews() {
+    public String getFeedViews() {
         return this.feedViews;
     }
     /**
@@ -70,12 +70,12 @@ public class ImageStats implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("avg_view_duration_ms", (n) -> { this.setAvgViewDurationMs(n.getDoubleValue()); });
-        deserializerMap.put("feed_views", (n) -> { this.setFeedViews(n.getLongValue()); });
+        deserializerMap.put("feed_views", (n) -> { this.setFeedViews(n.getStringValue()); });
         deserializerMap.put("image_id", (n) -> { this.setImageId(n.getStringValue()); });
-        deserializerMap.put("standalone_views", (n) -> { this.setStandaloneViews(n.getLongValue()); });
+        deserializerMap.put("standalone_views", (n) -> { this.setStandaloneViews(n.getStringValue()); });
         deserializerMap.put("total_view_duration_ms", (n) -> { this.setTotalViewDurationMs(n.getDoubleValue()); });
-        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getLongValue()); });
-        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getLongValue()); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getStringValue()); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -88,10 +88,10 @@ public class ImageStats implements Parsable {
     }
     /**
      * Gets the standalone_views property value. The standalone_views property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getStandaloneViews() {
+    public String getStandaloneViews() {
         return this.standaloneViews;
     }
     /**
@@ -104,18 +104,18 @@ public class ImageStats implements Parsable {
     }
     /**
      * Gets the total_views property value. The total_views property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getTotalViews() {
+    public String getTotalViews() {
         return this.totalViews;
     }
     /**
      * Gets the unique_viewers property value. The unique_viewers property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getUniqueViewers() {
+    public String getUniqueViewers() {
         return this.uniqueViewers;
     }
     /**
@@ -125,12 +125,12 @@ public class ImageStats implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("avg_view_duration_ms", this.getAvgViewDurationMs());
-        writer.writeLongValue("feed_views", this.getFeedViews());
+        writer.writeStringValue("feed_views", this.getFeedViews());
         writer.writeStringValue("image_id", this.getImageId());
-        writer.writeLongValue("standalone_views", this.getStandaloneViews());
+        writer.writeStringValue("standalone_views", this.getStandaloneViews());
         writer.writeDoubleValue("total_view_duration_ms", this.getTotalViewDurationMs());
-        writer.writeLongValue("total_views", this.getTotalViews());
-        writer.writeLongValue("unique_viewers", this.getUniqueViewers());
+        writer.writeStringValue("total_views", this.getTotalViews());
+        writer.writeStringValue("unique_viewers", this.getUniqueViewers());
     }
     /**
      * Sets the avg_view_duration_ms property value. Dwell time; images have no playback.
@@ -143,7 +143,7 @@ public class ImageStats implements Parsable {
      * Sets the feed_views property value. The feed_views property
      * @param value Value to set for the feed_views property.
      */
-    public void setFeedViews(@jakarta.annotation.Nullable final Long value) {
+    public void setFeedViews(@jakarta.annotation.Nullable final String value) {
         this.feedViews = value;
     }
     /**
@@ -157,7 +157,7 @@ public class ImageStats implements Parsable {
      * Sets the standalone_views property value. The standalone_views property
      * @param value Value to set for the standalone_views property.
      */
-    public void setStandaloneViews(@jakarta.annotation.Nullable final Long value) {
+    public void setStandaloneViews(@jakarta.annotation.Nullable final String value) {
         this.standaloneViews = value;
     }
     /**
@@ -171,14 +171,14 @@ public class ImageStats implements Parsable {
      * Sets the total_views property value. The total_views property
      * @param value Value to set for the total_views property.
      */
-    public void setTotalViews(@jakarta.annotation.Nullable final Long value) {
+    public void setTotalViews(@jakarta.annotation.Nullable final String value) {
         this.totalViews = value;
     }
     /**
      * Sets the unique_viewers property value. The unique_viewers property
      * @param value Value to set for the unique_viewers property.
      */
-    public void setUniqueViewers(@jakarta.annotation.Nullable final Long value) {
+    public void setUniqueViewers(@jakarta.annotation.Nullable final String value) {
         this.uniqueViewers = value;
     }
 }

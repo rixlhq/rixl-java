@@ -15,7 +15,7 @@ public class ListApiKeysResponse implements Parsable {
     /**
      * The total property
      */
-    private Long total;
+    private String total;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -42,15 +42,15 @@ public class ListApiKeysResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("api_keys", (n) -> { this.setApiKeys(n.getCollectionOfObjectValues(ApiKey::createFromDiscriminatorValue)); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getStringValue()); });
         return deserializerMap;
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getTotal() {
+    public String getTotal() {
         return this.total;
     }
     /**
@@ -60,7 +60,7 @@ public class ListApiKeysResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("api_keys", this.getApiKeys());
-        writer.writeLongValue("total", this.getTotal());
+        writer.writeStringValue("total", this.getTotal());
     }
     /**
      * Sets the api_keys property value. The api_keys property
@@ -73,7 +73,7 @@ public class ListApiKeysResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final Long value) {
+    public void setTotal(@jakarta.annotation.Nullable final String value) {
         this.total = value;
     }
 }
