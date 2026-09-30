@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.auth.v1.membershipapplications.item.WithOrgItemRequestBuilder;
 import com.rixl.sdk.models.auth.v1.ListMembershipApplicationsResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -19,6 +20,18 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
+    /**
+     * Gets an item from the com.rixl.sdk.auth.v1.membershipApplications.item collection
+     * @param org_id The org_id path parameter.
+     * @return a {@link WithOrgItemRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WithOrgItemRequestBuilder byOrg_id(@jakarta.annotation.Nonnull final String org_id) {
+        Objects.requireNonNull(org_id);
+        final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
+        urlTplParams.put("org_id", org_id);
+        return new WithOrgItemRequestBuilder(urlTplParams, requestAdapter);
+    }
     /**
      * Instantiates a new {@link MembershipApplicationsRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
