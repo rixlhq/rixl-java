@@ -15,7 +15,7 @@ public class MarkImageProcessedRequest implements Parsable {
     /**
      * The size property
      */
-    private Long size;
+    private String size;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -34,7 +34,7 @@ public class MarkImageProcessedRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("file_id", (n) -> { this.setFileId(n.getStringValue()); });
-        deserializerMap.put("size", (n) -> { this.setSize(n.getLongValue()); });
+        deserializerMap.put("size", (n) -> { this.setSize(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -47,10 +47,10 @@ public class MarkImageProcessedRequest implements Parsable {
     }
     /**
      * Gets the size property value. The size property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getSize() {
+    public String getSize() {
         return this.size;
     }
     /**
@@ -60,7 +60,7 @@ public class MarkImageProcessedRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("file_id", this.getFileId());
-        writer.writeLongValue("size", this.getSize());
+        writer.writeStringValue("size", this.getSize());
     }
     /**
      * Sets the file_id property value. The file_id property
@@ -73,7 +73,7 @@ public class MarkImageProcessedRequest implements Parsable {
      * Sets the size property value. The size property
      * @param value Value to set for the size property.
      */
-    public void setSize(@jakarta.annotation.Nullable final Long value) {
+    public void setSize(@jakarta.annotation.Nullable final String value) {
         this.size = value;
     }
 }

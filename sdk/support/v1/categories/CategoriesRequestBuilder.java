@@ -21,7 +21,7 @@ import java.util.Objects;
 public class CategoriesRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.support.v1.categories.item collection
-     * @param category_id Unique identifier of the item
+     * @param category_id The category_id path parameter.
      * @return a {@link WithCategoryItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

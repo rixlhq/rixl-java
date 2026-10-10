@@ -88,10 +88,19 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The limit query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer limit;
+        /**
+         * The range.end query parameter.
+         */
         @jakarta.annotation.Nullable
         public String rangeEnd;
+        /**
+         * The range.start query parameter.
+         */
         @jakarta.annotation.Nullable
         public String rangeStart;
         /**

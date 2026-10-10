@@ -32,7 +32,7 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item collection
-     * @param org_Id Unique identifier of the item
+     * @param org_Id The org_id path parameter.
      * @return a {@link OrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -111,12 +111,24 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The limit query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer limit;
+        /**
+         * The offset query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer offset;
+        /**
+         * The state query parameter.
+         */
         @jakarta.annotation.Nullable
         public MembershipState state;
+        /**
+         * The user.user_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String userUserId;
         /**

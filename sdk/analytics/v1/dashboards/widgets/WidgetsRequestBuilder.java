@@ -12,7 +12,7 @@ import java.util.Objects;
 public class WidgetsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.dashboards.widgets.item collection
-     * @param id Unique identifier of the item
+     * @param id The id path parameter.
      * @return a {@link WidgetsItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

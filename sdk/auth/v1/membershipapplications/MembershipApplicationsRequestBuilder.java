@@ -23,7 +23,7 @@ import java.util.Objects;
 public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.membershipApplications.item collection
-     * @param org_id Unique identifier of the item
+     * @param org_id The org_id path parameter.
      * @return a {@link WithOrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -102,12 +102,24 @@ public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The limit query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer limit;
+        /**
+         * The offset query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer offset;
+        /**
+         * The state query parameter.
+         */
         @jakarta.annotation.Nullable
         public MembershipApplicationState state;
+        /**
+         * The user.user_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String userUserId;
         /**

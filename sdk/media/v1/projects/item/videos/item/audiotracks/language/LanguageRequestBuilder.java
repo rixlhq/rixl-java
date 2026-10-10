@@ -12,7 +12,7 @@ import java.util.Objects;
 public class LanguageRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.audioTracks.language.item collection
-     * @param language_code Unique identifier of the item
+     * @param language_code The language_code path parameter.
      * @return a {@link WithLanguageCodeItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

@@ -17,7 +17,7 @@ public class CreateTicketRequest implements Parsable {
      */
     private String message;
     /**
-     * The priority property
+     * enum.defined_only = true
      */
     private TicketPriority priority;
     /**
@@ -74,7 +74,7 @@ public class CreateTicketRequest implements Parsable {
         return this.message;
     }
     /**
-     * Gets the priority property value. The priority property
+     * Gets the priority property value. enum.defined_only = true
      * @return a {@link TicketPriority}
      */
     @jakarta.annotation.Nullable
@@ -133,7 +133,7 @@ public class CreateTicketRequest implements Parsable {
         this.message = value;
     }
     /**
-     * Sets the priority property value. The priority property
+     * Sets the priority property value. enum.defined_only = true
      * @param value Value to set for the priority property.
      */
     public void setPriority(@jakarta.annotation.Nullable final TicketPriority value) {

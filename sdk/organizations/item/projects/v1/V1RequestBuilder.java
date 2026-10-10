@@ -22,7 +22,7 @@ import java.util.Objects;
 public class V1RequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.organizations.item.projects.v1.item collection
-     * @param project_id Unique identifier of the item
+     * @param project_id The project_id path parameter.
      * @return a {@link WithProjectItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

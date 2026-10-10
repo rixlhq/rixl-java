@@ -88,8 +88,14 @@ public class TopicsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The category_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String categoryId;
+        /**
+         * The query query parameter.
+         */
         @jakarta.annotation.Nullable
         public String query;
         /**

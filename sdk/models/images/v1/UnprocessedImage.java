@@ -32,7 +32,7 @@ public class UnprocessedImage implements Parsable {
     /**
      * The size property
      */
-    private Long size;
+    private String size;
     /**
      * The status property
      */
@@ -59,7 +59,7 @@ public class UnprocessedImage implements Parsable {
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("s3_path", (n) -> { this.setS3Path(n.getStringValue()); });
-        deserializerMap.put("size", (n) -> { this.setSize(n.getLongValue()); });
+        deserializerMap.put("size", (n) -> { this.setSize(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(FileStatus::forValue)); });
         return deserializerMap;
     }
@@ -105,10 +105,10 @@ public class UnprocessedImage implements Parsable {
     }
     /**
      * Gets the size property value. The size property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getSize() {
+    public String getSize() {
         return this.size;
     }
     /**
@@ -130,7 +130,7 @@ public class UnprocessedImage implements Parsable {
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("project_id", this.getProjectId());
         writer.writeStringValue("s3_path", this.getS3Path());
-        writer.writeLongValue("size", this.getSize());
+        writer.writeStringValue("size", this.getSize());
         writer.writeEnumValue("status", this.getStatus());
     }
     /**
@@ -172,7 +172,7 @@ public class UnprocessedImage implements Parsable {
      * Sets the size property value. The size property
      * @param value Value to set for the size property.
      */
-    public void setSize(@jakarta.annotation.Nullable final Long value) {
+    public void setSize(@jakarta.annotation.Nullable final String value) {
         this.size = value;
     }
     /**

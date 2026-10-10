@@ -124,26 +124,59 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The filter.browsers query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterBrowsers;
+        /**
+         * The filter.cities query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterCities;
+        /**
+         * The filter.countries query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterCountries;
+        /**
+         * The filter.devices query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterDevices;
+        /**
+         * The filter.languages query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterLanguages;
+        /**
+         * The filter.os query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterOs;
+        /**
+         * The filter.os_versions query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterOsVersions;
+        /**
+         * The filter.regions query parameter.
+         */
         @jakarta.annotation.Nullable
         public String[] filterRegions;
+        /**
+         * The interval query parameter.
+         */
         @jakarta.annotation.Nullable
         public String interval;
+        /**
+         * The time_end query parameter.
+         */
         @jakarta.annotation.Nullable
         public String timeEnd;
+        /**
+         * The time_start query parameter.
+         */
         @jakarta.annotation.Nullable
         public String timeStart;
         /**

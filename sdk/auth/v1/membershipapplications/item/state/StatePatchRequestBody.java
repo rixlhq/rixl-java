@@ -10,10 +10,6 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class StatePatchRequestBody implements Parsable {
     /**
-     * The org_id property
-     */
-    private String orgId;
-    /**
      * The state property
      */
     private MembershipApplicationState state;
@@ -33,18 +29,9 @@ public class StatePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
         deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipApplicationState::forValue)); });
         return deserializerMap;
-    }
-    /**
-     * Gets the org_id property value. The org_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getOrgId() {
-        return this.orgId;
     }
     /**
      * Gets the state property value. The state property
@@ -60,15 +47,7 @@ public class StatePatchRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeEnumValue("state", this.getState());
-    }
-    /**
-     * Sets the org_id property value. The org_id property
-     * @param value Value to set for the org_id property.
-     */
-    public void setOrgId(@jakarta.annotation.Nullable final String value) {
-        this.orgId = value;
     }
     /**
      * Sets the state property value. The state property

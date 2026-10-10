@@ -12,7 +12,7 @@ import java.util.Objects;
 public class AttachmentsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.policies.attachments.item collection
-     * @param attachment_id Unique identifier of the item
+     * @param attachment_id The attachment_id path parameter.
      * @return a {@link WithAttachmentItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

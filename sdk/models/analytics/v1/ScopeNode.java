@@ -31,7 +31,7 @@ public class ScopeNode implements Parsable {
     /**
      * The views property
      */
-    private Long views;
+    private String views;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -54,7 +54,7 @@ public class ScopeNode implements Parsable {
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("kind", (n) -> { this.setKind(n.getStringValue()); });
         deserializerMap.put("label", (n) -> { this.setLabel(n.getStringValue()); });
-        deserializerMap.put("views", (n) -> { this.setViews(n.getLongValue()); });
+        deserializerMap.put("views", (n) -> { this.setViews(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -99,10 +99,10 @@ public class ScopeNode implements Parsable {
     }
     /**
      * Gets the views property value. The views property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getViews() {
+    public String getViews() {
         return this.views;
     }
     /**
@@ -116,7 +116,7 @@ public class ScopeNode implements Parsable {
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("kind", this.getKind());
         writer.writeStringValue("label", this.getLabel());
-        writer.writeLongValue("views", this.getViews());
+        writer.writeStringValue("views", this.getViews());
     }
     /**
      * Sets the filters property value. The filters property
@@ -157,7 +157,7 @@ public class ScopeNode implements Parsable {
      * Sets the views property value. The views property
      * @param value Value to set for the views property.
      */
-    public void setViews(@jakarta.annotation.Nullable final Long value) {
+    public void setViews(@jakarta.annotation.Nullable final String value) {
         this.views = value;
     }
 }

@@ -97,6 +97,9 @@ public class UnsubscribeRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostQueryParameters implements QueryParameters {
+        /**
+         * The user_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

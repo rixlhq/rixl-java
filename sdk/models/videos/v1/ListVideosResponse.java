@@ -27,7 +27,7 @@ public class ListVideosResponse implements Parsable {
     /**
      * The total property
      */
-    private Long total;
+    private String total;
     /**
      * The videos property
      */
@@ -53,7 +53,7 @@ public class ListVideosResponse implements Parsable {
         deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
         deserializerMap.put("sort_direction", (n) -> { this.setSortDirection(n.getStringValue()); });
         deserializerMap.put("sort_field", (n) -> { this.setSortField(n.getStringValue()); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getStringValue()); });
         deserializerMap.put("videos", (n) -> { this.setVideos(n.getCollectionOfObjectValues(Video::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -91,10 +91,10 @@ public class ListVideosResponse implements Parsable {
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getTotal() {
+    public String getTotal() {
         return this.total;
     }
     /**
@@ -115,7 +115,7 @@ public class ListVideosResponse implements Parsable {
         writer.writeIntegerValue("offset", this.getOffset());
         writer.writeStringValue("sort_direction", this.getSortDirection());
         writer.writeStringValue("sort_field", this.getSortField());
-        writer.writeLongValue("total", this.getTotal());
+        writer.writeStringValue("total", this.getTotal());
         writer.writeCollectionOfObjectValues("videos", this.getVideos());
     }
     /**
@@ -150,7 +150,7 @@ public class ListVideosResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final Long value) {
+    public void setTotal(@jakarta.annotation.Nullable final String value) {
         this.total = value;
     }
     /**

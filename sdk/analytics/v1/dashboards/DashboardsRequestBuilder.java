@@ -33,7 +33,7 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.dashboards.item collection
-     * @param dashboard_Id Unique identifier of the item
+     * @param dashboard_Id The id path parameter.
      * @return a {@link DashboardItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -157,8 +157,14 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The page query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer page;
+        /**
+         * The page_size query parameter.
+         */
         @jakarta.annotation.Nullable
         public Integer pageSize;
         /**

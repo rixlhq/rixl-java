@@ -12,7 +12,7 @@ import java.util.Objects;
 public class VideosRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.videos.item collection
-     * @param video_id Unique identifier of the item
+     * @param video_id The video_id path parameter.
      * @return a {@link WithVideoItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

@@ -25,7 +25,7 @@ import java.util.Objects;
 public class TicketsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.support.v1.tickets.item collection
-     * @param ticket_id Unique identifier of the item
+     * @param ticket_id The ticket_id path parameter.
      * @return a {@link WithTicketItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -159,6 +159,9 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
+        /**
+         * enum.defined_only = true
+         */
         @jakarta.annotation.Nullable
         public TicketStatus status;
         /**

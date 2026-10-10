@@ -31,7 +31,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item collection
-     * @param video_id Unique identifier of the item
+     * @param video_id The video_id path parameter.
      * @return a {@link WithVideoItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -120,8 +120,14 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
+        /**
+         * The sort_direction query parameter.
+         */
         @jakarta.annotation.Nullable
         public String sortDirection;
+        /**
+         * The sort_field query parameter.
+         */
         @jakarta.annotation.Nullable
         public String sortField;
         /**

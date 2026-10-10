@@ -15,11 +15,11 @@ public class PaymentMethodDetails implements Parsable {
     /**
      * The exp_month property
      */
-    private Long expMonth;
+    private String expMonth;
     /**
      * The exp_year property
      */
-    private Long expYear;
+    private String expYear;
     /**
      * The id property
      */
@@ -56,18 +56,18 @@ public class PaymentMethodDetails implements Parsable {
     }
     /**
      * Gets the exp_month property value. The exp_month property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getExpMonth() {
+    public String getExpMonth() {
         return this.expMonth;
     }
     /**
      * Gets the exp_year property value. The exp_year property
-     * @return a {@link Long}
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public Long getExpYear() {
+    public String getExpYear() {
         return this.expYear;
     }
     /**
@@ -78,8 +78,8 @@ public class PaymentMethodDetails implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("brand", (n) -> { this.setBrand(n.getStringValue()); });
-        deserializerMap.put("exp_month", (n) -> { this.setExpMonth(n.getLongValue()); });
-        deserializerMap.put("exp_year", (n) -> { this.setExpYear(n.getLongValue()); });
+        deserializerMap.put("exp_month", (n) -> { this.setExpMonth(n.getStringValue()); });
+        deserializerMap.put("exp_year", (n) -> { this.setExpYear(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("is_default", (n) -> { this.setIsDefault(n.getBooleanValue()); });
         deserializerMap.put("last4", (n) -> { this.setLast4(n.getStringValue()); });
@@ -125,8 +125,8 @@ public class PaymentMethodDetails implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("brand", this.getBrand());
-        writer.writeLongValue("exp_month", this.getExpMonth());
-        writer.writeLongValue("exp_year", this.getExpYear());
+        writer.writeStringValue("exp_month", this.getExpMonth());
+        writer.writeStringValue("exp_year", this.getExpYear());
         writer.writeStringValue("id", this.getId());
         writer.writeBooleanValue("is_default", this.getIsDefault());
         writer.writeStringValue("last4", this.getLast4());
@@ -143,14 +143,14 @@ public class PaymentMethodDetails implements Parsable {
      * Sets the exp_month property value. The exp_month property
      * @param value Value to set for the exp_month property.
      */
-    public void setExpMonth(@jakarta.annotation.Nullable final Long value) {
+    public void setExpMonth(@jakarta.annotation.Nullable final String value) {
         this.expMonth = value;
     }
     /**
      * Sets the exp_year property value. The exp_year property
      * @param value Value to set for the exp_year property.
      */
-    public void setExpYear(@jakarta.annotation.Nullable final Long value) {
+    public void setExpYear(@jakarta.annotation.Nullable final String value) {
         this.expYear = value;
     }
     /**

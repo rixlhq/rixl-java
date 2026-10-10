@@ -101,10 +101,19 @@ public class PlansRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The currency query parameter.
+         */
         @jakarta.annotation.Nullable
         public String currency;
+        /**
+         * The free query parameter.
+         */
         @jakarta.annotation.Nullable
         public String free;
+        /**
+         * The interval query parameter.
+         */
         @jakarta.annotation.Nullable
         public String interval;
         /**

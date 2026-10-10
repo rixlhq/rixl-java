@@ -22,7 +22,7 @@ import java.util.Objects;
 public class InvoicesRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.billing.v1.invoices.item collection
-     * @param invoice_id Unique identifier of the item
+     * @param invoice_id The invoice_id path parameter.
      * @return a {@link WithInvoiceItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -101,6 +101,9 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
+        /**
+         * The org_id query parameter.
+         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**
