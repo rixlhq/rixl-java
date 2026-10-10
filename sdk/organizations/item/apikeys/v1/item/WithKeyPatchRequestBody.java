@@ -14,9 +14,17 @@ public class WithKeyPatchRequestBody implements Parsable {
      */
     private Timestamp expiringAt;
     /**
+     * The key_id property
+     */
+    private String keyId;
+    /**
      * The name property
      */
     private String name;
+    /**
+     * The org_id property
+     */
+    private String orgId;
     /**
      * The policy_ids property
      */
@@ -49,12 +57,22 @@ public class WithKeyPatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("expiring_at", (n) -> { this.setExpiringAt(n.getObjectValue(Timestamp::createFromDiscriminatorValue)); });
+        deserializerMap.put("key_id", (n) -> { this.setKeyId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("policy_ids", (n) -> { this.setPolicyIds(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("replace_policies", (n) -> { this.setReplacePolicies(n.getBooleanValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the key_id property value. The key_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getKeyId() {
+        return this.keyId;
     }
     /**
      * Gets the name property value. The name property
@@ -63,6 +81,14 @@ public class WithKeyPatchRequestBody implements Parsable {
     @jakarta.annotation.Nullable
     public String getName() {
         return this.name;
+    }
+    /**
+     * Gets the org_id property value. The org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOrgId() {
+        return this.orgId;
     }
     /**
      * Gets the policy_ids property value. The policy_ids property
@@ -87,7 +113,9 @@ public class WithKeyPatchRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("expiring_at", this.getExpiringAt());
+        writer.writeStringValue("key_id", this.getKeyId());
         writer.writeStringValue("name", this.getName());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeCollectionOfPrimitiveValues("policy_ids", this.getPolicyIds());
         writer.writeBooleanValue("replace_policies", this.getReplacePolicies());
     }
@@ -99,11 +127,25 @@ public class WithKeyPatchRequestBody implements Parsable {
         this.expiringAt = value;
     }
     /**
+     * Sets the key_id property value. The key_id property
+     * @param value Value to set for the key_id property.
+     */
+    public void setKeyId(@jakarta.annotation.Nullable final String value) {
+        this.keyId = value;
+    }
+    /**
      * Sets the name property value. The name property
      * @param value Value to set for the name property.
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
+    }
+    /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
+     */
+    public void setOrgId(@jakarta.annotation.Nullable final String value) {
+        this.orgId = value;
     }
     /**
      * Sets the policy_ids property value. The policy_ids property

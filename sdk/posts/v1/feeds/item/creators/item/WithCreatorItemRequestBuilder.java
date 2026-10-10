@@ -98,9 +98,6 @@ public class WithCreatorItemRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
-        /**
-         * The project_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String projectId;
         /**

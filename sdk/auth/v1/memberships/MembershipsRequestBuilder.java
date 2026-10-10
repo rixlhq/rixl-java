@@ -12,6 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.memberships.active.ActiveRequestBuilder;
 import com.rixl.sdk.auth.v1.memberships.item.OrgItemRequestBuilder;
 import com.rixl.sdk.models.auth.v1.ListMembershipsResponse;
+import com.rixl.sdk.models.auth.v1.MembershipState;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item collection
-     * @param org_Id The org_id path parameter.
+     * @param org_Id Unique identifier of the item
      * @return a {@link OrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -110,24 +111,12 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The limit query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
-        /**
-         * The offset query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer offset;
-        /**
-         * The state query parameter.
-         */
         @jakarta.annotation.Nullable
-        public String state;
-        /**
-         * The user.user_id query parameter.
-         */
+        public MembershipState state;
         @jakarta.annotation.Nullable
         public String userUserId;
         /**
@@ -137,9 +126,9 @@ public class MembershipsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nonnull
         public Map<String, Object> toQueryParameters() {
             final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("state", state);
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
-            allQueryParams.put("state", state);
             allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }

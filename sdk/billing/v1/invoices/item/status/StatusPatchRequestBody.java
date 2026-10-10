@@ -10,7 +10,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class StatusPatchRequestBody implements Parsable {
     /**
-     * enum.defined_only = true
+     * The invoice_id property
+     */
+    private String invoiceId;
+    /**
+     * The status property
      */
     private InvoiceStatus status;
     /**
@@ -29,12 +33,21 @@ public class StatusPatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("invoice_id", (n) -> { this.setInvoiceId(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(InvoiceStatus::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the status property value. enum.defined_only = true
+     * Gets the invoice_id property value. The invoice_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getInvoiceId() {
+        return this.invoiceId;
+    }
+    /**
+     * Gets the status property value. The status property
      * @return a {@link InvoiceStatus}
      */
     @jakarta.annotation.Nullable
@@ -47,10 +60,18 @@ public class StatusPatchRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("invoice_id", this.getInvoiceId());
         writer.writeEnumValue("status", this.getStatus());
     }
     /**
-     * Sets the status property value. enum.defined_only = true
+     * Sets the invoice_id property value. The invoice_id property
+     * @param value Value to set for the invoice_id property.
+     */
+    public void setInvoiceId(@jakarta.annotation.Nullable final String value) {
+        this.invoiceId = value;
+    }
+    /**
+     * Sets the status property value. The status property
      * @param value Value to set for the status property.
      */
     public void setStatus(@jakarta.annotation.Nullable final InvoiceStatus value) {

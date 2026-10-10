@@ -27,7 +27,7 @@ public class TrackUploadItem implements Parsable {
     /**
      * The size property
      */
-    private String size;
+    private Long size;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -49,7 +49,7 @@ public class TrackUploadItem implements Parsable {
         deserializerMap.put("format", (n) -> { this.setFormat(n.getStringValue()); });
         deserializerMap.put("label", (n) -> { this.setLabel(n.getStringValue()); });
         deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
-        deserializerMap.put("size", (n) -> { this.setSize(n.getStringValue()); });
+        deserializerMap.put("size", (n) -> { this.setSize(n.getLongValue()); });
         return deserializerMap;
     }
     /**
@@ -86,10 +86,10 @@ public class TrackUploadItem implements Parsable {
     }
     /**
      * Gets the size property value. The size property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getSize() {
+    public Long getSize() {
         return this.size;
     }
     /**
@@ -102,7 +102,7 @@ public class TrackUploadItem implements Parsable {
         writer.writeStringValue("format", this.getFormat());
         writer.writeStringValue("label", this.getLabel());
         writer.writeStringValue("language_code", this.getLanguageCode());
-        writer.writeStringValue("size", this.getSize());
+        writer.writeLongValue("size", this.getSize());
     }
     /**
      * Sets the file_name property value. The file_name property
@@ -136,7 +136,7 @@ public class TrackUploadItem implements Parsable {
      * Sets the size property value. The size property
      * @param value Value to set for the size property.
      */
-    public void setSize(@jakarta.annotation.Nullable final String value) {
+    public void setSize(@jakarta.annotation.Nullable final Long value) {
         this.size = value;
     }
 }

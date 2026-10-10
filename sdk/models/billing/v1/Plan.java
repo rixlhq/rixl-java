@@ -22,7 +22,7 @@ public class Plan implements Parsable {
      */
     private String description;
     /**
-     * The features property
+     * `Struct` represents a structured data value, consisting of fields which map to dynamically typed values. In some languages, `Struct` might be supported by a native representation. For example, in scripting languages like JS a struct is represented as an object. The details of that representation are described together with the proto support for the language. The JSON representation for `Struct` is JSON object.
      */
     private Struct features;
     /**
@@ -100,7 +100,7 @@ public class Plan implements Parsable {
         return this.description;
     }
     /**
-     * Gets the features property value. The features property
+     * Gets the features property value. `Struct` represents a structured data value, consisting of fields which map to dynamically typed values. In some languages, `Struct` might be supported by a native representation. For example, in scripting languages like JS a struct is represented as an object. The details of that representation are described together with the proto support for the language. The JSON representation for `Struct` is JSON object.
      * @return a {@link Struct}
      */
     @jakarta.annotation.Nullable
@@ -253,7 +253,7 @@ public class Plan implements Parsable {
         this.description = value;
     }
     /**
-     * Sets the features property value. The features property
+     * Sets the features property value. `Struct` represents a structured data value, consisting of fields which map to dynamically typed values. In some languages, `Struct` might be supported by a native representation. For example, in scripting languages like JS a struct is represented as an object. The details of that representation are described together with the proto support for the language. The JSON representation for `Struct` is JSON object.
      * @param value Value to set for the features property.
      */
     public void setFeatures(@jakarta.annotation.Nullable final Struct value) {

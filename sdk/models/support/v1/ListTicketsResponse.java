@@ -23,7 +23,7 @@ public class ListTicketsResponse implements Parsable {
     /**
      * The total property
      */
-    private String total;
+    private Long total;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -44,7 +44,7 @@ public class ListTicketsResponse implements Parsable {
         deserializerMap.put("limit", (n) -> { this.setLimit(n.getIntegerValue()); });
         deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
         deserializerMap.put("tickets", (n) -> { this.setTickets(n.getCollectionOfObjectValues(Ticket::createFromDiscriminatorValue)); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getStringValue()); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
         return deserializerMap;
     }
     /**
@@ -73,10 +73,10 @@ public class ListTicketsResponse implements Parsable {
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getTotal() {
+    public Long getTotal() {
         return this.total;
     }
     /**
@@ -88,7 +88,7 @@ public class ListTicketsResponse implements Parsable {
         writer.writeIntegerValue("limit", this.getLimit());
         writer.writeIntegerValue("offset", this.getOffset());
         writer.writeCollectionOfObjectValues("tickets", this.getTickets());
-        writer.writeStringValue("total", this.getTotal());
+        writer.writeLongValue("total", this.getTotal());
     }
     /**
      * Sets the limit property value. Maximum number of items returned.
@@ -115,7 +115,7 @@ public class ListTicketsResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final String value) {
+    public void setTotal(@jakarta.annotation.Nullable final Long value) {
         this.total = value;
     }
 }

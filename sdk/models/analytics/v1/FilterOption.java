@@ -11,7 +11,7 @@ public class FilterOption implements Parsable {
     /**
      * The count property
      */
-    private String count;
+    private Long count;
     /**
      * The value property
      */
@@ -28,10 +28,10 @@ public class FilterOption implements Parsable {
     }
     /**
      * Gets the count property value. The count property
-     * @return a {@link String}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public String getCount() {
+    public Long getCount() {
         return this.count;
     }
     /**
@@ -41,7 +41,7 @@ public class FilterOption implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("count", (n) -> { this.setCount(n.getStringValue()); });
+        deserializerMap.put("count", (n) -> { this.setCount(n.getLongValue()); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getStringValue()); });
         return deserializerMap;
     }
@@ -59,14 +59,14 @@ public class FilterOption implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("count", this.getCount());
+        writer.writeLongValue("count", this.getCount());
         writer.writeStringValue("value", this.getValue());
     }
     /**
      * Sets the count property value. The count property
      * @param value Value to set for the count property.
      */
-    public void setCount(@jakarta.annotation.Nullable final String value) {
+    public void setCount(@jakarta.annotation.Nullable final Long value) {
         this.count = value;
     }
     /**

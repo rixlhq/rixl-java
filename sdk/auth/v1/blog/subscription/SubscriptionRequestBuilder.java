@@ -88,9 +88,6 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

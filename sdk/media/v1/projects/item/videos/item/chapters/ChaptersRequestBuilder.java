@@ -22,11 +22,11 @@ import java.util.Objects;
 public class ChaptersRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.chapters.item collection
-     * @param start_time_sec The start_time_sec path parameter.
+     * @param start_time_sec Unique identifier of the item
      * @return a {@link WithStartTimeSecItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithStartTimeSecItemRequestBuilder byStart_time_sec(@jakarta.annotation.Nonnull final String start_time_sec) {
+    public WithStartTimeSecItemRequestBuilder byStart_time_sec(@jakarta.annotation.Nonnull final Long start_time_sec) {
         Objects.requireNonNull(start_time_sec);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
         urlTplParams.put("start_time_sec", start_time_sec);
@@ -86,27 +86,6 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * UpdateVideoChapters
-     * @param body The request body
-     * @return a {@link VideoChapters}
-     */
-    @jakarta.annotation.Nullable
-    public VideoChapters put(@jakarta.annotation.Nonnull final ChaptersPutRequestBody body) {
-        return put(body, null);
-    }
-    /**
-     * UpdateVideoChapters
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link VideoChapters}
-     */
-    @jakarta.annotation.Nullable
-    public VideoChapters put(@jakarta.annotation.Nonnull final ChaptersPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
-        Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, VideoChapters::createFromDiscriminatorValue);
-    }
-    /**
-     * UpdateVideoChapters
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -146,30 +125,6 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * UpdateVideoChapters
-     * @param body The request body
-     * @return a {@link RequestInformation}
-     */
-    @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ChaptersPutRequestBody body) {
-        return toPutRequestInformation(body, null);
-    }
-    /**
-     * UpdateVideoChapters
-     * @param body The request body
-     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-     * @return a {@link RequestInformation}
-     */
-    @jakarta.annotation.Nonnull
-    public RequestInformation toPutRequestInformation(@jakarta.annotation.Nonnull final ChaptersPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
-        Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
-        requestInfo.headers.tryAdd("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
-        return requestInfo;
-    }
-    /**
      * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
      * @param rawUrl The raw URL to use for the request builder.
      * @return a {@link ChaptersRequestBuilder}
@@ -184,14 +139,8 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteQueryParameters implements QueryParameters {
-        /**
-         * The chapters.start_time_sec query parameter.
-         */
         @jakarta.annotation.Nullable
         public Double chaptersStartTimeSec;
-        /**
-         * The chapters.title query parameter.
-         */
         @jakarta.annotation.Nullable
         public String chaptersTitle;
         /**
@@ -222,11 +171,5 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
-    }
-    /**
-     * Configuration for the request such as headers, query parameters, and middleware options.
-     */
-    @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PutRequestConfiguration extends BaseRequestConfiguration {
     }
 }
