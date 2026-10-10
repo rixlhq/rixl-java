@@ -5,6 +5,7 @@ import com.microsoft.kiota.RequestAdapter;
 import com.rixl.sdk.billing.v1.address.AddressRequestBuilder;
 import com.rixl.sdk.billing.v1.bandwidthusage.BandwidthUsageRequestBuilder;
 import com.rixl.sdk.billing.v1.checkout.CheckoutRequestBuilder;
+import com.rixl.sdk.billing.v1.config.ConfigRequestBuilder;
 import com.rixl.sdk.billing.v1.contactsales.ContactSalesRequestBuilder;
 import com.rixl.sdk.billing.v1.invoices.InvoicesRequestBuilder;
 import com.rixl.sdk.billing.v1.paymentmethods.PaymentMethodsRequestBuilder;
@@ -43,6 +44,14 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public CheckoutRequestBuilder checkout() {
         return new CheckoutRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The config property
+     * @return a {@link ConfigRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ConfigRequestBuilder config() {
+        return new ConfigRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The contactSales property
