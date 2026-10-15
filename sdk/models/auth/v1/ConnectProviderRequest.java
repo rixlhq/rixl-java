@@ -9,6 +9,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ConnectProviderRequest implements Parsable {
     /**
+     * The code_verifier property
+     */
+    private String codeVerifier;
+    /**
      * The country_code property
      */
     private String countryCode;
@@ -20,6 +24,10 @@ public class ConnectProviderRequest implements Parsable {
      * The provider property
      */
     private ExternalAccountProvider provider;
+    /**
+     * The redirect_uri property
+     */
+    private String redirectUri;
     /**
      * The token property
      */
@@ -39,6 +47,14 @@ public class ConnectProviderRequest implements Parsable {
         return new ConnectProviderRequest();
     }
     /**
+     * Gets the code_verifier property value. The code_verifier property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCodeVerifier() {
+        return this.codeVerifier;
+    }
+    /**
      * Gets the country_code property value. The country_code property
      * @return a {@link String}
      */
@@ -52,10 +68,12 @@ public class ConnectProviderRequest implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
+        deserializerMap.put("code_verifier", (n) -> { this.setCodeVerifier(n.getStringValue()); });
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("origin", (n) -> { this.setOrigin(n.getStringValue()); });
         deserializerMap.put("provider", (n) -> { this.setProvider(n.getEnumValue(ExternalAccountProvider::forValue)); });
+        deserializerMap.put("redirect_uri", (n) -> { this.setRedirectUri(n.getStringValue()); });
         deserializerMap.put("token", (n) -> { this.setToken(n.getStringValue()); });
         deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(UserRequest::createFromDiscriminatorValue)); });
         return deserializerMap;
@@ -75,6 +93,14 @@ public class ConnectProviderRequest implements Parsable {
     @jakarta.annotation.Nullable
     public ExternalAccountProvider getProvider() {
         return this.provider;
+    }
+    /**
+     * Gets the redirect_uri property value. The redirect_uri property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getRedirectUri() {
+        return this.redirectUri;
     }
     /**
      * Gets the token property value. The token property
@@ -98,11 +124,20 @@ public class ConnectProviderRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("code_verifier", this.getCodeVerifier());
         writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("origin", this.getOrigin());
         writer.writeEnumValue("provider", this.getProvider());
+        writer.writeStringValue("redirect_uri", this.getRedirectUri());
         writer.writeStringValue("token", this.getToken());
         writer.writeObjectValue("user", this.getUser());
+    }
+    /**
+     * Sets the code_verifier property value. The code_verifier property
+     * @param value Value to set for the code_verifier property.
+     */
+    public void setCodeVerifier(@jakarta.annotation.Nullable final String value) {
+        this.codeVerifier = value;
     }
     /**
      * Sets the country_code property value. The country_code property
@@ -124,6 +159,13 @@ public class ConnectProviderRequest implements Parsable {
      */
     public void setProvider(@jakarta.annotation.Nullable final ExternalAccountProvider value) {
         this.provider = value;
+    }
+    /**
+     * Sets the redirect_uri property value. The redirect_uri property
+     * @param value Value to set for the redirect_uri property.
+     */
+    public void setRedirectUri(@jakarta.annotation.Nullable final String value) {
+        this.redirectUri = value;
     }
     /**
      * Sets the token property value. The token property

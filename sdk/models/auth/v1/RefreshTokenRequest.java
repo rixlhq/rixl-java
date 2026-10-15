@@ -9,6 +9,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RefreshTokenRequest implements Parsable {
     /**
+     * The code_verifier property
+     */
+    private String codeVerifier;
+    /**
      * The country_code property
      */
     private String countryCode;
@@ -16,6 +20,10 @@ public class RefreshTokenRequest implements Parsable {
      * The origin property
      */
     private String origin;
+    /**
+     * The redirect_uri property
+     */
+    private String redirectUri;
     /**
      * The refresh_token property
      */
@@ -35,6 +43,14 @@ public class RefreshTokenRequest implements Parsable {
         return new RefreshTokenRequest();
     }
     /**
+     * Gets the code_verifier property value. The code_verifier property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getCodeVerifier() {
+        return this.codeVerifier;
+    }
+    /**
      * Gets the country_code property value. The country_code property
      * @return a {@link String}
      */
@@ -48,9 +64,11 @@ public class RefreshTokenRequest implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
+        deserializerMap.put("code_verifier", (n) -> { this.setCodeVerifier(n.getStringValue()); });
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("origin", (n) -> { this.setOrigin(n.getStringValue()); });
+        deserializerMap.put("redirect_uri", (n) -> { this.setRedirectUri(n.getStringValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
@@ -62,6 +80,14 @@ public class RefreshTokenRequest implements Parsable {
     @jakarta.annotation.Nullable
     public String getOrigin() {
         return this.origin;
+    }
+    /**
+     * Gets the redirect_uri property value. The redirect_uri property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getRedirectUri() {
+        return this.redirectUri;
     }
     /**
      * Gets the refresh_token property value. The refresh_token property
@@ -85,10 +111,19 @@ public class RefreshTokenRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("code_verifier", this.getCodeVerifier());
         writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("origin", this.getOrigin());
+        writer.writeStringValue("redirect_uri", this.getRedirectUri());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("token_type", this.getTokenType());
+    }
+    /**
+     * Sets the code_verifier property value. The code_verifier property
+     * @param value Value to set for the code_verifier property.
+     */
+    public void setCodeVerifier(@jakarta.annotation.Nullable final String value) {
+        this.codeVerifier = value;
     }
     /**
      * Sets the country_code property value. The country_code property
@@ -103,6 +138,13 @@ public class RefreshTokenRequest implements Parsable {
      */
     public void setOrigin(@jakarta.annotation.Nullable final String value) {
         this.origin = value;
+    }
+    /**
+     * Sets the redirect_uri property value. The redirect_uri property
+     * @param value Value to set for the redirect_uri property.
+     */
+    public void setRedirectUri(@jakarta.annotation.Nullable final String value) {
+        this.redirectUri = value;
     }
     /**
      * Sets the refresh_token property value. The refresh_token property
