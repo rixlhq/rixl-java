@@ -9,6 +9,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class LogoutRequest implements Parsable {
     /**
+     * The refresh_token property
+     */
+    private String refreshToken;
+    /**
      * The token property
      */
     private String token;
@@ -28,9 +32,18 @@ public class LogoutRequest implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("token", (n) -> { this.setToken(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the refresh_token property value. The refresh_token property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getRefreshToken() {
+        return this.refreshToken;
     }
     /**
      * Gets the token property value. The token property
@@ -46,7 +59,15 @@ public class LogoutRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("token", this.getToken());
+    }
+    /**
+     * Sets the refresh_token property value. The refresh_token property
+     * @param value Value to set for the refresh_token property.
+     */
+    public void setRefreshToken(@jakarta.annotation.Nullable final String value) {
+        this.refreshToken = value;
     }
     /**
      * Sets the token property value. The token property
