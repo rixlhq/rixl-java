@@ -22,6 +22,7 @@ import com.rixl.sdk.organizations.OrganizationsRequestBuilder;
 import com.rixl.sdk.platform.PlatformRequestBuilder;
 import com.rixl.sdk.posts.PostsRequestBuilder;
 import com.rixl.sdk.support.SupportRequestBuilder;
+import com.rixl.sdk.webhooks.WebhooksRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -108,6 +109,14 @@ public class RixlClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public SupportRequestBuilder support() {
         return new SupportRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The webhooks property
+     * @return a {@link WebhooksRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WebhooksRequestBuilder webhooks() {
+        return new WebhooksRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link RixlClient} and sets the default values.
