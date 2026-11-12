@@ -11,6 +11,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.projects.item.videos.item.WithVideoItemRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.videos.upload.UploadRequestBuilder;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.videos.v1.ListVideosResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -31,7 +32,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item collection
-     * @param video_id The video_id path parameter.
+     * @param video_id Unique identifier of the item
      * @return a {@link WithVideoItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -60,6 +61,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
     /**
      * ListVideos
      * @return a {@link ListVideosResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListVideosResponse get() {
@@ -69,11 +71,14 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
      * ListVideos
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListVideosResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListVideosResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListVideosResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListVideosResponse::createFromDiscriminatorValue);
     }
     /**
      * ListVideos
@@ -120,14 +125,8 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
-        /**
-         * The sort_direction query parameter.
-         */
         @jakarta.annotation.Nullable
         public String sortDirection;
-        /**
-         * The sort_field query parameter.
-         */
         @jakarta.annotation.Nullable
         public String sortField;
         /**

@@ -11,6 +11,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.analytics.v1.dashboard.chartquery.batch.BatchRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.ChartQueryRequest;
 import com.rixl.sdk.models.analytics.v1.ChartQueryResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,6 +49,7 @@ public class ChartQueryRequestBuilder extends BaseRequestBuilder {
      * QueryChart
      * @param body The request body
      * @return a {@link ChartQueryResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ChartQueryResponse post(@jakarta.annotation.Nonnull final ChartQueryRequest body) {
@@ -58,12 +60,15 @@ public class ChartQueryRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ChartQueryResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ChartQueryResponse post(@jakarta.annotation.Nonnull final ChartQueryRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ChartQueryResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ChartQueryResponse::createFromDiscriminatorValue);
     }
     /**
      * QueryChart

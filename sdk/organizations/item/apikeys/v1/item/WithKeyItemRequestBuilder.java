@@ -10,6 +10,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.apikeys.v1.UpdateApiKeyResponse;
 import com.rixl.sdk.models.google.protobuf.Empty;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.organizations.item.apikeys.v1.item.rotate.RotateRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
@@ -47,6 +48,7 @@ public class WithKeyItemRequestBuilder extends BaseRequestBuilder {
     /**
      * DeleteApiKey
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete() {
@@ -56,16 +58,20 @@ public class WithKeyItemRequestBuilder extends BaseRequestBuilder {
      * DeleteApiKey
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Empty::createFromDiscriminatorValue);
     }
     /**
      * UpdateApiKey
      * @param body The request body
      * @return a {@link UpdateApiKeyResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateApiKeyResponse patch(@jakarta.annotation.Nonnull final WithKeyPatchRequestBody body) {
@@ -76,12 +82,15 @@ public class WithKeyItemRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateApiKeyResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateApiKeyResponse patch(@jakarta.annotation.Nonnull final WithKeyPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, UpdateApiKeyResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, UpdateApiKeyResponse::createFromDiscriminatorValue);
     }
     /**
      * DeleteApiKey

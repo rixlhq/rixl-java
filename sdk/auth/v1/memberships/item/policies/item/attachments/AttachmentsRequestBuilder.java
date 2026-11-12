@@ -3,6 +3,7 @@ package com.rixl.sdk.auth.v1.memberships.item.policies.item.attachments;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
@@ -10,6 +11,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.ListAttachmentsResponse;
 import com.rixl.sdk.models.auth.v1.PolicyAttachment;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +27,7 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AttachmentsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}/attachments", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}/attachments{?user%2Euser_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link AttachmentsRequestBuilder} and sets the default values.
@@ -33,11 +35,12 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AttachmentsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}/attachments", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/{policy_id}/attachments{?user%2Euser_id*}", rawUrl);
     }
     /**
      * ListPolicyAttachments
      * @return a {@link ListAttachmentsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListAttachmentsResponse get() {
@@ -47,16 +50,20 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
      * ListPolicyAttachments
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListAttachmentsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListAttachmentsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListAttachmentsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListAttachmentsResponse::createFromDiscriminatorValue);
     }
     /**
      * AttachPolicy
      * @param body The request body
      * @return a {@link PolicyAttachment}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PolicyAttachment post(@jakarta.annotation.Nonnull final AttachmentsPostRequestBody body) {
@@ -67,12 +74,15 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PolicyAttachment}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PolicyAttachment post(@jakarta.annotation.Nonnull final AttachmentsPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, PolicyAttachment::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, PolicyAttachment::createFromDiscriminatorValue);
     }
     /**
      * ListPolicyAttachments
@@ -90,7 +100,7 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -129,10 +139,33 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
         return new AttachmentsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
+     * ListPolicyAttachments
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetQueryParameters implements QueryParameters {
+        @jakarta.annotation.Nullable
+        public String userUserId;
+        /**
+         * Extracts the query parameters into a map for the URI template parsing.
+         * @return a {@link Map<String, Object>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, Object> toQueryParameters() {
+            final Map<String, Object> allQueryParams = new HashMap();
+            allQueryParams.put("user%2Euser_id", userUserId);
+            return allQueryParams;
+        }
+    }
+    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
+        /**
+         * Request query parameters
+         */
+        @jakarta.annotation.Nullable
+        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

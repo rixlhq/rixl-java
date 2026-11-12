@@ -12,6 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.clientauth.v1.CreateClientCredentialRequest;
 import com.rixl.sdk.models.clientauth.v1.CreateClientCredentialResponse;
 import com.rixl.sdk.models.clientauth.v1.ListClientCredentialsResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.platform.clientauth.v1.credentials.item.WithCredentialItemRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ import java.util.Objects;
 public class CredentialsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.platform.clientauth.v1.credentials.item collection
-     * @param credential_id The credential_id path parameter.
+     * @param credential_id Unique identifier of the item
      * @return a {@link WithCredentialItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -53,6 +54,7 @@ public class CredentialsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListClientCredentials
      * @return a {@link ListClientCredentialsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListClientCredentialsResponse get() {
@@ -62,16 +64,20 @@ public class CredentialsRequestBuilder extends BaseRequestBuilder {
      * ListClientCredentials
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListClientCredentialsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListClientCredentialsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListClientCredentialsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListClientCredentialsResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateClientCredential
      * @param body The request body
      * @return a {@link CreateClientCredentialResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateClientCredentialResponse post(@jakarta.annotation.Nonnull final CreateClientCredentialRequest body) {
@@ -82,12 +88,15 @@ public class CredentialsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CreateClientCredentialResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateClientCredentialResponse post(@jakarta.annotation.Nonnull final CreateClientCredentialRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CreateClientCredentialResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CreateClientCredentialResponse::createFromDiscriminatorValue);
     }
     /**
      * ListClientCredentials
@@ -148,9 +157,6 @@ public class CredentialsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The org_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

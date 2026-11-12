@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CalculateGenericTaxRequest implements Parsable {
     /**
-     * The amount property
+     * int64.gt = 0
      */
     private String amount;
     /**
@@ -39,7 +39,7 @@ public class CalculateGenericTaxRequest implements Parsable {
         return new CalculateGenericTaxRequest();
     }
     /**
-     * Gets the amount property value. The amount property
+     * Gets the amount property value. int64.gt = 0
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -105,7 +105,7 @@ public class CalculateGenericTaxRequest implements Parsable {
         writer.writeStringValue("org_id", this.getOrgId());
     }
     /**
-     * Sets the amount property value. The amount property
+     * Sets the amount property value. int64.gt = 0
      * @param value Value to set for the amount property.
      */
     public void setAmount(@jakarta.annotation.Nullable final String value) {

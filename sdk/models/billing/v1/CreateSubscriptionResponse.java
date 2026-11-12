@@ -14,7 +14,7 @@ public class CreateSubscriptionResponse implements Parsable {
      */
     private Boolean cancelAtPeriodEnd;
     /**
-     * The current_period_end property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime currentPeriodEnd;
     /**
@@ -60,7 +60,7 @@ public class CreateSubscriptionResponse implements Parsable {
         return this.cancelAtPeriodEnd;
     }
     /**
-     * Gets the current_period_end property value. The current_period_end property
+     * Gets the current_period_end property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -155,7 +155,7 @@ public class CreateSubscriptionResponse implements Parsable {
         this.cancelAtPeriodEnd = value;
     }
     /**
-     * Sets the current_period_end property value. The current_period_end property
+     * Sets the current_period_end property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the current_period_end property.
      */
     public void setCurrentPeriodEnd(@jakarta.annotation.Nullable final OffsetDateTime value) {

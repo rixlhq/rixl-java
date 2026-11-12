@@ -1,6 +1,5 @@
 package com.rixl.sdk.models.analytics.v1;
 
-import com.microsoft.kiota.PeriodAndDuration;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
@@ -20,7 +19,7 @@ public class ContentViewEvent implements Parsable {
      */
     private String contentId;
     /**
-     * enum.defined_only = true
+     * The content_type property
      */
     private MediaType contentType;
     /**
@@ -44,7 +43,7 @@ public class ContentViewEvent implements Parsable {
      */
     private String postId;
     /**
-     * enum.defined_only = true
+     * The quality property
      */
     private VideoQuality quality;
     /**
@@ -56,21 +55,21 @@ public class ContentViewEvent implements Parsable {
      */
     private String subtitleLanguage;
     /**
-     * The video_position_ms property
+     * A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      */
-    private PeriodAndDuration videoPositionMs;
+    private String videoPositionMs;
     /**
-     * The video_total_duration_ms property
+     * A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      */
-    private PeriodAndDuration videoTotalDurationMs;
+    private String videoTotalDurationMs;
     /**
      * The view_type property
      */
     private ContentViewEventViewType viewType;
     /**
-     * The watch_duration_ms property
+     * A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      */
-    private PeriodAndDuration watchDurationMs;
+    private String watchDurationMs;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -98,7 +97,7 @@ public class ContentViewEvent implements Parsable {
         return this.contentId;
     }
     /**
-     * Gets the content_type property value. enum.defined_only = true
+     * Gets the content_type property value. The content_type property
      * @return a {@link MediaType}
      */
     @jakarta.annotation.Nullable
@@ -147,10 +146,10 @@ public class ContentViewEvent implements Parsable {
         deserializerMap.put("quality", (n) -> { this.setQuality(n.getEnumValue(VideoQuality::forValue)); });
         deserializerMap.put("segments", (n) -> { this.setSegments(n.getCollectionOfObjectValues(Segment::createFromDiscriminatorValue)); });
         deserializerMap.put("subtitle_language", (n) -> { this.setSubtitleLanguage(n.getStringValue()); });
-        deserializerMap.put("video_position_ms", (n) -> { this.setVideoPositionMs(n.getPeriodAndDurationValue()); });
-        deserializerMap.put("video_total_duration_ms", (n) -> { this.setVideoTotalDurationMs(n.getPeriodAndDurationValue()); });
+        deserializerMap.put("video_position_ms", (n) -> { this.setVideoPositionMs(n.getStringValue()); });
+        deserializerMap.put("video_total_duration_ms", (n) -> { this.setVideoTotalDurationMs(n.getStringValue()); });
         deserializerMap.put("view_type", (n) -> { this.setViewType(n.getEnumValue(ContentViewEventViewType::forValue)); });
-        deserializerMap.put("watch_duration_ms", (n) -> { this.setWatchDurationMs(n.getPeriodAndDurationValue()); });
+        deserializerMap.put("watch_duration_ms", (n) -> { this.setWatchDurationMs(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -170,7 +169,7 @@ public class ContentViewEvent implements Parsable {
         return this.postId;
     }
     /**
-     * Gets the quality property value. enum.defined_only = true
+     * Gets the quality property value. The quality property
      * @return a {@link VideoQuality}
      */
     @jakarta.annotation.Nullable
@@ -194,19 +193,19 @@ public class ContentViewEvent implements Parsable {
         return this.subtitleLanguage;
     }
     /**
-     * Gets the video_position_ms property value. The video_position_ms property
-     * @return a {@link PeriodAndDuration}
+     * Gets the video_position_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public PeriodAndDuration getVideoPositionMs() {
+    public String getVideoPositionMs() {
         return this.videoPositionMs;
     }
     /**
-     * Gets the video_total_duration_ms property value. The video_total_duration_ms property
-     * @return a {@link PeriodAndDuration}
+     * Gets the video_total_duration_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public PeriodAndDuration getVideoTotalDurationMs() {
+    public String getVideoTotalDurationMs() {
         return this.videoTotalDurationMs;
     }
     /**
@@ -218,11 +217,11 @@ public class ContentViewEvent implements Parsable {
         return this.viewType;
     }
     /**
-     * Gets the watch_duration_ms property value. The watch_duration_ms property
-     * @return a {@link PeriodAndDuration}
+     * Gets the watch_duration_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public PeriodAndDuration getWatchDurationMs() {
+    public String getWatchDurationMs() {
         return this.watchDurationMs;
     }
     /**
@@ -242,10 +241,10 @@ public class ContentViewEvent implements Parsable {
         writer.writeEnumValue("quality", this.getQuality());
         writer.writeCollectionOfObjectValues("segments", this.getSegments());
         writer.writeStringValue("subtitle_language", this.getSubtitleLanguage());
-        writer.writePeriodAndDurationValue("video_position_ms", this.getVideoPositionMs());
-        writer.writePeriodAndDurationValue("video_total_duration_ms", this.getVideoTotalDurationMs());
+        writer.writeStringValue("video_position_ms", this.getVideoPositionMs());
+        writer.writeStringValue("video_total_duration_ms", this.getVideoTotalDurationMs());
         writer.writeEnumValue("view_type", this.getViewType());
-        writer.writePeriodAndDurationValue("watch_duration_ms", this.getWatchDurationMs());
+        writer.writeStringValue("watch_duration_ms", this.getWatchDurationMs());
     }
     /**
      * Sets the audio_language property value. The audio_language property
@@ -262,7 +261,7 @@ public class ContentViewEvent implements Parsable {
         this.contentId = value;
     }
     /**
-     * Sets the content_type property value. enum.defined_only = true
+     * Sets the content_type property value. The content_type property
      * @param value Value to set for the content_type property.
      */
     public void setContentType(@jakarta.annotation.Nullable final MediaType value) {
@@ -304,7 +303,7 @@ public class ContentViewEvent implements Parsable {
         this.postId = value;
     }
     /**
-     * Sets the quality property value. enum.defined_only = true
+     * Sets the quality property value. The quality property
      * @param value Value to set for the quality property.
      */
     public void setQuality(@jakarta.annotation.Nullable final VideoQuality value) {
@@ -325,18 +324,18 @@ public class ContentViewEvent implements Parsable {
         this.subtitleLanguage = value;
     }
     /**
-     * Sets the video_position_ms property value. The video_position_ms property
+     * Sets the video_position_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      * @param value Value to set for the video_position_ms property.
      */
-    public void setVideoPositionMs(@jakarta.annotation.Nullable final PeriodAndDuration value) {
-        this.videoPositionMs = PeriodAndDuration.ofPeriodAndDuration(value);
+    public void setVideoPositionMs(@jakarta.annotation.Nullable final String value) {
+        this.videoPositionMs = value;
     }
     /**
-     * Sets the video_total_duration_ms property value. The video_total_duration_ms property
+     * Sets the video_total_duration_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      * @param value Value to set for the video_total_duration_ms property.
      */
-    public void setVideoTotalDurationMs(@jakarta.annotation.Nullable final PeriodAndDuration value) {
-        this.videoTotalDurationMs = PeriodAndDuration.ofPeriodAndDuration(value);
+    public void setVideoTotalDurationMs(@jakarta.annotation.Nullable final String value) {
+        this.videoTotalDurationMs = value;
     }
     /**
      * Sets the view_type property value. The view_type property
@@ -346,10 +345,10 @@ public class ContentViewEvent implements Parsable {
         this.viewType = value;
     }
     /**
-     * Sets the watch_duration_ms property value. The watch_duration_ms property
+     * Sets the watch_duration_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      * @param value Value to set for the watch_duration_ms property.
      */
-    public void setWatchDurationMs(@jakarta.annotation.Nullable final PeriodAndDuration value) {
-        this.watchDurationMs = PeriodAndDuration.ofPeriodAndDuration(value);
+    public void setWatchDurationMs(@jakarta.annotation.Nullable final String value) {
+        this.watchDurationMs = value;
     }
 }

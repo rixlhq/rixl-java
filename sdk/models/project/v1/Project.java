@@ -11,7 +11,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class Project implements Parsable {
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
@@ -35,7 +35,7 @@ public class Project implements Parsable {
      */
     private java.util.List<String> regions;
     /**
-     * The updated_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime updatedAt;
     /**
@@ -53,7 +53,7 @@ public class Project implements Parsable {
         return new Project();
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -118,7 +118,7 @@ public class Project implements Parsable {
         return this.regions;
     }
     /**
-     * Gets the updated_at property value. The updated_at property
+     * Gets the updated_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -149,7 +149,7 @@ public class Project implements Parsable {
         writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -191,7 +191,7 @@ public class Project implements Parsable {
         this.regions = value;
     }
     /**
-     * Sets the updated_at property value. The updated_at property
+     * Sets the updated_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the updated_at property.
      */
     public void setUpdatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

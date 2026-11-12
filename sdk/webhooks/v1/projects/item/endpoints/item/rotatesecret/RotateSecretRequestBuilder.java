@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.webhooks.v1.RotateEndpointSecretResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class RotateSecretRequestBuilder extends BaseRequestBuilder {
     /**
      * RotateEndpointSecret installs a fresh signing secret. For 24h deliveries are signed with both the old and the new secret so consumers can migrate.
      * @return a {@link RotateEndpointSecretResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public RotateEndpointSecretResponse post() {
@@ -46,11 +48,14 @@ public class RotateSecretRequestBuilder extends BaseRequestBuilder {
      * RotateEndpointSecret installs a fresh signing secret. For 24h deliveries are signed with both the old and the new secret so consumers can migrate.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RotateEndpointSecretResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public RotateEndpointSecretResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, RotateEndpointSecretResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, RotateEndpointSecretResponse::createFromDiscriminatorValue);
     }
     /**
      * RotateEndpointSecret installs a fresh signing secret. For 24h deliveries are signed with both the old and the new secret so consumers can migrate.

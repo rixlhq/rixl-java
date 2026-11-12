@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.analytics.v1.FeedStats;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
     /**
      * GetFeedStats
      * @return a {@link FeedStats}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public FeedStats get() {
@@ -47,11 +49,14 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
      * GetFeedStats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link FeedStats}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public FeedStats get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, FeedStats::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, FeedStats::createFromDiscriminatorValue);
     }
     /**
      * GetFeedStats
@@ -88,14 +93,8 @@ public class StatsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The range.end query parameter.
-         */
         @jakarta.annotation.Nullable
         public String rangeEnd;
-        /**
-         * The range.start query parameter.
-         */
         @jakarta.annotation.Nullable
         public String rangeStart;
         /**

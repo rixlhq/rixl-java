@@ -1,6 +1,5 @@
 package com.rixl.sdk.models.videos.v1;
 
-import com.microsoft.kiota.PeriodAndDuration;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
@@ -21,9 +20,9 @@ public class Video implements Parsable {
      */
     private String codec;
     /**
-     * The duration property
+     * A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      */
-    private PeriodAndDuration duration;
+    private String duration;
     /**
      * The file property
      */
@@ -83,11 +82,11 @@ public class Video implements Parsable {
         return this.codec;
     }
     /**
-     * Gets the duration property value. The duration property
-     * @return a {@link PeriodAndDuration}
+     * Gets the duration property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public PeriodAndDuration getDuration() {
+    public String getDuration() {
         return this.duration;
     }
     /**
@@ -99,7 +98,7 @@ public class Video implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
         deserializerMap.put("bitrate", (n) -> { this.setBitrate(n.getIntegerValue()); });
         deserializerMap.put("codec", (n) -> { this.setCodec(n.getStringValue()); });
-        deserializerMap.put("duration", (n) -> { this.setDuration(n.getPeriodAndDurationValue()); });
+        deserializerMap.put("duration", (n) -> { this.setDuration(n.getStringValue()); });
         deserializerMap.put("file", (n) -> { this.setFile(n.getObjectValue(File::createFromDiscriminatorValue)); });
         deserializerMap.put("framerate", (n) -> { this.setFramerate(n.getStringValue()); });
         deserializerMap.put("hdr", (n) -> { this.setHdr(n.getBooleanValue()); });
@@ -182,7 +181,7 @@ public class Video implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeIntegerValue("bitrate", this.getBitrate());
         writer.writeStringValue("codec", this.getCodec());
-        writer.writePeriodAndDurationValue("duration", this.getDuration());
+        writer.writeStringValue("duration", this.getDuration());
         writer.writeObjectValue("file", this.getFile());
         writer.writeStringValue("framerate", this.getFramerate());
         writer.writeBooleanValue("hdr", this.getHdr());
@@ -207,11 +206,11 @@ public class Video implements Parsable {
         this.codec = value;
     }
     /**
-     * Sets the duration property value. The duration property
+     * Sets the duration property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      * @param value Value to set for the duration property.
      */
-    public void setDuration(@jakarta.annotation.Nullable final PeriodAndDuration value) {
-        this.duration = PeriodAndDuration.ofPeriodAndDuration(value);
+    public void setDuration(@jakarta.annotation.Nullable final String value) {
+        this.duration = value;
     }
     /**
      * Sets the file property value. The file property

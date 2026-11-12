@@ -13,6 +13,10 @@ public class NamePatchRequestBody implements Parsable {
      */
     private String fullName;
     /**
+     * The user property
+     */
+    private NamePatchRequestBodyUser user;
+    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link NamePatchRequestBody}
@@ -28,8 +32,9 @@ public class NamePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("full_name", (n) -> { this.setFullName(n.getStringValue()); });
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(NamePatchRequestBodyUser::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -41,12 +46,21 @@ public class NamePatchRequestBody implements Parsable {
         return this.fullName;
     }
     /**
+     * Gets the user property value. The user property
+     * @return a {@link NamePatchRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public NamePatchRequestBodyUser getUser() {
+        return this.user;
+    }
+    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("full_name", this.getFullName());
+        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the full_name property value. The full_name property
@@ -54,5 +68,12 @@ public class NamePatchRequestBody implements Parsable {
      */
     public void setFullName(@jakarta.annotation.Nullable final String value) {
         this.fullName = value;
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final NamePatchRequestBodyUser value) {
+        this.user = value;
     }
 }

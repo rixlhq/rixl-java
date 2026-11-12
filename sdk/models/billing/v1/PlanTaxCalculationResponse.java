@@ -1,5 +1,6 @@
 package com.rixl.sdk.models.billing.v1;
 
+import com.microsoft.kiota.serialization.ComposedTypeWrapper;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
@@ -26,7 +27,7 @@ public class PlanTaxCalculationResponse implements Parsable {
      */
     private BillingCycle billingCycle;
     /**
-     * The calculated_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime calculatedAt;
     /**
@@ -56,7 +57,7 @@ public class PlanTaxCalculationResponse implements Parsable {
     /**
      * The tax_percentage property
      */
-    private Double taxPercentage;
+    private PlanTaxCalculationResponseTaxPercentage taxPercentage;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -100,7 +101,7 @@ public class PlanTaxCalculationResponse implements Parsable {
         return this.billingCycle;
     }
     /**
-     * Gets the calculated_at property value. The calculated_at property
+     * Gets the calculated_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -141,7 +142,7 @@ public class PlanTaxCalculationResponse implements Parsable {
         deserializerMap.put("plan_name", (n) -> { this.setPlanName(n.getStringValue()); });
         deserializerMap.put("tax_amount_exclusive", (n) -> { this.setTaxAmountExclusive(n.getStringValue()); });
         deserializerMap.put("tax_amount_inclusive", (n) -> { this.setTaxAmountInclusive(n.getStringValue()); });
-        deserializerMap.put("tax_percentage", (n) -> { this.setTaxPercentage(n.getDoubleValue()); });
+        deserializerMap.put("tax_percentage", (n) -> { this.setTaxPercentage(n.getObjectValue(PlanTaxCalculationResponseTaxPercentage::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -178,10 +179,10 @@ public class PlanTaxCalculationResponse implements Parsable {
     }
     /**
      * Gets the tax_percentage property value. The tax_percentage property
-     * @return a {@link Double}
+     * @return a {@link PlanTaxCalculationResponseTaxPercentage}
      */
     @jakarta.annotation.Nullable
-    public Double getTaxPercentage() {
+    public PlanTaxCalculationResponseTaxPercentage getTaxPercentage() {
         return this.taxPercentage;
     }
     /**
@@ -201,7 +202,7 @@ public class PlanTaxCalculationResponse implements Parsable {
         writer.writeStringValue("plan_name", this.getPlanName());
         writer.writeStringValue("tax_amount_exclusive", this.getTaxAmountExclusive());
         writer.writeStringValue("tax_amount_inclusive", this.getTaxAmountInclusive());
-        writer.writeDoubleValue("tax_percentage", this.getTaxPercentage());
+        writer.writeObjectValue("tax_percentage", this.getTaxPercentage());
     }
     /**
      * Sets the amount_total property value. The amount_total property
@@ -232,7 +233,7 @@ public class PlanTaxCalculationResponse implements Parsable {
         this.billingCycle = value;
     }
     /**
-     * Sets the calculated_at property value. The calculated_at property
+     * Sets the calculated_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the calculated_at property.
      */
     public void setCalculatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -284,7 +285,91 @@ public class PlanTaxCalculationResponse implements Parsable {
      * Sets the tax_percentage property value. The tax_percentage property
      * @param value Value to set for the tax_percentage property.
      */
-    public void setTaxPercentage(@jakarta.annotation.Nullable final Double value) {
+    public void setTaxPercentage(@jakarta.annotation.Nullable final PlanTaxCalculationResponseTaxPercentage value) {
         this.taxPercentage = value;
+    }
+    /**
+     * Composed type wrapper for classes {@link Double}, {@link String}
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public static class PlanTaxCalculationResponseTaxPercentage implements ComposedTypeWrapper, Parsable {
+        /**
+         * Composed type representation for type {@link Double}
+         */
+        private Double doubleEscaped;
+        /**
+         * Composed type representation for type {@link String}
+         */
+        private String string;
+        /**
+         * Creates a new instance of the appropriate class based on discriminator value
+         * @param parseNode The parse node to use to read the discriminator value and create the object
+         * @return a {@link PlanTaxCalculationResponseTaxPercentage}
+         */
+        @jakarta.annotation.Nonnull
+        public static PlanTaxCalculationResponseTaxPercentage createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+            Objects.requireNonNull(parseNode);
+            final PlanTaxCalculationResponseTaxPercentage result = new PlanTaxCalculationResponseTaxPercentage();
+            final ParseNode mappingValueNode = parseNode.getChildNode("");
+            if (mappingValueNode != null) {
+                final String mappingValue = mappingValueNode.getStringValue();
+            }
+            if (parseNode.getDoubleValue() != null) {
+                result.setDouble(parseNode.getDoubleValue());
+            } else if (parseNode.getStringValue() != null) {
+                result.setString(parseNode.getStringValue());
+            }
+            return result;
+        }
+        /**
+         * Gets the double property value. Composed type representation for type {@link Double}
+         * @return a {@link Double}
+         */
+        @jakarta.annotation.Nullable
+        public Double getDouble() {
+            return this.doubleEscaped;
+        }
+        /**
+         * The deserialization information for the current model
+         * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
+         */
+        @jakarta.annotation.Nonnull
+        public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
+            return new HashMap<String, java.util.function.Consumer<ParseNode>>();
+        }
+        /**
+         * Gets the string property value. Composed type representation for type {@link String}
+         * @return a {@link String}
+         */
+        @jakarta.annotation.Nullable
+        public String getString() {
+            return this.string;
+        }
+        /**
+         * Serializes information the current object
+         * @param writer Serialization writer to use to serialize this model
+         */
+        public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
+            Objects.requireNonNull(writer);
+            if (this.getDouble() != null) {
+                writer.writeDoubleValue(null, this.getDouble());
+            } else if (this.getString() != null) {
+                writer.writeStringValue(null, this.getString());
+            }
+        }
+        /**
+         * Sets the double property value. Composed type representation for type {@link Double}
+         * @param value Value to set for the double property.
+         */
+        public void setDouble(@jakarta.annotation.Nullable final Double value) {
+            this.doubleEscaped = value;
+        }
+        /**
+         * Sets the string property value. Composed type representation for type {@link String}
+         * @param value Value to set for the string property.
+         */
+        public void setString(@jakarta.annotation.Nullable final String value) {
+            this.string = value;
+        }
     }
 }

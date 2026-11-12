@@ -11,6 +11,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.apikeys.v1.CreateApiKeyResponse;
 import com.rixl.sdk.models.apikeys.v1.ListApiKeysResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.organizations.item.apikeys.v1.item.WithKeyItemRequestBuilder;
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,7 +24,7 @@ import java.util.Objects;
 public class V1RequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.organizations.item.apiKeys.v1.item collection
-     * @param key_id The key_id path parameter.
+     * @param key_id Unique identifier of the item
      * @return a {@link WithKeyItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -52,6 +53,7 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     /**
      * ListApiKeys
      * @return a {@link ListApiKeysResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListApiKeysResponse get() {
@@ -61,16 +63,20 @@ public class V1RequestBuilder extends BaseRequestBuilder {
      * ListApiKeys
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListApiKeysResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListApiKeysResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListApiKeysResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListApiKeysResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateApiKey
      * @param body The request body
      * @return a {@link CreateApiKeyResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateApiKeyResponse post(@jakarta.annotation.Nonnull final V1PostRequestBody body) {
@@ -81,12 +87,15 @@ public class V1RequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CreateApiKeyResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateApiKeyResponse post(@jakarta.annotation.Nonnull final V1PostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CreateApiKeyResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CreateApiKeyResponse::createFromDiscriminatorValue);
     }
     /**
      * ListApiKeys

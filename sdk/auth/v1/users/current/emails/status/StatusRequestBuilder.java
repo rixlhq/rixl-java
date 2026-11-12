@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.EmailStatusResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
     /**
      * GetUserEmailStatus
      * @return a {@link EmailStatusResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public EmailStatusResponse get() {
@@ -47,11 +49,14 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
      * GetUserEmailStatus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link EmailStatusResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public EmailStatusResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, EmailStatusResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, EmailStatusResponse::createFromDiscriminatorValue);
     }
     /**
      * GetUserEmailStatus
@@ -88,9 +93,6 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

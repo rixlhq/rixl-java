@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.project.v1.Project;
 import java.util.Collection;
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class CustomDomainRequestBuilder extends BaseRequestBuilder {
     /**
      * RemoveCustomDomain
      * @return a {@link Project}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Project delete() {
@@ -46,16 +48,20 @@ public class CustomDomainRequestBuilder extends BaseRequestBuilder {
      * RemoveCustomDomain
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Project}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Project delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Project::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Project::createFromDiscriminatorValue);
     }
     /**
      * SetCustomDomain
      * @param body The request body
      * @return a {@link Project}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Project put(@jakarta.annotation.Nonnull final CustomDomainPutRequestBody body) {
@@ -66,12 +72,15 @@ public class CustomDomainRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Project}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Project put(@jakarta.annotation.Nonnull final CustomDomainPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Project::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Project::createFromDiscriminatorValue);
     }
     /**
      * RemoveCustomDomain

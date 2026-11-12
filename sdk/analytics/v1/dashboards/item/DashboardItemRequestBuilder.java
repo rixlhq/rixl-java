@@ -15,6 +15,7 @@ import com.rixl.sdk.analytics.v1.dashboards.item.layout.LayoutRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboards.item.widgets.WidgetsRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.Dashboard;
 import com.rixl.sdk.models.google.protobuf.Empty;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -75,6 +76,7 @@ public class DashboardItemRequestBuilder extends BaseRequestBuilder {
     /**
      * DeleteDashboard
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete() {
@@ -84,15 +86,19 @@ public class DashboardItemRequestBuilder extends BaseRequestBuilder {
      * DeleteDashboard
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Empty::createFromDiscriminatorValue);
     }
     /**
      * GetDashboard
      * @return a {@link Dashboard}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Dashboard get() {
@@ -102,16 +108,20 @@ public class DashboardItemRequestBuilder extends BaseRequestBuilder {
      * GetDashboard
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Dashboard}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Dashboard get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Dashboard::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Dashboard::createFromDiscriminatorValue);
     }
     /**
      * UpdateDashboard
      * @param body The request body
      * @return a {@link Dashboard}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Dashboard patch(@jakarta.annotation.Nonnull final DashboardPatchRequestBody body) {
@@ -122,12 +132,15 @@ public class DashboardItemRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Dashboard}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Dashboard patch(@jakarta.annotation.Nonnull final DashboardPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Dashboard::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Dashboard::createFromDiscriminatorValue);
     }
     /**
      * DeleteDashboard
@@ -208,9 +221,6 @@ public class DashboardItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteQueryParameters implements QueryParameters {
-        /**
-         * The expected_revision query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer expectedRevision;
         /**

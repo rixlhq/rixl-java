@@ -12,7 +12,7 @@ import java.util.Objects;
 public class EventsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.webhooks.v1.projects.item.endpoints.item.events.item collection
-     * @param event_id The event_id path parameter.
+     * @param event_id Unique identifier of the item
      * @return a {@link WithEventItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull

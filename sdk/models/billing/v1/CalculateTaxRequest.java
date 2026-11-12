@@ -17,7 +17,7 @@ public class CalculateTaxRequest implements Parsable {
      */
     private BillingAddress billingAddress;
     /**
-     * enum.defined_only = true
+     * The billing_cycle property
      */
     private BillingCycle billingCycle;
     /**
@@ -75,7 +75,7 @@ public class CalculateTaxRequest implements Parsable {
         return this.billingAddress;
     }
     /**
-     * Gets the billing_cycle property value. enum.defined_only = true
+     * Gets the billing_cycle property value. The billing_cycle property
      * @return a {@link BillingCycle}
      */
     @jakarta.annotation.Nullable
@@ -189,7 +189,7 @@ public class CalculateTaxRequest implements Parsable {
         this.billingAddress = value;
     }
     /**
-     * Sets the billing_cycle property value. enum.defined_only = true
+     * Sets the billing_cycle property value. The billing_cycle property
      * @param value Value to set for the billing_cycle property.
      */
     public void setBillingCycle(@jakarta.annotation.Nullable final BillingCycle value) {

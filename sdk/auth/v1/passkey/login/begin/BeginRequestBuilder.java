@@ -10,6 +10,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.PasskeyBeginResponse;
 import com.rixl.sdk.models.auth.v1.PasskeyLoginBeginRequest;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +40,7 @@ public class BeginRequestBuilder extends BaseRequestBuilder {
      * PasskeyLoginBegin
      * @param body options and credential carry the WebAuthn ceremony payloads verbatim as JSON (the browser credential API consumes them as-is), so they are opaque bytes.
      * @return a {@link PasskeyBeginResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PasskeyBeginResponse post(@jakarta.annotation.Nonnull final PasskeyLoginBeginRequest body) {
@@ -49,12 +51,15 @@ public class BeginRequestBuilder extends BaseRequestBuilder {
      * @param body options and credential carry the WebAuthn ceremony payloads verbatim as JSON (the browser credential API consumes them as-is), so they are opaque bytes.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PasskeyBeginResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PasskeyBeginResponse post(@jakarta.annotation.Nonnull final PasskeyLoginBeginRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, PasskeyBeginResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, PasskeyBeginResponse::createFromDiscriminatorValue);
     }
     /**
      * PasskeyLoginBegin

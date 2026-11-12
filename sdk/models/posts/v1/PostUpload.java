@@ -30,7 +30,7 @@ public class PostUpload implements Parsable {
      */
     private String postId;
     /**
-     * The upload_expires property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime uploadExpires;
     /**
@@ -99,7 +99,7 @@ public class PostUpload implements Parsable {
         return this.postId;
     }
     /**
-     * Gets the upload_expires property value. The upload_expires property
+     * Gets the upload_expires property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -155,7 +155,7 @@ public class PostUpload implements Parsable {
         this.postId = value;
     }
     /**
-     * Sets the upload_expires property value. The upload_expires property
+     * Sets the upload_expires property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the upload_expires property.
      */
     public void setUploadExpires(@jakarta.annotation.Nullable final OffsetDateTime value) {

@@ -22,7 +22,7 @@ public class GetPlanResponse implements Parsable {
      */
     private String description;
     /**
-     * The features property
+     * A JSON object whose property values may be any JSON value.
      */
     private Struct features;
     /**
@@ -100,7 +100,7 @@ public class GetPlanResponse implements Parsable {
         return this.description;
     }
     /**
-     * Gets the features property value. The features property
+     * Gets the features property value. A JSON object whose property values may be any JSON value.
      * @return a {@link Struct}
      */
     @jakarta.annotation.Nullable
@@ -253,7 +253,7 @@ public class GetPlanResponse implements Parsable {
         this.description = value;
     }
     /**
-     * Sets the features property value. The features property
+     * Sets the features property value. A JSON object whose property values may be any JSON value.
      * @param value Value to set for the features property.
      */
     public void setFeatures(@jakarta.annotation.Nullable final Struct value) {

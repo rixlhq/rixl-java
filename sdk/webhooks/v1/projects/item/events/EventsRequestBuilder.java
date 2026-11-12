@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.webhooks.v1.ListEventsResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListEvents
      * @return a {@link ListEventsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListEventsResponse get() {
@@ -47,11 +49,14 @@ public class EventsRequestBuilder extends BaseRequestBuilder {
      * ListEvents
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListEventsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListEventsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListEventsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListEventsResponse::createFromDiscriminatorValue);
     }
     /**
      * ListEvents

@@ -1,6 +1,5 @@
 package com.rixl.sdk.models.analytics.v1;
 
-import com.microsoft.kiota.PeriodAndDuration;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
@@ -19,11 +18,11 @@ public class Segment implements Parsable {
      */
     private String chapterTitle;
     /**
-     * The end_ms property
+     * A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      */
-    private PeriodAndDuration endMs;
+    private String endMs;
     /**
-     * enum.defined_only = true
+     * The quality property
      */
     private VideoQuality quality;
     /**
@@ -31,9 +30,9 @@ public class Segment implements Parsable {
      */
     private Double speed;
     /**
-     * The start_ms property
+     * A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      */
-    private PeriodAndDuration startMs;
+    private String startMs;
     /**
      * Unset fields inherit the value the view was opened with.
      */
@@ -65,11 +64,11 @@ public class Segment implements Parsable {
         return this.chapterTitle;
     }
     /**
-     * Gets the end_ms property value. The end_ms property
-     * @return a {@link PeriodAndDuration}
+     * Gets the end_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public PeriodAndDuration getEndMs() {
+    public String getEndMs() {
         return this.endMs;
     }
     /**
@@ -81,15 +80,15 @@ public class Segment implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("audio_language", (n) -> { this.setAudioLanguage(n.getStringValue()); });
         deserializerMap.put("chapter_title", (n) -> { this.setChapterTitle(n.getStringValue()); });
-        deserializerMap.put("end_ms", (n) -> { this.setEndMs(n.getPeriodAndDurationValue()); });
+        deserializerMap.put("end_ms", (n) -> { this.setEndMs(n.getStringValue()); });
         deserializerMap.put("quality", (n) -> { this.setQuality(n.getEnumValue(VideoQuality::forValue)); });
         deserializerMap.put("speed", (n) -> { this.setSpeed(n.getDoubleValue()); });
-        deserializerMap.put("start_ms", (n) -> { this.setStartMs(n.getPeriodAndDurationValue()); });
+        deserializerMap.put("start_ms", (n) -> { this.setStartMs(n.getStringValue()); });
         deserializerMap.put("subtitle_language", (n) -> { this.setSubtitleLanguage(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the quality property value. enum.defined_only = true
+     * Gets the quality property value. The quality property
      * @return a {@link VideoQuality}
      */
     @jakarta.annotation.Nullable
@@ -105,11 +104,11 @@ public class Segment implements Parsable {
         return this.speed;
     }
     /**
-     * Gets the start_ms property value. The start_ms property
-     * @return a {@link PeriodAndDuration}
+     * Gets the start_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
+     * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public PeriodAndDuration getStartMs() {
+    public String getStartMs() {
         return this.startMs;
     }
     /**
@@ -128,10 +127,10 @@ public class Segment implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("audio_language", this.getAudioLanguage());
         writer.writeStringValue("chapter_title", this.getChapterTitle());
-        writer.writePeriodAndDurationValue("end_ms", this.getEndMs());
+        writer.writeStringValue("end_ms", this.getEndMs());
         writer.writeEnumValue("quality", this.getQuality());
         writer.writeDoubleValue("speed", this.getSpeed());
-        writer.writePeriodAndDurationValue("start_ms", this.getStartMs());
+        writer.writeStringValue("start_ms", this.getStartMs());
         writer.writeStringValue("subtitle_language", this.getSubtitleLanguage());
     }
     /**
@@ -149,14 +148,14 @@ public class Segment implements Parsable {
         this.chapterTitle = value;
     }
     /**
-     * Sets the end_ms property value. The end_ms property
+     * Sets the end_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      * @param value Value to set for the end_ms property.
      */
-    public void setEndMs(@jakarta.annotation.Nullable final PeriodAndDuration value) {
-        this.endMs = PeriodAndDuration.ofPeriodAndDuration(value);
+    public void setEndMs(@jakarta.annotation.Nullable final String value) {
+        this.endMs = value;
     }
     /**
-     * Sets the quality property value. enum.defined_only = true
+     * Sets the quality property value. The quality property
      * @param value Value to set for the quality property.
      */
     public void setQuality(@jakarta.annotation.Nullable final VideoQuality value) {
@@ -170,11 +169,11 @@ public class Segment implements Parsable {
         this.speed = value;
     }
     /**
-     * Sets the start_ms property value. The start_ms property
+     * Sets the start_ms property value. A signed duration in seconds, with up to nine fractional digits and an `s` suffix (for example, `3s` or `-0.001s`).
      * @param value Value to set for the start_ms property.
      */
-    public void setStartMs(@jakarta.annotation.Nullable final PeriodAndDuration value) {
-        this.startMs = PeriodAndDuration.ofPeriodAndDuration(value);
+    public void setStartMs(@jakarta.annotation.Nullable final String value) {
+        this.startMs = value;
     }
     /**
      * Sets the subtitle_language property value. Unset fields inherit the value the view was opened with.

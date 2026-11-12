@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.PermissionRegistryResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PermissionsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*,user%2Euser_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PermissionsRequestBuilder} and sets the default values.
@@ -33,11 +34,12 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PermissionsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/memberships/{org_%2Did}/policies/permissions{?limit*,offset*,types*,user%2Euser_id*}", rawUrl);
     }
     /**
      * ListPermissionRegistry
      * @return a {@link PermissionRegistryResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PermissionRegistryResponse get() {
@@ -47,11 +49,14 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      * ListPermissionRegistry
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PermissionRegistryResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PermissionRegistryResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, PermissionRegistryResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, PermissionRegistryResponse::createFromDiscriminatorValue);
     }
     /**
      * ListPermissionRegistry
@@ -88,21 +93,14 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The limit query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
-        /**
-         * The offset query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer offset;
-        /**
-         * The types query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] types;
+        @jakarta.annotation.Nullable
+        public String userUserId;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -112,6 +110,7 @@ public class PermissionsRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
+            allQueryParams.put("user%2Euser_id", userUserId);
             allQueryParams.put("types", types);
             return allQueryParams;
         }

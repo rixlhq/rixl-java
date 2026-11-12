@@ -18,7 +18,7 @@ public class ClientCredential implements Parsable {
      */
     private String clientId;
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
@@ -30,7 +30,7 @@ public class ClientCredential implements Parsable {
      */
     private String kid;
     /**
-     * The last_used_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime lastUsedAt;
     /**
@@ -68,7 +68,7 @@ public class ClientCredential implements Parsable {
         return this.clientId;
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -109,7 +109,7 @@ public class ClientCredential implements Parsable {
         return this.kid;
     }
     /**
-     * Gets the last_used_at property value. The last_used_at property
+     * Gets the last_used_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -162,7 +162,7 @@ public class ClientCredential implements Parsable {
         this.clientId = value;
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -183,7 +183,7 @@ public class ClientCredential implements Parsable {
         this.kid = value;
     }
     /**
-     * Sets the last_used_at property value. The last_used_at property
+     * Sets the last_used_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the last_used_at property.
      */
     public void setLastUsedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

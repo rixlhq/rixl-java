@@ -9,6 +9,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ResendPostRequestBody implements Parsable {
     /**
+     * The user property
+     */
+    private ResendPostRequestBodyUser user;
+    /**
      * The user_id property
      */
     private String userId;
@@ -28,9 +32,18 @@ public class ResendPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(ResendPostRequestBodyUser::createFromDiscriminatorValue)); });
         deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the user property value. The user property
+     * @return a {@link ResendPostRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public ResendPostRequestBodyUser getUser() {
+        return this.user;
     }
     /**
      * Gets the user_id property value. The user_id property
@@ -46,7 +59,15 @@ public class ResendPostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeObjectValue("user", this.getUser());
         writer.writeStringValue("user_id", this.getUserId());
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final ResendPostRequestBodyUser value) {
+        this.user = value;
     }
     /**
      * Sets the user_id property value. The user_id property

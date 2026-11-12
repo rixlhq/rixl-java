@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CreatePostResponse implements Parsable {
     /**
-     * The post property
+     * At most one of `image`, `video` may be set.
      */
     private Post post;
     /**
@@ -33,7 +33,7 @@ public class CreatePostResponse implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the post property value. The post property
+     * Gets the post property value. At most one of `image`, `video` may be set.
      * @return a {@link Post}
      */
     @jakarta.annotation.Nullable
@@ -49,7 +49,7 @@ public class CreatePostResponse implements Parsable {
         writer.writeObjectValue("post", this.getPost());
     }
     /**
-     * Sets the post property value. The post property
+     * Sets the post property value. At most one of `image`, `video` may be set.
      * @param value Value to set for the post property.
      */
     public void setPost(@jakarta.annotation.Nullable final Post value) {

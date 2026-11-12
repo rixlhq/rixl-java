@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.support.v1.CreateTicketRequest;
 import com.rixl.sdk.models.support.v1.CreateTicketResponse;
 import com.rixl.sdk.models.support.v1.ListTicketsResponse;
@@ -25,7 +26,7 @@ import java.util.Objects;
 public class TicketsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.support.v1.tickets.item collection
-     * @param ticket_id The ticket_id path parameter.
+     * @param ticket_id Unique identifier of the item
      * @return a {@link WithTicketItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -54,6 +55,7 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListTickets
      * @return a {@link ListTicketsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListTicketsResponse get() {
@@ -63,16 +65,20 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
      * ListTickets
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListTicketsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListTicketsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListTicketsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListTicketsResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateTicket
      * @param body The request body
      * @return a {@link CreateTicketResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateTicketResponse post(@jakarta.annotation.Nonnull final CreateTicketRequest body) {
@@ -83,12 +89,15 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CreateTicketResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateTicketResponse post(@jakarta.annotation.Nonnull final CreateTicketRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CreateTicketResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CreateTicketResponse::createFromDiscriminatorValue);
     }
     /**
      * ListTickets
@@ -159,9 +168,6 @@ public class TicketsRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
-        /**
-         * enum.defined_only = true
-         */
         @jakarta.annotation.Nullable
         public TicketStatus status;
         /**

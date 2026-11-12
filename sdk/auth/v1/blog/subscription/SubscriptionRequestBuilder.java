@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.BlogSubscriptionResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
     /**
      * GetBlogSubscription
      * @return a {@link BlogSubscriptionResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public BlogSubscriptionResponse get() {
@@ -47,11 +49,14 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      * GetBlogSubscription
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link BlogSubscriptionResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public BlogSubscriptionResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, BlogSubscriptionResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, BlogSubscriptionResponse::createFromDiscriminatorValue);
     }
     /**
      * GetBlogSubscription
@@ -88,9 +93,6 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.google.protobuf.Empty;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.webhooks.v1.GetEndpointResponse;
 import com.rixl.sdk.models.webhooks.v1.UpdateEndpointResponse;
 import com.rixl.sdk.webhooks.v1.projects.item.endpoints.item.attempts.AttemptsRequestBuilder;
@@ -75,6 +76,7 @@ public class WithEndpointItemRequestBuilder extends BaseRequestBuilder {
     /**
      * DeleteEndpoint
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete() {
@@ -84,15 +86,19 @@ public class WithEndpointItemRequestBuilder extends BaseRequestBuilder {
      * DeleteEndpoint
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Empty::createFromDiscriminatorValue);
     }
     /**
      * GetEndpoint
      * @return a {@link GetEndpointResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetEndpointResponse get() {
@@ -102,16 +108,20 @@ public class WithEndpointItemRequestBuilder extends BaseRequestBuilder {
      * GetEndpoint
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetEndpointResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetEndpointResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetEndpointResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, GetEndpointResponse::createFromDiscriminatorValue);
     }
     /**
      * UpdateEndpoint
      * @param body The request body
      * @return a {@link UpdateEndpointResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateEndpointResponse patch(@jakarta.annotation.Nonnull final WithEndpointPatchRequestBody body) {
@@ -122,12 +132,15 @@ public class WithEndpointItemRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateEndpointResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateEndpointResponse patch(@jakarta.annotation.Nonnull final WithEndpointPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, UpdateEndpointResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, UpdateEndpointResponse::createFromDiscriminatorValue);
     }
     /**
      * DeleteEndpoint

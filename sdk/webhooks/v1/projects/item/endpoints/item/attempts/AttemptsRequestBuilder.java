@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.webhooks.v1.ListEndpointAttemptsResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class AttemptsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListEndpointAttempts returns the delivery history for one endpoint, newest first.
      * @return a {@link ListEndpointAttemptsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListEndpointAttemptsResponse get() {
@@ -47,11 +49,14 @@ public class AttemptsRequestBuilder extends BaseRequestBuilder {
      * ListEndpointAttempts returns the delivery history for one endpoint, newest first.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListEndpointAttemptsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListEndpointAttemptsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListEndpointAttemptsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListEndpointAttemptsResponse::createFromDiscriminatorValue);
     }
     /**
      * ListEndpointAttempts returns the delivery history for one endpoint, newest first.

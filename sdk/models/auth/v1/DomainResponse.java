@@ -21,7 +21,7 @@ public class DomainResponse implements Parsable {
      */
     private Boolean present;
     /**
-     * The status property
+     * At most one of `verified`, `pending` may be set.
      */
     private DomainStatus status;
     /**
@@ -72,7 +72,7 @@ public class DomainResponse implements Parsable {
         return this.present;
     }
     /**
-     * Gets the status property value. The status property
+     * Gets the status property value. At most one of `verified`, `pending` may be set.
      * @return a {@link DomainStatus}
      */
     @jakarta.annotation.Nullable
@@ -112,7 +112,7 @@ public class DomainResponse implements Parsable {
         this.present = value;
     }
     /**
-     * Sets the status property value. The status property
+     * Sets the status property value. At most one of `verified`, `pending` may be set.
      * @param value Value to set for the status property.
      */
     public void setStatus(@jakarta.annotation.Nullable final DomainStatus value) {

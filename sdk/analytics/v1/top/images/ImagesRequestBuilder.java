@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.analytics.v1.TopImagesResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
     /**
      * GetTopImages
      * @return a {@link TopImagesResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public TopImagesResponse get() {
@@ -47,11 +49,14 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
      * GetTopImages
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TopImagesResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public TopImagesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, TopImagesResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, TopImagesResponse::createFromDiscriminatorValue);
     }
     /**
      * GetTopImages
@@ -88,19 +93,10 @@ public class ImagesRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The limit query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
-        /**
-         * The range.end query parameter.
-         */
         @jakarta.annotation.Nullable
         public String rangeEnd;
-        /**
-         * The range.start query parameter.
-         */
         @jakarta.annotation.Nullable
         public String rangeStart;
         /**

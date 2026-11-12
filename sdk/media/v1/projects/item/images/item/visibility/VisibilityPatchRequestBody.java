@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VisibilityPatchRequestBody implements Parsable {
     /**
-     * enum.defined_only = true
+     * The visibility property
      */
     private Visibility visibility;
     /**
@@ -34,7 +34,7 @@ public class VisibilityPatchRequestBody implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the visibility property value. enum.defined_only = true
+     * Gets the visibility property value. The visibility property
      * @return a {@link Visibility}
      */
     @jakarta.annotation.Nullable
@@ -50,7 +50,7 @@ public class VisibilityPatchRequestBody implements Parsable {
         writer.writeEnumValue("visibility", this.getVisibility());
     }
     /**
-     * Sets the visibility property value. enum.defined_only = true
+     * Sets the visibility property value. The visibility property
      * @param value Value to set for the visibility property.
      */
     public void setVisibility(@jakarta.annotation.Nullable final Visibility value) {

@@ -22,7 +22,7 @@ public class SendBlogBroadcastRequest implements Parsable {
      */
     private String description;
     /**
-     * The published_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime publishedAt;
     /**
@@ -88,7 +88,7 @@ public class SendBlogBroadcastRequest implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the published_at property value. The published_at property
+     * Gets the published_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -155,7 +155,7 @@ public class SendBlogBroadcastRequest implements Parsable {
         this.description = value;
     }
     /**
-     * Sets the published_at property value. The published_at property
+     * Sets the published_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the published_at property.
      */
     public void setPublishedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VerifiedDomain implements Parsable {
     /**
-     * The verified_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime verifiedAt;
     /**
@@ -34,7 +34,7 @@ public class VerifiedDomain implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the verified_at property value. The verified_at property
+     * Gets the verified_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -50,7 +50,7 @@ public class VerifiedDomain implements Parsable {
         writer.writeOffsetDateTimeValue("verified_at", this.getVerifiedAt());
     }
     /**
-     * Sets the verified_at property value. The verified_at property
+     * Sets the verified_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the verified_at property.
      */
     public void setVerifiedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

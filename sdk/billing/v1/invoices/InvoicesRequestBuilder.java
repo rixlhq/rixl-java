@@ -11,6 +11,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.billing.v1.invoices.item.WithInvoiceItemRequestBuilder;
 import com.rixl.sdk.models.billing.v1.ListInvoicesResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +23,7 @@ import java.util.Objects;
 public class InvoicesRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.billing.v1.invoices.item collection
-     * @param invoice_id The invoice_id path parameter.
+     * @param invoice_id Unique identifier of the item
      * @return a {@link WithInvoiceItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -51,6 +52,7 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
     /**
      * ListInvoices
      * @return a {@link ListInvoicesResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListInvoicesResponse get() {
@@ -60,11 +62,14 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
      * ListInvoices
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListInvoicesResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListInvoicesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListInvoicesResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListInvoicesResponse::createFromDiscriminatorValue);
     }
     /**
      * ListInvoices
@@ -101,9 +106,6 @@ public class InvoicesRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The org_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

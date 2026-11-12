@@ -11,6 +11,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.users.current.avatar.upload.UploadRequestBuilder;
 import com.rixl.sdk.models.auth.v1.UpdateUserAvatarRequest;
 import com.rixl.sdk.models.auth.v1.UpdateUserAvatarResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,6 +49,7 @@ public class AvatarRequestBuilder extends BaseRequestBuilder {
      * UpdateUserAvatar
      * @param body The request body
      * @return a {@link UpdateUserAvatarResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateUserAvatarResponse patch(@jakarta.annotation.Nonnull final UpdateUserAvatarRequest body) {
@@ -58,12 +60,15 @@ public class AvatarRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateUserAvatarResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateUserAvatarResponse patch(@jakarta.annotation.Nonnull final UpdateUserAvatarRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, UpdateUserAvatarResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, UpdateUserAvatarResponse::createFromDiscriminatorValue);
     }
     /**
      * UpdateUserAvatar

@@ -13,7 +13,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WebhookEndpoint implements Parsable {
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
@@ -37,7 +37,7 @@ public class WebhookEndpoint implements Parsable {
      */
     private String projectId;
     /**
-     * The updated_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime updatedAt;
     /**
@@ -55,7 +55,7 @@ public class WebhookEndpoint implements Parsable {
         return new WebhookEndpoint();
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -120,7 +120,7 @@ public class WebhookEndpoint implements Parsable {
         return this.projectId;
     }
     /**
-     * Gets the updated_at property value. The updated_at property
+     * Gets the updated_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -151,7 +151,7 @@ public class WebhookEndpoint implements Parsable {
         writer.writeStringValue("url", this.getUrl());
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -193,7 +193,7 @@ public class WebhookEndpoint implements Parsable {
         this.projectId = value;
     }
     /**
-     * Sets the updated_at property value. The updated_at property
+     * Sets the updated_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the updated_at property.
      */
     public void setUpdatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

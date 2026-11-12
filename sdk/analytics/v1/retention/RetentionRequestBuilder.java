@@ -10,6 +10,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.analytics.v1.GetRetentionRequest;
 import com.rixl.sdk.models.analytics.v1.RetentionAnalytics;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +40,7 @@ public class RetentionRequestBuilder extends BaseRequestBuilder {
      * GetRetentionAnalytics
      * @param body The request body
      * @return a {@link RetentionAnalytics}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public RetentionAnalytics post(@jakarta.annotation.Nonnull final GetRetentionRequest body) {
@@ -49,12 +51,15 @@ public class RetentionRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RetentionAnalytics}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public RetentionAnalytics post(@jakarta.annotation.Nonnull final GetRetentionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, RetentionAnalytics::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, RetentionAnalytics::createFromDiscriminatorValue);
     }
     /**
      * GetRetentionAnalytics

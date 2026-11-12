@@ -14,7 +14,7 @@ public class BlogSubscriptionResponse implements Parsable {
      */
     private Boolean subscribed;
     /**
-     * The subscribed_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime subscribedAt;
     /**
@@ -47,7 +47,7 @@ public class BlogSubscriptionResponse implements Parsable {
         return this.subscribed;
     }
     /**
-     * Gets the subscribed_at property value. The subscribed_at property
+     * Gets the subscribed_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -71,7 +71,7 @@ public class BlogSubscriptionResponse implements Parsable {
         this.subscribed = value;
     }
     /**
-     * Sets the subscribed_at property value. The subscribed_at property
+     * Sets the subscribed_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the subscribed_at property.
      */
     public void setSubscribedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

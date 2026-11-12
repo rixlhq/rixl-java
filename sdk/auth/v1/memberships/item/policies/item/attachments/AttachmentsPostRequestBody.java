@@ -18,6 +18,10 @@ public class AttachmentsPostRequestBody implements Parsable {
      */
     private PolicyIdentityType identityType;
     /**
+     * The user property
+     */
+    private AttachmentsPostRequestBodyUser user;
+    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link AttachmentsPostRequestBody}
@@ -33,9 +37,10 @@ public class AttachmentsPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("identity_id", (n) -> { this.setIdentityId(n.getStringValue()); });
         deserializerMap.put("identity_type", (n) -> { this.setIdentityType(n.getEnumValue(PolicyIdentityType::forValue)); });
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(AttachmentsPostRequestBodyUser::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -55,6 +60,14 @@ public class AttachmentsPostRequestBody implements Parsable {
         return this.identityType;
     }
     /**
+     * Gets the user property value. The user property
+     * @return a {@link AttachmentsPostRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public AttachmentsPostRequestBodyUser getUser() {
+        return this.user;
+    }
+    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -62,6 +75,7 @@ public class AttachmentsPostRequestBody implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("identity_id", this.getIdentityId());
         writer.writeEnumValue("identity_type", this.getIdentityType());
+        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the identity_id property value. The identity_id property
@@ -76,5 +90,12 @@ public class AttachmentsPostRequestBody implements Parsable {
      */
     public void setIdentityType(@jakarta.annotation.Nullable final PolicyIdentityType value) {
         this.identityType = value;
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final AttachmentsPostRequestBodyUser value) {
+        this.user = value;
     }
 }

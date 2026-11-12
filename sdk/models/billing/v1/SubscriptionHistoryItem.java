@@ -14,7 +14,7 @@ public class SubscriptionHistoryItem implements Parsable {
      */
     private Boolean cancelAtPeriodEnd;
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
@@ -22,11 +22,11 @@ public class SubscriptionHistoryItem implements Parsable {
      */
     private String currency;
     /**
-     * The current_period_end property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime currentPeriodEnd;
     /**
-     * The end_date property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime endDate;
     /**
@@ -50,7 +50,7 @@ public class SubscriptionHistoryItem implements Parsable {
      */
     private String price;
     /**
-     * The start_date property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime startDate;
     /**
@@ -76,7 +76,7 @@ public class SubscriptionHistoryItem implements Parsable {
         return this.cancelAtPeriodEnd;
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -92,7 +92,7 @@ public class SubscriptionHistoryItem implements Parsable {
         return this.currency;
     }
     /**
-     * Gets the current_period_end property value. The current_period_end property
+     * Gets the current_period_end property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -100,7 +100,7 @@ public class SubscriptionHistoryItem implements Parsable {
         return this.currentPeriodEnd;
     }
     /**
-     * Gets the end_date property value. The end_date property
+     * Gets the end_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -169,7 +169,7 @@ public class SubscriptionHistoryItem implements Parsable {
         return this.price;
     }
     /**
-     * Gets the start_date property value. The start_date property
+     * Gets the start_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -211,7 +211,7 @@ public class SubscriptionHistoryItem implements Parsable {
         this.cancelAtPeriodEnd = value;
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -225,14 +225,14 @@ public class SubscriptionHistoryItem implements Parsable {
         this.currency = value;
     }
     /**
-     * Sets the current_period_end property value. The current_period_end property
+     * Sets the current_period_end property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the current_period_end property.
      */
     public void setCurrentPeriodEnd(@jakarta.annotation.Nullable final OffsetDateTime value) {
         this.currentPeriodEnd = value;
     }
     /**
-     * Sets the end_date property value. The end_date property
+     * Sets the end_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the end_date property.
      */
     public void setEndDate(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -274,7 +274,7 @@ public class SubscriptionHistoryItem implements Parsable {
         this.price = value;
     }
     /**
-     * Sets the start_date property value. The start_date property
+     * Sets the start_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the start_date property.
      */
     public void setStartDate(@jakarta.annotation.Nullable final OffsetDateTime value) {

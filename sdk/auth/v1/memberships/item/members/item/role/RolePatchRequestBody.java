@@ -14,6 +14,10 @@ public class RolePatchRequestBody implements Parsable {
      */
     private MembershipRole role;
     /**
+     * The user property
+     */
+    private RolePatchRequestBodyUser user;
+    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link RolePatchRequestBody}
@@ -29,8 +33,9 @@ public class RolePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(RolePatchRequestBodyUser::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
     /**
@@ -42,12 +47,21 @@ public class RolePatchRequestBody implements Parsable {
         return this.role;
     }
     /**
+     * Gets the user property value. The user property
+     * @return a {@link RolePatchRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public RolePatchRequestBodyUser getUser() {
+        return this.user;
+    }
+    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("role", this.getRole());
+        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the role property value. The role property
@@ -55,5 +69,12 @@ public class RolePatchRequestBody implements Parsable {
      */
     public void setRole(@jakarta.annotation.Nullable final MembershipRole value) {
         this.role = value;
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final RolePatchRequestBodyUser value) {
+        this.user = value;
     }
 }

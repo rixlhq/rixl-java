@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.posts.v1.ListPostsResponse;
 import com.rixl.sdk.posts.v1.feeds.item.creators.CreatorsRequestBuilder;
 import com.rixl.sdk.posts.v1.feeds.item.item.WithPostItemRequestBuilder;
@@ -31,7 +32,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.posts.v1.feeds.item.item collection
-     * @param post_id The post_id path parameter.
+     * @param post_id Unique identifier of the item
      * @return a {@link WithPostItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -60,6 +61,7 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
     /**
      * ListPosts
      * @return a {@link ListPostsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPostsResponse get() {
@@ -69,11 +71,14 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      * ListPosts
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPostsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPostsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListPostsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListPostsResponse::createFromDiscriminatorValue);
     }
     /**
      * ListPosts
@@ -110,9 +115,6 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The creator_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String creatorId;
         /**
@@ -125,9 +127,6 @@ public class WithFeedItemRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public Integer paginationOffset;
-        /**
-         * The project_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String projectId;
         /**

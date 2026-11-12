@@ -10,11 +10,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ApiKey implements Parsable {
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
-     * The expiring_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime expiringAt;
     /**
@@ -22,7 +22,7 @@ public class ApiKey implements Parsable {
      */
     private String id;
     /**
-     * The last_used property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime lastUsed;
     /**
@@ -64,7 +64,7 @@ public class ApiKey implements Parsable {
         return new ApiKey();
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class ApiKey implements Parsable {
         return this.createdAt;
     }
     /**
-     * Gets the expiring_at property value. The expiring_at property
+     * Gets the expiring_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -108,7 +108,7 @@ public class ApiKey implements Parsable {
         return this.id;
     }
     /**
-     * Gets the last_used property value. The last_used property
+     * Gets the last_used property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -190,14 +190,14 @@ public class ApiKey implements Parsable {
         writer.writeStringValue("secret", this.getSecret());
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
         this.createdAt = value;
     }
     /**
-     * Sets the expiring_at property value. The expiring_at property
+     * Sets the expiring_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the expiring_at property.
      */
     public void setExpiringAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -211,7 +211,7 @@ public class ApiKey implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the last_used property value. The last_used property
+     * Sets the last_used property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the last_used property.
      */
     public void setLastUsed(@jakarta.annotation.Nullable final OffsetDateTime value) {

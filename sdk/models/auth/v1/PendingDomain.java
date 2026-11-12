@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PendingDomain implements Parsable {
     /**
-     * The expires_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime expiresAt;
     /**
@@ -28,7 +28,7 @@ public class PendingDomain implements Parsable {
         return new PendingDomain();
     }
     /**
-     * Gets the expires_at property value. The expires_at property
+     * Gets the expires_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -64,7 +64,7 @@ public class PendingDomain implements Parsable {
         writer.writeStringValue("verification_token", this.getVerificationToken());
     }
     /**
-     * Sets the expires_at property value. The expires_at property
+     * Sets the expires_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the expires_at property.
      */
     public void setExpiresAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

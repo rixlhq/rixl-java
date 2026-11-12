@@ -13,6 +13,7 @@ import com.rixl.sdk.auth.v1.memberships.item.domain.autojoin.AutoJoinRequestBuil
 import com.rixl.sdk.auth.v1.memberships.item.domain.verify.VerifyRequestBuilder;
 import com.rixl.sdk.models.auth.v1.DomainResponse;
 import com.rixl.sdk.models.google.protobuf.Empty;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,6 +58,7 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
     /**
      * RemoveDomain
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete() {
@@ -66,15 +68,19 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      * RemoveDomain
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Empty::createFromDiscriminatorValue);
     }
     /**
      * GetDomainStatus
      * @return a {@link DomainResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DomainResponse get() {
@@ -84,16 +90,20 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      * GetDomainStatus
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DomainResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DomainResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DomainResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, DomainResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateDomainVerification
      * @param body The request body
      * @return a {@link DomainResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DomainResponse post(@jakarta.annotation.Nonnull final DomainPostRequestBody body) {
@@ -104,12 +114,15 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DomainResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DomainResponse post(@jakarta.annotation.Nonnull final DomainPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DomainResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, DomainResponse::createFromDiscriminatorValue);
     }
     /**
      * RemoveDomain
@@ -190,9 +203,6 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**
@@ -222,9 +232,6 @@ public class DomainRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

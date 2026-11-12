@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.AutoJoinSetting;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class AutoJoinRequestBuilder extends BaseRequestBuilder {
     /**
      * GetDomainAutoJoin
      * @return a {@link AutoJoinSetting}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public AutoJoinSetting get() {
@@ -47,16 +49,20 @@ public class AutoJoinRequestBuilder extends BaseRequestBuilder {
      * GetDomainAutoJoin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link AutoJoinSetting}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public AutoJoinSetting get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, AutoJoinSetting::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, AutoJoinSetting::createFromDiscriminatorValue);
     }
     /**
      * SetDomainAutoJoin
      * @param body The request body
      * @return a {@link AutoJoinSetting}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public AutoJoinSetting put(@jakarta.annotation.Nonnull final AutoJoinPutRequestBody body) {
@@ -67,12 +73,15 @@ public class AutoJoinRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link AutoJoinSetting}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public AutoJoinSetting put(@jakarta.annotation.Nonnull final AutoJoinPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, AutoJoinSetting::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, AutoJoinSetting::createFromDiscriminatorValue);
     }
     /**
      * GetDomainAutoJoin
@@ -133,9 +142,6 @@ public class AutoJoinRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

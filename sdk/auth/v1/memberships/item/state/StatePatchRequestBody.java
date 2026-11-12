@@ -14,6 +14,10 @@ public class StatePatchRequestBody implements Parsable {
      */
     private MembershipApplicationState state;
     /**
+     * The user property
+     */
+    private StatePatchRequestBodyUser user;
+    /**
      * The user_id property
      */
     private String userId;
@@ -33,8 +37,9 @@ public class StatePatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipApplicationState::forValue)); });
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(StatePatchRequestBodyUser::createFromDiscriminatorValue)); });
         deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
@@ -45,6 +50,14 @@ public class StatePatchRequestBody implements Parsable {
     @jakarta.annotation.Nullable
     public MembershipApplicationState getState() {
         return this.state;
+    }
+    /**
+     * Gets the user property value. The user property
+     * @return a {@link StatePatchRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public StatePatchRequestBodyUser getUser() {
+        return this.user;
     }
     /**
      * Gets the user_id property value. The user_id property
@@ -61,6 +74,7 @@ public class StatePatchRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("state", this.getState());
+        writer.writeObjectValue("user", this.getUser());
         writer.writeStringValue("user_id", this.getUserId());
     }
     /**
@@ -69,6 +83,13 @@ public class StatePatchRequestBody implements Parsable {
      */
     public void setState(@jakarta.annotation.Nullable final MembershipApplicationState value) {
         this.state = value;
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final StatePatchRequestBodyUser value) {
+        this.user = value;
     }
     /**
      * Sets the user_id property value. The user_id property

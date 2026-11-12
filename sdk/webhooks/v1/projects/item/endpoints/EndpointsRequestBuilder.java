@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.webhooks.v1.CreateEndpointResponse;
 import com.rixl.sdk.models.webhooks.v1.ListEndpointsResponse;
 import com.rixl.sdk.webhooks.v1.projects.item.endpoints.item.WithEndpointItemRequestBuilder;
@@ -23,7 +24,7 @@ import java.util.Objects;
 public class EndpointsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.webhooks.v1.projects.item.endpoints.item collection
-     * @param endpoint_id The endpoint_id path parameter.
+     * @param endpoint_id Unique identifier of the item
      * @return a {@link WithEndpointItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -52,6 +53,7 @@ public class EndpointsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListEndpoints
      * @return a {@link ListEndpointsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListEndpointsResponse get() {
@@ -61,16 +63,20 @@ public class EndpointsRequestBuilder extends BaseRequestBuilder {
      * ListEndpoints
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListEndpointsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListEndpointsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListEndpointsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListEndpointsResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateEndpoint registers a new HTTPS endpoint and returns its signing secret exactly once. Store it; only a rotation returns a secret again.
      * @param body The request body
      * @return a {@link CreateEndpointResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateEndpointResponse post(@jakarta.annotation.Nonnull final EndpointsPostRequestBody body) {
@@ -81,12 +87,15 @@ public class EndpointsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CreateEndpointResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateEndpointResponse post(@jakarta.annotation.Nonnull final EndpointsPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, CreateEndpointResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, CreateEndpointResponse::createFromDiscriminatorValue);
     }
     /**
      * ListEndpoints

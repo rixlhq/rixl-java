@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.billing.v1.GetStorageUsageHistoryResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +39,7 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
     /**
      * GetStorageUsageHistory
      * @return a {@link GetStorageUsageHistoryResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetStorageUsageHistoryResponse get() {
@@ -47,11 +49,14 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      * GetStorageUsageHistory
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetStorageUsageHistoryResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetStorageUsageHistoryResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetStorageUsageHistoryResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, GetStorageUsageHistoryResponse::createFromDiscriminatorValue);
     }
     /**
      * GetStorageUsageHistory
@@ -88,14 +93,8 @@ public class HistoryRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The days query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer days;
-        /**
-         * The org_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

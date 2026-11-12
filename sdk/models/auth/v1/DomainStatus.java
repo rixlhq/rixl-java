@@ -1,26 +1,28 @@
 package com.rixl.sdk.models.auth.v1;
 
-import com.microsoft.kiota.serialization.ComposedTypeWrapper;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
-import com.microsoft.kiota.serialization.ParseNodeHelper;
 import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Composed type wrapper for classes {@link DomainStatusMember1}, {@link DomainStatusMember2}
+ * At most one of `verified`, `pending` may be set.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class DomainStatus implements ComposedTypeWrapper, Parsable {
+public class DomainStatus implements Parsable {
     /**
-     * Composed type representation for type {@link DomainStatusMember1}
+     * The auto_join property
      */
-    private DomainStatusMember1 domainStatusMember1;
+    private Boolean autoJoin;
     /**
-     * Composed type representation for type {@link DomainStatusMember2}
+     * The pending property
      */
-    private DomainStatusMember2 domainStatusMember2;
+    private PendingDomain pending;
+    /**
+     * The verified property
+     */
+    private VerifiedDomain verified;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -29,26 +31,15 @@ public class DomainStatus implements ComposedTypeWrapper, Parsable {
     @jakarta.annotation.Nonnull
     public static DomainStatus createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        final DomainStatus result = new DomainStatus();
-        result.setDomainStatusMember1(new DomainStatusMember1());
-        result.setDomainStatusMember2(new DomainStatusMember2());
-        return result;
+        return new DomainStatus();
     }
     /**
-     * Gets the DomainStatusMember1 property value. Composed type representation for type {@link DomainStatusMember1}
-     * @return a {@link DomainStatusMember1}
+     * Gets the auto_join property value. The auto_join property
+     * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
-    public DomainStatusMember1 getDomainStatusMember1() {
-        return this.domainStatusMember1;
-    }
-    /**
-     * Gets the DomainStatusMember2 property value. Composed type representation for type {@link DomainStatusMember2}
-     * @return a {@link DomainStatusMember2}
-     */
-    @jakarta.annotation.Nullable
-    public DomainStatusMember2 getDomainStatusMember2() {
-        return this.domainStatusMember2;
+    public Boolean getAutoJoin() {
+        return this.autoJoin;
     }
     /**
      * The deserialization information for the current model
@@ -56,10 +47,27 @@ public class DomainStatus implements ComposedTypeWrapper, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        if (this.getDomainStatusMember1() != null || this.getDomainStatusMember2() != null) {
-            return ParseNodeHelper.mergeDeserializersForIntersectionWrapper(this.getDomainStatusMember1(), this.getDomainStatusMember2());
-        }
-        return new HashMap<String, java.util.function.Consumer<ParseNode>>();
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
+        deserializerMap.put("auto_join", (n) -> { this.setAutoJoin(n.getBooleanValue()); });
+        deserializerMap.put("pending", (n) -> { this.setPending(n.getObjectValue(PendingDomain::createFromDiscriminatorValue)); });
+        deserializerMap.put("verified", (n) -> { this.setVerified(n.getObjectValue(VerifiedDomain::createFromDiscriminatorValue)); });
+        return deserializerMap;
+    }
+    /**
+     * Gets the pending property value. The pending property
+     * @return a {@link PendingDomain}
+     */
+    @jakarta.annotation.Nullable
+    public PendingDomain getPending() {
+        return this.pending;
+    }
+    /**
+     * Gets the verified property value. The verified property
+     * @return a {@link VerifiedDomain}
+     */
+    @jakarta.annotation.Nullable
+    public VerifiedDomain getVerified() {
+        return this.verified;
     }
     /**
      * Serializes information the current object
@@ -67,20 +75,29 @@ public class DomainStatus implements ComposedTypeWrapper, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue(null, this.getDomainStatusMember1(), this.getDomainStatusMember2());
+        writer.writeBooleanValue("auto_join", this.getAutoJoin());
+        writer.writeObjectValue("pending", this.getPending());
+        writer.writeObjectValue("verified", this.getVerified());
     }
     /**
-     * Sets the DomainStatusMember1 property value. Composed type representation for type {@link DomainStatusMember1}
-     * @param value Value to set for the DomainStatusMember1 property.
+     * Sets the auto_join property value. The auto_join property
+     * @param value Value to set for the auto_join property.
      */
-    public void setDomainStatusMember1(@jakarta.annotation.Nullable final DomainStatusMember1 value) {
-        this.domainStatusMember1 = value;
+    public void setAutoJoin(@jakarta.annotation.Nullable final Boolean value) {
+        this.autoJoin = value;
     }
     /**
-     * Sets the DomainStatusMember2 property value. Composed type representation for type {@link DomainStatusMember2}
-     * @param value Value to set for the DomainStatusMember2 property.
+     * Sets the pending property value. The pending property
+     * @param value Value to set for the pending property.
      */
-    public void setDomainStatusMember2(@jakarta.annotation.Nullable final DomainStatusMember2 value) {
-        this.domainStatusMember2 = value;
+    public void setPending(@jakarta.annotation.Nullable final PendingDomain value) {
+        this.pending = value;
+    }
+    /**
+     * Sets the verified property value. The verified property
+     * @param value Value to set for the verified property.
+     */
+    public void setVerified(@jakarta.annotation.Nullable final VerifiedDomain value) {
+        this.verified = value;
     }
 }

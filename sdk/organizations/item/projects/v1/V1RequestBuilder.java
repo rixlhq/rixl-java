@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.project.v1.ListProjectsResponse;
 import com.rixl.sdk.models.project.v1.Project;
 import com.rixl.sdk.organizations.item.projects.v1.item.WithProjectItemRequestBuilder;
@@ -22,7 +23,7 @@ import java.util.Objects;
 public class V1RequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.organizations.item.projects.v1.item collection
-     * @param project_id The project_id path parameter.
+     * @param project_id Unique identifier of the item
      * @return a {@link WithProjectItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -51,6 +52,7 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     /**
      * ListProjects
      * @return a {@link ListProjectsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListProjectsResponse get() {
@@ -60,16 +62,20 @@ public class V1RequestBuilder extends BaseRequestBuilder {
      * ListProjects
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListProjectsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListProjectsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListProjectsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListProjectsResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateProject
      * @param body The request body
      * @return a {@link Project}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Project post(@jakarta.annotation.Nonnull final V1PostRequestBody body) {
@@ -80,12 +86,15 @@ public class V1RequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Project}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Project post(@jakarta.annotation.Nonnull final V1PostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Project::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Project::createFromDiscriminatorValue);
     }
     /**
      * ListProjects

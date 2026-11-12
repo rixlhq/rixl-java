@@ -9,6 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.support.v1.ListChatMessagesResponse;
 import com.rixl.sdk.models.support.v1.SendChatMessageRequest;
 import com.rixl.sdk.models.support.v1.SendChatMessageResponse;
@@ -41,6 +42,7 @@ public class MessagesRequestBuilder extends BaseRequestBuilder {
     /**
      * ListChatMessages
      * @return a {@link ListChatMessagesResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListChatMessagesResponse get() {
@@ -50,16 +52,20 @@ public class MessagesRequestBuilder extends BaseRequestBuilder {
      * ListChatMessages
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListChatMessagesResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListChatMessagesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListChatMessagesResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListChatMessagesResponse::createFromDiscriminatorValue);
     }
     /**
      * SendChatMessage
      * @param body The request body
      * @return a {@link SendChatMessageResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SendChatMessageResponse post(@jakarta.annotation.Nonnull final SendChatMessageRequest body) {
@@ -70,12 +76,15 @@ public class MessagesRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SendChatMessageResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SendChatMessageResponse post(@jakarta.annotation.Nonnull final SendChatMessageRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, SendChatMessageResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, SendChatMessageResponse::createFromDiscriminatorValue);
     }
     /**
      * ListChatMessages
@@ -141,9 +150,6 @@ public class MessagesRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public OffsetDateTime after;
-        /**
-         * The limit query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
         /**

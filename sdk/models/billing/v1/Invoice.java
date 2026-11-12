@@ -14,7 +14,7 @@ public class Invoice implements Parsable {
      */
     private String amount;
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
@@ -26,7 +26,7 @@ public class Invoice implements Parsable {
      */
     private String description;
     /**
-     * The due_date property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime dueDate;
     /**
@@ -38,7 +38,7 @@ public class Invoice implements Parsable {
      */
     private String orgId;
     /**
-     * The paid_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime paidAt;
     /**
@@ -68,7 +68,7 @@ public class Invoice implements Parsable {
         return this.amount;
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -92,7 +92,7 @@ public class Invoice implements Parsable {
         return this.description;
     }
     /**
-     * Gets the due_date property value. The due_date property
+     * Gets the due_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class Invoice implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the paid_at property value. The paid_at property
+     * Gets the paid_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -183,7 +183,7 @@ public class Invoice implements Parsable {
         this.amount = value;
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -204,7 +204,7 @@ public class Invoice implements Parsable {
         this.description = value;
     }
     /**
-     * Sets the due_date property value. The due_date property
+     * Sets the due_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the due_date property.
      */
     public void setDueDate(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -225,7 +225,7 @@ public class Invoice implements Parsable {
         this.orgId = value;
     }
     /**
-     * Sets the paid_at property value. The paid_at property
+     * Sets the paid_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the paid_at property.
      */
     public void setPaidAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

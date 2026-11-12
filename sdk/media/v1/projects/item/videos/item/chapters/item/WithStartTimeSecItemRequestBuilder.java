@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.videos.v1.VideoChapters;
 import java.util.Collection;
 import java.util.HashMap;
@@ -37,6 +38,7 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
     /**
      * DeleteVideoChapter
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters delete() {
@@ -46,11 +48,14 @@ public class WithStartTimeSecItemRequestBuilder extends BaseRequestBuilder {
      * DeleteVideoChapter
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, VideoChapters::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, VideoChapters::createFromDiscriminatorValue);
     }
     /**
      * DeleteVideoChapter

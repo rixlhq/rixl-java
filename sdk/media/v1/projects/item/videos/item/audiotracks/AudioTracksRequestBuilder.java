@@ -12,6 +12,7 @@ import com.rixl.sdk.media.v1.projects.item.videos.item.audiotracks.item.WithTrac
 import com.rixl.sdk.media.v1.projects.item.videos.item.audiotracks.language.LanguageRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.videos.item.audiotracks.upload.UploadRequestBuilder;
 import com.rixl.sdk.models.google.protobuf.Empty;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +40,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.audioTracks.item collection
-     * @param track_id The track_id path parameter.
+     * @param track_id Unique identifier of the item
      * @return a {@link WithTrackItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -68,6 +69,7 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
     /**
      * DeleteAllAudioTracks
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete() {
@@ -77,11 +79,14 @@ public class AudioTracksRequestBuilder extends BaseRequestBuilder {
      * DeleteAllAudioTracks
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Empty}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Empty delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Empty::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Empty::createFromDiscriminatorValue);
     }
     /**
      * DeleteAllAudioTracks

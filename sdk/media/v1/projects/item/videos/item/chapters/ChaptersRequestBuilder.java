@@ -10,6 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.projects.item.videos.item.chapters.item.WithStartTimeSecItemRequestBuilder;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.videos.v1.VideoChapters;
 import java.util.Collection;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ import java.util.Objects;
 public class ChaptersRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.media.v1.projects.item.videos.item.chapters.item collection
-     * @param start_time_sec The start_time_sec path parameter.
+     * @param start_time_sec Unique identifier of the item
      * @return a {@link WithStartTimeSecItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -51,6 +52,7 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
     /**
      * UpdateVideoChapters
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters delete() {
@@ -60,15 +62,19 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      * UpdateVideoChapters
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, VideoChapters::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, VideoChapters::createFromDiscriminatorValue);
     }
     /**
      * GetVideoChapters
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters get() {
@@ -78,16 +84,20 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      * GetVideoChapters
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, VideoChapters::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, VideoChapters::createFromDiscriminatorValue);
     }
     /**
      * UpdateVideoChapters
      * @param body The request body
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters put(@jakarta.annotation.Nonnull final ChaptersPutRequestBody body) {
@@ -98,12 +108,15 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VideoChapters}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public VideoChapters put(@jakarta.annotation.Nonnull final ChaptersPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, VideoChapters::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, VideoChapters::createFromDiscriminatorValue);
     }
     /**
      * UpdateVideoChapters
@@ -184,14 +197,8 @@ public class ChaptersRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class DeleteQueryParameters implements QueryParameters {
-        /**
-         * The chapters.start_time_sec query parameter.
-         */
         @jakarta.annotation.Nullable
         public Double chaptersStartTimeSec;
-        /**
-         * The chapters.title query parameter.
-         */
         @jakarta.annotation.Nullable
         public String chaptersTitle;
         /**

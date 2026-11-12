@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.videos.v1.UpdateVideoVisibilityResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class VisibilityRequestBuilder extends BaseRequestBuilder {
      * UpdateVideoVisibility
      * @param body The request body
      * @return a {@link UpdateVideoVisibilityResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateVideoVisibilityResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body) {
@@ -48,12 +50,15 @@ public class VisibilityRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link UpdateVideoVisibilityResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public UpdateVideoVisibilityResponse patch(@jakarta.annotation.Nonnull final VisibilityPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, UpdateVideoVisibilityResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, UpdateVideoVisibilityResponse::createFromDiscriminatorValue);
     }
     /**
      * UpdateVideoVisibility

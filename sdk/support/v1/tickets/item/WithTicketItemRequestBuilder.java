@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.support.v1.GetTicketResponse;
 import com.rixl.sdk.support.v1.tickets.item.close.CloseRequestBuilder;
 import com.rixl.sdk.support.v1.tickets.item.messages.MessagesRequestBuilder;
@@ -55,6 +56,7 @@ public class WithTicketItemRequestBuilder extends BaseRequestBuilder {
     /**
      * GetTicket
      * @return a {@link GetTicketResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetTicketResponse get() {
@@ -64,11 +66,14 @@ public class WithTicketItemRequestBuilder extends BaseRequestBuilder {
      * GetTicket
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetTicketResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetTicketResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, GetTicketResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, GetTicketResponse::createFromDiscriminatorValue);
     }
     /**
      * GetTicket

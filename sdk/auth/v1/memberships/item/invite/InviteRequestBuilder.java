@@ -11,6 +11,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.memberships.item.invite.item.WithUserItemRequestBuilder;
 import com.rixl.sdk.auth.v1.memberships.item.invite.resend.ResendRequestBuilder;
 import com.rixl.sdk.models.auth.v1.MembershipApplication;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.memberships.item.invite.item collection
-     * @param user_id The user_id path parameter.
+     * @param user_id Unique identifier of the item
      * @return a {@link WithUserItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -60,6 +61,7 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
      * InviteMember
      * @param body The request body
      * @return a {@link MembershipApplication}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public MembershipApplication post(@jakarta.annotation.Nonnull final InvitePostRequestBody body) {
@@ -70,12 +72,15 @@ public class InviteRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link MembershipApplication}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public MembershipApplication post(@jakarta.annotation.Nonnull final InvitePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, MembershipApplication::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, MembershipApplication::createFromDiscriminatorValue);
     }
     /**
      * InviteMember

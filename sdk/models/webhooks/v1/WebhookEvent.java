@@ -14,11 +14,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class WebhookEvent implements Parsable {
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
-     * The data property
+     * A JSON object whose property values may be any JSON value.
      */
     private Struct data;
     /**
@@ -44,7 +44,7 @@ public class WebhookEvent implements Parsable {
         return new WebhookEvent();
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -52,7 +52,7 @@ public class WebhookEvent implements Parsable {
         return this.createdAt;
     }
     /**
-     * Gets the data property value. The data property
+     * Gets the data property value. A JSON object whose property values may be any JSON value.
      * @return a {@link Struct}
      */
     @jakarta.annotation.Nullable
@@ -110,14 +110,14 @@ public class WebhookEvent implements Parsable {
         writer.writeStringValue("type", this.getType());
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
         this.createdAt = value;
     }
     /**
-     * Sets the data property value. The data property
+     * Sets the data property value. A JSON object whose property values may be any JSON value.
      * @param value Value to set for the data property.
      */
     public void setData(@jakarta.annotation.Nullable final Struct value) {

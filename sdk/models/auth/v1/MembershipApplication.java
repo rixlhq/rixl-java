@@ -10,11 +10,11 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MembershipApplication implements Parsable {
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
-     * The decided_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime decidedAt;
     /**
@@ -22,7 +22,7 @@ public class MembershipApplication implements Parsable {
      */
     private String id;
     /**
-     * The invitation_expires_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime invitationExpiresAt;
     /**
@@ -64,7 +64,7 @@ public class MembershipApplication implements Parsable {
         return new MembershipApplication();
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -72,7 +72,7 @@ public class MembershipApplication implements Parsable {
         return this.createdAt;
     }
     /**
-     * Gets the decided_at property value. The decided_at property
+     * Gets the decided_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -108,7 +108,7 @@ public class MembershipApplication implements Parsable {
         return this.id;
     }
     /**
-     * Gets the invitation_expires_at property value. The invitation_expires_at property
+     * Gets the invitation_expires_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -190,14 +190,14 @@ public class MembershipApplication implements Parsable {
         writer.writeStringValue("user_id", this.getUserId());
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
         this.createdAt = value;
     }
     /**
-     * Sets the decided_at property value. The decided_at property
+     * Sets the decided_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the decided_at property.
      */
     public void setDecidedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -211,7 +211,7 @@ public class MembershipApplication implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the invitation_expires_at property value. The invitation_expires_at property
+     * Sets the invitation_expires_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the invitation_expires_at property.
      */
     public void setInvitationExpiresAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

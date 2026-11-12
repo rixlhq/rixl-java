@@ -18,7 +18,7 @@ public class StorageUsage implements Parsable {
      */
     private String imageStorageBytes;
     /**
-     * The last_updated property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime lastUpdated;
     /**
@@ -42,7 +42,7 @@ public class StorageUsage implements Parsable {
      */
     private Integer projectCount;
     /**
-     * The snapshot_date property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime snapshotDate;
     /**
@@ -115,7 +115,7 @@ public class StorageUsage implements Parsable {
         return this.imageStorageBytes;
     }
     /**
-     * Gets the last_updated property value. The last_updated property
+     * Gets the last_updated property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -163,7 +163,7 @@ public class StorageUsage implements Parsable {
         return this.projectCount;
     }
     /**
-     * Gets the snapshot_date property value. The snapshot_date property
+     * Gets the snapshot_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -246,7 +246,7 @@ public class StorageUsage implements Parsable {
         this.imageStorageBytes = value;
     }
     /**
-     * Sets the last_updated property value. The last_updated property
+     * Sets the last_updated property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the last_updated property.
      */
     public void setLastUpdated(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -288,7 +288,7 @@ public class StorageUsage implements Parsable {
         this.projectCount = value;
     }
     /**
-     * Sets the snapshot_date property value. The snapshot_date property
+     * Sets the snapshot_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the snapshot_date property.
      */
     public void setSnapshotDate(@jakarta.annotation.Nullable final OffsetDateTime value) {

@@ -1,38 +1,41 @@
 package com.rixl.sdk.models.analytics.v1;
 
-import com.microsoft.kiota.serialization.ComposedTypeWrapper;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
-import com.microsoft.kiota.serialization.ParseNodeHelper;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Composed type wrapper for classes {@link AnalyticsEventMember1}, {@link AnalyticsEventMember2}, {@link AnalyticsEventMember3}, {@link AnalyticsEventMember4}, {@link AnalyticsEventMember5}
+ * At most one of `session_start`, `content_view`, `engagement`, `interaction`, `error` may be set.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class AnalyticsEvent implements ComposedTypeWrapper, Parsable {
+public class AnalyticsEvent implements Parsable {
     /**
-     * Composed type representation for type {@link AnalyticsEventMember1}
+     * The content_view property
      */
-    private AnalyticsEventMember1 analyticsEventMember1;
+    private ContentViewEvent contentView;
     /**
-     * Composed type representation for type {@link AnalyticsEventMember2}
+     * The engagement property
      */
-    private AnalyticsEventMember2 analyticsEventMember2;
+    private EngagementEvent engagement;
     /**
-     * Composed type representation for type {@link AnalyticsEventMember3}
+     * The error property
      */
-    private AnalyticsEventMember3 analyticsEventMember3;
+    private ErrorEvent error;
     /**
-     * Composed type representation for type {@link AnalyticsEventMember4}
+     * The interaction property
      */
-    private AnalyticsEventMember4 analyticsEventMember4;
+    private InteractionEvent interaction;
     /**
-     * Composed type representation for type {@link AnalyticsEventMember5}
+     * The session_start property
      */
-    private AnalyticsEventMember5 analyticsEventMember5;
+    private SessionStartEvent sessionStart;
+    /**
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
+     */
+    private OffsetDateTime timestamp;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -41,53 +44,31 @@ public class AnalyticsEvent implements ComposedTypeWrapper, Parsable {
     @jakarta.annotation.Nonnull
     public static AnalyticsEvent createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        final AnalyticsEvent result = new AnalyticsEvent();
-        result.setAnalyticsEventMember1(new AnalyticsEventMember1());
-        result.setAnalyticsEventMember2(new AnalyticsEventMember2());
-        result.setAnalyticsEventMember3(new AnalyticsEventMember3());
-        result.setAnalyticsEventMember4(new AnalyticsEventMember4());
-        result.setAnalyticsEventMember5(new AnalyticsEventMember5());
-        return result;
+        return new AnalyticsEvent();
     }
     /**
-     * Gets the AnalyticsEventMember1 property value. Composed type representation for type {@link AnalyticsEventMember1}
-     * @return a {@link AnalyticsEventMember1}
+     * Gets the content_view property value. The content_view property
+     * @return a {@link ContentViewEvent}
      */
     @jakarta.annotation.Nullable
-    public AnalyticsEventMember1 getAnalyticsEventMember1() {
-        return this.analyticsEventMember1;
+    public ContentViewEvent getContentView() {
+        return this.contentView;
     }
     /**
-     * Gets the AnalyticsEventMember2 property value. Composed type representation for type {@link AnalyticsEventMember2}
-     * @return a {@link AnalyticsEventMember2}
+     * Gets the engagement property value. The engagement property
+     * @return a {@link EngagementEvent}
      */
     @jakarta.annotation.Nullable
-    public AnalyticsEventMember2 getAnalyticsEventMember2() {
-        return this.analyticsEventMember2;
+    public EngagementEvent getEngagement() {
+        return this.engagement;
     }
     /**
-     * Gets the AnalyticsEventMember3 property value. Composed type representation for type {@link AnalyticsEventMember3}
-     * @return a {@link AnalyticsEventMember3}
+     * Gets the error property value. The error property
+     * @return a {@link ErrorEvent}
      */
     @jakarta.annotation.Nullable
-    public AnalyticsEventMember3 getAnalyticsEventMember3() {
-        return this.analyticsEventMember3;
-    }
-    /**
-     * Gets the AnalyticsEventMember4 property value. Composed type representation for type {@link AnalyticsEventMember4}
-     * @return a {@link AnalyticsEventMember4}
-     */
-    @jakarta.annotation.Nullable
-    public AnalyticsEventMember4 getAnalyticsEventMember4() {
-        return this.analyticsEventMember4;
-    }
-    /**
-     * Gets the AnalyticsEventMember5 property value. Composed type representation for type {@link AnalyticsEventMember5}
-     * @return a {@link AnalyticsEventMember5}
-     */
-    @jakarta.annotation.Nullable
-    public AnalyticsEventMember5 getAnalyticsEventMember5() {
-        return this.analyticsEventMember5;
+    public ErrorEvent getError() {
+        return this.error;
     }
     /**
      * The deserialization information for the current model
@@ -95,10 +76,38 @@ public class AnalyticsEvent implements ComposedTypeWrapper, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        if (this.getAnalyticsEventMember1() != null || this.getAnalyticsEventMember2() != null || this.getAnalyticsEventMember3() != null || this.getAnalyticsEventMember4() != null || this.getAnalyticsEventMember5() != null) {
-            return ParseNodeHelper.mergeDeserializersForIntersectionWrapper(this.getAnalyticsEventMember1(), this.getAnalyticsEventMember2(), this.getAnalyticsEventMember3(), this.getAnalyticsEventMember4(), this.getAnalyticsEventMember5());
-        }
-        return new HashMap<String, java.util.function.Consumer<ParseNode>>();
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
+        deserializerMap.put("content_view", (n) -> { this.setContentView(n.getObjectValue(ContentViewEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("engagement", (n) -> { this.setEngagement(n.getObjectValue(EngagementEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("error", (n) -> { this.setError(n.getObjectValue(ErrorEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("interaction", (n) -> { this.setInteraction(n.getObjectValue(InteractionEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("session_start", (n) -> { this.setSessionStart(n.getObjectValue(SessionStartEvent::createFromDiscriminatorValue)); });
+        deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getOffsetDateTimeValue()); });
+        return deserializerMap;
+    }
+    /**
+     * Gets the interaction property value. The interaction property
+     * @return a {@link InteractionEvent}
+     */
+    @jakarta.annotation.Nullable
+    public InteractionEvent getInteraction() {
+        return this.interaction;
+    }
+    /**
+     * Gets the session_start property value. The session_start property
+     * @return a {@link SessionStartEvent}
+     */
+    @jakarta.annotation.Nullable
+    public SessionStartEvent getSessionStart() {
+        return this.sessionStart;
+    }
+    /**
+     * Gets the timestamp property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
+     * @return a {@link OffsetDateTime}
+     */
+    @jakarta.annotation.Nullable
+    public OffsetDateTime getTimestamp() {
+        return this.timestamp;
     }
     /**
      * Serializes information the current object
@@ -106,41 +115,53 @@ public class AnalyticsEvent implements ComposedTypeWrapper, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue(null, this.getAnalyticsEventMember1(), this.getAnalyticsEventMember2(), this.getAnalyticsEventMember3(), this.getAnalyticsEventMember4(), this.getAnalyticsEventMember5());
+        writer.writeObjectValue("content_view", this.getContentView());
+        writer.writeObjectValue("engagement", this.getEngagement());
+        writer.writeObjectValue("error", this.getError());
+        writer.writeObjectValue("interaction", this.getInteraction());
+        writer.writeObjectValue("session_start", this.getSessionStart());
+        writer.writeOffsetDateTimeValue("timestamp", this.getTimestamp());
     }
     /**
-     * Sets the AnalyticsEventMember1 property value. Composed type representation for type {@link AnalyticsEventMember1}
-     * @param value Value to set for the AnalyticsEventMember1 property.
+     * Sets the content_view property value. The content_view property
+     * @param value Value to set for the content_view property.
      */
-    public void setAnalyticsEventMember1(@jakarta.annotation.Nullable final AnalyticsEventMember1 value) {
-        this.analyticsEventMember1 = value;
+    public void setContentView(@jakarta.annotation.Nullable final ContentViewEvent value) {
+        this.contentView = value;
     }
     /**
-     * Sets the AnalyticsEventMember2 property value. Composed type representation for type {@link AnalyticsEventMember2}
-     * @param value Value to set for the AnalyticsEventMember2 property.
+     * Sets the engagement property value. The engagement property
+     * @param value Value to set for the engagement property.
      */
-    public void setAnalyticsEventMember2(@jakarta.annotation.Nullable final AnalyticsEventMember2 value) {
-        this.analyticsEventMember2 = value;
+    public void setEngagement(@jakarta.annotation.Nullable final EngagementEvent value) {
+        this.engagement = value;
     }
     /**
-     * Sets the AnalyticsEventMember3 property value. Composed type representation for type {@link AnalyticsEventMember3}
-     * @param value Value to set for the AnalyticsEventMember3 property.
+     * Sets the error property value. The error property
+     * @param value Value to set for the error property.
      */
-    public void setAnalyticsEventMember3(@jakarta.annotation.Nullable final AnalyticsEventMember3 value) {
-        this.analyticsEventMember3 = value;
+    public void setError(@jakarta.annotation.Nullable final ErrorEvent value) {
+        this.error = value;
     }
     /**
-     * Sets the AnalyticsEventMember4 property value. Composed type representation for type {@link AnalyticsEventMember4}
-     * @param value Value to set for the AnalyticsEventMember4 property.
+     * Sets the interaction property value. The interaction property
+     * @param value Value to set for the interaction property.
      */
-    public void setAnalyticsEventMember4(@jakarta.annotation.Nullable final AnalyticsEventMember4 value) {
-        this.analyticsEventMember4 = value;
+    public void setInteraction(@jakarta.annotation.Nullable final InteractionEvent value) {
+        this.interaction = value;
     }
     /**
-     * Sets the AnalyticsEventMember5 property value. Composed type representation for type {@link AnalyticsEventMember5}
-     * @param value Value to set for the AnalyticsEventMember5 property.
+     * Sets the session_start property value. The session_start property
+     * @param value Value to set for the session_start property.
      */
-    public void setAnalyticsEventMember5(@jakarta.annotation.Nullable final AnalyticsEventMember5 value) {
-        this.analyticsEventMember5 = value;
+    public void setSessionStart(@jakarta.annotation.Nullable final SessionStartEvent value) {
+        this.sessionStart = value;
+    }
+    /**
+     * Sets the timestamp property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
+     * @param value Value to set for the timestamp property.
+     */
+    public void setTimestamp(@jakarta.annotation.Nullable final OffsetDateTime value) {
+        this.timestamp = value;
     }
 }

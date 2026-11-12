@@ -14,6 +14,7 @@ import com.rixl.sdk.analytics.v1.dashboard.datasets.DatasetsRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboard.filteroptions.FilterOptionsRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboard.scopetree.ScopeTreeRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.DashboardStatsResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -74,6 +75,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
     /**
      * GetDashboardStats
      * @return a {@link DashboardStatsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DashboardStatsResponse get() {
@@ -83,11 +85,14 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * GetDashboardStats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DashboardStatsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DashboardStatsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DashboardStatsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, DashboardStatsResponse::createFromDiscriminatorValue);
     }
     /**
      * GetDashboardStats
@@ -124,59 +129,26 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The filter.browsers query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterBrowsers;
-        /**
-         * The filter.cities query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterCities;
-        /**
-         * The filter.countries query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterCountries;
-        /**
-         * The filter.devices query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterDevices;
-        /**
-         * The filter.languages query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterLanguages;
-        /**
-         * The filter.os query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterOs;
-        /**
-         * The filter.os_versions query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterOsVersions;
-        /**
-         * The filter.regions query parameter.
-         */
         @jakarta.annotation.Nullable
         public String[] filterRegions;
-        /**
-         * The interval query parameter.
-         */
         @jakarta.annotation.Nullable
         public String interval;
-        /**
-         * The time_end query parameter.
-         */
         @jakarta.annotation.Nullable
         public String timeEnd;
-        /**
-         * The time_start query parameter.
-         */
         @jakarta.annotation.Nullable
         public String timeStart;
         /**

@@ -10,6 +10,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.billing.v1.CreateCheckoutSessionRequest;
 import com.rixl.sdk.models.billing.v1.HostedCheckoutSessionResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +40,7 @@ public class CheckoutRequestBuilder extends BaseRequestBuilder {
      * CreateCheckoutSession
      * @param body The request body
      * @return a {@link HostedCheckoutSessionResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CreateCheckoutSessionRequest body) {
@@ -49,12 +51,15 @@ public class CheckoutRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link HostedCheckoutSessionResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public HostedCheckoutSessionResponse post(@jakarta.annotation.Nonnull final CreateCheckoutSessionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, HostedCheckoutSessionResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, HostedCheckoutSessionResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateCheckoutSession

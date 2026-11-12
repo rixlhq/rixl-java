@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.google.rpc.Status;
 import com.rixl.sdk.models.videos.v1.TrackUpload;
 import java.util.Collection;
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * CreateSubtitleUpload
      * @param body The request body
      * @return a {@link TrackUpload}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public TrackUpload post(@jakarta.annotation.Nonnull final UploadPostRequestBody body) {
@@ -48,12 +50,15 @@ public class UploadRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TrackUpload}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public TrackUpload post(@jakarta.annotation.Nonnull final UploadPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, TrackUpload::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, TrackUpload::createFromDiscriminatorValue);
     }
     /**
      * CreateSubtitleUpload

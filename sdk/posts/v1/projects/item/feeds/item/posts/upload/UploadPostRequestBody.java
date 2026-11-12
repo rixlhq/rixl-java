@@ -11,7 +11,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UploadPostRequestBody implements Parsable {
     /**
-     * enum.defined_only = true
+     * The content_type property
      */
     private MediaType contentType;
     /**
@@ -45,7 +45,7 @@ public class UploadPostRequestBody implements Parsable {
         return new UploadPostRequestBody();
     }
     /**
-     * Gets the content_type property value. enum.defined_only = true
+     * Gets the content_type property value. The content_type property
      * @return a {@link MediaType}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class UploadPostRequestBody implements Parsable {
         writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
     /**
-     * Sets the content_type property value. enum.defined_only = true
+     * Sets the content_type property value. The content_type property
      * @param value Value to set for the content_type property.
      */
     public void setContentType(@jakarta.annotation.Nullable final MediaType value) {

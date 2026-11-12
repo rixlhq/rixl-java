@@ -12,6 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.users.current.passkeys.item.PasskeysItemRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.passkeys.register.RegisterRequestBuilder;
 import com.rixl.sdk.models.auth.v1.ListPasskeysResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +32,7 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.users.current.passkeys.item collection
-     * @param id The id path parameter.
+     * @param id Unique identifier of the item
      * @return a {@link PasskeysItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -60,6 +61,7 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
     /**
      * ListPasskeys
      * @return a {@link ListPasskeysResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPasskeysResponse get() {
@@ -69,11 +71,14 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
      * ListPasskeys
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPasskeysResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPasskeysResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListPasskeysResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListPasskeysResponse::createFromDiscriminatorValue);
     }
     /**
      * ListPasskeys
@@ -110,9 +115,6 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userId;
         /**

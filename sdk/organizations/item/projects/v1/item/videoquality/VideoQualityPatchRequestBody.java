@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VideoQualityPatchRequestBody implements Parsable {
     /**
-     * enum.defined_only = true
+     * The video_quality property
      */
     private VideoQuality videoQuality;
     /**
@@ -34,7 +34,7 @@ public class VideoQualityPatchRequestBody implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the video_quality property value. enum.defined_only = true
+     * Gets the video_quality property value. The video_quality property
      * @return a {@link VideoQuality}
      */
     @jakarta.annotation.Nullable
@@ -50,7 +50,7 @@ public class VideoQualityPatchRequestBody implements Parsable {
         writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
     /**
-     * Sets the video_quality property value. enum.defined_only = true
+     * Sets the video_quality property value. The video_quality property
      * @param value Value to set for the video_quality property.
      */
     public void setVideoQuality(@jakarta.annotation.Nullable final VideoQuality value) {

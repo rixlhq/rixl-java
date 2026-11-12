@@ -12,6 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.billing.v1.storageusage.history.HistoryRequestBuilder;
 import com.rixl.sdk.billing.v1.storageusage.refresh.RefreshRequestBuilder;
 import com.rixl.sdk.models.billing.v1.StorageUsage;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -56,6 +57,7 @@ public class StorageUsageRequestBuilder extends BaseRequestBuilder {
     /**
      * GetStorageUsage
      * @return a {@link StorageUsage}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public StorageUsage get() {
@@ -65,11 +67,14 @@ public class StorageUsageRequestBuilder extends BaseRequestBuilder {
      * GetStorageUsage
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link StorageUsage}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public StorageUsage get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, StorageUsage::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, StorageUsage::createFromDiscriminatorValue);
     }
     /**
      * GetStorageUsage
@@ -106,9 +111,6 @@ public class StorageUsageRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The org_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String orgId;
         /**

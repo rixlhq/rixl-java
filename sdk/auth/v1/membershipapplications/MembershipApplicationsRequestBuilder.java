@@ -12,6 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.membershipapplications.item.WithOrgItemRequestBuilder;
 import com.rixl.sdk.models.auth.v1.ListMembershipApplicationsResponse;
 import com.rixl.sdk.models.auth.v1.MembershipApplicationState;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +24,7 @@ import java.util.Objects;
 public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.membershipApplications.item collection
-     * @param org_id The org_id path parameter.
+     * @param org_id Unique identifier of the item
      * @return a {@link WithOrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -52,6 +53,7 @@ public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListMembershipApplications
      * @return a {@link ListMembershipApplicationsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListMembershipApplicationsResponse get() {
@@ -61,11 +63,14 @@ public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
      * ListMembershipApplications
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListMembershipApplicationsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListMembershipApplicationsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListMembershipApplicationsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListMembershipApplicationsResponse::createFromDiscriminatorValue);
     }
     /**
      * ListMembershipApplications
@@ -102,24 +107,12 @@ public class MembershipApplicationsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The limit query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer limit;
-        /**
-         * The offset query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer offset;
-        /**
-         * The state query parameter.
-         */
         @jakarta.annotation.Nullable
         public MembershipApplicationState state;
-        /**
-         * The user.user_id query parameter.
-         */
         @jakarta.annotation.Nullable
         public String userUserId;
         /**

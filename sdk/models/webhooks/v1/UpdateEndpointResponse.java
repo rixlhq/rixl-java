@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpdateEndpointResponse implements Parsable {
     /**
-     * The endpoint property
+     * WebhookEndpoint is a delivery target. Secrets are never returned; they are only shown once on create and rotate.
      */
     private WebhookEndpoint endpoint;
     /**
@@ -23,7 +23,7 @@ public class UpdateEndpointResponse implements Parsable {
         return new UpdateEndpointResponse();
     }
     /**
-     * Gets the endpoint property value. The endpoint property
+     * Gets the endpoint property value. WebhookEndpoint is a delivery target. Secrets are never returned; they are only shown once on create and rotate.
      * @return a {@link WebhookEndpoint}
      */
     @jakarta.annotation.Nullable
@@ -49,7 +49,7 @@ public class UpdateEndpointResponse implements Parsable {
         writer.writeObjectValue("endpoint", this.getEndpoint());
     }
     /**
-     * Sets the endpoint property value. The endpoint property
+     * Sets the endpoint property value. WebhookEndpoint is a delivery target. Secrets are never returned; they are only shown once on create and rotate.
      * @param value Value to set for the endpoint property.
      */
     public void setEndpoint(@jakarta.annotation.Nullable final WebhookEndpoint value) {

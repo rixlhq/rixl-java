@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class BandwidthUsage implements Parsable {
     /**
-     * The created_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime createdAt;
     /**
@@ -30,7 +30,7 @@ public class BandwidthUsage implements Parsable {
      */
     private String orgId;
     /**
-     * The snapshot_date property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime snapshotDate;
     /**
@@ -68,7 +68,7 @@ public class BandwidthUsage implements Parsable {
         return new BandwidthUsage();
     }
     /**
-     * Gets the created_at property value. The created_at property
+     * Gets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -129,7 +129,7 @@ public class BandwidthUsage implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the snapshot_date property value. The snapshot_date property
+     * Gets the snapshot_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -204,7 +204,7 @@ public class BandwidthUsage implements Parsable {
         writer.writeStringValue("video_requests", this.getVideoRequests());
     }
     /**
-     * Sets the created_at property value. The created_at property
+     * Sets the created_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the created_at property.
      */
     public void setCreatedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
@@ -239,7 +239,7 @@ public class BandwidthUsage implements Parsable {
         this.orgId = value;
     }
     /**
-     * Sets the snapshot_date property value. The snapshot_date property
+     * Sets the snapshot_date property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the snapshot_date property.
      */
     public void setSnapshotDate(@jakarta.annotation.Nullable final OffsetDateTime value) {

@@ -14,6 +14,7 @@ import com.rixl.sdk.analytics.v1.dashboards.widgets.WidgetsRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.CreateDashboardRequest;
 import com.rixl.sdk.models.analytics.v1.Dashboard;
 import com.rixl.sdk.models.analytics.v1.ListDashboardsResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * Gets an item from the com.rixl.sdk.analytics.v1.dashboards.item collection
-     * @param dashboard_Id The id path parameter.
+     * @param dashboard_Id Unique identifier of the item
      * @return a {@link DashboardItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -62,6 +63,7 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListDashboards
      * @return a {@link ListDashboardsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListDashboardsResponse get() {
@@ -71,16 +73,20 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
      * ListDashboards
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListDashboardsResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListDashboardsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, ListDashboardsResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ListDashboardsResponse::createFromDiscriminatorValue);
     }
     /**
      * CreateDashboard
      * @param body The request body
      * @return a {@link Dashboard}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Dashboard post(@jakarta.annotation.Nonnull final CreateDashboardRequest body) {
@@ -91,12 +97,15 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Dashboard}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Dashboard post(@jakarta.annotation.Nonnull final CreateDashboardRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Dashboard::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Dashboard::createFromDiscriminatorValue);
     }
     /**
      * ListDashboards
@@ -157,14 +166,8 @@ public class DashboardsRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
-        /**
-         * The page query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer page;
-        /**
-         * The page_size query parameter.
-         */
         @jakarta.annotation.Nullable
         public Integer pageSize;
         /**

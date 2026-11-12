@@ -14,7 +14,7 @@ public class Membership implements Parsable {
      */
     private String id;
     /**
-     * The joined_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime joinedAt;
     /**
@@ -82,7 +82,7 @@ public class Membership implements Parsable {
         return this.id;
     }
     /**
-     * Gets the joined_at property value. The joined_at property
+     * Gets the joined_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -169,7 +169,7 @@ public class Membership implements Parsable {
         this.id = value;
     }
     /**
-     * Sets the joined_at property value. The joined_at property
+     * Sets the joined_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the joined_at property.
      */
     public void setJoinedAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

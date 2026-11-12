@@ -10,6 +10,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.PasskeyRegisterFinishRequest;
 import com.rixl.sdk.models.auth.v1.PasskeyRegisterFinishResponse;
+import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +40,7 @@ public class FinishRequestBuilder extends BaseRequestBuilder {
      * PasskeyRegisterFinish
      * @param body The request body
      * @return a {@link PasskeyRegisterFinishResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PasskeyRegisterFinishResponse post(@jakarta.annotation.Nonnull final PasskeyRegisterFinishRequest body) {
@@ -49,12 +51,15 @@ public class FinishRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PasskeyRegisterFinishResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PasskeyRegisterFinishResponse post(@jakarta.annotation.Nonnull final PasskeyRegisterFinishRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, PasskeyRegisterFinishResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, PasskeyRegisterFinishResponse::createFromDiscriminatorValue);
     }
     /**
      * PasskeyRegisterFinish

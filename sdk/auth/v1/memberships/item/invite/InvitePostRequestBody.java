@@ -14,6 +14,10 @@ public class InvitePostRequestBody implements Parsable {
      */
     private MembershipRole role;
     /**
+     * The user property
+     */
+    private InvitePostRequestBodyUser user;
+    /**
      * The username property
      */
     private String username;
@@ -33,8 +37,9 @@ public class InvitePostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(InvitePostRequestBodyUser::createFromDiscriminatorValue)); });
         deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }
@@ -45,6 +50,14 @@ public class InvitePostRequestBody implements Parsable {
     @jakarta.annotation.Nullable
     public MembershipRole getRole() {
         return this.role;
+    }
+    /**
+     * Gets the user property value. The user property
+     * @return a {@link InvitePostRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public InvitePostRequestBodyUser getUser() {
+        return this.user;
     }
     /**
      * Gets the username property value. The username property
@@ -61,6 +74,7 @@ public class InvitePostRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("role", this.getRole());
+        writer.writeObjectValue("user", this.getUser());
         writer.writeStringValue("username", this.getUsername());
     }
     /**
@@ -69,6 +83,13 @@ public class InvitePostRequestBody implements Parsable {
      */
     public void setRole(@jakarta.annotation.Nullable final MembershipRole value) {
         this.role = value;
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final InvitePostRequestBodyUser value) {
+        this.user = value;
     }
     /**
      * Sets the username property value. The username property

@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class V1PostRequestBody implements Parsable {
     /**
-     * The expiring_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime expiringAt;
     /**
@@ -36,7 +36,7 @@ public class V1PostRequestBody implements Parsable {
         return new V1PostRequestBody();
     }
     /**
-     * Gets the expiring_at property value. The expiring_at property
+     * Gets the expiring_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -92,7 +92,7 @@ public class V1PostRequestBody implements Parsable {
         writer.writeStringValue("project_id", this.getProjectId());
     }
     /**
-     * Sets the expiring_at property value. The expiring_at property
+     * Sets the expiring_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the expiring_at property.
      */
     public void setExpiringAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

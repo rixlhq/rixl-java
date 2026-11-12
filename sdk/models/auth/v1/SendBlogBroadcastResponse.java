@@ -14,11 +14,11 @@ public class SendBlogBroadcastResponse implements Parsable {
      */
     private String broadcastId;
     /**
-     * The scheduled_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime scheduledAt;
     /**
-     * The sent_at property
+     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
     private OffsetDateTime sentAt;
     /**
@@ -52,7 +52,7 @@ public class SendBlogBroadcastResponse implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the scheduled_at property value. The scheduled_at property
+     * Gets the scheduled_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -60,7 +60,7 @@ public class SendBlogBroadcastResponse implements Parsable {
         return this.scheduledAt;
     }
     /**
-     * Gets the sent_at property value. The sent_at property
+     * Gets the sent_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @return a {@link OffsetDateTime}
      */
     @jakarta.annotation.Nullable
@@ -85,14 +85,14 @@ public class SendBlogBroadcastResponse implements Parsable {
         this.broadcastId = value;
     }
     /**
-     * Sets the scheduled_at property value. The scheduled_at property
+     * Sets the scheduled_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the scheduled_at property.
      */
     public void setScheduledAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
         this.scheduledAt = value;
     }
     /**
-     * Sets the sent_at property value. The sent_at property
+     * Sets the sent_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      * @param value Value to set for the sent_at property.
      */
     public void setSentAt(@jakarta.annotation.Nullable final OffsetDateTime value) {

@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class StatusPatchRequestBody implements Parsable {
     /**
-     * enum.defined_only = true
+     * The status property
      */
     private InvoiceStatus status;
     /**
@@ -34,7 +34,7 @@ public class StatusPatchRequestBody implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the status property value. enum.defined_only = true
+     * Gets the status property value. The status property
      * @return a {@link InvoiceStatus}
      */
     @jakarta.annotation.Nullable
@@ -50,7 +50,7 @@ public class StatusPatchRequestBody implements Parsable {
         writer.writeEnumValue("status", this.getStatus());
     }
     /**
-     * Sets the status property value. enum.defined_only = true
+     * Sets the status property value. The status property
      * @param value Value to set for the status property.
      */
     public void setStatus(@jakarta.annotation.Nullable final InvoiceStatus value) {
