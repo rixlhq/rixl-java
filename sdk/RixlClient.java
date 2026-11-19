@@ -16,7 +16,6 @@ import com.rixl.sdk.analytics.AnalyticsRequestBuilder;
 import com.rixl.sdk.auth.AuthRequestBuilder;
 import com.rixl.sdk.billing.BillingRequestBuilder;
 import com.rixl.sdk.feeds.FeedsRequestBuilder;
-import com.rixl.sdk.internal.InternalRequestBuilder;
 import com.rixl.sdk.media.MediaRequestBuilder;
 import com.rixl.sdk.organizations.OrganizationsRequestBuilder;
 import com.rixl.sdk.platform.PlatformRequestBuilder;
@@ -61,14 +60,6 @@ public class RixlClient extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public FeedsRequestBuilder feeds() {
         return new FeedsRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The internal property
-     * @return a {@link InternalRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public InternalRequestBuilder internal() {
-        return new InternalRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The media property
