@@ -123,5 +123,9 @@ public class RixlClient extends BaseRequestBuilder {
         ApiClientBuilder.registerDefaultDeserializer(() -> new JsonParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new FormParseNodeFactory());
         ApiClientBuilder.registerDefaultDeserializer(() -> new TextParseNodeFactory());
+        if (requestAdapter.getBaseUrl() == null || requestAdapter.getBaseUrl().isEmpty()) {
+            requestAdapter.setBaseUrl("https://api.rixl.com");
+        }
+        pathParameters.put("baseurl", requestAdapter.getBaseUrl());
     }
 }
