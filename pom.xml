@@ -4,8 +4,8 @@
   <artifactId>sdk</artifactId>
   <version>1.3.0</version>
   <packaging>jar</packaging>
-  <name>RIXL Java SDK</name>
-  <description>Java client for the RIXL API.</description>
+  <name>Rixl Java SDK</name>
+  <description>Java client for the Rixl API.</description>
   <url>https://github.com/rixlhq/rixl-java</url>
 
   <licenses>
@@ -18,9 +18,9 @@
 
   <developers>
     <developer>
-      <name>RIXL</name>
+      <name>Rixl Inc.</name>
       <email>support@rixl.com</email>
-      <organization>RIXL</organization>
+      <organization>Rixl Inc.</organization>
       <organizationUrl>https://rixl.com</organizationUrl>
     </developer>
   </developers>
@@ -32,7 +32,7 @@
   </scm>
 
   <organization>
-    <name>RIXL</name>
+    <name>Rixl Inc.</name>
     <url>https://rixl.com</url>
   </organization>
 
