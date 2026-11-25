@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/members/current/check
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/members/current/check
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CheckRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class CheckRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CheckRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members/current/check", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members/current/check", pathParameters);
     }
     /**
      * Instantiates a new {@link CheckRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class CheckRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CheckRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members/current/check", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members/current/check", rawUrl);
     }
     /**
      * CheckCurrentMembership

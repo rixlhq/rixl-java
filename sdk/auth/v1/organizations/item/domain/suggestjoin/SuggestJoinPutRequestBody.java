@@ -13,10 +13,6 @@ public class SuggestJoinPutRequestBody implements Parsable {
      */
     private Boolean enabled;
     /**
-     * The user property
-     */
-    private SuggestJoinPutRequestBodyUser user;
-    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link SuggestJoinPutRequestBody}
@@ -40,18 +36,9 @@ public class SuggestJoinPutRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
         deserializerMap.put("enabled", (n) -> { this.setEnabled(n.getBooleanValue()); });
-        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(SuggestJoinPutRequestBodyUser::createFromDiscriminatorValue)); });
         return deserializerMap;
-    }
-    /**
-     * Gets the user property value. The user property
-     * @return a {@link SuggestJoinPutRequestBodyUser}
-     */
-    @jakarta.annotation.Nullable
-    public SuggestJoinPutRequestBodyUser getUser() {
-        return this.user;
     }
     /**
      * Serializes information the current object
@@ -60,7 +47,6 @@ public class SuggestJoinPutRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("enabled", this.getEnabled());
-        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the enabled property value. The enabled property
@@ -68,12 +54,5 @@ public class SuggestJoinPutRequestBody implements Parsable {
      */
     public void setEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.enabled = value;
-    }
-    /**
-     * Sets the user property value. The user property
-     * @param value Value to set for the user property.
-     */
-    public void setUser(@jakarta.annotation.Nullable final SuggestJoinPutRequestBodyUser value) {
-        this.user = value;
     }
 }

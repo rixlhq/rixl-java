@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/members
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/members
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MembersRequestBuilder extends BaseRequestBuilder {
@@ -48,7 +48,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembersRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members{?limit*,offset*,user%2Euser_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members{?limit*,offset*}", pathParameters);
     }
     /**
      * Instantiates a new {@link MembersRequestBuilder} and sets the default values.
@@ -56,7 +56,7 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MembersRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members{?limit*,offset*,user%2Euser_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members{?limit*,offset*}", rawUrl);
     }
     /**
      * ListOrganizationMembers
@@ -119,8 +119,6 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
         public Integer limit;
         @jakarta.annotation.Nullable
         public Integer offset;
-        @jakarta.annotation.Nullable
-        public String userUserId;
         /**
          * Extracts the query parameters into a map for the URI template parsing.
          * @return a {@link Map<String, Object>}
@@ -130,7 +128,6 @@ public class MembersRequestBuilder extends BaseRequestBuilder {
             final Map<String, Object> allQueryParams = new HashMap();
             allQueryParams.put("limit", limit);
             allQueryParams.put("offset", offset);
-            allQueryParams.put("user%2Euser_id", userUserId);
             return allQueryParams;
         }
     }

@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/notifications/{org_-id}/preferences
+ * Builds and executes requests for operations under /auth/v1/notifications/{org_id}/preferences
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PreferencesRequestBuilder extends BaseRequestBuilder {
@@ -27,7 +27,7 @@ public class PreferencesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PreferencesRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/notifications/{org_%2Did}/preferences{?user_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/notifications/{org_id}/preferences{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PreferencesRequestBuilder} and sets the default values.
@@ -35,7 +35,7 @@ public class PreferencesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PreferencesRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/notifications/{org_%2Did}/preferences{?user_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/notifications/{org_id}/preferences{?user_id*}", rawUrl);
     }
     /**
      * GetNotificationPreferences

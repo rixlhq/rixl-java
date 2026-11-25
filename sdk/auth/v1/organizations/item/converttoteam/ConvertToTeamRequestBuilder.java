@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/convert-to-team
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/convert-to-team
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ConvertToTeamRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class ConvertToTeamRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ConvertToTeamRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/convert-to-team", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/convert-to-team", pathParameters);
     }
     /**
      * Instantiates a new {@link ConvertToTeamRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class ConvertToTeamRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public ConvertToTeamRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/convert-to-team", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/convert-to-team", rawUrl);
     }
     /**
      * ConvertToTeamOrganization

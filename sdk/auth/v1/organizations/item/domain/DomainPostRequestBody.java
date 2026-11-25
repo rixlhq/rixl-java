@@ -13,10 +13,6 @@ public class DomainPostRequestBody implements Parsable {
      */
     private String domain;
     /**
-     * The user property
-     */
-    private DomainPostRequestBodyUser user;
-    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link DomainPostRequestBody}
@@ -40,18 +36,9 @@ public class DomainPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
         deserializerMap.put("domain", (n) -> { this.setDomain(n.getStringValue()); });
-        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(DomainPostRequestBodyUser::createFromDiscriminatorValue)); });
         return deserializerMap;
-    }
-    /**
-     * Gets the user property value. The user property
-     * @return a {@link DomainPostRequestBodyUser}
-     */
-    @jakarta.annotation.Nullable
-    public DomainPostRequestBodyUser getUser() {
-        return this.user;
     }
     /**
      * Serializes information the current object
@@ -60,7 +47,6 @@ public class DomainPostRequestBody implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("domain", this.getDomain());
-        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the domain property value. The domain property
@@ -68,12 +54,5 @@ public class DomainPostRequestBody implements Parsable {
      */
     public void setDomain(@jakarta.annotation.Nullable final String value) {
         this.domain = value;
-    }
-    /**
-     * Sets the user property value. The user property
-     * @param value Value to set for the user property.
-     */
-    public void setUser(@jakarta.annotation.Nullable final DomainPostRequestBodyUser value) {
-        this.user = value;
     }
 }
