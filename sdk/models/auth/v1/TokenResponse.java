@@ -13,9 +13,21 @@ public class TokenResponse implements Parsable {
      */
     private String accessToken;
     /**
+     * The domain_join_suggestions property
+     */
+    private java.util.List<Organization> domainJoinSuggestions;
+    /**
      * The expires_in property
      */
     private String expiresIn;
+    /**
+     * The last_active_org_id property
+     */
+    private String lastActiveOrgId;
+    /**
+     * The org_id property
+     */
+    private String orgId;
     /**
      * The refresh_token property
      */
@@ -24,6 +36,10 @@ public class TokenResponse implements Parsable {
      * The requires_action property
      */
     private String requiresAction;
+    /**
+     * The role property
+     */
+    private String role;
     /**
      * The token_type property
      */
@@ -47,6 +63,14 @@ public class TokenResponse implements Parsable {
         return this.accessToken;
     }
     /**
+     * Gets the domain_join_suggestions property value. The domain_join_suggestions property
+     * @return a {@link java.util.List<Organization>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<Organization> getDomainJoinSuggestions() {
+        return this.domainJoinSuggestions;
+    }
+    /**
      * Gets the expires_in property value. The expires_in property
      * @return a {@link String}
      */
@@ -60,13 +84,33 @@ public class TokenResponse implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
+        deserializerMap.put("domain_join_suggestions", (n) -> { this.setDomainJoinSuggestions(n.getCollectionOfObjectValues(Organization::createFromDiscriminatorValue)); });
         deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getStringValue()); });
+        deserializerMap.put("last_active_org_id", (n) -> { this.setLastActiveOrgId(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the last_active_org_id property value. The last_active_org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getLastActiveOrgId() {
+        return this.lastActiveOrgId;
+    }
+    /**
+     * Gets the org_id property value. The org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOrgId() {
+        return this.orgId;
     }
     /**
      * Gets the refresh_token property value. The refresh_token property
@@ -85,6 +129,14 @@ public class TokenResponse implements Parsable {
         return this.requiresAction;
     }
     /**
+     * Gets the role property value. The role property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getRole() {
+        return this.role;
+    }
+    /**
      * Gets the token_type property value. The token_type property
      * @return a {@link String}
      */
@@ -99,9 +151,13 @@ public class TokenResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_token", this.getAccessToken());
+        writer.writeCollectionOfObjectValues("domain_join_suggestions", this.getDomainJoinSuggestions());
         writer.writeStringValue("expires_in", this.getExpiresIn());
+        writer.writeStringValue("last_active_org_id", this.getLastActiveOrgId());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
+        writer.writeStringValue("role", this.getRole());
         writer.writeStringValue("token_type", this.getTokenType());
     }
     /**
@@ -112,11 +168,32 @@ public class TokenResponse implements Parsable {
         this.accessToken = value;
     }
     /**
+     * Sets the domain_join_suggestions property value. The domain_join_suggestions property
+     * @param value Value to set for the domain_join_suggestions property.
+     */
+    public void setDomainJoinSuggestions(@jakarta.annotation.Nullable final java.util.List<Organization> value) {
+        this.domainJoinSuggestions = value;
+    }
+    /**
      * Sets the expires_in property value. The expires_in property
      * @param value Value to set for the expires_in property.
      */
     public void setExpiresIn(@jakarta.annotation.Nullable final String value) {
         this.expiresIn = value;
+    }
+    /**
+     * Sets the last_active_org_id property value. The last_active_org_id property
+     * @param value Value to set for the last_active_org_id property.
+     */
+    public void setLastActiveOrgId(@jakarta.annotation.Nullable final String value) {
+        this.lastActiveOrgId = value;
+    }
+    /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
+     */
+    public void setOrgId(@jakarta.annotation.Nullable final String value) {
+        this.orgId = value;
     }
     /**
      * Sets the refresh_token property value. The refresh_token property
@@ -131,6 +208,13 @@ public class TokenResponse implements Parsable {
      */
     public void setRequiresAction(@jakarta.annotation.Nullable final String value) {
         this.requiresAction = value;
+    }
+    /**
+     * Sets the role property value. The role property
+     * @param value Value to set for the role property.
+     */
+    public void setRole(@jakarta.annotation.Nullable final String value) {
+        this.role = value;
     }
     /**
      * Sets the token_type property value. The token_type property

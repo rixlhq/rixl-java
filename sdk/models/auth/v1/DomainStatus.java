@@ -12,13 +12,13 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class DomainStatus implements Parsable {
     /**
-     * The auto_join property
-     */
-    private Boolean autoJoin;
-    /**
      * The pending property
      */
     private PendingDomain pending;
+    /**
+     * The suggest_join property
+     */
+    private Boolean suggestJoin;
     /**
      * The verified property
      */
@@ -34,22 +34,14 @@ public class DomainStatus implements Parsable {
         return new DomainStatus();
     }
     /**
-     * Gets the auto_join property value. The auto_join property
-     * @return a {@link Boolean}
-     */
-    @jakarta.annotation.Nullable
-    public Boolean getAutoJoin() {
-        return this.autoJoin;
-    }
-    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("auto_join", (n) -> { this.setAutoJoin(n.getBooleanValue()); });
         deserializerMap.put("pending", (n) -> { this.setPending(n.getObjectValue(PendingDomain::createFromDiscriminatorValue)); });
+        deserializerMap.put("suggest_join", (n) -> { this.setSuggestJoin(n.getBooleanValue()); });
         deserializerMap.put("verified", (n) -> { this.setVerified(n.getObjectValue(VerifiedDomain::createFromDiscriminatorValue)); });
         return deserializerMap;
     }
@@ -60,6 +52,14 @@ public class DomainStatus implements Parsable {
     @jakarta.annotation.Nullable
     public PendingDomain getPending() {
         return this.pending;
+    }
+    /**
+     * Gets the suggest_join property value. The suggest_join property
+     * @return a {@link Boolean}
+     */
+    @jakarta.annotation.Nullable
+    public Boolean getSuggestJoin() {
+        return this.suggestJoin;
     }
     /**
      * Gets the verified property value. The verified property
@@ -75,16 +75,9 @@ public class DomainStatus implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeBooleanValue("auto_join", this.getAutoJoin());
         writer.writeObjectValue("pending", this.getPending());
+        writer.writeBooleanValue("suggest_join", this.getSuggestJoin());
         writer.writeObjectValue("verified", this.getVerified());
-    }
-    /**
-     * Sets the auto_join property value. The auto_join property
-     * @param value Value to set for the auto_join property.
-     */
-    public void setAutoJoin(@jakarta.annotation.Nullable final Boolean value) {
-        this.autoJoin = value;
     }
     /**
      * Sets the pending property value. The pending property
@@ -92,6 +85,13 @@ public class DomainStatus implements Parsable {
      */
     public void setPending(@jakarta.annotation.Nullable final PendingDomain value) {
         this.pending = value;
+    }
+    /**
+     * Sets the suggest_join property value. The suggest_join property
+     * @param value Value to set for the suggest_join property.
+     */
+    public void setSuggestJoin(@jakarta.annotation.Nullable final Boolean value) {
+        this.suggestJoin = value;
     }
     /**
      * Sets the verified property value. The verified property

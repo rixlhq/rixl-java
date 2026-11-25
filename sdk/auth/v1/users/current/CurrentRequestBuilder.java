@@ -10,7 +10,9 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.users.current.avatar.AvatarRequestBuilder;
+import com.rixl.sdk.auth.v1.users.current.domainjoinsuggestions.DomainJoinSuggestionsRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.emails.EmailsRequestBuilder;
+import com.rixl.sdk.auth.v1.users.current.memberships.MembershipsRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.name.NameRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.passkeys.PasskeysRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.totp.TotpRequestBuilder;
@@ -35,12 +37,28 @@ public class CurrentRequestBuilder extends BaseRequestBuilder {
         return new AvatarRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The domainJoinSuggestions property
+     * @return a {@link DomainJoinSuggestionsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public DomainJoinSuggestionsRequestBuilder domainJoinSuggestions() {
+        return new DomainJoinSuggestionsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The emails property
      * @return a {@link EmailsRequestBuilder}
      */
     @jakarta.annotation.Nonnull
     public EmailsRequestBuilder emails() {
         return new EmailsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The memberships property
+     * @return a {@link MembershipsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public MembershipsRequestBuilder memberships() {
+        return new MembershipsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The name property

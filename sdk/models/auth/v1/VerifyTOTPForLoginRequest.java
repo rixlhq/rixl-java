@@ -9,13 +9,13 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VerifyTOTPForLoginRequest implements Parsable {
     /**
+     * The challenge_id property
+     */
+    private String challengeId;
+    /**
      * The code property
      */
     private String code;
-    /**
-     * The session_id property
-     */
-    private String sessionId;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -25,6 +25,14 @@ public class VerifyTOTPForLoginRequest implements Parsable {
     public static VerifyTOTPForLoginRequest createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new VerifyTOTPForLoginRequest();
+    }
+    /**
+     * Gets the challenge_id property value. The challenge_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getChallengeId() {
+        return this.challengeId;
     }
     /**
      * Gets the code property value. The code property
@@ -41,17 +49,9 @@ public class VerifyTOTPForLoginRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("challenge_id", (n) -> { this.setChallengeId(n.getStringValue()); });
         deserializerMap.put("code", (n) -> { this.setCode(n.getStringValue()); });
-        deserializerMap.put("session_id", (n) -> { this.setSessionId(n.getStringValue()); });
         return deserializerMap;
-    }
-    /**
-     * Gets the session_id property value. The session_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getSessionId() {
-        return this.sessionId;
     }
     /**
      * Serializes information the current object
@@ -59,8 +59,15 @@ public class VerifyTOTPForLoginRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("challenge_id", this.getChallengeId());
         writer.writeStringValue("code", this.getCode());
-        writer.writeStringValue("session_id", this.getSessionId());
+    }
+    /**
+     * Sets the challenge_id property value. The challenge_id property
+     * @param value Value to set for the challenge_id property.
+     */
+    public void setChallengeId(@jakarta.annotation.Nullable final String value) {
+        this.challengeId = value;
     }
     /**
      * Sets the code property value. The code property
@@ -68,12 +75,5 @@ public class VerifyTOTPForLoginRequest implements Parsable {
      */
     public void setCode(@jakarta.annotation.Nullable final String value) {
         this.code = value;
-    }
-    /**
-     * Sets the session_id property value. The session_id property
-     * @param value Value to set for the session_id property.
-     */
-    public void setSessionId(@jakarta.annotation.Nullable final String value) {
-        this.sessionId = value;
     }
 }

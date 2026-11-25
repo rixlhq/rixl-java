@@ -17,6 +17,10 @@ public class RefreshTokenRequest implements Parsable {
      */
     private String countryCode;
     /**
+     * The org_id property
+     */
+    private String orgId;
+    /**
      * The origin property
      */
     private String origin;
@@ -64,14 +68,23 @@ public class RefreshTokenRequest implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("code_verifier", (n) -> { this.setCodeVerifier(n.getStringValue()); });
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("origin", (n) -> { this.setOrigin(n.getStringValue()); });
         deserializerMap.put("redirect_uri", (n) -> { this.setRedirectUri(n.getStringValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the org_id property value. The org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOrgId() {
+        return this.orgId;
     }
     /**
      * Gets the origin property value. The origin property
@@ -113,6 +126,7 @@ public class RefreshTokenRequest implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("code_verifier", this.getCodeVerifier());
         writer.writeStringValue("country_code", this.getCountryCode());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("origin", this.getOrigin());
         writer.writeStringValue("redirect_uri", this.getRedirectUri());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
@@ -131,6 +145,13 @@ public class RefreshTokenRequest implements Parsable {
      */
     public void setCountryCode(@jakarta.annotation.Nullable final String value) {
         this.countryCode = value;
+    }
+    /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
+     */
+    public void setOrgId(@jakarta.annotation.Nullable final String value) {
+        this.orgId = value;
     }
     /**
      * Sets the origin property value. The origin property

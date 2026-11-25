@@ -14,13 +14,13 @@ public class MembershipMutation implements Parsable {
      */
     private OffsetDateTime joinedAt;
     /**
+     * The organization property
+     */
+    private Organization organization;
+    /**
      * The org_id property
      */
     private String orgId;
-    /**
-     * The org_name property
-     */
-    private String orgName;
     /**
      * The role property
      */
@@ -51,8 +51,8 @@ public class MembershipMutation implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("joined_at", (n) -> { this.setJoinedAt(n.getOffsetDateTimeValue()); });
+        deserializerMap.put("organization", (n) -> { this.setOrganization(n.getObjectValue(Organization::createFromDiscriminatorValue)); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("org_name", (n) -> { this.setOrgName(n.getStringValue()); });
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
         deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipState::forValue)); });
         deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
@@ -67,20 +67,20 @@ public class MembershipMutation implements Parsable {
         return this.joinedAt;
     }
     /**
+     * Gets the organization property value. The organization property
+     * @return a {@link Organization}
+     */
+    @jakarta.annotation.Nullable
+    public Organization getOrganization() {
+        return this.organization;
+    }
+    /**
      * Gets the org_id property value. The org_id property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
     public String getOrgId() {
         return this.orgId;
-    }
-    /**
-     * Gets the org_name property value. The org_name property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getOrgName() {
-        return this.orgName;
     }
     /**
      * Gets the role property value. The role property
@@ -113,8 +113,8 @@ public class MembershipMutation implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeOffsetDateTimeValue("joined_at", this.getJoinedAt());
+        writer.writeObjectValue("organization", this.getOrganization());
         writer.writeStringValue("org_id", this.getOrgId());
-        writer.writeStringValue("org_name", this.getOrgName());
         writer.writeEnumValue("role", this.getRole());
         writer.writeEnumValue("state", this.getState());
         writer.writeStringValue("user_id", this.getUserId());
@@ -127,18 +127,18 @@ public class MembershipMutation implements Parsable {
         this.joinedAt = value;
     }
     /**
+     * Sets the organization property value. The organization property
+     * @param value Value to set for the organization property.
+     */
+    public void setOrganization(@jakarta.annotation.Nullable final Organization value) {
+        this.organization = value;
+    }
+    /**
      * Sets the org_id property value. The org_id property
      * @param value Value to set for the org_id property.
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
-    }
-    /**
-     * Sets the org_name property value. The org_name property
-     * @param value Value to set for the org_name property.
-     */
-    public void setOrgName(@jakarta.annotation.Nullable final String value) {
-        this.orgName = value;
     }
     /**
      * Sets the role property value. The role property

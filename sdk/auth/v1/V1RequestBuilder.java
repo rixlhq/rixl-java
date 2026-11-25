@@ -8,11 +8,13 @@ import com.rixl.sdk.auth.v1.invitations.InvitationsRequestBuilder;
 import com.rixl.sdk.auth.v1.login.LoginRequestBuilder;
 import com.rixl.sdk.auth.v1.logout.LogoutRequestBuilder;
 import com.rixl.sdk.auth.v1.membershipapplications.MembershipApplicationsRequestBuilder;
-import com.rixl.sdk.auth.v1.memberships.MembershipsRequestBuilder;
+import com.rixl.sdk.auth.v1.notifications.NotificationsRequestBuilder;
+import com.rixl.sdk.auth.v1.organizations.OrganizationsRequestBuilder;
 import com.rixl.sdk.auth.v1.passkey.PasskeyRequestBuilder;
 import com.rixl.sdk.auth.v1.password.PasswordRequestBuilder;
 import com.rixl.sdk.auth.v1.providers.ProvidersRequestBuilder;
 import com.rixl.sdk.auth.v1.register.RegisterRequestBuilder;
+import com.rixl.sdk.auth.v1.signins.SignInsRequestBuilder;
 import com.rixl.sdk.auth.v1.token.TokenRequestBuilder;
 import com.rixl.sdk.auth.v1.userinfo.UserinfoRequestBuilder;
 import com.rixl.sdk.auth.v1.users.UsersRequestBuilder;
@@ -74,12 +76,20 @@ public class V1RequestBuilder extends BaseRequestBuilder {
         return new MembershipApplicationsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The memberships property
-     * @return a {@link MembershipsRequestBuilder}
+     * The notifications property
+     * @return a {@link NotificationsRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public MembershipsRequestBuilder memberships() {
-        return new MembershipsRequestBuilder(pathParameters, requestAdapter);
+    public NotificationsRequestBuilder notifications() {
+        return new NotificationsRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The organizations property
+     * @return a {@link OrganizationsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public OrganizationsRequestBuilder organizations() {
+        return new OrganizationsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The passkey property
@@ -112,6 +122,14 @@ public class V1RequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RegisterRequestBuilder register() {
         return new RegisterRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The signIns property
+     * @return a {@link SignInsRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public SignInsRequestBuilder signIns() {
+        return new SignInsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The token property

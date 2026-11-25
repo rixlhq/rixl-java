@@ -17,6 +17,10 @@ public class LoginResponse implements Parsable {
      */
     private java.util.List<AuthMethod> authentication;
     /**
+     * The challenge_id property
+     */
+    private String challengeId;
+    /**
      * The email property
      */
     private String email;
@@ -24,6 +28,14 @@ public class LoginResponse implements Parsable {
      * The expires_in property
      */
     private String expiresIn;
+    /**
+     * The last_active_org_id property
+     */
+    private String lastActiveOrgId;
+    /**
+     * The org_id property
+     */
+    private String orgId;
     /**
      * passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON, present only when &quot;passkey&quot; is one of the authentication methods.
      */
@@ -37,9 +49,9 @@ public class LoginResponse implements Parsable {
      */
     private String requiresAction;
     /**
-     * The session_id property
+     * The role property
      */
-    private String sessionId;
+    private String role;
     /**
      * &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
      */
@@ -75,6 +87,14 @@ public class LoginResponse implements Parsable {
         return this.authentication;
     }
     /**
+     * Gets the challenge_id property value. The challenge_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getChallengeId() {
+        return this.challengeId;
+    }
+    /**
      * Gets the email property value. The email property
      * @return a {@link String}
      */
@@ -96,18 +116,37 @@ public class LoginResponse implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
         deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getCollectionOfEnumValues(AuthMethod::forValue)); });
+        deserializerMap.put("challenge_id", (n) -> { this.setChallengeId(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getStringValue()); });
+        deserializerMap.put("last_active_org_id", (n) -> { this.setLastActiveOrgId(n.getStringValue()); });
+        deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("passkey_options", (n) -> { this.setPasskeyOptions(n.getByteArrayValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
-        deserializerMap.put("session_id", (n) -> { this.setSessionId(n.getStringValue()); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getStringValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
+    }
+    /**
+     * Gets the last_active_org_id property value. The last_active_org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getLastActiveOrgId() {
+        return this.lastActiveOrgId;
+    }
+    /**
+     * Gets the org_id property value. The org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getOrgId() {
+        return this.orgId;
     }
     /**
      * Gets the passkey_options property value. passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON, present only when &quot;passkey&quot; is one of the authentication methods.
@@ -134,12 +173,12 @@ public class LoginResponse implements Parsable {
         return this.requiresAction;
     }
     /**
-     * Gets the session_id property value. The session_id property
+     * Gets the role property value. The role property
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
-    public String getSessionId() {
-        return this.sessionId;
+    public String getRole() {
+        return this.role;
     }
     /**
      * Gets the status property value. &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
@@ -165,12 +204,15 @@ public class LoginResponse implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_token", this.getAccessToken());
         writer.writeCollectionOfEnumValues("authentication", this.getAuthentication());
+        writer.writeStringValue("challenge_id", this.getChallengeId());
         writer.writeStringValue("email", this.getEmail());
         writer.writeStringValue("expires_in", this.getExpiresIn());
+        writer.writeStringValue("last_active_org_id", this.getLastActiveOrgId());
+        writer.writeStringValue("org_id", this.getOrgId());
         writer.writeByteArrayValue("passkey_options", this.getPasskeyOptions());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
-        writer.writeStringValue("session_id", this.getSessionId());
+        writer.writeStringValue("role", this.getRole());
         writer.writeStringValue("status", this.getStatus());
         writer.writeStringValue("token_type", this.getTokenType());
     }
@@ -189,6 +231,13 @@ public class LoginResponse implements Parsable {
         this.authentication = value;
     }
     /**
+     * Sets the challenge_id property value. The challenge_id property
+     * @param value Value to set for the challenge_id property.
+     */
+    public void setChallengeId(@jakarta.annotation.Nullable final String value) {
+        this.challengeId = value;
+    }
+    /**
      * Sets the email property value. The email property
      * @param value Value to set for the email property.
      */
@@ -201,6 +250,20 @@ public class LoginResponse implements Parsable {
      */
     public void setExpiresIn(@jakarta.annotation.Nullable final String value) {
         this.expiresIn = value;
+    }
+    /**
+     * Sets the last_active_org_id property value. The last_active_org_id property
+     * @param value Value to set for the last_active_org_id property.
+     */
+    public void setLastActiveOrgId(@jakarta.annotation.Nullable final String value) {
+        this.lastActiveOrgId = value;
+    }
+    /**
+     * Sets the org_id property value. The org_id property
+     * @param value Value to set for the org_id property.
+     */
+    public void setOrgId(@jakarta.annotation.Nullable final String value) {
+        this.orgId = value;
     }
     /**
      * Sets the passkey_options property value. passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON, present only when &quot;passkey&quot; is one of the authentication methods.
@@ -224,11 +287,11 @@ public class LoginResponse implements Parsable {
         this.requiresAction = value;
     }
     /**
-     * Sets the session_id property value. The session_id property
-     * @param value Value to set for the session_id property.
+     * Sets the role property value. The role property
+     * @param value Value to set for the role property.
      */
-    public void setSessionId(@jakarta.annotation.Nullable final String value) {
-        this.sessionId = value;
+    public void setRole(@jakarta.annotation.Nullable final String value) {
+        this.role = value;
     }
     /**
      * Sets the status property value. &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;

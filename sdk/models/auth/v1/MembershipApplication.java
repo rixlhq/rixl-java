@@ -26,17 +26,9 @@ public class MembershipApplication implements Parsable {
      */
     private OffsetDateTime invitationExpiresAt;
     /**
-     * The organization_first_name property
+     * The organization property
      */
-    private String organizationFirstName;
-    /**
-     * The organization_last_name property
-     */
-    private String organizationLastName;
-    /**
-     * The organization_username property
-     */
-    private String organizationUsername;
+    private Organization organization;
     /**
      * The org_id property
      */
@@ -85,14 +77,12 @@ public class MembershipApplication implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(11);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("created_at", (n) -> { this.setCreatedAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("decided_at", (n) -> { this.setDecidedAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("invitation_expires_at", (n) -> { this.setInvitationExpiresAt(n.getOffsetDateTimeValue()); });
-        deserializerMap.put("organization_first_name", (n) -> { this.setOrganizationFirstName(n.getStringValue()); });
-        deserializerMap.put("organization_last_name", (n) -> { this.setOrganizationLastName(n.getStringValue()); });
-        deserializerMap.put("organization_username", (n) -> { this.setOrganizationUsername(n.getStringValue()); });
+        deserializerMap.put("organization", (n) -> { this.setOrganization(n.getObjectValue(Organization::createFromDiscriminatorValue)); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
         deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipApplicationState::forValue)); });
@@ -116,28 +106,12 @@ public class MembershipApplication implements Parsable {
         return this.invitationExpiresAt;
     }
     /**
-     * Gets the organization_first_name property value. The organization_first_name property
-     * @return a {@link String}
+     * Gets the organization property value. The organization property
+     * @return a {@link Organization}
      */
     @jakarta.annotation.Nullable
-    public String getOrganizationFirstName() {
-        return this.organizationFirstName;
-    }
-    /**
-     * Gets the organization_last_name property value. The organization_last_name property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getOrganizationLastName() {
-        return this.organizationLastName;
-    }
-    /**
-     * Gets the organization_username property value. The organization_username property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getOrganizationUsername() {
-        return this.organizationUsername;
+    public Organization getOrganization() {
+        return this.organization;
     }
     /**
      * Gets the org_id property value. The org_id property
@@ -181,9 +155,7 @@ public class MembershipApplication implements Parsable {
         writer.writeOffsetDateTimeValue("decided_at", this.getDecidedAt());
         writer.writeStringValue("id", this.getId());
         writer.writeOffsetDateTimeValue("invitation_expires_at", this.getInvitationExpiresAt());
-        writer.writeStringValue("organization_first_name", this.getOrganizationFirstName());
-        writer.writeStringValue("organization_last_name", this.getOrganizationLastName());
-        writer.writeStringValue("organization_username", this.getOrganizationUsername());
+        writer.writeObjectValue("organization", this.getOrganization());
         writer.writeStringValue("org_id", this.getOrgId());
         writer.writeEnumValue("role", this.getRole());
         writer.writeEnumValue("state", this.getState());
@@ -218,25 +190,11 @@ public class MembershipApplication implements Parsable {
         this.invitationExpiresAt = value;
     }
     /**
-     * Sets the organization_first_name property value. The organization_first_name property
-     * @param value Value to set for the organization_first_name property.
+     * Sets the organization property value. The organization property
+     * @param value Value to set for the organization property.
      */
-    public void setOrganizationFirstName(@jakarta.annotation.Nullable final String value) {
-        this.organizationFirstName = value;
-    }
-    /**
-     * Sets the organization_last_name property value. The organization_last_name property
-     * @param value Value to set for the organization_last_name property.
-     */
-    public void setOrganizationLastName(@jakarta.annotation.Nullable final String value) {
-        this.organizationLastName = value;
-    }
-    /**
-     * Sets the organization_username property value. The organization_username property
-     * @param value Value to set for the organization_username property.
-     */
-    public void setOrganizationUsername(@jakarta.annotation.Nullable final String value) {
-        this.organizationUsername = value;
+    public void setOrganization(@jakarta.annotation.Nullable final Organization value) {
+        this.organization = value;
     }
     /**
      * Sets the org_id property value. The org_id property

@@ -9,10 +9,6 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UserInfo implements Parsable {
     /**
-     * The active_org_id property
-     */
-    private String activeOrgId;
-    /**
      * The country_code property
      */
     private String countryCode;
@@ -45,6 +41,10 @@ public class UserInfo implements Parsable {
      */
     private String languageCode;
     /**
+     * The last_active_org_id property
+     */
+    private String lastActiveOrgId;
+    /**
      * The last_name property
      */
     private String lastName;
@@ -69,14 +69,6 @@ public class UserInfo implements Parsable {
     public static UserInfo createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
         return new UserInfo();
-    }
-    /**
-     * Gets the active_org_id property value. The active_org_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getActiveOrgId() {
-        return this.activeOrgId;
     }
     /**
      * Gets the country_code property value. The country_code property
@@ -109,7 +101,6 @@ public class UserInfo implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
-        deserializerMap.put("active_org_id", (n) -> { this.setActiveOrgId(n.getStringValue()); });
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("email_verified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
@@ -118,6 +109,7 @@ public class UserInfo implements Parsable {
         deserializerMap.put("image_id", (n) -> { this.setImageId(n.getStringValue()); });
         deserializerMap.put("image_url", (n) -> { this.setImageUrl(n.getStringValue()); });
         deserializerMap.put("language_code", (n) -> { this.setLanguageCode(n.getStringValue()); });
+        deserializerMap.put("last_active_org_id", (n) -> { this.setLastActiveOrgId(n.getStringValue()); });
         deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("policies", (n) -> { this.setPolicies(n.getCollectionOfObjectValues(Policy::createFromDiscriminatorValue)); });
@@ -165,6 +157,14 @@ public class UserInfo implements Parsable {
         return this.languageCode;
     }
     /**
+     * Gets the last_active_org_id property value. The last_active_org_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getLastActiveOrgId() {
+        return this.lastActiveOrgId;
+    }
+    /**
      * Gets the last_name property value. The last_name property
      * @return a {@link String}
      */
@@ -202,7 +202,6 @@ public class UserInfo implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("active_org_id", this.getActiveOrgId());
         writer.writeStringValue("country_code", this.getCountryCode());
         writer.writeStringValue("email", this.getEmail());
         writer.writeBooleanValue("email_verified", this.getEmailVerified());
@@ -211,17 +210,11 @@ public class UserInfo implements Parsable {
         writer.writeStringValue("image_id", this.getImageId());
         writer.writeStringValue("image_url", this.getImageUrl());
         writer.writeStringValue("language_code", this.getLanguageCode());
+        writer.writeStringValue("last_active_org_id", this.getLastActiveOrgId());
         writer.writeStringValue("last_name", this.getLastName());
         writer.writeCollectionOfPrimitiveValues("permissions", this.getPermissions());
         writer.writeCollectionOfObjectValues("policies", this.getPolicies());
         writer.writeStringValue("username", this.getUsername());
-    }
-    /**
-     * Sets the active_org_id property value. The active_org_id property
-     * @param value Value to set for the active_org_id property.
-     */
-    public void setActiveOrgId(@jakarta.annotation.Nullable final String value) {
-        this.activeOrgId = value;
     }
     /**
      * Sets the country_code property value. The country_code property
@@ -278,6 +271,13 @@ public class UserInfo implements Parsable {
      */
     public void setLanguageCode(@jakarta.annotation.Nullable final String value) {
         this.languageCode = value;
+    }
+    /**
+     * Sets the last_active_org_id property value. The last_active_org_id property
+     * @param value Value to set for the last_active_org_id property.
+     */
+    public void setLastActiveOrgId(@jakarta.annotation.Nullable final String value) {
+        this.lastActiveOrgId = value;
     }
     /**
      * Sets the last_name property value. The last_name property

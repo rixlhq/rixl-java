@@ -8,6 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.auth.v1.logout.all.AllRequestBuilder;
 import com.rixl.sdk.models.auth.v1.LogoutRequest;
 import com.rixl.sdk.models.google.protobuf.Empty;
 import com.rixl.sdk.models.google.rpc.Status;
@@ -20,6 +21,14 @@ import java.util.Objects;
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class LogoutRequestBuilder extends BaseRequestBuilder {
+    /**
+     * The all property
+     * @return a {@link AllRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public AllRequestBuilder all() {
+        return new AllRequestBuilder(pathParameters, requestAdapter);
+    }
     /**
      * Instantiates a new {@link LogoutRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request

@@ -9,13 +9,13 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PasskeyBeginResponse implements Parsable {
     /**
+     * The challenge_id property
+     */
+    private String challengeId;
+    /**
      * The options property
      */
     private byte[] options;
-    /**
-     * The session_id property
-     */
-    private String sessionId;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -27,14 +27,22 @@ public class PasskeyBeginResponse implements Parsable {
         return new PasskeyBeginResponse();
     }
     /**
+     * Gets the challenge_id property value. The challenge_id property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getChallengeId() {
+        return this.challengeId;
+    }
+    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        deserializerMap.put("challenge_id", (n) -> { this.setChallengeId(n.getStringValue()); });
         deserializerMap.put("options", (n) -> { this.setOptions(n.getByteArrayValue()); });
-        deserializerMap.put("session_id", (n) -> { this.setSessionId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -46,21 +54,20 @@ public class PasskeyBeginResponse implements Parsable {
         return this.options;
     }
     /**
-     * Gets the session_id property value. The session_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getSessionId() {
-        return this.sessionId;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("challenge_id", this.getChallengeId());
         writer.writeByteArrayValue("options", this.getOptions());
-        writer.writeStringValue("session_id", this.getSessionId());
+    }
+    /**
+     * Sets the challenge_id property value. The challenge_id property
+     * @param value Value to set for the challenge_id property.
+     */
+    public void setChallengeId(@jakarta.annotation.Nullable final String value) {
+        this.challengeId = value;
     }
     /**
      * Sets the options property value. The options property
@@ -68,12 +75,5 @@ public class PasskeyBeginResponse implements Parsable {
      */
     public void setOptions(@jakarta.annotation.Nullable final byte[] value) {
         this.options = value;
-    }
-    /**
-     * Sets the session_id property value. The session_id property
-     * @param value Value to set for the session_id property.
-     */
-    public void setSessionId(@jakarta.annotation.Nullable final String value) {
-        this.sessionId = value;
     }
 }
