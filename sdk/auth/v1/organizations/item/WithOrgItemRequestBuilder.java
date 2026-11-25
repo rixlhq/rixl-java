@@ -23,10 +23,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class OrgItemRequestBuilder extends BaseRequestBuilder {
+public class WithOrgItemRequestBuilder extends BaseRequestBuilder {
     /**
      * The auditEvents property
      * @return a {@link AuditEventsRequestBuilder}
@@ -92,20 +92,20 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
         return new TransferOwnershipRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * Instantiates a new {@link OrgItemRequestBuilder} and sets the default values.
+     * Instantiates a new {@link WithOrgItemRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
      */
-    public OrgItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}", pathParameters);
+    public WithOrgItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}", pathParameters);
     }
     /**
-     * Instantiates a new {@link OrgItemRequestBuilder} and sets the default values.
+     * Instantiates a new {@link WithOrgItemRequestBuilder} and sets the default values.
      * @param rawUrl The raw URL to use for the request builder.
      * @param requestAdapter The request adapter to use to execute the requests.
      */
-    public OrgItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}", rawUrl);
+    public WithOrgItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}", rawUrl);
     }
     /**
      * GetOrganization
@@ -136,7 +136,7 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
      * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
-    public Organization patch(@jakarta.annotation.Nonnull final OrgPatchRequestBody body) {
+    public Organization patch(@jakarta.annotation.Nonnull final WithOrgPatchRequestBody body) {
         return patch(body, null);
     }
     /**
@@ -147,7 +147,7 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
      * @throws Status When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
-    public Organization patch(@jakarta.annotation.Nonnull final OrgPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    public Organization patch(@jakarta.annotation.Nonnull final WithOrgPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
@@ -180,7 +180,7 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final OrgPatchRequestBody body) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final WithOrgPatchRequestBody body) {
         return toPatchRequestInformation(body, null);
     }
     /**
@@ -190,7 +190,7 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final OrgPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
+    public RequestInformation toPatchRequestInformation(@jakarta.annotation.Nonnull final WithOrgPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PATCH, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PatchRequestConfiguration::new);
@@ -201,12 +201,12 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
     /**
      * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
      * @param rawUrl The raw URL to use for the request builder.
-     * @return a {@link OrgItemRequestBuilder}
+     * @return a {@link WithOrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public OrgItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+    public WithOrgItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
         Objects.requireNonNull(rawUrl);
-        return new OrgItemRequestBuilder(rawUrl, requestAdapter);
+        return new WithOrgItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
      * Configuration for the request such as headers, query parameters, and middleware options.

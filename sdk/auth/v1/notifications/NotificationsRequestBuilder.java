@@ -2,7 +2,7 @@ package com.rixl.sdk.auth.v1.notifications;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixl.sdk.auth.v1.notifications.item.OrgItemRequestBuilder;
+import com.rixl.sdk.auth.v1.notifications.item.WithOrgItemRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -12,15 +12,15 @@ import java.util.Objects;
 public class NotificationsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.notifications.item collection
-     * @param org_Id Unique identifier of the item
-     * @return a {@link OrgItemRequestBuilder}
+     * @param org_id Unique identifier of the item
+     * @return a {@link WithOrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public OrgItemRequestBuilder byOrg_Id(@jakarta.annotation.Nonnull final String org_Id) {
-        Objects.requireNonNull(org_Id);
+    public WithOrgItemRequestBuilder byOrg_id(@jakarta.annotation.Nonnull final String org_id) {
+        Objects.requireNonNull(org_id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("org_%2Did", org_Id);
-        return new OrgItemRequestBuilder(urlTplParams, requestAdapter);
+        urlTplParams.put("org_id", org_id);
+        return new WithOrgItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
      * Instantiates a new {@link NotificationsRequestBuilder} and sets the default values.

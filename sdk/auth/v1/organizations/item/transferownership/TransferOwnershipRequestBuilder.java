@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/transfer-ownership
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/transfer-ownership
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class TransferOwnershipRequestBuilder extends BaseRequestBuilder {
@@ -25,7 +25,7 @@ public class TransferOwnershipRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public TransferOwnershipRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/transfer-ownership", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/transfer-ownership", pathParameters);
     }
     /**
      * Instantiates a new {@link TransferOwnershipRequestBuilder} and sets the default values.
@@ -33,7 +33,7 @@ public class TransferOwnershipRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public TransferOwnershipRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/transfer-ownership", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/transfer-ownership", rawUrl);
     }
     /**
      * TransferOwnership

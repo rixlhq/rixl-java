@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/policies
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/policies
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PoliciesRequestBuilder extends BaseRequestBuilder {
@@ -58,7 +58,7 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PoliciesRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/policies{?user_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/policies{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link PoliciesRequestBuilder} and sets the default values.
@@ -66,7 +66,7 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public PoliciesRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/policies{?user_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/policies{?user_id*}", rawUrl);
     }
     /**
      * ListPolicies

@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/invitations
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/invitations
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class InvitationsRequestBuilder extends BaseRequestBuilder {
@@ -41,7 +41,7 @@ public class InvitationsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public InvitationsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/invitations{?page_size*,page_token*,state*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/invitations{?page_size*,page_token*,state*}", pathParameters);
     }
     /**
      * Instantiates a new {@link InvitationsRequestBuilder} and sets the default values.
@@ -49,7 +49,7 @@ public class InvitationsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public InvitationsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/invitations{?page_size*,page_token*,state*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/invitations{?page_size*,page_token*,state*}", rawUrl);
     }
     /**
      * ListOrganizationInvitations

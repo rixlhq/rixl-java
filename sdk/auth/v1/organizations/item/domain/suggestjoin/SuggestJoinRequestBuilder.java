@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/domain/suggest-join
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/domain/suggest-join
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SuggestJoinRequestBuilder extends BaseRequestBuilder {
@@ -26,7 +26,7 @@ public class SuggestJoinRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SuggestJoinRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/domain/suggest-join{?user_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/domain/suggest-join{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link SuggestJoinRequestBuilder} and sets the default values.
@@ -34,7 +34,7 @@ public class SuggestJoinRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SuggestJoinRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/domain/suggest-join{?user_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/domain/suggest-join{?user_id*}", rawUrl);
     }
     /**
      * GetDomainSuggestJoin

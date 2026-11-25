@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/members/{member_-id}
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/members/{member_-id}
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MemberItemRequestBuilder extends BaseRequestBuilder {
@@ -35,7 +35,7 @@ public class MemberItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MemberItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members/{member_%2Did}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members/{member_%2Did}", pathParameters);
     }
     /**
      * Instantiates a new {@link MemberItemRequestBuilder} and sets the default values.
@@ -43,7 +43,7 @@ public class MemberItemRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public MemberItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members/{member_%2Did}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members/{member_%2Did}", rawUrl);
     }
     /**
      * RemoveMember

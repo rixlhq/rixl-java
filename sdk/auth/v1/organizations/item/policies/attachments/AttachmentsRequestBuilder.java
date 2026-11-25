@@ -6,7 +6,7 @@ import com.rixl.sdk.auth.v1.organizations.item.policies.attachments.item.WithAtt
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/policies/attachments
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/policies/attachments
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AttachmentsRequestBuilder extends BaseRequestBuilder {
@@ -28,7 +28,7 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AttachmentsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/policies/attachments", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/policies/attachments", pathParameters);
     }
     /**
      * Instantiates a new {@link AttachmentsRequestBuilder} and sets the default values.
@@ -36,6 +36,6 @@ public class AttachmentsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AttachmentsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/policies/attachments", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/policies/attachments", rawUrl);
     }
 }

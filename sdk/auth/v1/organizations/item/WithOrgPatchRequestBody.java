@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class OrgPatchRequestBody implements Parsable {
+public class WithOrgPatchRequestBody implements Parsable {
     /**
      * The organization property
      */
@@ -20,12 +20,12 @@ public class OrgPatchRequestBody implements Parsable {
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link OrgPatchRequestBody}
+     * @return a {@link WithOrgPatchRequestBody}
      */
     @jakarta.annotation.Nonnull
-    public static OrgPatchRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static WithOrgPatchRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new OrgPatchRequestBody();
+        return new WithOrgPatchRequestBody();
     }
     /**
      * The deserialization information for the current model
