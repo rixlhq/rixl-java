@@ -3,7 +3,6 @@ package com.rixl.sdk.auth.v1.signins;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
-import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
@@ -48,7 +47,7 @@ public class SignInsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SignInsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/sign-ins{?user_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/sign-ins", pathParameters);
     }
     /**
      * Instantiates a new {@link SignInsRequestBuilder} and sets the default values.
@@ -56,7 +55,7 @@ public class SignInsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public SignInsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/sign-ins{?user_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/sign-ins", rawUrl);
     }
     /**
      * Lists the caller&apos;s sign-ins, most recently used first.
@@ -96,7 +95,7 @@ public class SignInsRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -111,32 +110,9 @@ public class SignInsRequestBuilder extends BaseRequestBuilder {
         return new SignInsRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Lists the caller&apos;s sign-ins, most recently used first.
-     */
-    @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class GetQueryParameters implements QueryParameters {
-        @jakarta.annotation.Nullable
-        public String userId;
-        /**
-         * Extracts the query parameters into a map for the URI template parsing.
-         * @return a {@link Map<String, Object>}
-         */
-        @jakarta.annotation.Nonnull
-        public Map<String, Object> toQueryParameters() {
-            final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("user_id", userId);
-            return allQueryParams;
-        }
-    }
-    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetRequestConfiguration extends BaseRequestConfiguration {
-        /**
-         * Request query parameters
-         */
-        @jakarta.annotation.Nullable
-        public GetQueryParameters queryParameters = new GetQueryParameters();
     }
 }

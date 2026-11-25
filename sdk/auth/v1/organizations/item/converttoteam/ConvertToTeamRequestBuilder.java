@@ -1,0 +1,96 @@
+package com.rixl.sdk.auth.v1.organizations.item.converttoteam;
+
+import com.microsoft.kiota.BaseRequestBuilder;
+import com.microsoft.kiota.BaseRequestConfiguration;
+import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.RequestAdapter;
+import com.microsoft.kiota.RequestInformation;
+import com.microsoft.kiota.RequestOption;
+import com.microsoft.kiota.serialization.Parsable;
+import com.microsoft.kiota.serialization.ParsableFactory;
+import com.rixl.sdk.models.auth.v1.ConvertToTeamOrganizationResponse;
+import com.rixl.sdk.models.google.rpc.Status;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+/**
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/convert-to-team
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class ConvertToTeamRequestBuilder extends BaseRequestBuilder {
+    /**
+     * Instantiates a new {@link ConvertToTeamRequestBuilder} and sets the default values.
+     * @param pathParameters Path parameters for the request
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public ConvertToTeamRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/convert-to-team", pathParameters);
+    }
+    /**
+     * Instantiates a new {@link ConvertToTeamRequestBuilder} and sets the default values.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public ConvertToTeamRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/convert-to-team", rawUrl);
+    }
+    /**
+     * ConvertToTeamOrganization
+     * @return a {@link ConvertToTeamOrganizationResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
+     */
+    @jakarta.annotation.Nullable
+    public ConvertToTeamOrganizationResponse post() {
+        return post(null);
+    }
+    /**
+     * ConvertToTeamOrganization
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link ConvertToTeamOrganizationResponse}
+     * @throws Status When receiving a 4XX or 5XX status code
+     */
+    @jakarta.annotation.Nullable
+    public ConvertToTeamOrganizationResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, ConvertToTeamOrganizationResponse::createFromDiscriminatorValue);
+    }
+    /**
+     * ConvertToTeamOrganization
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation() {
+        return toPostRequestInformation(null);
+    }
+    /**
+     * ConvertToTeamOrganization
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a {@link ConvertToTeamRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ConvertToTeamRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new ConvertToTeamRequestBuilder(rawUrl, requestAdapter);
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class PostRequestConfiguration extends BaseRequestConfiguration {
+    }
+}

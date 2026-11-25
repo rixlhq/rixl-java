@@ -3,7 +3,6 @@ package com.rixl.sdk.auth.v1.logout.all;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
-import com.microsoft.kiota.QueryParameters;
 import com.microsoft.kiota.RequestAdapter;
 import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
@@ -26,7 +25,7 @@ public class AllRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AllRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/logout/all{?user_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/logout/all", pathParameters);
     }
     /**
      * Instantiates a new {@link AllRequestBuilder} and sets the default values.
@@ -34,7 +33,7 @@ public class AllRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AllRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/logout/all{?user_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/logout/all", rawUrl);
     }
     /**
      * Revokes all of the caller&apos;s sign-ins and invalidates their tokens.
@@ -74,7 +73,7 @@ public class AllRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
-        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new, x -> x.queryParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
@@ -89,32 +88,9 @@ public class AllRequestBuilder extends BaseRequestBuilder {
         return new AllRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * Revokes all of the caller&apos;s sign-ins and invalidates their tokens.
-     */
-    @jakarta.annotation.Generated("com.microsoft.kiota")
-    public class PostQueryParameters implements QueryParameters {
-        @jakarta.annotation.Nullable
-        public String userId;
-        /**
-         * Extracts the query parameters into a map for the URI template parsing.
-         * @return a {@link Map<String, Object>}
-         */
-        @jakarta.annotation.Nonnull
-        public Map<String, Object> toQueryParameters() {
-            final Map<String, Object> allQueryParams = new HashMap();
-            allQueryParams.put("user_id", userId);
-            return allQueryParams;
-        }
-    }
-    /**
      * Configuration for the request such as headers, query parameters, and middleware options.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class PostRequestConfiguration extends BaseRequestConfiguration {
-        /**
-         * Request query parameters
-         */
-        @jakarta.annotation.Nullable
-        public PostQueryParameters queryParameters = new PostQueryParameters();
     }
 }

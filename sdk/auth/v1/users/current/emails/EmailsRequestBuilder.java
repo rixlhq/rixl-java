@@ -10,6 +10,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.users.current.emails.change.ChangeRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.emails.status.StatusRequestBuilder;
+import com.rixl.sdk.auth.v1.users.current.emails.verify.VerifyRequestBuilder;
 import com.rixl.sdk.models.auth.v1.AddEmailRequest;
 import com.rixl.sdk.models.auth.v1.VerificationSentResponse;
 import com.rixl.sdk.models.google.rpc.Status;
@@ -39,6 +40,14 @@ public class EmailsRequestBuilder extends BaseRequestBuilder {
         return new StatusRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The verify property
+     * @return a {@link VerifyRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public VerifyRequestBuilder verify() {
+        return new VerifyRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * Instantiates a new {@link EmailsRequestBuilder} and sets the default values.
      * @param pathParameters Path parameters for the request
      * @param requestAdapter The request adapter to use to execute the requests.
@@ -55,7 +64,7 @@ public class EmailsRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/auth/v1/users/current/emails", rawUrl);
     }
     /**
-     * AddEmail
+     * Requests adding an email. Nothing is stored on the account until the address is verified with VerifyEmailChange.
      * @param body The request body
      * @return a {@link VerificationSentResponse}
      * @throws Status When receiving a 4XX or 5XX status code
@@ -65,7 +74,7 @@ public class EmailsRequestBuilder extends BaseRequestBuilder {
         return post(body, null);
     }
     /**
-     * AddEmail
+     * Requests adding an email. Nothing is stored on the account until the address is verified with VerifyEmailChange.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link VerificationSentResponse}
@@ -80,7 +89,7 @@ public class EmailsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, errorMapping, VerificationSentResponse::createFromDiscriminatorValue);
     }
     /**
-     * AddEmail
+     * Requests adding an email. Nothing is stored on the account until the address is verified with VerifyEmailChange.
      * @param body The request body
      * @return a {@link RequestInformation}
      */
@@ -89,7 +98,7 @@ public class EmailsRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(body, null);
     }
     /**
-     * AddEmail
+     * Requests adding an email. Nothing is stored on the account until the address is verified with VerifyEmailChange.
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}

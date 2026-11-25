@@ -2,7 +2,9 @@ package com.rixl.sdk.auth.v1.invitations;
 
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.RequestAdapter;
-import com.rixl.sdk.auth.v1.invitations.item.WithTokenItemRequestBuilder;
+import com.rixl.sdk.auth.v1.invitations.accept.AcceptRequestBuilder;
+import com.rixl.sdk.auth.v1.invitations.decline.DeclineRequestBuilder;
+import com.rixl.sdk.auth.v1.invitations.lookup.LookupRequestBuilder;
 import java.util.HashMap;
 import java.util.Objects;
 /**
@@ -11,16 +13,28 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class InvitationsRequestBuilder extends BaseRequestBuilder {
     /**
-     * Gets an item from the com.rixl.sdk.auth.v1.invitations.item collection
-     * @param token Unique identifier of the item
-     * @return a {@link WithTokenItemRequestBuilder}
+     * The accept property
+     * @return a {@link AcceptRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithTokenItemRequestBuilder byToken(@jakarta.annotation.Nonnull final String token) {
-        Objects.requireNonNull(token);
-        final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("token", token);
-        return new WithTokenItemRequestBuilder(urlTplParams, requestAdapter);
+    public AcceptRequestBuilder accept() {
+        return new AcceptRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The decline property
+     * @return a {@link DeclineRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public DeclineRequestBuilder decline() {
+        return new DeclineRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The lookup property
+     * @return a {@link LookupRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public LookupRequestBuilder lookup() {
+        return new LookupRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link InvitationsRequestBuilder} and sets the default values.

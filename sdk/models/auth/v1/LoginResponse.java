@@ -53,7 +53,7 @@ public class LoginResponse implements Parsable {
      */
     private String role;
     /**
-     * &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
+     * &quot;ok&quot; | &quot;2fa_required&quot;
      */
     private String status;
     /**
@@ -181,7 +181,7 @@ public class LoginResponse implements Parsable {
         return this.role;
     }
     /**
-     * Gets the status property value. &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
+     * Gets the status property value. &quot;ok&quot; | &quot;2fa_required&quot;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -294,7 +294,7 @@ public class LoginResponse implements Parsable {
         this.role = value;
     }
     /**
-     * Sets the status property value. &quot;ok&quot; | &quot;2fa_required&quot; | &quot;email_not_verified&quot;
+     * Sets the status property value. &quot;ok&quot; | &quot;2fa_required&quot;
      * @param value Value to set for the status property.
      */
     public void setStatus(@jakarta.annotation.Nullable final String value) {

@@ -11,7 +11,7 @@ public class PermissionRegistryResponse implements Parsable {
     /**
      * The permissions property
      */
-    private java.util.List<PermissionOffset> permissions;
+    private java.util.List<RegisteredPermission> permissions;
     /**
      * The total property
      */
@@ -33,16 +33,16 @@ public class PermissionRegistryResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfObjectValues(PermissionOffset::createFromDiscriminatorValue)); });
+        deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfObjectValues(RegisteredPermission::createFromDiscriminatorValue)); });
         deserializerMap.put("total", (n) -> { this.setTotal(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
      * Gets the permissions property value. The permissions property
-     * @return a {@link java.util.List<PermissionOffset>}
+     * @return a {@link java.util.List<RegisteredPermission>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<PermissionOffset> getPermissions() {
+    public java.util.List<RegisteredPermission> getPermissions() {
         return this.permissions;
     }
     /**
@@ -66,7 +66,7 @@ public class PermissionRegistryResponse implements Parsable {
      * Sets the permissions property value. The permissions property
      * @param value Value to set for the permissions property.
      */
-    public void setPermissions(@jakarta.annotation.Nullable final java.util.List<PermissionOffset> value) {
+    public void setPermissions(@jakarta.annotation.Nullable final java.util.List<RegisteredPermission> value) {
         this.permissions = value;
     }
     /**

@@ -10,11 +10,12 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.organizations.item.auditevents.AuditEventsRequestBuilder;
 import com.rixl.sdk.auth.v1.organizations.item.avatar.AvatarRequestBuilder;
+import com.rixl.sdk.auth.v1.organizations.item.converttoteam.ConvertToTeamRequestBuilder;
 import com.rixl.sdk.auth.v1.organizations.item.domain.DomainRequestBuilder;
-import com.rixl.sdk.auth.v1.organizations.item.invite.InviteRequestBuilder;
+import com.rixl.sdk.auth.v1.organizations.item.invitations.InvitationsRequestBuilder;
 import com.rixl.sdk.auth.v1.organizations.item.members.MembersRequestBuilder;
-import com.rixl.sdk.auth.v1.organizations.item.membershipapplications.MembershipApplicationsRequestBuilder;
 import com.rixl.sdk.auth.v1.organizations.item.policies.PoliciesRequestBuilder;
+import com.rixl.sdk.auth.v1.organizations.item.transferownership.TransferOwnershipRequestBuilder;
 import com.rixl.sdk.models.auth.v1.Organization;
 import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
@@ -43,6 +44,14 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
         return new AvatarRequestBuilder(pathParameters, requestAdapter);
     }
     /**
+     * The convertToTeam property
+     * @return a {@link ConvertToTeamRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public ConvertToTeamRequestBuilder convertToTeam() {
+        return new ConvertToTeamRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
      * The domain property
      * @return a {@link DomainRequestBuilder}
      */
@@ -51,12 +60,12 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
         return new DomainRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The invite property
-     * @return a {@link InviteRequestBuilder}
+     * The invitations property
+     * @return a {@link InvitationsRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public InviteRequestBuilder invite() {
-        return new InviteRequestBuilder(pathParameters, requestAdapter);
+    public InvitationsRequestBuilder invitations() {
+        return new InvitationsRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * The members property
@@ -67,20 +76,20 @@ public class OrgItemRequestBuilder extends BaseRequestBuilder {
         return new MembersRequestBuilder(pathParameters, requestAdapter);
     }
     /**
-     * The membershipApplications property
-     * @return a {@link MembershipApplicationsRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public MembershipApplicationsRequestBuilder membershipApplications() {
-        return new MembershipApplicationsRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
      * The policies property
      * @return a {@link PoliciesRequestBuilder}
      */
     @jakarta.annotation.Nonnull
     public PoliciesRequestBuilder policies() {
         return new PoliciesRequestBuilder(pathParameters, requestAdapter);
+    }
+    /**
+     * The transferOwnership property
+     * @return a {@link TransferOwnershipRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public TransferOwnershipRequestBuilder transferOwnership() {
+        return new TransferOwnershipRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link OrgItemRequestBuilder} and sets the default values.

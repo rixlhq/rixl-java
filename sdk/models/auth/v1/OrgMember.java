@@ -20,10 +20,6 @@ public class OrgMember implements Parsable {
     /**
      * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
      */
-    private OffsetDateTime invitationExpiresAt;
-    /**
-     * A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
-     */
     private OffsetDateTime joinedAt;
     /**
      * The last_name property
@@ -65,10 +61,9 @@ public class OrgMember implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
-        deserializerMap.put("invitation_expires_at", (n) -> { this.setInvitationExpiresAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("joined_at", (n) -> { this.setJoinedAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
@@ -93,14 +88,6 @@ public class OrgMember implements Parsable {
     @jakarta.annotation.Nullable
     public String getId() {
         return this.id;
-    }
-    /**
-     * Gets the invitation_expires_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
-     * @return a {@link OffsetDateTime}
-     */
-    @jakarta.annotation.Nullable
-    public OffsetDateTime getInvitationExpiresAt() {
-        return this.invitationExpiresAt;
     }
     /**
      * Gets the joined_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
@@ -166,7 +153,6 @@ public class OrgMember implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("first_name", this.getFirstName());
         writer.writeStringValue("id", this.getId());
-        writer.writeOffsetDateTimeValue("invitation_expires_at", this.getInvitationExpiresAt());
         writer.writeOffsetDateTimeValue("joined_at", this.getJoinedAt());
         writer.writeStringValue("last_name", this.getLastName());
         writer.writeStringValue("org_id", this.getOrgId());
@@ -188,13 +174,6 @@ public class OrgMember implements Parsable {
      */
     public void setId(@jakarta.annotation.Nullable final String value) {
         this.id = value;
-    }
-    /**
-     * Sets the invitation_expires_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.
-     * @param value Value to set for the invitation_expires_at property.
-     */
-    public void setInvitationExpiresAt(@jakarta.annotation.Nullable final OffsetDateTime value) {
-        this.invitationExpiresAt = value;
     }
     /**
      * Sets the joined_at property value. A point in time in RFC 3339 format, with up to nanosecond precision. Output uses UTC (`Z`); input may use an offset from UTC.

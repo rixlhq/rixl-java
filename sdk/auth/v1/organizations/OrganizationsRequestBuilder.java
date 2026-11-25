@@ -10,7 +10,9 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.organizations.item.OrgItemRequestBuilder;
+import com.rixl.sdk.models.auth.v1.CreateOrganizationRequest;
 import com.rixl.sdk.models.auth.v1.ListOrganizationsResponse;
+import com.rixl.sdk.models.auth.v1.Organization;
 import com.rixl.sdk.models.google.rpc.Status;
 import java.util.Collection;
 import java.util.HashMap;
@@ -72,6 +74,31 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, errorMapping, ListOrganizationsResponse::createFromDiscriminatorValue);
     }
     /**
+     * CreateOrganization
+     * @param body The request body
+     * @return a {@link Organization}
+     * @throws Status When receiving a 4XX or 5XX status code
+     */
+    @jakarta.annotation.Nullable
+    public Organization post(@jakarta.annotation.Nonnull final CreateOrganizationRequest body) {
+        return post(body, null);
+    }
+    /**
+     * CreateOrganization
+     * @param body The request body
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Organization}
+     * @throws Status When receiving a 4XX or 5XX status code
+     */
+    @jakarta.annotation.Nullable
+    public Organization post(@jakarta.annotation.Nonnull final CreateOrganizationRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Organization::createFromDiscriminatorValue);
+    }
+    /**
      * ListOrganizations
      * @return a {@link RequestInformation}
      */
@@ -89,6 +116,30 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
+        return requestInfo;
+    }
+    /**
+     * CreateOrganization
+     * @param body The request body
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateOrganizationRequest body) {
+        return toPostRequestInformation(body, null);
+    }
+    /**
+     * CreateOrganization
+     * @param body The request body
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final CreateOrganizationRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        Objects.requireNonNull(body);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**
@@ -111,7 +162,7 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
         @jakarta.annotation.Nullable
         public String pageToken;
         /**
-         * Includes deleted organizations visible to their owners once lifecycle adds deletion.
+         * Includes deleted organizations visible to their retained active owners.
          */
         @jakarta.annotation.Nullable
         public Boolean showDeleted;
@@ -138,5 +189,11 @@ public class OrganizationsRequestBuilder extends BaseRequestBuilder {
          */
         @jakarta.annotation.Nullable
         public GetQueryParameters queryParameters = new GetQueryParameters();
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class PostRequestConfiguration extends BaseRequestConfiguration {
     }
 }
