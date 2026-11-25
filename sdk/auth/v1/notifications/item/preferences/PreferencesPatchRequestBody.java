@@ -18,6 +18,10 @@ public class PreferencesPatchRequestBody implements Parsable {
      */
     private Boolean emailEnabled;
     /**
+     * The user property
+     */
+    private PreferencesPatchRequestBodyUser user;
+    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link PreferencesPatchRequestBody}
@@ -49,10 +53,19 @@ public class PreferencesPatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("category", (n) -> { this.setCategory(n.getEnumValue(NotificationCategory::forValue)); });
         deserializerMap.put("email_enabled", (n) -> { this.setEmailEnabled(n.getBooleanValue()); });
+        deserializerMap.put("user", (n) -> { this.setUser(n.getObjectValue(PreferencesPatchRequestBodyUser::createFromDiscriminatorValue)); });
         return deserializerMap;
+    }
+    /**
+     * Gets the user property value. The user property
+     * @return a {@link PreferencesPatchRequestBodyUser}
+     */
+    @jakarta.annotation.Nullable
+    public PreferencesPatchRequestBodyUser getUser() {
+        return this.user;
     }
     /**
      * Serializes information the current object
@@ -62,6 +75,7 @@ public class PreferencesPatchRequestBody implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeEnumValue("category", this.getCategory());
         writer.writeBooleanValue("email_enabled", this.getEmailEnabled());
+        writer.writeObjectValue("user", this.getUser());
     }
     /**
      * Sets the category property value. The category property
@@ -76,5 +90,12 @@ public class PreferencesPatchRequestBody implements Parsable {
      */
     public void setEmailEnabled(@jakarta.annotation.Nullable final Boolean value) {
         this.emailEnabled = value;
+    }
+    /**
+     * Sets the user property value. The user property
+     * @param value Value to set for the user property.
+     */
+    public void setUser(@jakarta.annotation.Nullable final PreferencesPatchRequestBodyUser value) {
+        this.user = value;
     }
 }

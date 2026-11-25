@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.auth.v1.organizations.item.WithOrgItemRequestBuilder;
+import com.rixl.sdk.auth.v1.organizations.item.OrgItemRequestBuilder;
 import com.rixl.sdk.models.auth.v1.CreateOrganizationRequest;
 import com.rixl.sdk.models.auth.v1.ListOrganizationsResponse;
 import com.rixl.sdk.models.auth.v1.Organization;
@@ -25,15 +25,15 @@ import java.util.Objects;
 public class OrganizationsRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.rixl.sdk.auth.v1.organizations.item collection
-     * @param org_id Unique identifier of the item
-     * @return a {@link WithOrgItemRequestBuilder}
+     * @param org_Id Unique identifier of the item
+     * @return a {@link OrgItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
-    public WithOrgItemRequestBuilder byOrg_id(@jakarta.annotation.Nonnull final String org_id) {
-        Objects.requireNonNull(org_id);
+    public OrgItemRequestBuilder byOrg_Id(@jakarta.annotation.Nonnull final String org_Id) {
+        Objects.requireNonNull(org_Id);
         final HashMap<String, Object> urlTplParams = new HashMap<String, Object>(this.pathParameters);
-        urlTplParams.put("org_id", org_id);
-        return new WithOrgItemRequestBuilder(urlTplParams, requestAdapter);
+        urlTplParams.put("org_%2Did", org_Id);
+        return new OrgItemRequestBuilder(urlTplParams, requestAdapter);
     }
     /**
      * Instantiates a new {@link OrganizationsRequestBuilder} and sets the default values.

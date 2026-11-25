@@ -3,6 +3,9 @@ package com.rixl.sdk.models.auth.v1;
 import com.microsoft.kiota.serialization.ValuedEnum;
 import java.util.Objects;
 
+/**
+ * The effective state: a pending invitation past its expiry reads as expired.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public enum InvitationState implements ValuedEnum {
     INVITATION_STATE_UNSPECIFIED("INVITATION_STATE_UNSPECIFIED"),

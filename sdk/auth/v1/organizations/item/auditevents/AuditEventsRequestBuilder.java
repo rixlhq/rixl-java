@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/audit-events
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/audit-events
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AuditEventsRequestBuilder extends BaseRequestBuilder {
@@ -26,7 +26,7 @@ public class AuditEventsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AuditEventsRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/audit-events{?page_size*,page_token*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/audit-events{?page_size*,page_token*}", pathParameters);
     }
     /**
      * Instantiates a new {@link AuditEventsRequestBuilder} and sets the default values.
@@ -34,7 +34,7 @@ public class AuditEventsRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AuditEventsRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/audit-events{?page_size*,page_token*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/audit-events{?page_size*,page_token*}", rawUrl);
     }
     /**
      * ListOrganizationAuditEvents

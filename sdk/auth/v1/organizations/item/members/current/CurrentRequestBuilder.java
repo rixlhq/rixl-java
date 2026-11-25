@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/members/current
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/members/current
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class CurrentRequestBuilder extends BaseRequestBuilder {
@@ -35,7 +35,7 @@ public class CurrentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CurrentRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members/current{?user_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members/current{?user_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link CurrentRequestBuilder} and sets the default values.
@@ -43,7 +43,7 @@ public class CurrentRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public CurrentRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/members/current{?user_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/members/current{?user_id*}", rawUrl);
     }
     /**
      * LeaveOrganization

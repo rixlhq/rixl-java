@@ -6,7 +6,7 @@ import com.rixl.sdk.auth.v1.organizations.item.avatar.upload.UploadRequestBuilde
 import java.util.HashMap;
 import java.util.Objects;
 /**
- * Builds and executes requests for operations under /auth/v1/organizations/{org_id}/avatar
+ * Builds and executes requests for operations under /auth/v1/organizations/{org_-id}/avatar
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AvatarRequestBuilder extends BaseRequestBuilder {
@@ -24,7 +24,7 @@ public class AvatarRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AvatarRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/avatar", pathParameters);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/avatar", pathParameters);
     }
     /**
      * Instantiates a new {@link AvatarRequestBuilder} and sets the default values.
@@ -32,6 +32,6 @@ public class AvatarRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public AvatarRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_id}/avatar", rawUrl);
+        super(requestAdapter, "{+baseurl}/auth/v1/organizations/{org_%2Did}/avatar", rawUrl);
     }
 }
