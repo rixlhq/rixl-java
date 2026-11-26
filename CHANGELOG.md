@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.4.0](https://github.com/rixlhq/rixl-java/compare/v1.3.0...v1.4.0) (2026-11-26)
+
+
+### Features
+
+* **sdk:** regenerate based on latest OpenAPI spec ([a13a430](https://github.com/rixlhq/rixl-java/commit/a13a4301898388ff8f0b742b2ca3b545d3c34e83))
+* **sdk:** regenerate based on latest OpenAPI spec ([7e8ff3a](https://github.com/rixlhq/rixl-java/commit/7e8ff3a55bcac9dffbb3dc6076f9abec3d3a2032))
+* **sdk:** regenerate based on latest OpenAPI spec ([be31002](https://github.com/rixlhq/rixl-java/commit/be31002f32471991e10cd01e6799d556ca3f2b0e))
+* **sdk:** regenerate based on latest OpenAPI spec ([108cacd](https://github.com/rixlhq/rixl-java/commit/108cacd3eb0f538d795bd206ed9b6e59a7f363dc))
+* **sdk:** regenerate based on latest OpenAPI spec ([f89cd81](https://github.com/rixlhq/rixl-java/commit/f89cd81fb8cc98f40edfcca4d7025928aee04659))
+* **sdk:** regenerate based on latest OpenAPI spec ([d665425](https://github.com/rixlhq/rixl-java/commit/d6654252edeec99cd3ce4ef1c9aa788b8fb3bdf8))
+* **sdk:** regenerate based on latest OpenAPI spec ([8197d6f](https://github.com/rixlhq/rixl-java/commit/8197d6f819e0aeff926b31ec9ea9339559726166))
+* **sdk:** regenerate based on latest OpenAPI spec ([34f789d](https://github.com/rixlhq/rixl-java/commit/34f789dec6e65c3f4b960f896adf7d2f80970dae))
+* **sdk:** regenerate based on latest OpenAPI spec ([b98d75a](https://github.com/rixlhq/rixl-java/commit/b98d75aada14bfa32111e5654ee25b7b8f99f287))
+* **sdk:** regenerate based on latest OpenAPI spec ([e5217f8](https://github.com/rixlhq/rixl-java/commit/e5217f82f8aa2f1a91d12a4cb3bedd756b4ac9a7))
+* **sdk:** regenerate based on latest OpenAPI spec ([be9ce27](https://github.com/rixlhq/rixl-java/commit/be9ce270a52a7dd4a203baec1bc138204baa5c07))
+* **sdk:** regenerate based on latest OpenAPI spec ([c2a4601](https://github.com/rixlhq/rixl-java/commit/c2a4601a1bc23f2d7e386191eec0b40434313677))
+* **sdk:** regenerate based on latest OpenAPI spec ([2f546d9](https://github.com/rixlhq/rixl-java/commit/2f546d99bd62b2249453eab8b918050160210b55))
+* **sdk:** regenerate based on latest OpenAPI spec ([8f954bb](https://github.com/rixlhq/rixl-java/commit/8f954bbb9825974815587d0c12b1b6a7fbea2628))
+* **sdk:** regenerate based on latest OpenAPI spec ([c274269](https://github.com/rixlhq/rixl-java/commit/c274269bc4e5e3789b972920348846ccdd290463))
+* **sdk:** regenerate based on latest OpenAPI spec ([ac982f4](https://github.com/rixlhq/rixl-java/commit/ac982f4a1e5b4a96a455be7cc0b5fcc5ffaab4bd))
+
+
+### Bug Fixes
+
+* **branding:** canonical company name, domain and address ([cf78add](https://github.com/rixlhq/rixl-java/commit/cf78add3585db3de1432cd0667ea588007e47fd6))
+* **branding:** use canonical company name Rixl Inc., rixl.com and Wilmington DE address ([8ff0f61](https://github.com/rixlhq/rixl-java/commit/8ff0f61c352d0c6674db2b9ca7e945decbc4caf0))
+
 ## [1.3.0](https://github.com/rixlhq/rixl-java/compare/v1.2.0...v1.3.0) (2026-10-29)
 
 
