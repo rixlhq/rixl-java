@@ -10,7 +10,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.auth.v1.SuggestJoinSetting;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +39,7 @@ public class SuggestJoinRequestBuilder extends BaseRequestBuilder {
     /**
      * GetDomainSuggestJoin
      * @return a {@link SuggestJoinSetting}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SuggestJoinSetting get() {
@@ -49,20 +49,20 @@ public class SuggestJoinRequestBuilder extends BaseRequestBuilder {
      * GetDomainSuggestJoin
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SuggestJoinSetting}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SuggestJoinSetting get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, SuggestJoinSetting::createFromDiscriminatorValue);
     }
     /**
      * SetDomainSuggestJoin
      * @param body The request body
      * @return a {@link SuggestJoinSetting}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SuggestJoinSetting put(@jakarta.annotation.Nonnull final SuggestJoinPutRequestBody body) {
@@ -73,14 +73,14 @@ public class SuggestJoinRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SuggestJoinSetting}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SuggestJoinSetting put(@jakarta.annotation.Nonnull final SuggestJoinPutRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, SuggestJoinSetting::createFromDiscriminatorValue);
     }
     /**

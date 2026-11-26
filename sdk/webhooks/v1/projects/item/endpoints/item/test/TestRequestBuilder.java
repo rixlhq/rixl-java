@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import com.rixl.sdk.models.webhooks.v1.SendTestEventResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class TestRequestBuilder extends BaseRequestBuilder {
     /**
      * SendTestEvent delivers one synthetic webhook.test event to the endpoint.
      * @return a {@link SendTestEventResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SendTestEventResponse post() {
@@ -48,13 +48,13 @@ public class TestRequestBuilder extends BaseRequestBuilder {
      * SendTestEvent delivers one synthetic webhook.test event to the endpoint.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SendTestEventResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public SendTestEventResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, SendTestEventResponse::createFromDiscriminatorValue);
     }
     /**

@@ -16,7 +16,7 @@ import com.rixl.sdk.billing.v1.subscription.upgrade.UpgradeRequestBuilder;
 import com.rixl.sdk.models.billing.v1.CreateSubscriptionRequest;
 import com.rixl.sdk.models.billing.v1.CreateSubscriptionResponse;
 import com.rixl.sdk.models.billing.v1.Subscription;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -77,7 +77,7 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
     /**
      * GetSubscription
      * @return a {@link Subscription}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Subscription get() {
@@ -87,20 +87,20 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      * GetSubscription
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Subscription}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Subscription get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Subscription::createFromDiscriminatorValue);
     }
     /**
      * CreateSubscription
      * @param body The request body
      * @return a {@link CreateSubscriptionResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateSubscriptionResponse post(@jakarta.annotation.Nonnull final CreateSubscriptionRequest body) {
@@ -111,14 +111,14 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CreateSubscriptionResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public CreateSubscriptionResponse post(@jakarta.annotation.Nonnull final CreateSubscriptionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, CreateSubscriptionResponse::createFromDiscriminatorValue);
     }
     /**

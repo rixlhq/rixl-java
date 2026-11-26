@@ -9,7 +9,7 @@ import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.billing.v1.Invoice;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +39,7 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
      * UpdateInvoiceStatus
      * @param body The request body
      * @return a {@link Invoice}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Invoice patch(@jakarta.annotation.Nonnull final StatusPatchRequestBody body) {
@@ -50,14 +50,14 @@ public class StatusRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Invoice}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Invoice patch(@jakarta.annotation.Nonnull final StatusPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Invoice::createFromDiscriminatorValue);
     }
     /**

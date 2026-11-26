@@ -17,7 +17,7 @@ import com.rixl.sdk.auth.v1.organizations.item.members.MembersRequestBuilder;
 import com.rixl.sdk.auth.v1.organizations.item.policies.PoliciesRequestBuilder;
 import com.rixl.sdk.auth.v1.organizations.item.transferownership.TransferOwnershipRequestBuilder;
 import com.rixl.sdk.models.auth.v1.Organization;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -110,7 +110,7 @@ public class WithOrgItemRequestBuilder extends BaseRequestBuilder {
     /**
      * GetOrganization
      * @return a {@link Organization}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Organization get() {
@@ -120,20 +120,20 @@ public class WithOrgItemRequestBuilder extends BaseRequestBuilder {
      * GetOrganization
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Organization}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Organization get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Organization::createFromDiscriminatorValue);
     }
     /**
      * UpdateOrganization
      * @param body The request body
      * @return a {@link Organization}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Organization patch(@jakarta.annotation.Nonnull final WithOrgPatchRequestBody body) {
@@ -144,14 +144,14 @@ public class WithOrgItemRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Organization}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Organization patch(@jakarta.annotation.Nonnull final WithOrgPatchRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PatchRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPatchRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Organization::createFromDiscriminatorValue);
     }
     /**

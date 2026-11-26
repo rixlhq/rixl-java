@@ -11,7 +11,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.models.analytics.v1.Widget;
 import com.rixl.sdk.models.analytics.v1.WidgetInput;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,7 +41,7 @@ public class WidgetsRequestBuilder extends BaseRequestBuilder {
      * CreateWidget
      * @param body The request body
      * @return a {@link Widget}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Widget post(@jakarta.annotation.Nonnull final WidgetInput body) {
@@ -52,14 +52,14 @@ public class WidgetsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Widget}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Widget post(@jakarta.annotation.Nonnull final WidgetInput body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Widget::createFromDiscriminatorValue);
     }
     /**

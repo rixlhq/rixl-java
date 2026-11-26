@@ -15,7 +15,7 @@ import com.rixl.sdk.billing.v1.paymentmethods.item.WithPaymentMethodItemRequestB
 import com.rixl.sdk.models.billing.v1.ListPaymentMethodsResponse;
 import com.rixl.sdk.models.billing.v1.PaymentMethodDetails;
 import com.rixl.sdk.models.billing.v1.UpsertPaymentMethodRequest;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -72,7 +72,7 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
     /**
      * ListPaymentMethods
      * @return a {@link ListPaymentMethodsResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPaymentMethodsResponse get() {
@@ -82,20 +82,20 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
      * ListPaymentMethods
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPaymentMethodsResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPaymentMethodsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, ListPaymentMethodsResponse::createFromDiscriminatorValue);
     }
     /**
      * UpsertPaymentMethod
      * @param body The request body
      * @return a {@link PaymentMethodDetails}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PaymentMethodDetails put(@jakarta.annotation.Nonnull final UpsertPaymentMethodRequest body) {
@@ -106,14 +106,14 @@ public class PaymentMethodsRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link PaymentMethodDetails}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public PaymentMethodDetails put(@jakarta.annotation.Nonnull final UpsertPaymentMethodRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, PaymentMethodDetails::createFromDiscriminatorValue);
     }
     /**

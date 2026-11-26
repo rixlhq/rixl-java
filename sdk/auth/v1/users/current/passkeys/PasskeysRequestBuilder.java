@@ -12,7 +12,7 @@ import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.auth.v1.users.current.passkeys.item.PasskeysItemRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.passkeys.register.RegisterRequestBuilder;
 import com.rixl.sdk.models.auth.v1.ListPasskeysResponse;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,7 +61,7 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
     /**
      * ListPasskeys
      * @return a {@link ListPasskeysResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPasskeysResponse get() {
@@ -71,13 +71,13 @@ public class PasskeysRequestBuilder extends BaseRequestBuilder {
      * ListPasskeys
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPasskeysResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPasskeysResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, ListPasskeysResponse::createFromDiscriminatorValue);
     }
     /**

@@ -8,7 +8,7 @@ import com.microsoft.kiota.RequestInformation;
 import com.microsoft.kiota.RequestOption;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import com.rixl.sdk.models.support.v1.ListCategoriesResponse;
 import com.rixl.sdk.support.v1.categories.item.WithCategoryItemRequestBuilder;
 import java.util.Collection;
@@ -51,7 +51,7 @@ public class CategoriesRequestBuilder extends BaseRequestBuilder {
     /**
      * ListCategories
      * @return a {@link ListCategoriesResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListCategoriesResponse get() {
@@ -61,13 +61,13 @@ public class CategoriesRequestBuilder extends BaseRequestBuilder {
      * ListCategories
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListCategoriesResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListCategoriesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, ListCategoriesResponse::createFromDiscriminatorValue);
     }
     /**

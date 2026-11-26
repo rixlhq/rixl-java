@@ -11,7 +11,7 @@ import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParsableFactory;
 import com.rixl.sdk.media.v1.projects.item.videos.item.WithVideoItemRequestBuilder;
 import com.rixl.sdk.media.v1.projects.item.videos.upload.UploadRequestBuilder;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import com.rixl.sdk.models.videos.v1.ListVideosResponse;
 import java.util.Collection;
 import java.util.HashMap;
@@ -61,7 +61,7 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
     /**
      * ListVideos
      * @return a {@link ListVideosResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListVideosResponse get() {
@@ -71,13 +71,13 @@ public class VideosRequestBuilder extends BaseRequestBuilder {
      * ListVideos
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListVideosResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListVideosResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, ListVideosResponse::createFromDiscriminatorValue);
     }
     /**

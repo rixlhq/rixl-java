@@ -14,7 +14,7 @@ import com.rixl.sdk.auth.v1.organizations.item.policies.item.WithPolicyItemReque
 import com.rixl.sdk.auth.v1.organizations.item.policies.permissions.PermissionsRequestBuilder;
 import com.rixl.sdk.models.auth.v1.ListPoliciesResponse;
 import com.rixl.sdk.models.auth.v1.Policy;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,7 +71,7 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
     /**
      * ListPolicies
      * @return a {@link ListPoliciesResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPoliciesResponse get() {
@@ -81,20 +81,20 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      * ListPolicies
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link ListPoliciesResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public ListPoliciesResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, ListPoliciesResponse::createFromDiscriminatorValue);
     }
     /**
      * CreatePolicy
      * @param body The request body
      * @return a {@link Policy}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Policy post(@jakarta.annotation.Nonnull final PoliciesPostRequestBody body) {
@@ -105,14 +105,14 @@ public class PoliciesRequestBuilder extends BaseRequestBuilder {
      * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Policy}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public Policy post(@jakarta.annotation.Nonnull final PoliciesPostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, Policy::createFromDiscriminatorValue);
     }
     /**

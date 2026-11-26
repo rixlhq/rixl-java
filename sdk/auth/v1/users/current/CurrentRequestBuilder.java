@@ -20,7 +20,7 @@ import com.rixl.sdk.auth.v1.users.current.passkeys.PasskeysRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.totp.TotpRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.username.UsernameRequestBuilder;
 import com.rixl.sdk.models.auth.v1.GetUserResponse;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -129,7 +129,7 @@ public class CurrentRequestBuilder extends BaseRequestBuilder {
     /**
      * GetUser
      * @return a {@link GetUserResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetUserResponse get() {
@@ -139,13 +139,13 @@ public class CurrentRequestBuilder extends BaseRequestBuilder {
      * GetUser
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetUserResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public GetUserResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, GetUserResponse::createFromDiscriminatorValue);
     }
     /**

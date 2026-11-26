@@ -14,7 +14,7 @@ import com.rixl.sdk.analytics.v1.dashboard.datasets.DatasetsRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboard.filteroptions.FilterOptionsRequestBuilder;
 import com.rixl.sdk.analytics.v1.dashboard.scopetree.ScopeTreeRequestBuilder;
 import com.rixl.sdk.models.analytics.v1.DashboardStatsResponse;
-import com.rixl.sdk.models.google.rpc.Status;
+import com.rixl.sdk.models.Error;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -75,7 +75,7 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
     /**
      * GetDashboardStats
      * @return a {@link DashboardStatsResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DashboardStatsResponse get() {
@@ -85,13 +85,13 @@ public class DashboardRequestBuilder extends BaseRequestBuilder {
      * GetDashboardStats
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DashboardStatsResponse}
-     * @throws Status When receiving a 4XX or 5XX status code
+     * @throws Error When receiving a 4XX or 5XX status code
      */
     @jakarta.annotation.Nullable
     public DashboardStatsResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
         final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
-        errorMapping.put("XXX", Status::createFromDiscriminatorValue);
+        errorMapping.put("XXX", Error::createFromDiscriminatorValue);
         return this.requestAdapter.send(requestInfo, errorMapping, DashboardStatsResponse::createFromDiscriminatorValue);
     }
     /**

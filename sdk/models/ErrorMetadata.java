@@ -1,4 +1,4 @@
-package com.rixl.sdk.models.google.protobuf;
+package com.rixl.sdk.models;
 
 import com.microsoft.kiota.serialization.AdditionalDataHolder;
 import com.microsoft.kiota.serialization.Parsable;
@@ -8,33 +8,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
+ * Reason-specific details, such as `invitation_id` on `INVITATION_PENDING` or `max_age_seconds` on `STEP_UP_REQUIRED`. Absent when there is none.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class Any implements AdditionalDataHolder, Parsable {
+public class ErrorMetadata implements AdditionalDataHolder, Parsable {
     /**
      * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
      */
     private Map<String, Object> additionalData;
     /**
-     * A URL/resource name that uniquely identifies the type of the serialized message.
+     * Instantiates a new {@link ErrorMetadata} and sets the default values.
      */
-    private String type;
-    /**
-     * Instantiates a new {@link Any} and sets the default values.
-     */
-    public Any() {
+    public ErrorMetadata() {
         this.setAdditionalData(new HashMap<>());
     }
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link Any}
+     * @return a {@link ErrorMetadata}
      */
     @jakarta.annotation.Nonnull
-    public static Any createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static ErrorMetadata createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new Any();
+        return new ErrorMetadata();
     }
     /**
      * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -50,17 +46,8 @@ public class Any implements AdditionalDataHolder, Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("@type", (n) -> { this.setType(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(0);
         return deserializerMap;
-    }
-    /**
-     * Gets the @type property value. A URL/resource name that uniquely identifies the type of the serialized message.
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getType() {
-        return this.type;
     }
     /**
      * Serializes information the current object
@@ -68,7 +55,6 @@ public class Any implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("@type", this.getType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -77,12 +63,5 @@ public class Any implements AdditionalDataHolder, Parsable {
      */
     public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
         this.additionalData = value;
-    }
-    /**
-     * Sets the @type property value. A URL/resource name that uniquely identifies the type of the serialized message.
-     * @param value Value to set for the @type property.
-     */
-    public void setType(@jakarta.annotation.Nullable final String value) {
-        this.type = value;
     }
 }
