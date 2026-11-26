@@ -10,13 +10,13 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UserDeletionPlanEntry implements Parsable {
     /**
+     * The affected member&apos;s full name.
+     */
+    private String affectedName;
+    /**
      * Set when another member will lose access to the personal org.
      */
     private String affectedUserId;
-    /**
-     * The affected_username property
-     */
-    private String affectedUsername;
     /**
      * The kind property
      */
@@ -40,6 +40,14 @@ public class UserDeletionPlanEntry implements Parsable {
         return new UserDeletionPlanEntry();
     }
     /**
+     * Gets the affected_name property value. The affected member&apos;s full name.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getAffectedName() {
+        return this.affectedName;
+    }
+    /**
      * Gets the affected_user_id property value. Set when another member will lose access to the personal org.
      * @return a {@link String}
      */
@@ -48,22 +56,14 @@ public class UserDeletionPlanEntry implements Parsable {
         return this.affectedUserId;
     }
     /**
-     * Gets the affected_username property value. The affected_username property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getAffectedUsername() {
-        return this.affectedUsername;
-    }
-    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
+        deserializerMap.put("affected_name", (n) -> { this.setAffectedName(n.getStringValue()); });
         deserializerMap.put("affected_user_id", (n) -> { this.setAffectedUserId(n.getStringValue()); });
-        deserializerMap.put("affected_username", (n) -> { this.setAffectedUsername(n.getStringValue()); });
         deserializerMap.put("kind", (n) -> { this.setKind(n.getEnumValue(Kind::forValue)); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
         deserializerMap.put("org_name", (n) -> { this.setOrgName(n.getStringValue()); });
@@ -99,11 +99,18 @@ public class UserDeletionPlanEntry implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("affected_name", this.getAffectedName());
         writer.writeStringValue("affected_user_id", this.getAffectedUserId());
-        writer.writeStringValue("affected_username", this.getAffectedUsername());
         writer.writeEnumValue("kind", this.getKind());
         writer.writeStringValue("org_id", this.getOrgId());
         writer.writeStringValue("org_name", this.getOrgName());
+    }
+    /**
+     * Sets the affected_name property value. The affected member&apos;s full name.
+     * @param value Value to set for the affected_name property.
+     */
+    public void setAffectedName(@jakarta.annotation.Nullable final String value) {
+        this.affectedName = value;
     }
     /**
      * Sets the affected_user_id property value. Set when another member will lose access to the personal org.
@@ -111,13 +118,6 @@ public class UserDeletionPlanEntry implements Parsable {
      */
     public void setAffectedUserId(@jakarta.annotation.Nullable final String value) {
         this.affectedUserId = value;
-    }
-    /**
-     * Sets the affected_username property value. The affected_username property
-     * @param value Value to set for the affected_username property.
-     */
-    public void setAffectedUsername(@jakarta.annotation.Nullable final String value) {
-        this.affectedUsername = value;
     }
     /**
      * Sets the kind property value. The kind property

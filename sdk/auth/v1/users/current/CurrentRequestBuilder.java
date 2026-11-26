@@ -18,7 +18,6 @@ import com.rixl.sdk.auth.v1.users.current.memberships.MembershipsRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.name.NameRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.passkeys.PasskeysRequestBuilder;
 import com.rixl.sdk.auth.v1.users.current.totp.TotpRequestBuilder;
-import com.rixl.sdk.auth.v1.users.current.username.UsernameRequestBuilder;
 import com.rixl.sdk.models.auth.v1.GetUserResponse;
 import com.rixl.sdk.models.Error;
 import java.util.Collection;
@@ -101,14 +100,6 @@ public class CurrentRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public TotpRequestBuilder totp() {
         return new TotpRequestBuilder(pathParameters, requestAdapter);
-    }
-    /**
-     * The username property
-     * @return a {@link UsernameRequestBuilder}
-     */
-    @jakarta.annotation.Nonnull
-    public UsernameRequestBuilder username() {
-        return new UsernameRequestBuilder(pathParameters, requestAdapter);
     }
     /**
      * Instantiates a new {@link CurrentRequestBuilder} and sets the default values.

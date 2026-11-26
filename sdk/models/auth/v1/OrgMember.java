@@ -10,6 +10,10 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class OrgMember implements Parsable {
     /**
+     * The email property
+     */
+    private String email;
+    /**
      * The first_name property
      */
     private String firstName;
@@ -42,10 +46,6 @@ public class OrgMember implements Parsable {
      */
     private String userId;
     /**
-     * The username property
-     */
-    private String username;
-    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link OrgMember}
@@ -56,12 +56,21 @@ public class OrgMember implements Parsable {
         return new OrgMember();
     }
     /**
+     * Gets the email property value. The email property
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getEmail() {
+        return this.email;
+    }
+    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
+        deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("first_name", (n) -> { this.setFirstName(n.getStringValue()); });
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("joined_at", (n) -> { this.setJoinedAt(n.getOffsetDateTimeValue()); });
@@ -70,7 +79,6 @@ public class OrgMember implements Parsable {
         deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(MembershipRole::forValue)); });
         deserializerMap.put("state", (n) -> { this.setState(n.getEnumValue(MembershipState::forValue)); });
         deserializerMap.put("user_id", (n) -> { this.setUserId(n.getStringValue()); });
-        deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -138,19 +146,12 @@ public class OrgMember implements Parsable {
         return this.userId;
     }
     /**
-     * Gets the username property value. The username property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getUsername() {
-        return this.username;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
+        writer.writeStringValue("email", this.getEmail());
         writer.writeStringValue("first_name", this.getFirstName());
         writer.writeStringValue("id", this.getId());
         writer.writeOffsetDateTimeValue("joined_at", this.getJoinedAt());
@@ -159,7 +160,13 @@ public class OrgMember implements Parsable {
         writer.writeEnumValue("role", this.getRole());
         writer.writeEnumValue("state", this.getState());
         writer.writeStringValue("user_id", this.getUserId());
-        writer.writeStringValue("username", this.getUsername());
+    }
+    /**
+     * Sets the email property value. The email property
+     * @param value Value to set for the email property.
+     */
+    public void setEmail(@jakarta.annotation.Nullable final String value) {
+        this.email = value;
     }
     /**
      * Sets the first_name property value. The first_name property
@@ -216,12 +223,5 @@ public class OrgMember implements Parsable {
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {
         this.userId = value;
-    }
-    /**
-     * Sets the username property value. The username property
-     * @param value Value to set for the username property.
-     */
-    public void setUsername(@jakarta.annotation.Nullable final String value) {
-        this.username = value;
     }
 }

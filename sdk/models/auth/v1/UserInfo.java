@@ -57,10 +57,6 @@ public class UserInfo implements Parsable {
      */
     private java.util.List<Policy> policies;
     /**
-     * The username property
-     */
-    private String username;
-    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link UserInfo}
@@ -100,7 +96,7 @@ public class UserInfo implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(13);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
         deserializerMap.put("country_code", (n) -> { this.setCountryCode(n.getStringValue()); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
         deserializerMap.put("email_verified", (n) -> { this.setEmailVerified(n.getBooleanValue()); });
@@ -113,7 +109,6 @@ public class UserInfo implements Parsable {
         deserializerMap.put("last_name", (n) -> { this.setLastName(n.getStringValue()); });
         deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfPrimitiveValues(String.class)); });
         deserializerMap.put("policies", (n) -> { this.setPolicies(n.getCollectionOfObjectValues(Policy::createFromDiscriminatorValue)); });
-        deserializerMap.put("username", (n) -> { this.setUsername(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -189,14 +184,6 @@ public class UserInfo implements Parsable {
         return this.policies;
     }
     /**
-     * Gets the username property value. The username property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getUsername() {
-        return this.username;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -214,7 +201,6 @@ public class UserInfo implements Parsable {
         writer.writeStringValue("last_name", this.getLastName());
         writer.writeCollectionOfPrimitiveValues("permissions", this.getPermissions());
         writer.writeCollectionOfObjectValues("policies", this.getPolicies());
-        writer.writeStringValue("username", this.getUsername());
     }
     /**
      * Sets the country_code property value. The country_code property
@@ -299,12 +285,5 @@ public class UserInfo implements Parsable {
      */
     public void setPolicies(@jakarta.annotation.Nullable final java.util.List<Policy> value) {
         this.policies = value;
-    }
-    /**
-     * Sets the username property value. The username property
-     * @param value Value to set for the username property.
-     */
-    public void setUsername(@jakarta.annotation.Nullable final String value) {
-        this.username = value;
     }
 }
