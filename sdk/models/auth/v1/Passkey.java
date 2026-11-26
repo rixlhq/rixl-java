@@ -33,7 +33,7 @@ public class Passkey implements Parsable {
      */
     private String lastUsedAt;
     /**
-     * The name property
+     * At most 64 UTF-8 bytes.
      */
     private String name;
     /**
@@ -116,7 +116,7 @@ public class Passkey implements Parsable {
         return this.lastUsedAt;
     }
     /**
-     * Gets the name property value. The name property
+     * Gets the name property value. At most 64 UTF-8 bytes.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -189,7 +189,7 @@ public class Passkey implements Parsable {
         this.lastUsedAt = value;
     }
     /**
-     * Sets the name property value. The name property
+     * Sets the name property value. At most 64 UTF-8 bytes.
      * @param value Value to set for the name property.
      */
     public void setName(@jakarta.annotation.Nullable final String value) {

@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class PasskeyRegisterFinishResponse implements Parsable {
     /**
-     * The name property
+     * At most 64 UTF-8 bytes.
      */
     private String name;
     /**
@@ -38,7 +38,7 @@ public class PasskeyRegisterFinishResponse implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the name property value. The name property
+     * Gets the name property value. At most 64 UTF-8 bytes.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -63,7 +63,7 @@ public class PasskeyRegisterFinishResponse implements Parsable {
         writer.writeStringValue("passkey_id", this.getPasskeyId());
     }
     /**
-     * Sets the name property value. The name property
+     * Sets the name property value. At most 64 UTF-8 bytes.
      * @param value Value to set for the name property.
      */
     public void setName(@jakarta.annotation.Nullable final String value) {

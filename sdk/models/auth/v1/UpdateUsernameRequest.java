@@ -13,7 +13,7 @@ public class UpdateUsernameRequest implements Parsable {
      */
     private String userId;
     /**
-     * The username property
+     * Trimmed and lowercased before validation. The normalized value may contain at most 24 Unicode characters; an empty value is allowed.
      */
     private String username;
     /**
@@ -46,7 +46,7 @@ public class UpdateUsernameRequest implements Parsable {
         return this.userId;
     }
     /**
-     * Gets the username property value. The username property
+     * Gets the username property value. Trimmed and lowercased before validation. The normalized value may contain at most 24 Unicode characters; an empty value is allowed.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -70,7 +70,7 @@ public class UpdateUsernameRequest implements Parsable {
         this.userId = value;
     }
     /**
-     * Sets the username property value. The username property
+     * Sets the username property value. Trimmed and lowercased before validation. The normalized value may contain at most 24 Unicode characters; an empty value is allowed.
      * @param value Value to set for the username property.
      */
     public void setUsername(@jakarta.annotation.Nullable final String value) {

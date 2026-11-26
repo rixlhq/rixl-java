@@ -10,7 +10,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class InvitationsPostRequestBody implements Parsable {
     /**
-     * The email property
+     * Trimmed and lowercased before validation as a bare email address. The normalized address must be nonempty and at most 254 UTF-8 bytes, with a local part of at most 64 bytes and a domain containing a dot that is neither leading nor trailing.
      */
     private String email;
     /**
@@ -32,7 +32,7 @@ public class InvitationsPostRequestBody implements Parsable {
         return new InvitationsPostRequestBody();
     }
     /**
-     * Gets the email property value. The email property
+     * Gets the email property value. Trimmed and lowercased before validation as a bare email address. The normalized address must be nonempty and at most 254 UTF-8 bytes, with a local part of at most 64 bytes and a domain containing a dot that is neither leading nor trailing.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -78,7 +78,7 @@ public class InvitationsPostRequestBody implements Parsable {
         writer.writeEnumValue("role", this.getRole());
     }
     /**
-     * Sets the email property value. The email property
+     * Sets the email property value. Trimmed and lowercased before validation as a bare email address. The normalized address must be nonempty and at most 254 UTF-8 bytes, with a local part of at most 64 bytes and a domain containing a dot that is neither leading nor trailing.
      * @param value Value to set for the email property.
      */
     public void setEmail(@jakarta.annotation.Nullable final String value) {

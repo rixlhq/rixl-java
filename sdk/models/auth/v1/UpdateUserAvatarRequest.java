@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class UpdateUserAvatarRequest implements Parsable {
     /**
-     * The image_id property
+     * Trimmed before validation. Empty clears the avatar; otherwise must be a valid base62 image ID.
      */
     private String imageId;
     /**
@@ -38,7 +38,7 @@ public class UpdateUserAvatarRequest implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the image_id property value. The image_id property
+     * Gets the image_id property value. Trimmed before validation. Empty clears the avatar; otherwise must be a valid base62 image ID.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -63,7 +63,7 @@ public class UpdateUserAvatarRequest implements Parsable {
         writer.writeStringValue("user_id", this.getUserId());
     }
     /**
-     * Sets the image_id property value. The image_id property
+     * Sets the image_id property value. Trimmed before validation. Empty clears the avatar; otherwise must be a valid base62 image ID.
      * @param value Value to set for the image_id property.
      */
     public void setImageId(@jakarta.annotation.Nullable final String value) {

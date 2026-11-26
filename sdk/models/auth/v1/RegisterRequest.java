@@ -17,7 +17,7 @@ public class RegisterRequest implements Parsable {
      */
     private String email;
     /**
-     * The password property
+     * Must contain at least 8 UTF-8 bytes (not 8 characters).
      */
     private String password;
     /**
@@ -64,7 +64,7 @@ public class RegisterRequest implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the password property value. The password property
+     * Gets the password property value. Must contain at least 8 UTF-8 bytes (not 8 characters).
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -105,7 +105,7 @@ public class RegisterRequest implements Parsable {
         this.email = value;
     }
     /**
-     * Sets the password property value. The password property
+     * Sets the password property value. Must contain at least 8 UTF-8 bytes (not 8 characters).
      * @param value Value to set for the password property.
      */
     public void setPassword(@jakarta.annotation.Nullable final String value) {

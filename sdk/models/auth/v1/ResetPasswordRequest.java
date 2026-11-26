@@ -9,7 +9,7 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ResetPasswordRequest implements Parsable {
     /**
-     * The new_password property
+     * Must contain at least 8 UTF-8 bytes (not 8 characters).
      */
     private String newPassword;
     /**
@@ -38,7 +38,7 @@ public class ResetPasswordRequest implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the new_password property value. The new_password property
+     * Gets the new_password property value. Must contain at least 8 UTF-8 bytes (not 8 characters).
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -63,7 +63,7 @@ public class ResetPasswordRequest implements Parsable {
         writer.writeStringValue("token", this.getToken());
     }
     /**
-     * Sets the new_password property value. The new_password property
+     * Sets the new_password property value. Must contain at least 8 UTF-8 bytes (not 8 characters).
      * @param value Value to set for the new_password property.
      */
     public void setNewPassword(@jakarta.annotation.Nullable final String value) {

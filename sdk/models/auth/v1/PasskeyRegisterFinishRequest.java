@@ -17,7 +17,7 @@ public class PasskeyRegisterFinishRequest implements Parsable {
      */
     private byte[] credential;
     /**
-     * The name property
+     * At most 64 UTF-8 bytes. When renaming, whitespace is trimmed before validation and the result must be nonempty.
      */
     private String name;
     /**
@@ -64,7 +64,7 @@ public class PasskeyRegisterFinishRequest implements Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the name property value. The name property
+     * Gets the name property value. At most 64 UTF-8 bytes. When renaming, whitespace is trimmed before validation and the result must be nonempty.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -105,7 +105,7 @@ public class PasskeyRegisterFinishRequest implements Parsable {
         this.credential = value;
     }
     /**
-     * Sets the name property value. The name property
+     * Sets the name property value. At most 64 UTF-8 bytes. When renaming, whitespace is trimmed before validation and the result must be nonempty.
      * @param value Value to set for the name property.
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
